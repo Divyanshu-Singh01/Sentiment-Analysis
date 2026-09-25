@@ -1,0 +1,39 @@
+{
+  "model_name": "LogisticRegression",
+  "vectorizer_name": "TfidfVectorizer",
+  "classes": [
+    "mixed",
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "vocabulary_size": 7679,
+  "train_records": 4000,
+  "test_records": 1000,
+  "random_state": 42,
+  "train_accuracy": 0.9818,
+  "test_accuracy": 0.93,
+  "macro_f1": 0.9343,
+  "weighted_f1": 0.9302,
+  "leakage_stats": {
+    "train_size": 4000,
+    "test_size": 1000,
+    "train_class_distribution": {
+      "negative": 1359,
+      "positive": 1087,
+      "neutral": 923,
+      "mixed": 631
+    },
+    "test_class_distribution": {
+      "negative": 339,
+      "positive": 272,
+      "neutral": 231,
+      "mixed": 158
+    },
+    "unique_train_texts": 3763,
+    "unique_test_texts": 984,
+    "overlapping_unique_texts": 79,
+    "overlapping_test_records": 93,
+    "overlapping_test_percentage": 9.3
+  }
+}

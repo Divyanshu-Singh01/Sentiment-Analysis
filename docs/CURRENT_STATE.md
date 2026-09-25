@@ -52,23 +52,38 @@ Sentiment Analysis/
 ├── ml/                               # Machine learning code and artifacts
 │   ├── models/                       # Serialized model artifacts
 │   │   ├── sentiment_model.pkl       # Trained LogisticRegression (gitignored)
-│   │   └── tfidf_vectorizer.pkl      # Fitted TF-IDF vectorizer (gitignored)
+│   │   ├── tfidf_vectorizer.pkl      # Fitted TF-IDF vectorizer (gitignored)
+│   │   ├── sentiment_baseline_model.pkl      # Phase 4 baseline model (gitignored)
+│   │   ├── sentiment_baseline_vectorizer.pkl # Phase 4 baseline vectorizer (gitignored)
+│   │   ├── baseline_metadata.json    # Phase 4 baseline metadata
+│   │   ├── sentiment_best_model.pkl  # Phase 5 winning model (Exp 3: Word+Char) (gitignored)
+│   │   ├── sentiment_best_vectorizer.pkl # Phase 5 winning vectorizer (gitignored)
+│   │   ├── best_model_metadata.json  # Phase 5 winning model metadata
+│   │   └── experiment_results.json   # Phase 5 all 5 experiment metrics
 │   ├── preprocessing/                # Data preprocessing scripts
 │   │   ├── preprocessing.py          # Text cleaning pipeline
 │   │   ├── data_check.py            # Dataset inspection/stats
 │   │   ├── validate_datasets.py     # Reusable dataset validator (Phase 2)
 │   │   └── clean_datasets.py        # Dataset cleaning & normalization pipeline (Phase 3)
 │   ├── training/                     # Model training scripts
-│   │   ├── train_model.py            # Train LogisticRegression + TF-IDF
+│   │   ├── train_experiments.py      # Phase 5 controlled experiments pipeline
+│   │   ├── train_baseline.py         # Multi-class baseline training pipeline (Phase 4)
+│   │   ├── train_model.py            # Legacy binary training script
 │   │   ├── train_test_split.py       # Check train/test split distribution
 │   │   └── tfidf_test.py            # Test TF-IDF vectorization
 │   └── evaluation/                   # Model evaluation scripts
-│       └── evaluate_model.py         # Accuracy, classification report, confusion matrix
+│       ├── evaluate_experiments.py   # Phase 5 experiment evaluation & report generator
+│       ├── evaluate_baseline.py      # Baseline evaluation & error analysis (Phase 4)
+│       └── evaluate_model.py         # Legacy binary evaluation script
 │
 ├── docs/                             # Project documentation
 │   ├── PROJECT.md                    # Project purpose and scope
 │   ├── SYSTEM_DESIGN.md              # Architecture and data flow
 │   ├── DATASET_DESIGN.md             # Dataset structure and column specs
+│   ├── DATASET_VALIDATION.md         # Phase 2 validation report
+│   ├── DATASET_CLEANING.md           # Phase 3 cleaning and normalization report
+│   ├── ML_BASELINE_EVALUATION.md     # Phase 4 baseline evaluation report
+│   ├── ML_IMPROVEMENT_EVALUATION.md  # Phase 5 model improvement evaluation report
 │   ├── IMPLEMENTATION_PLAN.md        # Phase 0–9 improvement plan
 │   └── CURRENT_STATE.md              # This file
 │
@@ -252,18 +267,21 @@ From `package.json`:
 11. ✅ Python dependencies documented in `requirements.txt`.
 12. ✅ Reusable dataset validator (`ml/preprocessing/validate_datasets.py`) verifies all 10 raw datasets; findings documented in `docs/DATASET_VALIDATION.md`.
 13. ✅ Cleaned and validated 5,000-record training dataset created at `data/processed/sentiment_dataset.csv` via `ml/preprocessing/clean_datasets.py`; findings documented in `docs/DATASET_CLEANING.md`.
+14. ✅ Multi-class baseline model trained (`ml/training/train_baseline.py`) and evaluated (`ml/evaluation/evaluate_baseline.py`) achieving 93.00% accuracy and 0.9343 macro F1; documented in `docs/ML_BASELINE_EVALUATION.md`.
+15. ✅ Model improvement experiments conducted (`ml/training/train_experiments.py`, `ml/evaluation/evaluate_experiments.py`); Exp 3 (Combined Word + Character n-grams) achieved **94.70%** accuracy, **0.9487** macro F1, **90.46%** Hinglish accuracy, and **94.91%** strict unseen-text accuracy; documented in `docs/ML_IMPROVEMENT_EVALUATION.md`.
 
 ---
 
 ## Known Issues (Remaining)
 
-### 1. ML Scripts Not Yet Runnable on New Dataset
-- The processed dataset `data/processed/sentiment_dataset.csv` is ready.
-- The ML training scripts (`train_model.py`, `evaluate_model.py`) currently still have legacy 2-column paths and will be updated in Phase 4 to train on the new 4-class multi-service dataset.
+### 1. Production Model Still Uses Binary Model
+- The new 4-class multi-service winning candidate artifacts are saved as `ml/models/sentiment_best_model.pkl` and `sentiment_best_vectorizer.pkl` (Phase 4 baseline preserved at `sentiment_baseline_*.pkl`).
+- Django (`analyzer/views.py`) still loads the old binary model (`sentiment_model.pkl`) until Phase 6 (Django REST Integration).
+- Legacy 2-column scripts (`train_model.py`, `evaluate_model.py`) remain for backward reference.
 
 ### 2. Model Version Mismatch (Minor)
-- The model `.pkl` was saved with scikit-learn 1.9.1 but the local environment
-  has 1.9.0. This produces a warning but does not break functionality.
+- The legacy model `.pkl` was saved with scikit-learn 1.9.1 but the local environment
+  has 1.9.0. This produces a warning but does not break functionality. New Phase 4 & Phase 5 models are trained and saved using current scikit-learn 1.9.0.
 
 ### 3. No Project README.md
 - No root `README.md` exists (only `frontend/README.md` which is the default

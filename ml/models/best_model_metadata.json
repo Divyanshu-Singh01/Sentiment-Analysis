@@ -1,0 +1,12 @@
+{
+  "candidate_name": "Exp 3 (Combined Word+Char)",
+  "feature_representation": "FeatureUnion(Word TfidfVectorizer(1,1) + Char_wb TfidfVectorizer(3,5))",
+  "classifier": "LogisticRegression(max_iter=1000, class_weight=None, random_state=42)",
+  "features_count": 51743,
+  "standard_accuracy": 0.947,
+  "standard_macro_f1": 0.9487,
+  "hinglish_accuracy": 0.9046,
+  "english_accuracy": 0.9637,
+  "strict_unseen_accuracy": 0.9491,
+  "strict_macro_f1": 0.9502
+}
