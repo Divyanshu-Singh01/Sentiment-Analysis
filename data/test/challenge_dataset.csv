@@ -1,0 +1,91 @@
+id,text,language,sentiment
+CH001,great service,english,positive
+CH002,loved it,english,positive
+CH003,very bad,english,negative
+CH004,terrible experience,english,negative
+CH005,okay product,english,neutral
+CH006,it was fine,english,neutral
+CH007,good but slow,english,mixed
+CH008,nice food bad delivery,english,mixed
+CH009,bahut acha tha service,hinglish,positive
+CH010,bohot accha experience mila,hinglish,positive
+CH011,bahut accha laga mujhe,hinglish,positive
+CH012,bohot acha kaam kiya,hinglish,positive
+CH013,nhi acha tha bilkul,hinglish,negative
+CH014,bahut bura tha ye sab,hinglish,negative
+CH015,bohot kharab service thi,hinglish,negative
+CH016,acha nhi laga mujhe,hinglish,negative
+CH017,theek thaak tha kuch khaas nhi,hinglish,neutral
+CH018,chalega koi baat nhi,hinglish,neutral
+CH019,Why am I being charged extra for something that was supposed to be free?,english,negative
+CH020,Can someone explain why my refund has not been processed after 30 days?,english,negative
+CH021,Is there any reason the support team takes 3 hours to respond to a simple query?,english,negative
+CH022,What exactly is the point of premium membership if benefits keep changing?,english,negative
+CH023,The product arrived on time and the packaging was neat but honestly the quality is quite disappointing for the price,english,mixed
+CH024,I appreciate the quick delivery however the item was completely different from what was shown,english,mixed
+CH025,Staff was polite and helpful but the waiting time of 2 hours was unacceptable,english,mixed
+CH026,The food tasted amazing but the portion size was laughably small,english,mixed
+CH027,Oh wow what a fantastic experience waiting 45 minutes for cold food,english,negative
+CH028,Sure the app works great if you enjoy watching loading screens all day,english,negative
+CH029,Absolutely brilliant how they managed to lose my package twice in a row,english,negative
+CH030,Thank you so much for the wonderful experience of being put on hold for an hour,english,negative
+CH031,I understand these things happen but the repeated delays are getting frustrating,english,negative
+CH032,Not to complain but the service has been consistently below expectations,english,negative
+CH033,I wish I could say something positive but the quality has really gone down,english,negative
+CH034,With all due respect the current system is not working for most users,english,negative
+CH035,bhai mast tha ekdum solid performance,hinglish,positive
+CH036,bhai kya bakwas hai ye app,hinglish,negative
+CH037,bhai theek hai nothing special,hinglish,neutral
+CH038,bhai speed test kiya bhot fast tha network loving it,hinglish,positive
+CH039,bhai ye loan approval process bahut smooth tha seedha account me paisa aa gaya,hinglish,positive
+CH040,bhai ambulance 45 minute late aayi ye toh galat hai,hinglish,negative
+CH041,The new update has improved the interface significantly and everything runs smoothly now,english,positive
+CH042,Customer service was exceptional they resolved my issue within minutes,english,positive
+CH043,Excellent value for money I would definitely recommend this to everyone,english,positive
+CH044,My order was delivered to the wrong address and customer care just keeps saying they will look into it,english,negative
+CH045,The app crashes every time I try to make a payment which is extremely frustrating,english,negative
+CH046,Delivery was on schedule and the items matched the description,english,neutral
+CH047,Received the standard confirmation email after placing the order,english,neutral
+CH048,The account statement was generated on the 1st of every month as per schedule,english,neutral
+CH049,amazng servce very hapy with the reult,english,positive
+CH050,terribl experienc wuld not recomend,english,negative
+CH051,delievry was late and produt was damaegd,english,negative
+CH052,goood qualitty but shiping took too lonng,english,mixed
+CH053,bahut acha,hinglish,positive
+CH054,bohot bura,hinglish,negative
+CH055,theek hai,hinglish,neutral
+CH056,mast,hinglish,positive
+CH057,bekaar,hinglish,negative
+CH058,ok,english,neutral
+CH059,bad,english,negative
+CH060,love,english,positive
+CH061,Doctor explained everything clearly and treatment was effective but the billing department made three errors,english,mixed
+CH062,Teacher ka padhane ka tarika acha tha lekin class me bahut shor tha concentrate nhi ho paya,hinglish,mixed
+CH063,Cab driver was very professional but the car AC was not working in 45 degree heat,english,mixed
+CH064,Hotel room was spacious and clean par breakfast me options bohot kam the,hinglish,mixed
+CH065,bhai UPI payment instant hua koi dikkat nhi,hinglish,positive
+CH066,bhai recharge kiya tha par data nhi mila scam hai ye company,hinglish,negative
+CH067,bhai doctor ne time pe dekha aur dawai bhi sahi di,hinglish,positive
+CH068,bhai 2 ghante wait karaya phir bola system down hai kal aana,hinglish,negative
+CH069,ye product toh sach me kamaal ka hai quality top notch hai,hinglish,positive
+CH070,paisa barbaad hogaya kuch kaam ka nhi hai ye,hinglish,negative
+CH071,The grocery delivery arrived with all items intact and fresh vegetables were of good quality,english,positive
+CH072,I have been trying to reach customer support for 5 days but nobody picks up the phone,english,negative
+CH073,Flight departed at 6 AM and landed at 8:30 AM at terminal 2,english,neutral
+CH074,The medicine was available at the pharmacy counter on the ground floor,english,neutral
+CH075,Registration was completed at the front desk between 9 AM and 10 AM,english,neutral
+CH076,acha bhi hai aur bura bhi depends on your expectations honestly,hinglish,mixed
+CH077,service fast thi par attitude bohot rude tha staff ka,hinglish,mixed
+CH078,khana tasty tha par plates gande the hygiene zero,hinglish,mixed
+CH079,I'm not angry just disappointed with how things were handled this time,english,negative
+CH080,It works I guess nothing to write home about really,english,neutral
+CH081,paise toh zyada lge par quality dekhke lagta hai sahi hai,hinglish,mixed
+CH082,Honestly I expected much worse but it turned out to be decent enough,english,positive
+CH083,wifi speed thik thi par raat ko signal gayab ho jata tha,hinglish,mixed
+CH084,The return policy says 7 days but my return request was rejected on day 5 without explanation,english,negative
+CH085,Train number 12301 departed from platform 4 at the scheduled time of 16:55,english,neutral
+CH086,bhai pehle toh acha tha ab ekdum wahiyat hogaya hai sab,hinglish,negative
+CH087,mene socha tha bura hoga par acha nikla surprisingly,hinglish,positive
+CH088,koi complaint nhi hai sab normal tha as expected,hinglish,neutral
+CH089,Absolutely loved the whole experience from start to finish would come back again,english,positive
+CH090,This is hands down the worst service I have ever experienced in my entire life,english,negative

@@ -1,0 +1,191 @@
+{
+  "model_name": "Phase 6.3 Final Model (Exp3 Architecture Retrained on 6,000 Records)",
+  "base_architecture": "Exp3 (FeatureUnion: Word TF-IDF + Character n-grams TF-IDF)",
+  "vectorizer": {
+    "word": {
+      "analyzer": "word",
+      "ngram_range": [
+        1,
+        1
+      ],
+      "min_df": 2,
+      "sublinear_tf": true
+    },
+    "char": {
+      "analyzer": "char_wb",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "min_df": 3,
+      "sublinear_tf": true
+    }
+  },
+  "classifier": "LogisticRegression(max_iter=1000, class_weight=None, random_state=42)",
+  "dataset": {
+    "path": "C:\\Users\\hp\\OneDrive\\Desktop\\Sentiment Analysis\\data\\processed\\sentiment_dataset.csv",
+    "total_records": 6000,
+    "classes": [
+      "negative",
+      "positive",
+      "neutral",
+      "mixed"
+    ]
+  },
+  "standard_split": {
+    "train_size": 4800,
+    "test_size": 1200,
+    "random_state": 42,
+    "metrics": {
+      "accuracy": 0.9083,
+      "macro_precision": 0.9165,
+      "macro_recall": 0.9059,
+      "macro_f1": 0.9107,
+      "weighted_precision": 0.91,
+      "weighted_recall": 0.9083,
+      "weighted_f1": 0.9086,
+      "total_samples": 1200,
+      "total_errors": 110,
+      "per_class": {
+        "negative": {
+          "precision": 0.8661,
+          "recall": 0.926,
+          "f1_score": 0.895,
+          "support": 419
+        },
+        "positive": {
+          "precision": 0.9317,
+          "recall": 0.898,
+          "f1_score": 0.9146,
+          "support": 304
+        },
+        "neutral": {
+          "precision": 0.9364,
+          "recall": 0.8983,
+          "f1_score": 0.917,
+          "support": 295
+        },
+        "mixed": {
+          "precision": 0.9318,
+          "recall": 0.9011,
+          "f1_score": 0.9162,
+          "support": 182
+        }
+      },
+      "confusion_matrix": [
+        [
+          388,
+          9,
+          12,
+          10
+        ],
+        [
+          25,
+          273,
+          4,
+          2
+        ],
+        [
+          23,
+          7,
+          265,
+          0
+        ],
+        [
+          12,
+          4,
+          2,
+          164
+        ]
+      ]
+    },
+    "language_metrics": {
+      "english": {
+        "total": 794,
+        "correct": 743,
+        "errors": 51,
+        "accuracy": 0.9358
+      },
+      "hinglish": {
+        "total": 406,
+        "correct": 347,
+        "errors": 59,
+        "accuracy": 0.8547
+      }
+    },
+    "complexity_metrics": {
+      "simple_accuracy": 0.8545,
+      "moderate_accuracy": 0.9297,
+      "complex_accuracy": 0.9836
+    }
+  },
+  "strict_split": {
+    "train_size": 4788,
+    "test_size": 1212,
+    "random_state": 42,
+    "metrics": {
+      "accuracy": 0.9142,
+      "macro_precision": 0.9151,
+      "macro_recall": 0.91,
+      "macro_f1": 0.9123,
+      "weighted_precision": 0.9148,
+      "weighted_recall": 0.9142,
+      "weighted_f1": 0.9142,
+      "total_samples": 1212,
+      "total_errors": 104,
+      "per_class": {
+        "negative": {
+          "precision": 0.884,
+          "recall": 0.9181,
+          "f1_score": 0.9007,
+          "support": 415
+        },
+        "positive": {
+          "precision": 0.9429,
+          "recall": 0.9489,
+          "f1_score": 0.9459,
+          "support": 313
+        },
+        "neutral": {
+          "precision": 0.939,
+          "recall": 0.8935,
+          "f1_score": 0.9157,
+          "support": 310
+        },
+        "mixed": {
+          "precision": 0.8947,
+          "recall": 0.8793,
+          "f1_score": 0.887,
+          "support": 174
+        }
+      },
+      "confusion_matrix": [
+        [
+          381,
+          9,
+          13,
+          12
+        ],
+        [
+          9,
+          297,
+          4,
+          3
+        ],
+        [
+          22,
+          8,
+          277,
+          3
+        ],
+        [
+          19,
+          1,
+          1,
+          153
+        ]
+      ]
+    }
+  },
+  "feature_count": 31321
+}

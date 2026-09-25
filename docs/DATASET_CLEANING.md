@@ -12,22 +12,22 @@
 ## 2. Dataset Ingestion Summary
 
 - **Input Datasets:** 10 service domain files under `data/raw/`
-- **Total Input Records:** 5,000
-- **Total Output Records:** 5,000
-- **Excluded Records:** 0 (all 5,000 records successfully cleaned and retained)
+- **Total Input Records:** 8,000
+- **Total Output Records:** 8,000
+- **Excluded Records:** 0 (all 8,000 records successfully cleaned and retained)
 
 | Service Domain | Raw File | Input Records | Cleaned Output Records | Excluded |
 | :--- | :--- | :--- | :--- | :--- |
-| BK | `data/raw/*/BK.csv` | 500 | 500 | 0 |
-| CB | `data/raw/*/CB.csv` | 500 | 500 | 0 |
-| CS | `data/raw/*/CS.csv` | 500 | 500 | 0 |
-| EC | `data/raw/*/EC.csv` | 500 | 500 | 0 |
-| ED | `data/raw/*/ED.csv` | 500 | 500 | 0 |
-| FD | `data/raw/*/FD.csv` | 500 | 500 | 0 |
-| GR | `data/raw/*/GR.csv` | 500 | 500 | 0 |
-| HC | `data/raw/*/HC.csv` | 500 | 500 | 0 |
-| TC | `data/raw/*/TC.csv` | 500 | 500 | 0 |
-| TR | `data/raw/*/TR.csv` | 500 | 500 | 0 |
+| BK | `data/raw/*/BK.csv` | 800 | 800 | 0 |
+| CB | `data/raw/*/CB.csv` | 800 | 800 | 0 |
+| CS | `data/raw/*/CS.csv` | 800 | 800 | 0 |
+| EC | `data/raw/*/EC.csv` | 800 | 800 | 0 |
+| ED | `data/raw/*/ED.csv` | 800 | 800 | 0 |
+| FD | `data/raw/*/FD.csv` | 800 | 800 | 0 |
+| GR | `data/raw/*/GR.csv` | 800 | 800 | 0 |
+| HC | `data/raw/*/HC.csv` | 800 | 800 | 0 |
+| TC | `data/raw/*/TC.csv` | 800 | 800 | 0 |
+| TR | `data/raw/*/TR.csv` | 800 | 800 | 0 |
 
 ---
 
@@ -86,7 +86,7 @@
 ## 4. Final Dataset Validation & Statistics
 
 ### A. Schema & Integrity
-- **Total Records:** 5,000
+- **Total Records:** 8,000
 - **Columns:** 12 columns (`id, text, language, service, behavior, sentiment, aspect, issue, severity, abuse, complexity, suggestion`)
 - **Column Order:** 100% matching canonical schema
 - **Total Missing Values:** 0 (0 missing values across all columns)
@@ -99,69 +99,69 @@
 #### Sentiment Distribution (Target Variable)
 | Sentiment | Count | Percentage |
 | :--- | :--- | :--- |
-| `negative` | 1,698 | 33.96% |
-| `positive` | 1,359 | 27.18% |
-| `neutral` | 1,154 | 23.08% |
-| `mixed` | 789 | 15.78% |
+| `negative` | 3,275 | 40.94% |
+| `positive` | 1,761 | 22.01% |
+| `neutral` | 1,734 | 21.68% |
+| `mixed` | 1,230 | 15.38% |
 
 #### Language Distribution
 | Language | Count | Percentage |
 | :--- | :--- | :--- |
-| `english` | 3,601 | 72.02% |
-| `hinglish` | 1,399 | 27.98% |
+| `english` | 4,967 | 62.09% |
+| `hinglish` | 3,033 | 37.91% |
 
 #### Behavior Distribution
 | Behavior | Count | Percentage |
 | :--- | :--- | :--- |
-| `complaint` | 2,089 | 41.78% |
-| `appreciation` | 1,490 | 29.80% |
-| `question` | 727 | 14.54% |
-| `suggestion` | 520 | 10.40% |
-| `informational` | 174 | 3.48% |
+| `complaint` | 3,957 | 49.46% |
+| `appreciation` | 1,892 | 23.65% |
+| `question` | 947 | 11.84% |
+| `informational` | 684 | 8.55% |
+| `suggestion` | 520 | 6.50% |
 
 #### Complexity Distribution
 | Complexity | Count | Percentage |
 | :--- | :--- | :--- |
-| `moderate` | 3,344 | 66.88% |
-| `simple` | 1,355 | 27.10% |
-| `complex` | 301 | 6.02% |
+| `moderate` | 5,154 | 64.42% |
+| `simple` | 2,502 | 31.27% |
+| `complex` | 344 | 4.30% |
 
 #### Severity Distribution
 | Severity | Count | Percentage |
 | :--- | :--- | :--- |
-| `none` | 2,527 | 50.54% |
-| `medium` | 876 | 17.52% |
-| `low` | 822 | 16.44% |
-| `high` | 775 | 15.50% |
+| `none` | 3,509 | 43.86% |
+| `high` | 1,737 | 21.71% |
+| `medium` | 1,543 | 19.29% |
+| `low` | 1,211 | 15.14% |
 
 #### Abuse Distribution
 | Abuse | Count | Percentage |
 | :--- | :--- | :--- |
-| `none` | 4,631 | 92.62% |
-| `mild` | 204 | 4.08% |
-| `severe` | 165 | 3.30% |
+| `none` | 7,619 | 95.24% |
+| `mild` | 216 | 2.70% |
+| `severe` | 165 | 2.06% |
 
 #### Service Distribution
 | Service | Count | Percentage |
 | :--- | :--- | :--- |
-| `banking_upi` | 500 | 10.00% |
-| `cab_transport` | 500 | 10.00% |
-| `customer_support` | 500 | 10.00% |
-| `ecommerce` | 500 | 10.00% |
-| `education` | 500 | 10.00% |
-| `grocery_delivery` | 500 | 10.00% |
-| `healthcare` | 500 | 10.00% |
-| `telecom_internet` | 500 | 10.00% |
-| `travel_hotels` | 500 | 10.00% |
-| `food_delivery` | 348 | 6.96% |
-| `restaurant` | 152 | 3.04% |
+| `banking_upi` | 800 | 10.00% |
+| `cab_transport` | 800 | 10.00% |
+| `customer_support` | 800 | 10.00% |
+| `ecommerce` | 800 | 10.00% |
+| `education` | 800 | 10.00% |
+| `grocery_delivery` | 800 | 10.00% |
+| `healthcare` | 800 | 10.00% |
+| `telecom_internet` | 800 | 10.00% |
+| `travel_hotels` | 800 | 10.00% |
+| `food_delivery` | 648 | 8.10% |
+| `restaurant` | 152 | 1.90% |
 
 ---
 
 ## 5. Duplicate Text Analysis
-- **Total Rows with Duplicate Text:** 497
-- **Unique Duplicate Text Phrases:** 165
-- **Phrases Shared Across Multiple Services:** 149
+- **Total Rows with Duplicate Text:** 509
+- **Unique Duplicate Text Phrases:** 167
+- **Phrases Shared Across Multiple Services:** 151
 - **Phrases Duplicated Within Single Service Only:** 16
 
 **Major Cross-Service Text Sharing Clusters:**
@@ -171,6 +171,8 @@
 - `22` phrases shared across: `CB.csv, CS.csv, TC.csv, TR.csv`
 - `1` phrases shared across: `CS.csv, TR.csv`
 - `1` phrases shared across: `CB.csv, CS.csv`
+- `1` phrases shared across: `EC.csv, GR.csv`
+- `1` phrases shared across: `BK.csv, CB.csv, CS.csv, EC.csv, ED.csv, FD.csv, GR.csv, HC.csv, TC.csv, TR.csv`
 
 ---
 

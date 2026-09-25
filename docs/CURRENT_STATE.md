@@ -26,28 +26,30 @@ Sentiment Analysis/
 │   └── views.py                      # predict_sentiment view (loads model from ml/models/)
 │
 ├── data/                             # All datasets
-│   ├── raw/                          # Raw service datasets (unmodified originals)
+│   ├── raw/                          # Raw service datasets (expanded from 600 to 800 records each in Phase 6.4)
 │   │   ├── banking_upi/
-│   │   │   └── BK.csv               # Banking/UPI (500 records)
+│   │   │   └── BK.csv               # Banking/UPI (800 records)
 │   │   ├── cab_transport/
-│   │   │   └── CB.csv               # Cab/Transport (500 records)
+│   │   │   └── CB.csv               # Cab/Transport (800 records)
 │   │   ├── customer_support/
-│   │   │   └── CS.csv               # Customer Support (500 records)
+│   │   │   └── CS.csv               # Customer Support (800 records)
 │   │   ├── ecommerce/
-│   │   │   └── EC.csv               # E-commerce (500 records)
+│   │   │   └── EC.csv               # E-commerce (800 records)
 │   │   ├── education/
-│   │   │   └── ED.csv               # Education (500 records)
+│   │   │   └── ED.csv               # Education (800 records)
 │   │   ├── food_delivery/
-│   │   │   └── FD.csv               # Food Delivery (500 records)
+│   │   │   └── FD.csv               # Food Delivery (800 records)
 │   │   ├── grocery_delivery/
-│   │   │   └── GR.csv               # Grocery Delivery (500 records)
+│   │   │   └── GR.csv               # Grocery Delivery (800 records)
 │   │   ├── healthcare/
-│   │   │   └── HC.csv               # Healthcare (500 records)
+│   │   │   └── HC.csv               # Healthcare (800 records)
 │   │   ├── telecom/
-│   │   │   └── TC.csv               # Telecom/Internet (500 records)
+│   │   │   └── TC.csv               # Telecom/Internet (800 records)
 │   │   └── travel_hotels/
-│   │       └── TR.csv               # Travel/Hotels (500 records)
-│   └── processed/                    # Processed training dataset (sentiment_dataset.csv, cleaning_log.json)
+│   │       └── TR.csv               # Travel/Hotels (800 records)
+│   ├── processed/                    # Processed training dataset (sentiment_dataset.csv: 8,000 records, cleaning_log.json)
+│   └── test/                         # Independent test datasets
+│       └── challenge_dataset.csv     # Phase 6 manually curated challenge set (90 records)
 │
 ├── ml/                               # Machine learning code and artifacts
 │   ├── models/                       # Serialized model artifacts
@@ -59,19 +61,26 @@ Sentiment Analysis/
 │   │   ├── sentiment_best_model.pkl  # Phase 5 winning model (Exp 3: Word+Char) (gitignored)
 │   │   ├── sentiment_best_vectorizer.pkl # Phase 5 winning vectorizer (gitignored)
 │   │   ├── best_model_metadata.json  # Phase 5 winning model metadata
-│   │   └── experiment_results.json   # Phase 5 all 5 experiment metrics
+│   │   ├── experiment_results.json   # Phase 5 all 5 experiment metrics
+│   │   ├── sentiment_final_model.pkl # Phase 6.3 retrained winning model on 6k records (gitignored)
+│   │   ├── sentiment_final_vectorizer.pkl # Phase 6.3 retrained vectorizer (gitignored)
+│   │   ├── final_model_metadata.json # Phase 6.3 final model metadata
+│   │   └── final_challenge_evaluation.json # Phase 6.3 challenge evaluation results
 │   ├── preprocessing/                # Data preprocessing scripts
 │   │   ├── preprocessing.py          # Text cleaning pipeline
 │   │   ├── data_check.py            # Dataset inspection/stats
 │   │   ├── validate_datasets.py     # Reusable dataset validator (Phase 2)
 │   │   └── clean_datasets.py        # Dataset cleaning & normalization pipeline (Phase 3)
 │   ├── training/                     # Model training scripts
+│   │   ├── train_final.py            # Phase 6.3 final model retraining pipeline
 │   │   ├── train_experiments.py      # Phase 5 controlled experiments pipeline
 │   │   ├── train_baseline.py         # Multi-class baseline training pipeline (Phase 4)
 │   │   ├── train_model.py            # Legacy binary training script
 │   │   ├── train_test_split.py       # Check train/test split distribution
 │   │   └── tfidf_test.py            # Test TF-IDF vectorization
 │   └── evaluation/                   # Model evaluation scripts
+│       ├── evaluate_final.py        # Phase 6.3 final challenge evaluation & comparison
+│       ├── evaluate_challenge.py    # Phase 6 challenge dataset evaluation & report generator
 │       ├── evaluate_experiments.py   # Phase 5 experiment evaluation & report generator
 │       ├── evaluate_baseline.py      # Baseline evaluation & error analysis (Phase 4)
 │       └── evaluate_model.py         # Legacy binary evaluation script
@@ -84,6 +93,8 @@ Sentiment Analysis/
 │   ├── DATASET_CLEANING.md           # Phase 3 cleaning and normalization report
 │   ├── ML_BASELINE_EVALUATION.md     # Phase 4 baseline evaluation report
 │   ├── ML_IMPROVEMENT_EVALUATION.md  # Phase 5 model improvement evaluation report
+│   ├── FINAL_MODEL_VALIDATION.md     # Phase 6 challenge testing report
+│   ├── FINAL_MODEL_EVALUATION.md     # Phase 6.3 final retrained model evaluation report
 │   ├── IMPLEMENTATION_PLAN.md        # Phase 0–9 improvement plan
 │   └── CURRENT_STATE.md              # This file
 │
@@ -202,23 +213,24 @@ views, or URLs — it was only a container for ML scripts which have been moved 
 
 | Service Directory     | File    | Records |
 | --------------------- | ------- | ------- |
-| `banking_upi/`        | BK.csv  | 500     |
-| `cab_transport/`      | CB.csv  | 500     |
-| `customer_support/`   | CS.csv  | 500     |
-| `ecommerce/`          | EC.csv  | 500     |
-| `education/`          | ED.csv  | 500     |
-| `food_delivery/`      | FD.csv  | 500     |
-| `grocery_delivery/`   | GR.csv  | 500     |
-| `healthcare/`         | HC.csv  | 500     |
-| `telecom/`            | TC.csv  | 500     |
-| `travel_hotels/`      | TR.csv  | 500     |
+| `banking_upi/`        | BK.csv  | 800     |
+| `cab_transport/`      | CB.csv  | 800     |
+| `customer_support/`   | CS.csv  | 800     |
+| `ecommerce/`          | EC.csv  | 800     |
+| `education/`          | ED.csv  | 800     |
+| `food_delivery/`      | FD.csv  | 800     |
+| `grocery_delivery/`   | GR.csv  | 800     |
+| `healthcare/`         | HC.csv  | 800     |
+| `telecom/`            | TC.csv  | 800     |
+| `travel_hotels/`      | TR.csv  | 800     |
 
 Each has 12 columns: id, text, language, service, behavior, sentiment, aspect,
 issue, severity, abuse, complexity, suggestion.
 
 ### Processed Data (`data/processed/`)
-Empty. Will be populated in Phase 3 when the raw datasets are processed for
-ML training.
+Canonical 8,000-record dataset at `data/processed/sentiment_dataset.csv` generated
+from the 10 raw datasets via `ml/preprocessing/clean_datasets.py` with 0 missing values,
+0 duplicate IDs, and complete normalization logged in `cleaning_log.json`.
 
 ### Original Training Data (Git History Only)
 - `data/sentiment_dataset.csv` — Original ~1,000-record TSV.
@@ -269,14 +281,20 @@ From `package.json`:
 13. ✅ Cleaned and validated 5,000-record training dataset created at `data/processed/sentiment_dataset.csv` via `ml/preprocessing/clean_datasets.py`; findings documented in `docs/DATASET_CLEANING.md`.
 14. ✅ Multi-class baseline model trained (`ml/training/train_baseline.py`) and evaluated (`ml/evaluation/evaluate_baseline.py`) achieving 93.00% accuracy and 0.9343 macro F1; documented in `docs/ML_BASELINE_EVALUATION.md`.
 15. ✅ Model improvement experiments conducted (`ml/training/train_experiments.py`, `ml/evaluation/evaluate_experiments.py`); Exp 3 (Combined Word + Character n-grams) achieved **94.70%** accuracy, **0.9487** macro F1, **90.46%** Hinglish accuracy, and **94.91%** strict unseen-text accuracy; documented in `docs/ML_IMPROVEMENT_EVALUATION.md`.
+16. ✅ Challenge dataset stress-test completed (`data/test/challenge_dataset.csv`, `ml/evaluation/evaluate_challenge.py`); 90 manually curated adversarial examples targeting known weaknesses; model scored **47.8%** on this deliberately adversarial set — exposed specific data gaps (factual neutrals, subtle complaints, negation, short text, bhai particle); documented in `docs/FINAL_MODEL_VALIDATION.md`.
+17. ✅ Phase 6.1 Targeted dataset expansion completed: added exactly 100 new high-quality, service-specific records across all 10 raw datasets (IDs 501–600 per prefix), expanding raw data from 5,000 to 6,000 records targeting identified model blind spots.
+18. ✅ Phase 6.2 Processed expanded dataset regenerated via `ml/preprocessing/clean_datasets.py`: 6,000 clean training records with 0 nulls, 0 duplicate IDs, and 100% valid schema and categorical labels saved to `data/processed/sentiment_dataset.csv` and logged in `data/processed/cleaning_log.json`.
+19. ✅ Phase 6.3 Retrained final Exp3 model on 6,000 records (`ml/training/train_final.py`) and evaluated on frozen 90-record challenge dataset (`ml/evaluation/evaluate_final.py`). Holdout accuracy: **90.83%** (macro F1: **0.9107**), strict unseen-text accuracy: **91.42%** (macro F1: **0.9123**). On the frozen challenge set, accuracy surged from **47.8% (43/90)** to **66.7% (60/90)**, macro F1 jumped from **0.4316** to **0.6688**, and errors dropped from 47 to 30. Major blind spots resolved: factual/neutral (14.3% → 85.7%), sarcasm (25.0% → 100.0%), "bhai" bias (54.5% → 90.9%), indirect complaints (50.0% → 75.0%), Hinglish challenge (48.6% → 64.9%). Persistent weaknesses identified: polite complaints (20.0%) and short expressions (50.0%). Status: **PARTIAL IMPROVEMENT**. Documented in `docs/FINAL_MODEL_EVALUATION.md`.
+20. ✅ Phase 6.4 Targeted dataset expansion: added exactly 2,000 new high-quality, service-specific records across all 10 raw datasets (IDs 601–800 per prefix, 200/service), expanding raw data from 6,000 to 8,000 records targeting remaining weaknesses (polite complaints, ultra-short feedback, transliteration variations, negation, mixed sentiment).
+21. ✅ Phase 6.5 Processed expanded dataset regenerated via `ml/preprocessing/clean_datasets.py`: 8,000 clean training records with 0 nulls, 0 duplicate IDs, and 100% valid schema and categorical labels saved to `data/processed/sentiment_dataset.csv` and logged in `data/processed/cleaning_log.json`.
 
 ---
 
 ## Known Issues (Remaining)
 
-### 1. Production Model Still Uses Binary Model
-- The new 4-class multi-service winning candidate artifacts are saved as `ml/models/sentiment_best_model.pkl` and `sentiment_best_vectorizer.pkl` (Phase 4 baseline preserved at `sentiment_baseline_*.pkl`).
-- Django (`analyzer/views.py`) still loads the old binary model (`sentiment_model.pkl`) until Phase 6 (Django REST Integration).
+### 1. Production Model Still Uses Legacy Binary Model
+- Multi-class candidate artifacts are saved: Phase 4 baseline (`sentiment_baseline_*.pkl`), Phase 5 candidate (`sentiment_best_*.pkl`), and Phase 6.3 final candidate (`sentiment_final_*.pkl`).
+- Django (`analyzer/views.py`) still loads the old binary model (`sentiment_model.pkl`) until Phase 7 (Django REST Integration).
 - Legacy 2-column scripts (`train_model.py`, `evaluate_model.py`) remain for backward reference.
 
 ### 2. Model Version Mismatch (Minor)
@@ -312,12 +330,12 @@ From `package.json`:
 | Aspect                  | Current State                              | Planned Design                           |
 | ----------------------- | ------------------------------------------ | ---------------------------------------- |
 | Sentiment classes       | 2 (positive, negative in current model)    | 4 (positive, negative, neutral, mixed)   |
-| Training data           | ~1,000 generic reviews (model artifact)    | 5,000 service-specific records (10 CSVs) |
+| Training data           | ~1,000 generic reviews (model artifact)    | 8,000 service-specific records (10 CSVs) |
 | Dataset columns         | Model trained on 2 cols (text, sentiment)  | 12 (id, text, language, service, ...)    |
 | API response            | `{ sentiment }` only                       | Multiple fields (aspect, severity, etc.) |
 | ML scripts              | Ready for Phase 4 retraining update        | Full pipeline for new datasets           |
 | UI result display       | Binary positive/negative only              | Multi-class + structured info            |
-| Processed dataset       | `data/processed/sentiment_dataset.csv`     | Combined, cleaned training CSV           |
+| Processed dataset       | `data/processed/sentiment_dataset.csv`     | Combined, cleaned training CSV (8,000 records) |
 
 ---
 

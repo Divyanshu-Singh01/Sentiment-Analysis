@@ -1,16 +1,16 @@
 {
-  "input_record_count": 5000,
+  "input_record_count": 8000,
   "input_files": {
-    "BK.csv": 500,
-    "CB.csv": 500,
-    "CS.csv": 500,
-    "EC.csv": 500,
-    "ED.csv": 500,
-    "FD.csv": 500,
-    "GR.csv": 500,
-    "HC.csv": 500,
-    "TC.csv": 500,
-    "TR.csv": 500
+    "BK.csv": 800,
+    "CB.csv": 800,
+    "CS.csv": 800,
+    "EC.csv": 800,
+    "ED.csv": 800,
+    "FD.csv": 800,
+    "GR.csv": 800,
+    "HC.csv": 800,
+    "TC.csv": 800,
+    "TR.csv": 800
   },
   "shifted_rows_repaired": [
     {
@@ -3419,9 +3419,9 @@
     }
   ],
   "duplicate_text_stats": {
-    "total_duplicate_rows": 497,
-    "unique_duplicate_phrases": 165,
-    "cross_file_phrases": 149,
+    "total_duplicate_rows": 509,
+    "unique_duplicate_phrases": 167,
+    "cross_file_phrases": 151,
     "intra_file_phrases": 16,
     "sharing_patterns": {
       "FD.csv, GR.csv": 5,
@@ -3429,11 +3429,13 @@
       "CB.csv, TR.csv": 19,
       "CB.csv, CS.csv, TC.csv, TR.csv": 22,
       "CS.csv, TR.csv": 1,
-      "CB.csv, CS.csv": 1
+      "CB.csv, CS.csv": 1,
+      "EC.csv, GR.csv": 1,
+      "BK.csv, CB.csv, CS.csv, EC.csv, ED.csv, FD.csv, GR.csv, HC.csv, TC.csv, TR.csv": 1
     }
   },
   "validation_results": {
-    "total_records": 5000,
+    "total_records": 8000,
     "columns_match": true,
     "null_counts": {},
     "empty_text_count": 0,
@@ -3446,49 +3448,49 @@
     "invalid_severity": {},
     "invalid_complexity": {},
     "sentiment_distribution": {
-      "negative": 1698,
-      "positive": 1359,
-      "neutral": 1154,
-      "mixed": 789
+      "negative": 3275,
+      "positive": 1761,
+      "neutral": 1734,
+      "mixed": 1230
     },
     "language_distribution": {
-      "english": 3601,
-      "hinglish": 1399
+      "english": 4967,
+      "hinglish": 3033
     },
     "behavior_distribution": {
-      "complaint": 2089,
-      "appreciation": 1490,
-      "question": 727,
-      "suggestion": 520,
-      "informational": 174
+      "complaint": 3957,
+      "appreciation": 1892,
+      "question": 947,
+      "informational": 684,
+      "suggestion": 520
     },
     "abuse_distribution": {
-      "none": 4631,
-      "mild": 204,
+      "none": 7619,
+      "mild": 216,
       "severe": 165
     },
     "severity_distribution": {
-      "none": 2527,
-      "medium": 876,
-      "low": 822,
-      "high": 775
+      "none": 3509,
+      "high": 1737,
+      "medium": 1543,
+      "low": 1211
     },
     "complexity_distribution": {
-      "moderate": 3344,
-      "simple": 1355,
-      "complex": 301
+      "moderate": 5154,
+      "simple": 2502,
+      "complex": 344
     },
     "service_distribution": {
-      "banking_upi": 500,
-      "cab_transport": 500,
-      "customer_support": 500,
-      "ecommerce": 500,
-      "education": 500,
-      "grocery_delivery": 500,
-      "healthcare": 500,
-      "telecom_internet": 500,
-      "travel_hotels": 500,
-      "food_delivery": 348,
+      "banking_upi": 800,
+      "cab_transport": 800,
+      "customer_support": 800,
+      "ecommerce": 800,
+      "education": 800,
+      "grocery_delivery": 800,
+      "healthcare": 800,
+      "telecom_internet": 800,
+      "travel_hotels": 800,
+      "food_delivery": 648,
       "restaurant": 152
     }
   }

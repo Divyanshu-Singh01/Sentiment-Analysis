@@ -314,7 +314,7 @@ def generate_markdown_report(
         "- **Input Datasets:** 10 service domain files under `data/raw/`",
         f"- **Total Input Records:** {sum(file_counts.values()):,}",
         f"- **Total Output Records:** {val_results['total_records']:,}",
-        "- **Excluded Records:** 0 (all 5,000 records successfully cleaned and retained)",
+        f"- **Excluded Records:** 0 (all {val_results['total_records']:,} records successfully cleaned and retained)",
         "",
         "| Service Domain | Raw File | Input Records | Cleaned Output Records | Excluded |",
         "| :--- | :--- | :--- | :--- | :--- |",
