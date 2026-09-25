@@ -1,0 +1,3495 @@
+{
+  "input_record_count": 5000,
+  "input_files": {
+    "BK.csv": 500,
+    "CB.csv": 500,
+    "CS.csv": 500,
+    "EC.csv": 500,
+    "ED.csv": 500,
+    "FD.csv": 500,
+    "GR.csv": 500,
+    "HC.csv": 500,
+    "TC.csv": 500,
+    "TR.csv": 500
+  },
+  "shifted_rows_repaired": [
+    {
+      "id": "BK011",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai 10 din se pending refund atka hua hai customer support ...",
+      "restored_suggestion": "Resolve pending merchant refunds immediately",
+      "inferred_complexity": "moderate",
+      "text_length": 93,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK025",
+      "source_file": "BK.csv",
+      "text_snippet": "Pathetic useless bank app keeps crashing on face unlock idio...",
+      "restored_suggestion": "Fix face unlock crash bug in app",
+      "inferred_complexity": "moderate",
+      "text_length": 111,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK030",
+      "source_file": "BK.csv",
+      "text_snippet": "Customer care executive was extremely condescending and refu...",
+      "restored_suggestion": "Train customer service staff in grievance logging",
+      "inferred_complexity": "complex",
+      "text_length": 130,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK043",
+      "source_file": "BK.csv",
+      "text_snippet": "quarterly average balance maintenance penalty 700 rupay kat ...",
+      "restored_suggestion": "Send alert notifications before levying balance penalties",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK050",
+      "source_file": "BK.csv",
+      "text_snippet": "terrible experience trying to block stolen card on IVR syste...",
+      "restored_suggestion": "Provide immediate one-press card block option on IVR",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK059",
+      "source_file": "BK.csv",
+      "text_snippet": "standing instruction for home loan EMI failed without notice...",
+      "restored_suggestion": "Provide grace window for automated SI clearing glitches",
+      "inferred_complexity": "moderate",
+      "text_length": 117,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK080",
+      "source_file": "BK.csv",
+      "text_snippet": "fraudulent phishing caller had my exact account balance and ...",
+      "restored_suggestion": "Investigate internal data leaks regarding customer balances",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK088",
+      "source_file": "BK.csv",
+      "text_snippet": "worst banking service ever ATM deducted 10000 rupees without...",
+      "restored_suggestion": "Escalate ATM reconciliation tickets directly to nodal desk",
+      "inferred_complexity": "moderate",
+      "text_length": 117,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK118",
+      "source_file": "BK.csv",
+      "text_snippet": "recovery agent threatened my family members over a disputed ...",
+      "restored_suggestion": "Enforce RBI fair practices code on debt recovery",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK122",
+      "source_file": "BK.csv",
+      "text_snippet": "fraudsters drained savings account using SIM swap attack ban...",
+      "restored_suggestion": "Implement automated IP anomaly triggers for high-value transfers",
+      "inferred_complexity": "complex",
+      "text_length": 134,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK142",
+      "source_file": "BK.csv",
+      "text_snippet": "Never opening an account with this bank again rogue staff op...",
+      "restored_suggestion": "Strictly audit non-consensual financial product issuance",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK163",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai bill payment kiya par reward coins credit nahi hue term...",
+      "restored_suggestion": "Ensure transparent fulfillment of reward terms",
+      "inferred_complexity": "moderate",
+      "text_length": 105,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK180",
+      "source_file": "BK.csv",
+      "text_snippet": "utter rubbish customer support nodal officer ignored formal ...",
+      "restored_suggestion": "Enforce prompt nodal officer complaint redressal",
+      "inferred_complexity": "complex",
+      "text_length": 134,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK185",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai loan application me hidden processing charges jod diye ...",
+      "restored_suggestion": "Disclose all loan fees upfront before processing",
+      "inferred_complexity": "moderate",
+      "text_length": 115,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK199",
+      "source_file": "BK.csv",
+      "text_snippet": "helpline executive demanded OTP over the phone claiming acco...",
+      "restored_suggestion": "Prohibit internal staff from requesting customer OTPs",
+      "inferred_complexity": "complex",
+      "text_length": 126,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK215",
+      "source_file": "BK.csv",
+      "text_snippet": "Disgusting fraud vulnerability, SIM swap scammer accessed my...",
+      "restored_suggestion": "Send mandatory alerts to email during SIM changes",
+      "inferred_complexity": "complex",
+      "text_length": 135,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK221",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai debit card lock kiya tha app me par contactless tap POS...",
+      "restored_suggestion": "Ensure card lock instantaneously halts contactless transactions",
+      "inferred_complexity": "moderate",
+      "text_length": 110,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK234",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai customer support agent ne call disconnect kar di jab ma...",
+      "restored_suggestion": "Record and penalize abrupt agent call drop-offs",
+      "inferred_complexity": "moderate",
+      "text_length": 107,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK236",
+      "source_file": "BK.csv",
+      "text_snippet": "Bank charged 500 rupees penalty for non-maintenance of minim...",
+      "restored_suggestion": "Cease balance penalties on mandated basic accounts",
+      "inferred_complexity": "complex",
+      "text_length": 132,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK254",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai unauthorized UPI transaction ho gayi 5000 ki phone lock...",
+      "restored_suggestion": "Investigate offline unauthorized UPI exploits",
+      "inferred_complexity": "moderate",
+      "text_length": 103,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK261",
+      "source_file": "BK.csv",
+      "text_snippet": "pathetic customer care executive kept repeating automated sc...",
+      "restored_suggestion": "Train support staff to address specific transaction disputes",
+      "inferred_complexity": "complex",
+      "text_length": 134,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK272",
+      "source_file": "BK.csv",
+      "text_snippet": "Branch official rejected senior citizen pension certificate ...",
+      "restored_suggestion": "Standardize photo guidelines reasonably for pensioners",
+      "inferred_complexity": "complex",
+      "text_length": 149,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK281",
+      "source_file": "BK.csv",
+      "text_snippet": "Worst bank service ever, branch debit card renewal team sent...",
+      "restored_suggestion": "Compensate customers for misdirected card deliveries",
+      "inferred_complexity": "moderate",
+      "text_length": 116,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK293",
+      "source_file": "BK.csv",
+      "text_snippet": "fraudulent unauthorized transaction of forty thousand rupees...",
+      "restored_suggestion": "Assist fraud victims with institutional police reporting",
+      "inferred_complexity": "complex",
+      "text_length": 143,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK297",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai branch manager ne loan clearance certificate dene ke li...",
+      "restored_suggestion": "Automate digital loan closure certificates",
+      "inferred_complexity": "moderate",
+      "text_length": 107,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK312",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai customer support agent ne call disconnect karke ticket ...",
+      "restored_suggestion": "Prevent ticket resolution without customer sign-off",
+      "inferred_complexity": "moderate",
+      "text_length": 102,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK325",
+      "source_file": "BK.csv",
+      "text_snippet": "fraud alert SMS received for transaction I never initiated b...",
+      "restored_suggestion": "Provide dedicated zero-wait fraud reporting emergency line",
+      "inferred_complexity": "moderate",
+      "text_length": 123,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK346",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai customer helpline pe 20 minute wait karne ke baad call ...",
+      "restored_suggestion": "Optimize helpline call queue routing",
+      "inferred_complexity": "moderate",
+      "text_length": 103,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK362",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai failed ATM withdrawal ka refund 7 din baad bhi nahi aay...",
+      "restored_suggestion": "Enforce automated T+5 ATM refund compensation",
+      "inferred_complexity": "moderate",
+      "text_length": 107,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK365",
+      "source_file": "BK.csv",
+      "text_snippet": "Bank charged 500 rupees penalty for non-maintenance of balan...",
+      "restored_suggestion": "Stop penalizing basic savings bank accounts",
+      "inferred_complexity": "moderate",
+      "text_length": 109,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK370",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai app ne auto-applied coupon remove kar diya credit card ...",
+      "restored_suggestion": "Honor published discount coupons on bill payments",
+      "inferred_complexity": "moderate",
+      "text_length": 104,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK377",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai unauthorized UPI transaction debited 15000 bank custome...",
+      "restored_suggestion": "Log unauthorized UPI dispute tickets immediately",
+      "inferred_complexity": "moderate",
+      "text_length": 108,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK407",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai customer support agent ne grievance ticket bina verify ...",
+      "restored_suggestion": "Ensure customer confirmation before closing grievance tickets",
+      "inferred_complexity": "moderate",
+      "text_length": 109,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK423",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai unauthorized ATM cash withdrawal ho gaya jabki debit ca...",
+      "restored_suggestion": "Install anti-skimming hardware on all branch ATMs",
+      "inferred_complexity": "moderate",
+      "text_length": 111,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK454",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai unauthorized online transaction ho gayi bina OTP receiv...",
+      "restored_suggestion": "Enforce mandatory 2-factor OTP across online gateways",
+      "inferred_complexity": "moderate",
+      "text_length": 98,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "BK474",
+      "source_file": "BK.csv",
+      "text_snippet": "bhai unauthorized debit card charge laga 5000 ka customer ca...",
+      "restored_suggestion": "Ensure immediate phone pick-up for fraud reporting",
+      "inferred_complexity": "moderate",
+      "text_length": 103,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB011",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai customer support executive itna batameez hai refund tic...",
+      "restored_suggestion": "Ensure human escalation for disputed fare tickets",
+      "inferred_complexity": "moderate",
+      "text_length": 112,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB025",
+      "source_file": "CB.csv",
+      "text_snippet": "Driver started abusing loudly and threatened violence when a...",
+      "restored_suggestion": "Deactivate aggressive drivers threatening passenger safety",
+      "inferred_complexity": "moderate",
+      "text_length": 118,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB030",
+      "source_file": "CB.csv",
+      "text_snippet": "Customer support bot closed the safety incident ticket stati...",
+      "restored_suggestion": "Ensure human review of safety-related dispute reports",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB050",
+      "source_file": "CB.csv",
+      "text_snippet": "terrible experience driver abandoned lone female passenger o...",
+      "restored_suggestion": "Institute zero-tolerance deactivations for passenger abandonment",
+      "inferred_complexity": "moderate",
+      "text_length": 125,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB059",
+      "source_file": "CB.csv",
+      "text_snippet": "auto driver demanded double fare during evening rain claimin...",
+      "restored_suggestion": "Regulate fare gouging by auto drivers during rainfall",
+      "inferred_complexity": "moderate",
+      "text_length": 117,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB080",
+      "source_file": "CB.csv",
+      "text_snippet": "fraud driver entered destination manually marked trip comple...",
+      "restored_suggestion": "Mandate start-trip OTP verification before trip progression",
+      "inferred_complexity": "moderate",
+      "text_length": 122,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB088",
+      "source_file": "CB.csv",
+      "text_snippet": "worst transport experience ever driver was visibly intoxicat...",
+      "restored_suggestion": "Implement mandatory spot breathalyzer checks at transport hubs",
+      "inferred_complexity": "complex",
+      "text_length": 129,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB118",
+      "source_file": "CB.csv",
+      "text_snippet": "cab driver verbally abused and physically pushed my elderly ...",
+      "restored_suggestion": "Permanently ban drivers resorting to physical aggression",
+      "inferred_complexity": "complex",
+      "text_length": 128,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB122",
+      "source_file": "CB.csv",
+      "text_snippet": "fraud driver took passenger to ATM machine demanded full cas...",
+      "restored_suggestion": "Immediate blacklisting and criminal FIR against rogue drivers",
+      "inferred_complexity": "moderate",
+      "text_length": 125,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB142",
+      "source_file": "CB.csv",
+      "text_snippet": "Never using this cab service again driver smelled of cheap a...",
+      "restored_suggestion": "Perform random breathalyzer sobriety tests on active drivers",
+      "inferred_complexity": "moderate",
+      "text_length": 116,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB160",
+      "source_file": "CB.csv",
+      "text_snippet": "Auto driver was extremely abrasive, demanded twenty rupees e...",
+      "restored_suggestion": "Abolish arbitrary return-fare demands by commercial auto drivers",
+      "inferred_complexity": "moderate",
+      "text_length": 118,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB163",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai discount promo code checkout pe lagaya tha par final in...",
+      "restored_suggestion": "Ensure validated promo codes apply reliably against final bills",
+      "inferred_complexity": "moderate",
+      "text_length": 115,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB180",
+      "source_file": "CB.csv",
+      "text_snippet": "utter rubbish service driver demanded cash at night threaten...",
+      "restored_suggestion": "Immediate permanent blacklisting and police reporting for violent drivers",
+      "inferred_complexity": "moderate",
+      "text_length": 124,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB185",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai driver continuous WhatsApp video call pe baat kar raha ...",
+      "restored_suggestion": "Strictly prohibit video calling on handsets while operating cabs",
+      "inferred_complexity": "moderate",
+      "text_length": 102,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB199",
+      "source_file": "CB.csv",
+      "text_snippet": "auto driver demanded fifty rupees extra cash bribe claiming ...",
+      "restored_suggestion": "Prohibit arbitrary unmetered luggage surcharges by auto drivers",
+      "inferred_complexity": "moderate",
+      "text_length": 114,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB215",
+      "source_file": "CB.csv",
+      "text_snippet": "Disgusting hygiene, rear floor mat was drenched with chewing...",
+      "restored_suggestion": "Terminate vehicles violating basic passenger cabin hygiene",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB221",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai cab book ki driver 15 minute stationary khada raha call...",
+      "restored_suggestion": "Penalize drivers accepting bookings while refueling",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB234",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai customer support ne ticket close kar di bina unauthoriz...",
+      "restored_suggestion": "Ensure financial dispute tickets resolve with audit proof",
+      "inferred_complexity": "moderate",
+      "text_length": 110,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB236",
+      "source_file": "CB.csv",
+      "text_snippet": "Driver threatened passenger with abusive slurs and refused t...",
+      "restored_suggestion": "Permanently blacklist abusive extortionist drivers",
+      "inferred_complexity": "complex",
+      "text_length": 140,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB254",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai cab me front passenger seatbelt ka buckle toota hua tha...",
+      "restored_suggestion": "Ensure functional passenger seatbelts across all fleet cabs",
+      "inferred_complexity": "moderate",
+      "text_length": 92,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB261",
+      "source_file": "CB.csv",
+      "text_snippet": "pathetic transport support bot keeps repeating automated ref...",
+      "restored_suggestion": "Ensure human review of disputed cancellation penalties",
+      "inferred_complexity": "complex",
+      "text_length": 136,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB274",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai car ka silencer toota hua tha pure raste loud deafening...",
+      "restored_suggestion": "Ensure exhaust system integrity before vehicle dispatch",
+      "inferred_complexity": "moderate",
+      "text_length": 92,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB281",
+      "source_file": "CB.csv",
+      "text_snippet": "Worst cab service ever driver started hurling vile abuses wh...",
+      "restored_suggestion": "Immediately ban drivers exhibiting aggressive roadside road rage",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB293",
+      "source_file": "CB.csv",
+      "text_snippet": "fraud driver marked trip started drove empty car to destinat...",
+      "restored_suggestion": "Enforce OTP validation before trip commencement",
+      "inferred_complexity": "moderate",
+      "text_length": 123,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB297",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai driver ne car me personal speaker pe loud calls sunte h...",
+      "restored_suggestion": "Enforce rules against using speakerphones during passenger rides",
+      "inferred_complexity": "moderate",
+      "text_length": 114,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB312",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai driver ne offline cash maanga mana karne par sunsan roa...",
+      "restored_suggestion": "Deactivate drivers abandoning passengers over payment disputes",
+      "inferred_complexity": "moderate",
+      "text_length": 112,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB325",
+      "source_file": "CB.csv",
+      "text_snippet": "driver deliberately took passenger through dark unlit alleys...",
+      "restored_suggestion": "Institute immediate police reporting and driver blacklisting",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB336",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai driver continuously khansi kar raha tha bina mask lagay...",
+      "restored_suggestion": "Ensure unwell drivers wear masks and ventilate vehicles",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB346",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai driver ne car me personal speaker pe gaali-galoch wali ...",
+      "restored_suggestion": "Strictly prohibit vulgar audio content inside passenger cabs",
+      "inferred_complexity": "moderate",
+      "text_length": 123,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB362",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai car ka AC filter itna choked tha ki hawa aane ki jagah ...",
+      "restored_suggestion": "Service and sanitize automotive AC filters periodically",
+      "inferred_complexity": "moderate",
+      "text_length": 108,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB365",
+      "source_file": "CB.csv",
+      "text_snippet": "Driver started abusing loudly and threatened violence when a...",
+      "restored_suggestion": "Permanently ban drivers resorting to abusive behavior",
+      "inferred_complexity": "moderate",
+      "text_length": 117,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB370",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai pickup pin correct dali thi par driver 600 meter door f...",
+      "restored_suggestion": "Improve driver navigation to exact pickup pins",
+      "inferred_complexity": "moderate",
+      "text_length": 114,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB377",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai driver ne offline cash maanga mana karne par sunsan roa...",
+      "restored_suggestion": "Deactivate drivers abandoning passengers over payment disputes",
+      "inferred_complexity": "moderate",
+      "text_length": 112,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB392",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai optical drop wire building ke entrance pe aisi latak ra...",
+      "restored_suggestion": "Ensure safe transit clearances on airport drop lanes",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB407",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai customer support executive ne call disconnect kar di ja...",
+      "restored_suggestion": "Ensure support agents resolve persistent refund requests",
+      "inferred_complexity": "complex",
+      "text_length": 140,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB423",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai outdoor fiber cable tree branches me ulajh kar toot gay...",
+      "restored_suggestion": "Reroute transit paths away from hazardous road debris",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB454",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai unauthorized postpaid connection activate kar diya meri...",
+      "restored_suggestion": "Enforce biometric verification on passenger accounts",
+      "inferred_complexity": "moderate",
+      "text_length": 106,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CB474",
+      "source_file": "CB.csv",
+      "text_snippet": "bhai unauthorized roaming charge lag gaya 500 ka customer ca...",
+      "restored_suggestion": "Ensure immediate phone pick-up for fare disputes",
+      "inferred_complexity": "moderate",
+      "text_length": 106,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS011",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai kya ghatiya aur bakwaas support hai 2 ghante se call ho...",
+      "restored_suggestion": "Reduce hold times during peak hours.",
+      "inferred_complexity": "moderate",
+      "text_length": 91,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS025",
+      "source_file": "CS.csv",
+      "text_snippet": "Your support staff are absolute idiots who cannot understand...",
+      "restored_suggestion": "Provide senior escalations for complex inquiries.",
+      "inferred_complexity": "moderate",
+      "text_length": 116,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS030",
+      "source_file": "CS.csv",
+      "text_snippet": "Frontline agent promised a senior manager callback by 4 PM, ...",
+      "restored_suggestion": "Ensure committed callbacks are delivered on schedule.",
+      "inferred_complexity": "moderate",
+      "text_length": 88,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS050",
+      "source_file": "CS.csv",
+      "text_snippet": "terrible experience agent disconnected the call on my face w...",
+      "restored_suggestion": "Penalize staff who disconnect customer calls.",
+      "inferred_complexity": "moderate",
+      "text_length": 117,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS059",
+      "source_file": "CS.csv",
+      "text_snippet": "repeatedly contacted helpline five times regarding lost cons...",
+      "restored_suggestion": "Maintain synchronized notes across support touchpoints.",
+      "inferred_complexity": "complex",
+      "text_length": 131,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS080",
+      "source_file": "CS.csv",
+      "text_snippet": "fraudulent representative hung up call while laughing when I...",
+      "restored_suggestion": "Discipline abusive frontline staff immediately.",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS088",
+      "source_file": "CS.csv",
+      "text_snippet": "worst customer care ever agent kept arguing instead of proce...",
+      "restored_suggestion": "Ensure agents honor verified return requests.",
+      "inferred_complexity": "moderate",
+      "text_length": 107,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS118",
+      "source_file": "CS.csv",
+      "text_snippet": "support agent threatened to blacklist my registered phone nu...",
+      "restored_suggestion": "Institute zero tolerance for agent threats.",
+      "inferred_complexity": "moderate",
+      "text_length": 117,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS122",
+      "source_file": "CS.csv",
+      "text_snippet": "fraud agent collected OTP pretending to update KYC and compr...",
+      "restored_suggestion": "Enforce strict verification safeguards against fraud.",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS142",
+      "source_file": "CS.csv",
+      "text_snippet": "Never dealing with this incompetent support team again rep l...",
+      "restored_suggestion": "Review call recordings and penalize rude reps.",
+      "inferred_complexity": "complex",
+      "text_length": 129,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS160",
+      "source_file": "CS.csv",
+      "text_snippet": "Front desk executive was dismissive, refused to register a f...",
+      "restored_suggestion": "Ensure all customer complaints are formally registered.",
+      "inferred_complexity": "moderate",
+      "text_length": 107,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS163",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai promotion email me 24/7 support likha tha par raat ko c...",
+      "restored_suggestion": "Align operational hours with advertised support claims.",
+      "inferred_complexity": "moderate",
+      "text_length": 116,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS180",
+      "source_file": "CS.csv",
+      "text_snippet": "customer service representative insulted my elderly father a...",
+      "restored_suggestion": "Terminate representatives who insult customers.",
+      "inferred_complexity": "complex",
+      "text_length": 132,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS199",
+      "source_file": "CS.csv",
+      "text_snippet": "helpline executive used derogatory slurs when I requested hi...",
+      "restored_suggestion": "Strictly enforce disciplinary action for derogatory language.",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS215",
+      "source_file": "CS.csv",
+      "text_snippet": "Disgusting conduct, support agent shared my personal phone n...",
+      "restored_suggestion": "Maintain passenger phone masking protocols strictly.",
+      "inferred_complexity": "complex",
+      "text_length": 132,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS221",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai call center executive ne issue sune bina bola 'sir poli...",
+      "restored_suggestion": "Ensure reps listen to full context before quoting policy.",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS234",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai ticket close kar di aur bola 'resolved' par jab app ope...",
+      "restored_suggestion": "Verify technical bug fixes before closing tickets.",
+      "inferred_complexity": "moderate",
+      "text_length": 114,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS236",
+      "source_file": "CS.csv",
+      "text_snippet": "Support agent called me back to insult me after I gave a 1-s...",
+      "restored_suggestion": "Block agent access to customer numbers post-survey.",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS254",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai customer care ne meri complaint reject kardi bolte hain...",
+      "restored_suggestion": "Extend complaint filing windows for service defects.",
+      "inferred_complexity": "moderate",
+      "text_length": 116,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS261",
+      "source_file": "CS.csv",
+      "text_snippet": "pathetic customer care executive called me a liar when I rep...",
+      "restored_suggestion": "Discipline agents who accuse customers of lying.",
+      "inferred_complexity": "moderate",
+      "text_length": 115,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS274",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai agent ne rude tone me bola 'jahan complain karni hai ka...",
+      "restored_suggestion": "Take strict action on agents refusing escalations.",
+      "inferred_complexity": "moderate",
+      "text_length": 118,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS281",
+      "source_file": "CS.csv",
+      "text_snippet": "Worst support service ever agent started yelling at me when ...",
+      "restored_suggestion": "Terminate support agents who shout at customers.",
+      "inferred_complexity": "moderate",
+      "text_length": 121,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS293",
+      "source_file": "CS.csv",
+      "text_snippet": "rogue customer support agent demanded five hundred cash paym...",
+      "restored_suggestion": "Institute strict anti-bribery vigilance in support teams.",
+      "inferred_complexity": "moderate",
+      "text_length": 110,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS297",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai support agent ne pucha 'are you stupid' jab maine billi...",
+      "restored_suggestion": "Penalize support agents using abusive language.",
+      "inferred_complexity": "moderate",
+      "text_length": 115,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS312",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai helpline pe agent ne call hold pe daal kar personal gos...",
+      "restored_suggestion": "Monitor agent call etiquette and background audio.",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS325",
+      "source_file": "CS.csv",
+      "text_snippet": "support agent shouted at me claiming I was wasting his time ...",
+      "restored_suggestion": "Terminate support agents who display aggressive behavior.",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS336",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai support agent ne call me background music play kar rakh...",
+      "restored_suggestion": "Ensure call center floors maintain quiet acoustics.",
+      "inferred_complexity": "moderate",
+      "text_length": 101,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS346",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai support representative ne call pe argument shuru kardi ...",
+      "restored_suggestion": "Train staff to explain billing breakdowns patiently.",
+      "inferred_complexity": "moderate",
+      "text_length": 117,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS362",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai customer care ne 5 din se koi update nahi diya aur phon...",
+      "restored_suggestion": "Provide substantive updates instead of generic replies.",
+      "inferred_complexity": "moderate",
+      "text_length": 115,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS365",
+      "source_file": "CS.csv",
+      "text_snippet": "Customer care executive started abusing loudly and threatene...",
+      "restored_suggestion": "Institute zero tolerance for abusive customer support reps.",
+      "inferred_complexity": "moderate",
+      "text_length": 125,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS370",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai live chat me 45 minute wait karne ke baad agent ne bola...",
+      "restored_suggestion": "Ensure agents route unresolved inquiries before disconnect.",
+      "inferred_complexity": "moderate",
+      "text_length": 111,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS377",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai support agent ne pucha 'are you stupid' jab maine billi...",
+      "restored_suggestion": "Penalize support agents using abusive language.",
+      "inferred_complexity": "moderate",
+      "text_length": 115,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS392",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai support agent ne call pe hold pe daala aur 20 minute ba...",
+      "restored_suggestion": "Limit maximum hold durations before agent check-in.",
+      "inferred_complexity": "moderate",
+      "text_length": 109,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS407",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai customer support executive ne call disconnect kar di ja...",
+      "restored_suggestion": "Ensure support agents resolve persistent refund requests.",
+      "inferred_complexity": "complex",
+      "text_length": 139,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS423",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai agent ne ticket pe likh diya 'customer satisfied' jabki...",
+      "restored_suggestion": "Validate customer satisfaction before closing tickets.",
+      "inferred_complexity": "moderate",
+      "text_length": 104,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS454",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai unauthorized postpaid connection activate kar diya meri...",
+      "restored_suggestion": "Enforce biometric verification on customer accounts.",
+      "inferred_complexity": "moderate",
+      "text_length": 106,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "CS474",
+      "source_file": "CS.csv",
+      "text_snippet": "bhai unauthorized roaming charge lag gaya 500 ka customer ca...",
+      "restored_suggestion": "Ensure immediate phone pick-up for billing disputes.",
+      "inferred_complexity": "moderate",
+      "text_length": 106,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC011",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai 15 din se refund pending hai customer service wale bilk...",
+      "restored_suggestion": "Expedite refund process immediately",
+      "inferred_complexity": "simple",
+      "text_length": 84,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC025",
+      "source_file": "EC.csv",
+      "text_snippet": "Pathetic fraudulent seller sent an empty soap bar box instea...",
+      "restored_suggestion": "Ban fraudulent sellers immediately",
+      "inferred_complexity": "moderate",
+      "text_length": 98,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC030",
+      "source_file": "EC.csv",
+      "text_snippet": "Delivery boy was extremely rude, demanded that I come down t...",
+      "restored_suggestion": "Train delivery executives in professional conduct",
+      "inferred_complexity": "moderate",
+      "text_length": 112,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC050",
+      "source_file": "EC.csv",
+      "text_snippet": "terrible experience ordered a brass diya set and received br...",
+      "restored_suggestion": "Double check warehouse packing bins",
+      "inferred_complexity": "moderate",
+      "text_length": 107,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC052",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai courier wale ne fake attempted delivery update mark kar...",
+      "restored_suggestion": "Penalize fake doorstep attempt reports",
+      "inferred_complexity": "moderate",
+      "text_length": 99,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC059",
+      "source_file": "EC.csv",
+      "text_snippet": "delivery delayed by 6 days without any sms update complete w...",
+      "restored_suggestion": "Provide proactive delay alerts",
+      "inferred_complexity": "moderate",
+      "text_length": 99,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC080",
+      "source_file": "EC.csv",
+      "text_snippet": "fraud seller sent a cheap dummy phone instead of genuine han...",
+      "restored_suggestion": "Investigate seller inventory scams",
+      "inferred_complexity": "moderate",
+      "text_length": 102,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC088",
+      "source_file": "EC.csv",
+      "text_snippet": "worst experience ever ceramic dinner set arrived shattered i...",
+      "restored_suggestion": "Use customized foam inserts for crockery",
+      "inferred_complexity": "moderate",
+      "text_length": 102,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC118",
+      "source_file": "EC.csv",
+      "text_snippet": "delivery boy abused my father over a minor landmark confusio...",
+      "restored_suggestion": "Dismiss aggressive delivery personnel",
+      "inferred_complexity": "moderate",
+      "text_length": 105,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC122",
+      "source_file": "EC.csv",
+      "text_snippet": "fraud seller sent a counterfeit duplicate perfume smelling l...",
+      "restored_suggestion": "Delist fraudulent fragrance vendors",
+      "inferred_complexity": "moderate",
+      "text_length": 105,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC142",
+      "source_file": "EC.csv",
+      "text_snippet": "Never buying footwear here again sole detached completely on...",
+      "restored_suggestion": "Ensure durable industrial sole vulcanization",
+      "inferred_complexity": "moderate",
+      "text_length": 106,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC163",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai discount coupon 200 off ka show hota hai par apply karn...",
+      "restored_suggestion": "Display minimum cart requirements upfront",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC178",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai delivery guy ne address confirm kiye bina delivery unre...",
+      "restored_suggestion": "Verify courier call attempts via system logs",
+      "inferred_complexity": "moderate",
+      "text_length": 96,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC180",
+      "source_file": "EC.csv",
+      "text_snippet": "utterly useless app keep showing technical error during chec...",
+      "restored_suggestion": "Fix checkout server stability issues",
+      "inferred_complexity": "moderate",
+      "text_length": 105,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC185",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai iron box use karte hi spark nikla aur short circuit ho ...",
+      "restored_suggestion": "Conduct electrical safety compliance tests",
+      "inferred_complexity": "moderate",
+      "text_length": 96,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC199",
+      "source_file": "EC.csv",
+      "text_snippet": "courier guy demanded fifty rupees cash bribe claiming heavy ...",
+      "restored_suggestion": "Warn courier staff against extortion demands",
+      "inferred_complexity": "moderate",
+      "text_length": 101,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC215",
+      "source_file": "EC.csv",
+      "text_snippet": "Disgusting fake cosmetics sent by unauthorized seller, face ...",
+      "restored_suggestion": "Perform lab testing on beauty inventory",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC234",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai support wale ne call disconnect kar di jab maine refund...",
+      "restored_suggestion": "Log agent call disconnect events automatically",
+      "inferred_complexity": "moderate",
+      "text_length": 106,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC236",
+      "source_file": "EC.csv",
+      "text_snippet": "Ordered branded smartwatch received cheap chinese digital wa...",
+      "restored_suggestion": "Delist fraudulent electronic merchants",
+      "inferred_complexity": "moderate",
+      "text_length": 106,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC261",
+      "source_file": "EC.csv",
+      "text_snippet": "pathetic customer support bot keeps repeating same useless a...",
+      "restored_suggestion": "Escalate unresolved chat loops to live staff",
+      "inferred_complexity": "moderate",
+      "text_length": 105,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC267",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai smart watch ke strap par scratches the aur screen prote...",
+      "restored_suggestion": "Inspect returned goods before restock",
+      "inferred_complexity": "moderate",
+      "text_length": 104,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC281",
+      "source_file": "EC.csv",
+      "text_snippet": "Worst product experience, induction fry pan deformed and war...",
+      "restored_suggestion": "Use thick warp-resistant induction base",
+      "inferred_complexity": "moderate",
+      "text_length": 108,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC293",
+      "source_file": "EC.csv",
+      "text_snippet": "fraud seller sent a used defective phone with scratches on l...",
+      "restored_suggestion": "Delist sellers trading refurbished units as new",
+      "inferred_complexity": "moderate",
+      "text_length": 106,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC297",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai courier boy parcel gate pe phek ke chala gaya glass ite...",
+      "restored_suggestion": "Penalize throwing of fragile parcels",
+      "inferred_complexity": "moderate",
+      "text_length": 96,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC312",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai customer support executive chat terminate karke chala g...",
+      "restored_suggestion": "Ensure support executives see tickets through",
+      "inferred_complexity": "moderate",
+      "text_length": 100,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC325",
+      "source_file": "EC.csv",
+      "text_snippet": "fraud app charged credit card twice and customer service say...",
+      "restored_suggestion": "Expedite duplicate credit card reversals",
+      "inferred_complexity": "moderate",
+      "text_length": 95,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC336",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai delivery boy ne society parking me gaadi tez chalayi au...",
+      "restored_suggestion": "Instruct courier drivers on community safety",
+      "inferred_complexity": "moderate",
+      "text_length": 90,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC346",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai delivery guy ne address samjhane par abusive language u...",
+      "restored_suggestion": "Terminate abusive logistics executives",
+      "inferred_complexity": "moderate",
+      "text_length": 102,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC362",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai return pickup complete hone ke 6 din baad bhi bank acco...",
+      "restored_suggestion": "Process bank refunds promptly after pickup",
+      "inferred_complexity": "moderate",
+      "text_length": 96,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC365",
+      "source_file": "EC.csv",
+      "text_snippet": "Ordered 65W fast charger received cheap local 10W brick, bla...",
+      "restored_suggestion": "Delist dishonest electronic merchants",
+      "inferred_complexity": "moderate",
+      "text_length": 100,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC370",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai app ne auto-applied coupon remove kar diya card details...",
+      "restored_suggestion": "Retain applied coupon codes during payment",
+      "inferred_complexity": "moderate",
+      "text_length": 97,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC377",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai courier boy ne parcel chori karke delivered mark kar di...",
+      "restored_suggestion": "Investigate stolen parcel delivery reports",
+      "inferred_complexity": "moderate",
+      "text_length": 107,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC407",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai support agent ne bina meri baat sune replacement reques...",
+      "restored_suggestion": "Review replacement rejections with human supervisor",
+      "inferred_complexity": "moderate",
+      "text_length": 100,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC423",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai packaged food packet expired nikla aur expiry date pe n...",
+      "restored_suggestion": "Delist merchants modifying expiration labels",
+      "inferred_complexity": "moderate",
+      "text_length": 101,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC454",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai parcel delivered mark ho gaya OTP liye bina par mujhe p...",
+      "restored_suggestion": "Strictly enforce OTP delivery handoffs",
+      "inferred_complexity": "moderate",
+      "text_length": 90,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "EC474",
+      "source_file": "EC.csv",
+      "text_snippet": "bhai smart bulb connect nahi ho raha WiFi se bilkul dead pie...",
+      "restored_suggestion": "Ensure functional testing of smart hardware",
+      "inferred_complexity": "moderate",
+      "text_length": 97,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED011",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai admission cell wale call pe sidhe muh baat nahi karte i...",
+      "restored_suggestion": "Train admission counseling staff in professional etiquette",
+      "inferred_complexity": "moderate",
+      "text_length": 95,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED025",
+      "source_file": "ED.csv",
+      "text_snippet": "Pathetic management took sixty thousand rupees fee and cance...",
+      "restored_suggestion": "Do not cancel enrolled batches abruptly without restitution",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED030",
+      "source_file": "ED.csv",
+      "text_snippet": "Hostel warden was extremely rude, refused to look into the n...",
+      "restored_suggestion": "Ensure hostel wardens address basic maintenance grievances politely",
+      "inferred_complexity": "moderate",
+      "text_length": 114,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED050",
+      "source_file": "ED.csv",
+      "text_snippet": "terrible experience admission counselor made false promises ...",
+      "restored_suggestion": "Provide audited genuine placement reports during admission",
+      "inferred_complexity": "moderate",
+      "text_length": 115,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED059",
+      "source_file": "ED.csv",
+      "text_snippet": "faculty delayed sharing the syllabus outline by two months a...",
+      "restored_suggestion": "Enforce balanced syllabus completion milestones",
+      "inferred_complexity": "moderate",
+      "text_length": 123,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED080",
+      "source_file": "ED.csv",
+      "text_snippet": "fraudulent institute closed operations midway through semest...",
+      "restored_suggestion": "Institute regulatory scrutiny on private coaching operations",
+      "inferred_complexity": "moderate",
+      "text_length": 112,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED088",
+      "source_file": "ED.csv",
+      "text_snippet": "worst coaching management ever rescheduled the mock exam thr...",
+      "restored_suggestion": "Lock mock exam dates without last-minute rescheduling",
+      "inferred_complexity": "moderate",
+      "text_length": 116,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED118",
+      "source_file": "ED.csv",
+      "text_snippet": "account office staff shouted at an orphaned scholarship stud...",
+      "restored_suggestion": "Sensitize administrative staff handling scholarship verifications",
+      "inferred_complexity": "moderate",
+      "text_length": 115,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED122",
+      "source_file": "ED.csv",
+      "text_snippet": "fraud coaching promised foreign certified trainers but deplo...",
+      "restored_suggestion": "Ensure trainers possess verified credentials and industry background",
+      "inferred_complexity": "moderate",
+      "text_length": 124,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED142",
+      "source_file": "ED.csv",
+      "text_snippet": "Never joining this offline institute again, crammed ninety s...",
+      "restored_suggestion": "Comply with building safety norms and student density limits",
+      "inferred_complexity": "complex",
+      "text_length": 127,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED163",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai scholarship portal pe document upload karne par session...",
+      "restored_suggestion": "Increase session timeout duration on scholarship upload forms",
+      "inferred_complexity": "moderate",
+      "text_length": 110,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED174",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai lab assistant ne record notebook checking ke naam pe 20...",
+      "restored_suggestion": "Enforce strict anti-corruption vigilance in academic departments",
+      "inferred_complexity": "moderate",
+      "text_length": 107,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED180",
+      "source_file": "ED.csv",
+      "text_snippet": "utter rubbish coaching center teachers don't know basic calc...",
+      "restored_suggestion": "Maintain qualified faculty and honor genuine refund policies",
+      "inferred_complexity": "moderate",
+      "text_length": 114,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED185",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai hostel room me electric sockets loose hain phone charge...",
+      "restored_suggestion": "Inspect and repair hazardous electrical sockets in student dorms",
+      "inferred_complexity": "moderate",
+      "text_length": 107,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED199",
+      "source_file": "ED.csv",
+      "text_snippet": "administrative clerk demanded cash bribe to process characte...",
+      "restored_suggestion": "Eliminate informal cash demands by administrative personnel",
+      "inferred_complexity": "moderate",
+      "text_length": 111,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED215",
+      "source_file": "ED.csv",
+      "text_snippet": "Disgusting coaching fraud, promised AC study cubicles and de...",
+      "restored_suggestion": "Fulfill infrastructural amenities promised in promotional literature",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED221",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai scholarship form submit kiya tha office me unhone file ...",
+      "restored_suggestion": "Implement digital document tracking for student scholarship files",
+      "inferred_complexity": "moderate",
+      "text_length": 109,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED234",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai mentor ne doubt session me call cut kar di jab maine re...",
+      "restored_suggestion": "Ensure tutors possess verified competence before assigning doubt slots",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED236",
+      "source_file": "ED.csv",
+      "text_snippet": "Coaching institute owner collected full fees for national co...",
+      "restored_suggestion": "Institute financial escrow requirements for private test-prep centers",
+      "inferred_complexity": "complex",
+      "text_length": 138,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED254",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai chemistry lab me safety goggles aur fire extinguishers ...",
+      "restored_suggestion": "Replace expired safety apparatus and fire extinguishers in laboratories",
+      "inferred_complexity": "moderate",
+      "text_length": 109,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED261",
+      "source_file": "ED.csv",
+      "text_snippet": "pathetic administration hostel warden locked gates during me...",
+      "restored_suggestion": "Ensure 24/7 immediate medical gate clearance without bureaucratic locks",
+      "inferred_complexity": "moderate",
+      "text_length": 123,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED274",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai mechanical workshop me lathe machines pe rust laga hua ...",
+      "restored_suggestion": "Service and true up mechanical lathe machines",
+      "inferred_complexity": "moderate",
+      "text_length": 122,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED281",
+      "source_file": "ED.csv",
+      "text_snippet": "Worst academic administration ever, misplaced my final semes...",
+      "restored_suggestion": "Establish digital repository records for all submitted dissertations",
+      "inferred_complexity": "complex",
+      "text_length": 135,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED293",
+      "source_file": "ED.csv",
+      "text_snippet": "corrupt college management sold reserved category scholarshi...",
+      "restored_suggestion": "Ensure strict external oversight on quota admission audits",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED297",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai hostel gatekeeper ne gate band karke emergency me medic...",
+      "restored_suggestion": "Allow emergency medical egress from student hostels without obstruction",
+      "inferred_complexity": "moderate",
+      "text_length": 105,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED312",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai student scholarship cell ne document verification hold ...",
+      "restored_suggestion": "Track scholarship grant verification deadlines vigilantly",
+      "inferred_complexity": "moderate",
+      "text_length": 123,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED325",
+      "source_file": "ED.csv",
+      "text_snippet": "examination cell issued question paper with five printing er...",
+      "restored_suggestion": "Proofread printed examination papers before mass duplication",
+      "inferred_complexity": "complex",
+      "text_length": 132,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED336",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai teacher class me aake pure period phone pe scrolling ka...",
+      "restored_suggestion": "Monitor active classroom instructional engagement by faculty",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED346",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai examination cell ne roll numbers ki wrong seat mapping ...",
+      "restored_suggestion": "Verify room seating seat charts thirty minutes prior to exams",
+      "inferred_complexity": "complex",
+      "text_length": 130,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED362",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai revaluation application daali thi 4 mahine ho gaye mark...",
+      "restored_suggestion": "Declare revaluation results before subsequent semester commences",
+      "inferred_complexity": "complex",
+      "text_length": 130,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED365",
+      "source_file": "ED.csv",
+      "text_snippet": "College administration demanded five thousand rupees duplica...",
+      "restored_suggestion": "Issue original graduation certificates without arbitrary surcharge fees",
+      "inferred_complexity": "complex",
+      "text_length": 140,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED370",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai online test series me questions copy-paste the direct g...",
+      "restored_suggestion": "Commission original verified problems for premium test series",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED377",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai exam supervisor ne extra answer sheet dene se mana kar ...",
+      "restored_suggestion": "Ensure adequate supply of supplementary answer sheets during exams",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED392",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai girls hostel lift 10 din se kharab thi 6th floor tak he...",
+      "restored_suggestion": "Prioritize immediate repairs for residential hostel lifts",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED407",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai exam invigilator ne attendance sheet pe galat roll numb...",
+      "restored_suggestion": "Ensure invigilators verify candidate identity cards before signatures",
+      "inferred_complexity": "moderate",
+      "text_length": 118,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED423",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai chemistry laboratory me acid bottles bina proper labeli...",
+      "restored_suggestion": "Store laboratory chemicals in labeled safety cabinets off floors",
+      "inferred_complexity": "moderate",
+      "text_length": 118,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED454",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai course sales executive ne misleading fake promises kiye...",
+      "restored_suggestion": "Ensure marketing teams represent instructional formats accurately",
+      "inferred_complexity": "complex",
+      "text_length": 132,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "ED474",
+      "source_file": "ED.csv",
+      "text_snippet": "bhai university ne end-semester practicals ka timetable exam...",
+      "restored_suggestion": "Announce practical examination schedules at least two weeks prior",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD011",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai kya bakwaas service hai ek ghante se rider ek hi jagah ...",
+      "restored_suggestion": "Monitor idle delivery riders",
+      "inferred_complexity": "simple",
+      "text_length": 75,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD025",
+      "source_file": "FD.csv",
+      "text_snippet": "Pathetic third-class support agents keep closing tickets wit...",
+      "restored_suggestion": "Train support staff properly",
+      "inferred_complexity": "moderate",
+      "text_length": 104,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD050",
+      "source_file": "FD.csv",
+      "text_snippet": "terrible experience, ordered paneer tikka and received burnt...",
+      "restored_suggestion": "Ensure proper tandoor cooking",
+      "inferred_complexity": "moderate",
+      "text_length": 96,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD052",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai parcel deliver mark kar diya bina deliver kiye fraud ri...",
+      "restored_suggestion": "Verify delivery OTP before closing",
+      "inferred_complexity": "simple",
+      "text_length": 63,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD059",
+      "source_file": "FD.csv",
+      "text_snippet": "order delayed by 50 mins no update in tracking app useless n...",
+      "restored_suggestion": "Provide proactive delay updates",
+      "inferred_complexity": "simple",
+      "text_length": 67,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD080",
+      "source_file": "FD.csv",
+      "text_snippet": "waste of money total garbage tasteless rubber chicken pathet...",
+      "restored_suggestion": "Improve meat quality standards",
+      "inferred_complexity": "simple",
+      "text_length": 76,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD088",
+      "source_file": "FD.csv",
+      "text_snippet": "worst experience ever food came after 2 hours completely fro...",
+      "restored_suggestion": "Reduce delivery transit time",
+      "inferred_complexity": "simple",
+      "text_length": 72,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD118",
+      "source_file": "FD.csv",
+      "text_snippet": "rider abused my security guard at the gate completely unacce...",
+      "restored_suggestion": "Take disciplinary action on rider",
+      "inferred_complexity": "moderate",
+      "text_length": 93,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD122",
+      "source_file": "FD.csv",
+      "text_snippet": "fraud app deducted money 3 times for one single paneer tikka...",
+      "restored_suggestion": "Automate immediate payment reversal",
+      "inferred_complexity": "moderate",
+      "text_length": 89,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD142",
+      "source_file": "FD.csv",
+      "text_snippet": "Never ordering again from this filthy restaurant found human...",
+      "restored_suggestion": "Ensure hairnets are worn in kitchen",
+      "inferred_complexity": "moderate",
+      "text_length": 91,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD167",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai khana aane me 80 minute lage, bhookh se dimag kharab ho...",
+      "restored_suggestion": "Keep delivery within 45 minutes",
+      "inferred_complexity": "simple",
+      "text_length": 72,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD180",
+      "source_file": "FD.csv",
+      "text_snippet": "utter rubbish service rider took food ate it and marked deli...",
+      "restored_suggestion": "Investigate stolen delivery cases",
+      "inferred_complexity": "simple",
+      "text_length": 78,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD185",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai sandwich ke andar cockroach ka wing mila hygiene level ...",
+      "restored_suggestion": "Conduct immediate pest control",
+      "inferred_complexity": "simple",
+      "text_length": 83,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD199",
+      "source_file": "FD.csv",
+      "text_snippet": "delivery boy demanded extra cash for parking charges at apar...",
+      "restored_suggestion": "Advise riders against asking cash",
+      "inferred_complexity": "moderate",
+      "text_length": 91,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD215",
+      "source_file": "FD.csv",
+      "text_snippet": "Disgusting oily mess, the fried rice was floating in rancid ...",
+      "restored_suggestion": "Control grease and oil usage",
+      "inferred_complexity": "moderate",
+      "text_length": 91,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD234",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai support wale ne call disconnect kar di bina solution di...",
+      "restored_suggestion": "Monitor agent call drop rates",
+      "inferred_complexity": "simple",
+      "text_length": 73,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD236",
+      "source_file": "FD.csv",
+      "text_snippet": "Ordered biryani received just plain white rice with yellow f...",
+      "restored_suggestion": "Investigate restaurant fraud",
+      "inferred_complexity": "moderate",
+      "text_length": 97,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD261",
+      "source_file": "FD.csv",
+      "text_snippet": "pathetic customer support bot keeps repeating same useless a...",
+      "restored_suggestion": "Provide human escalation",
+      "inferred_complexity": "moderate",
+      "text_length": 98,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD267",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai khane me do bal nikle paneer lababdar me ulti aa gayi d...",
+      "restored_suggestion": "Strict kitchen hygiene checks",
+      "inferred_complexity": "simple",
+      "text_length": 67,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD281",
+      "source_file": "FD.csv",
+      "text_snippet": "Worst food experience, fish curry smelled like rotten gutter...",
+      "restored_suggestion": "Ensure raw fish quality checks",
+      "inferred_complexity": "moderate",
+      "text_length": 90,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD293",
+      "source_file": "FD.csv",
+      "text_snippet": "fraud restaurant sent raw chicken inside veg roll, hurt reli...",
+      "restored_suggestion": "Strictly segregate veg kitchen items",
+      "inferred_complexity": "simple",
+      "text_length": 83,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD297",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai driver ne parking me gaadi thoki aur argument karne lag...",
+      "restored_suggestion": "Ensure safe driving behavior by riders",
+      "inferred_complexity": "simple",
+      "text_length": 79,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD312",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai customer support executive chat terminate karke bhaag g...",
+      "restored_suggestion": "Ensure support agents resolve queries",
+      "inferred_complexity": "simple",
+      "text_length": 79,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD325",
+      "source_file": "FD.csv",
+      "text_snippet": "fraud app charged money 2 times and deducted 750 rupees with...",
+      "restored_suggestion": "Resolve double debit issues instantly",
+      "inferred_complexity": "moderate",
+      "text_length": 92,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD336",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai rider ne lift me thook rakha tha disgusting fellow teac...",
+      "restored_suggestion": "Strictly enforce rider behavioral guidelines",
+      "inferred_complexity": "simple",
+      "text_length": 79,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD346",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai rider ne phone karke rude language use ki jab maine loc...",
+      "restored_suggestion": "Take strict action on rider rudeness",
+      "inferred_complexity": "simple",
+      "text_length": 80,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD362",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai refund ticket resolve mark kar di bina bank me paise bh...",
+      "restored_suggestion": "Verify bank refund before closing ticket",
+      "inferred_complexity": "simple",
+      "text_length": 80,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD370",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai app ne coupon automatically remove kar diya payment kar...",
+      "restored_suggestion": "Keep coupon valid until final step",
+      "inferred_complexity": "simple",
+      "text_length": 79,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD377",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai rider ne phone karke gaali di jab maine flat floor puch...",
+      "restored_suggestion": "Terminate abusive rider",
+      "inferred_complexity": "simple",
+      "text_length": 76,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD407",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai support wale ne issue resolve kiye bina ticket close ka...",
+      "restored_suggestion": "Ensure ticket resolution before closing",
+      "inferred_complexity": "simple",
+      "text_length": 81,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD423",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai paneer butter masala me dead insect mila hygiene standa...",
+      "restored_suggestion": "Ensure strict kitchen pest management",
+      "inferred_complexity": "simple",
+      "text_length": 78,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD430",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai delivery boy ne address nahi milne par phone par \u091a\u093f\u0932\u094d\u0932\u093e...",
+      "restored_suggestion": "Train delivery riders in polite communication",
+      "inferred_complexity": "moderate",
+      "text_length": 90,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD454",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai order deliver mark ho gaya par mujhe receive nahi hua f...",
+      "restored_suggestion": "Ensure OTP delivery handoff",
+      "inferred_complexity": "simple",
+      "text_length": 77,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "FD474",
+      "source_file": "FD.csv",
+      "text_snippet": "bhai burger ke andar stone piece nikla daant toot jata abhi ...",
+      "restored_suggestion": "Ensure thorough ingredient screening",
+      "inferred_complexity": "simple",
+      "text_length": 81,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR011",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai customer support executive itna batameez hai expired br...",
+      "restored_suggestion": "Train grocery support teams to resolve expired food disputes politely",
+      "inferred_complexity": "complex",
+      "text_length": 126,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR025",
+      "source_file": "GR.csv",
+      "text_snippet": "Pathetic service charged thousand rupees advance and sent ro...",
+      "restored_suggestion": "Do not dispatch fungal or rotten fruit inventory",
+      "inferred_complexity": "moderate",
+      "text_length": 114,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR030",
+      "source_file": "GR.csv",
+      "text_snippet": "Delivery rider was rude, dumped grocery bag on muddy porch f...",
+      "restored_suggestion": "Train delivery partners in courteous doorstep handoffs",
+      "inferred_complexity": "moderate",
+      "text_length": 102,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR050",
+      "source_file": "GR.csv",
+      "text_snippet": "terrible experience driver hurled abuses when asked why milk...",
+      "restored_suggestion": "Deactivate delivery executives resorting to verbal abuse",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR059",
+      "source_file": "GR.csv",
+      "text_snippet": "delivery took ninety minutes instead of promised ten minutes...",
+      "restored_suggestion": "Maintain realistic delivery estimates during rider crunches",
+      "inferred_complexity": "moderate",
+      "text_length": 110,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR080",
+      "source_file": "GR.csv",
+      "text_snippet": "fraud grocery portal took payment and delivered an empty tor...",
+      "restored_suggestion": "Verify delivery weight before handing over sealed cartons",
+      "inferred_complexity": "moderate",
+      "text_length": 111,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR088",
+      "source_file": "GR.csv",
+      "text_snippet": "worst grocery delivery service ice cream tub arrived as warm...",
+      "restored_suggestion": "Use insulated thermal bags with dry ice for frozen desserts",
+      "inferred_complexity": "moderate",
+      "text_length": 117,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR118",
+      "source_file": "GR.csv",
+      "text_snippet": "delivery boy threw the grocery bag against the front door br...",
+      "restored_suggestion": "Penalize delivery riders handling packages aggressively",
+      "inferred_complexity": "moderate",
+      "text_length": 112,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR122",
+      "source_file": "GR.csv",
+      "text_snippet": "fraud grocery app deducted money three times during checkout...",
+      "restored_suggestion": "Resolve multiple checkout debits immediately",
+      "inferred_complexity": "moderate",
+      "text_length": 121,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR142",
+      "source_file": "GR.csv",
+      "text_snippet": "Never ordering fresh meat here again delivered decaying grey...",
+      "restored_suggestion": "Enforce daily quality discards on raw meat inventory",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR163",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai discount coupon apply karte hi delivery fee 20 rupay ba...",
+      "restored_suggestion": "Keep delivery fees static regardless of applied promo codes",
+      "inferred_complexity": "moderate",
+      "text_length": 108,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR180",
+      "source_file": "GR.csv",
+      "text_snippet": "utter rubbish service sent expired baby formula tin with pee...",
+      "restored_suggestion": "Never dispatch baby formula with questionable expiry dates",
+      "inferred_complexity": "moderate",
+      "text_length": 118,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR185",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai atta bag ke andar chote chote black weevils ghum rahe t...",
+      "restored_suggestion": "Ensure pest-free grain storage in warehouse facilities",
+      "inferred_complexity": "moderate",
+      "text_length": 99,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR199",
+      "source_file": "GR.csv",
+      "text_snippet": "delivery boy demanded fifty rupees cash tip claiming heavy r...",
+      "restored_suggestion": "Prohibit delivery riders from soliciting forced cash tips",
+      "inferred_complexity": "moderate",
+      "text_length": 104,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR215",
+      "source_file": "GR.csv",
+      "text_snippet": "Disgusting hygiene, fresh coriander bunch was full of tiny g...",
+      "restored_suggestion": "Screen and wash fresh herbs to eliminate garden pests",
+      "inferred_complexity": "moderate",
+      "text_length": 123,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR221",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai rider ne delivery address pe aane se mana kiya aur bola...",
+      "restored_suggestion": "Ensure complete doorstep delivery by delivery partners",
+      "inferred_complexity": "moderate",
+      "text_length": 107,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR234",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai support wale ne photo mangne ke baad ticket close kar d...",
+      "restored_suggestion": "Ensure tickets do not close automatically without resolution",
+      "inferred_complexity": "moderate",
+      "text_length": 106,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR236",
+      "source_file": "GR.csv",
+      "text_snippet": "Dark store sent mouldy stale bread with green fungus spots a...",
+      "restored_suggestion": "Enforce daily audits on bakery shelves to purge mouldy bread",
+      "inferred_complexity": "moderate",
+      "text_length": 102,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR261",
+      "source_file": "GR.csv",
+      "text_snippet": "pathetic customer support bot keeps repeating same automated...",
+      "restored_suggestion": "Escalate unresolved missing item queries to human agents",
+      "inferred_complexity": "moderate",
+      "text_length": 115,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR267",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai loose sugar packet me se cheenti nikal rahi thi packagi...",
+      "restored_suggestion": "Ensure airtight insect-proof seals on sugar packets",
+      "inferred_complexity": "moderate",
+      "text_length": 99,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR281",
+      "source_file": "GR.csv",
+      "text_snippet": "Worst grocery experience, delivered mouldy bread with green ...",
+      "restored_suggestion": "Purge mouldy bakery items from dark stores",
+      "inferred_complexity": "moderate",
+      "text_length": 114,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR293",
+      "source_file": "GR.csv",
+      "text_snippet": "fraud store delivered expired baby milk powder with forged e...",
+      "restored_suggestion": "De-list vendors altering expiry labels on baby food",
+      "inferred_complexity": "moderate",
+      "text_length": 96,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR297",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai driver ne society parking me rash driving ki aur argue ...",
+      "restored_suggestion": "Instruct delivery riders to drive safely in residential areas",
+      "inferred_complexity": "moderate",
+      "text_length": 91,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR312",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai customer support executive chat terminate karke bhaag g...",
+      "restored_suggestion": "Ensure support agents resolve complaints before closing chat",
+      "inferred_complexity": "moderate",
+      "text_length": 86,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR325",
+      "source_file": "GR.csv",
+      "text_snippet": "fraud app charged credit card twice and customer care says w...",
+      "restored_suggestion": "Expedite duplicate transaction reversals immediately",
+      "inferred_complexity": "moderate",
+      "text_length": 92,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR336",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai delivery boy ne apartment lift me gutkha thook rakha th...",
+      "restored_suggestion": "Enforce strict hygiene and behavioral rules on riders",
+      "inferred_complexity": "moderate",
+      "text_length": 97,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR346",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai rider ne address samjhane par abusive language use ki d...",
+      "restored_suggestion": "Terminate abusive delivery executives immediately",
+      "inferred_complexity": "moderate",
+      "text_length": 95,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR362",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai missing butter ka refund approve hue 6 din ho gaye bank...",
+      "restored_suggestion": "Ensure bank refunds credit promptly after approval",
+      "inferred_complexity": "moderate",
+      "text_length": 93,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR370",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai app ne auto-applied coupon remove kar diya card details...",
+      "restored_suggestion": "Keep coupon valid throughout checkout flow",
+      "inferred_complexity": "moderate",
+      "text_length": 95,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR377",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai rider ne phone karke gaali di jab maine flat floor puch...",
+      "restored_suggestion": "Terminate abusive delivery executives immediately",
+      "inferred_complexity": "moderate",
+      "text_length": 90,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR407",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai support wale ne issue resolve kiye bina ticket close ka...",
+      "restored_suggestion": "Ensure ticket resolution before closing queries",
+      "inferred_complexity": "moderate",
+      "text_length": 87,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR423",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai paneer pack me dead insect mila packaging seal ke andar...",
+      "restored_suggestion": "Ensure strict packaging hygiene in dairy processing",
+      "inferred_complexity": "moderate",
+      "text_length": 93,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR430",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai delivery boy ne address nahi milne par phone par chilan...",
+      "restored_suggestion": "Train delivery riders in polite communication",
+      "inferred_complexity": "moderate",
+      "text_length": 89,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR454",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai order deliver mark ho gaya par mujhe grocery bag mila h...",
+      "restored_suggestion": "Ensure OTP delivery handoff",
+      "inferred_complexity": "moderate",
+      "text_length": 85,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "GR474",
+      "source_file": "GR.csv",
+      "text_snippet": "bhai paneer pack me dead insect mila packaging seal ke andar...",
+      "restored_suggestion": "Ensure strict packaging hygiene in dairy processing",
+      "inferred_complexity": "moderate",
+      "text_length": 87,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC011",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai billing counter staff itna badtameez aur incompetent ha...",
+      "restored_suggestion": "Train billing staff in professional customer courtesy",
+      "inferred_complexity": "moderate",
+      "text_length": 109,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC016",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai ultrasound ke liye empty stomach 3 ghante bitha ke rakh...",
+      "restored_suggestion": "Schedule fasting ultrasound appointments in priority slots",
+      "inferred_complexity": "moderate",
+      "text_length": 97,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC025",
+      "source_file": "HC.csv",
+      "text_snippet": "Pathetic useless hospital administration kept critically sic...",
+      "restored_suggestion": "Streamline emergency admission bed allotment",
+      "inferred_complexity": "complex",
+      "text_length": 129,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC030",
+      "source_file": "HC.csv",
+      "text_snippet": "Receptionist was unnecessarily arrogant, threw the appointme...",
+      "restored_suggestion": "Enforce professional etiquette training at front desk",
+      "inferred_complexity": "moderate",
+      "text_length": 116,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC050",
+      "source_file": "HC.csv",
+      "text_snippet": "terrible experience emergency desk receptionist arguing on p...",
+      "restored_suggestion": "Prohibit personal phone usage at emergency triage desks",
+      "inferred_complexity": "complex",
+      "text_length": 129,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC059",
+      "source_file": "HC.csv",
+      "text_snippet": "radiologist delayed sonography by 90 minutes without giving ...",
+      "restored_suggestion": "Respect scheduled timing for fasting ultrasound patients",
+      "inferred_complexity": "moderate",
+      "text_length": 121,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC080",
+      "source_file": "HC.csv",
+      "text_snippet": "negligent staff administered drip without checking patient a...",
+      "restored_suggestion": "Mandate barcode cross-checking of allergy bands before drug administration",
+      "inferred_complexity": "complex",
+      "text_length": 130,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC088",
+      "source_file": "HC.csv",
+      "text_snippet": "worst hospital experience ever lab technician punctured vein...",
+      "restored_suggestion": "Deploy experienced phlebotomists for difficult venipunctures",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC118",
+      "source_file": "HC.csv",
+      "text_snippet": "casualty doctor shouted at panicked family members instead o...",
+      "restored_suggestion": "Sensitize emergency doctors to communicate calmly with distressed families",
+      "inferred_complexity": "moderate",
+      "text_length": 122,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC122",
+      "source_file": "HC.csv",
+      "text_snippet": "fraudulent billing department added three PPE kits and docto...",
+      "restored_suggestion": "Audit post-discharge billing for unrendered services",
+      "inferred_complexity": "complex",
+      "text_length": 130,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC142",
+      "source_file": "HC.csv",
+      "text_snippet": "Never visiting this diagnostic branch again technician dropp...",
+      "restored_suggestion": "Enforce immediate glove replacement upon floor contact",
+      "inferred_complexity": "complex",
+      "text_length": 137,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC160",
+      "source_file": "HC.csv",
+      "text_snippet": "Front desk staff was extremely abrasive, refused to guide el...",
+      "restored_suggestion": "Provide wheelchair escorts for elderly patients to testing basements",
+      "inferred_complexity": "moderate",
+      "text_length": 112,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC163",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai discount health package me se do important tests silent...",
+      "restored_suggestion": "Honor all advertised tests in package vouchers",
+      "inferred_complexity": "moderate",
+      "text_length": 110,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC178",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai billing executive ne final discharge ke waqt 5000 extra...",
+      "restored_suggestion": "Prohibit arbitrary unreceipted cash collections at discharge",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC180",
+      "source_file": "HC.csv",
+      "text_snippet": "utter rubbish service casualty doctor refused to examine hea...",
+      "restored_suggestion": "Enforce emergency medical care stabilization prior to financial billing",
+      "inferred_complexity": "complex",
+      "text_length": 147,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC185",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai doctor ne 10 minute me 4 different patients ko cabin me...",
+      "restored_suggestion": "Ensure strictly one patient per consultation cabin",
+      "inferred_complexity": "moderate",
+      "text_length": 94,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC199",
+      "source_file": "HC.csv",
+      "text_snippet": "pharmacy cashier insulted an illiterate villager for not rea...",
+      "restored_suggestion": "Penalize staff exhibiting discriminatory behavior against patients",
+      "inferred_complexity": "moderate",
+      "text_length": 122,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC215",
+      "source_file": "HC.csv",
+      "text_snippet": "Disgusting hospital cafeteria food, served stale fermented s...",
+      "restored_suggestion": "Ensure strict quality audits on hospital canteen food",
+      "inferred_complexity": "moderate",
+      "text_length": 124,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC221",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai billing counter pe 45 minute khade rehne ke baad bola s...",
+      "restored_suggestion": "Ensure backup manual billing options during server downtimes",
+      "inferred_complexity": "moderate",
+      "text_length": 116,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC234",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai doctor ne 10 baje ka appointment deke 12 baje tak clini...",
+      "restored_suggestion": "Ensure doctors arrive punctually at advertised clinic opening hours",
+      "inferred_complexity": "moderate",
+      "text_length": 104,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC236",
+      "source_file": "HC.csv",
+      "text_snippet": "Emergency room doctors prioritized corporate executive with ...",
+      "restored_suggestion": "Adhere strictly to medical triage priority over social status",
+      "inferred_complexity": "complex",
+      "text_length": 151,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC254",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai nursing staff ne post-surgery dressing change karte waq...",
+      "restored_suggestion": "Strictly enforce sterile glove protocols during wound dressings",
+      "inferred_complexity": "moderate",
+      "text_length": 108,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC261",
+      "source_file": "HC.csv",
+      "text_snippet": "pathetic reception desk staff kept mocking elderly rural pat...",
+      "restored_suggestion": "Train front desk staff to assist illiterate patients respectfully",
+      "inferred_complexity": "moderate",
+      "text_length": 124,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC274",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai ambulance me oxygen mask damaged tha emergency transfer...",
+      "restored_suggestion": "Check ambulance breathing circuits and masks daily",
+      "inferred_complexity": "moderate",
+      "text_length": 123,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC281",
+      "source_file": "HC.csv",
+      "text_snippet": "Worst diagnostic center ever, technician punctured my arm mu...",
+      "restored_suggestion": "Deploy senior staff for difficult vein blood collection",
+      "inferred_complexity": "moderate",
+      "text_length": 124,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC293",
+      "source_file": "HC.csv",
+      "text_snippet": "fraudulent lab desk generated dummy lipid profile report wit...",
+      "restored_suggestion": "Audit laboratory testing logs against physical sample barcodes",
+      "inferred_complexity": "moderate",
+      "text_length": 121,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC297",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai security guard ne stretcher access block karke rakha VI...",
+      "restored_suggestion": "Never block emergency stretcher access for vehicular traffic",
+      "inferred_complexity": "moderate",
+      "text_length": 116,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC312",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai casualty medical officer ne patient ko check kiye bina ...",
+      "restored_suggestion": "Mandate emergency stabilization before referring patients elsewhere",
+      "inferred_complexity": "moderate",
+      "text_length": 118,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC325",
+      "source_file": "HC.csv",
+      "text_snippet": "emergency ambulance arrived without working suction machine ...",
+      "restored_suggestion": "Mandate functional pre-trip checklist for ambulance life-support gear",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC336",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai doctor ne checkup ke beech me personal phone pe 15 minu...",
+      "restored_suggestion": "Prohibit private phone calls during patient appointments",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC346",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai emergency desk pe security guard medical triage advice ...",
+      "restored_suggestion": "Ensure qualified medical officers conduct emergency triage",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC362",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai discharge procedure me 6 ghante lag gaye TPA clearance ...",
+      "restored_suggestion": "Hand over discharge summaries within 90 minutes of TPA clearance",
+      "inferred_complexity": "moderate",
+      "text_length": 110,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC365",
+      "source_file": "HC.csv",
+      "text_snippet": "Billing desk added charges for five surgical blades when ope...",
+      "restored_suggestion": "Reconcile operating room consumable billing with surgical nursing logs",
+      "inferred_complexity": "moderate",
+      "text_length": 122,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC370",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai online consultation book kiya par doctor ne audio disco...",
+      "restored_suggestion": "Mandate full audio-visual consultations for telemedicine",
+      "inferred_complexity": "moderate",
+      "text_length": 121,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC377",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai casualty ward me bleeding patient ko 1 ghante tak paink...",
+      "restored_suggestion": "Ensure standing orders for emergency analgesia by trained triage nurses",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC392",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai casualty ward me oxygen cylinder empty nikla emergency ...",
+      "restored_suggestion": "Ensure all emergency bay cylinders are filled and verified daily",
+      "inferred_complexity": "complex",
+      "text_length": 132,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC407",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai casualty doctor ne head injury patient ko bina CT scan ...",
+      "restored_suggestion": "Ensure mandatory clinical protocols for trauma cases",
+      "inferred_complexity": "moderate",
+      "text_length": 122,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC423",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai ICU me patient ke pass used syringes floor pe padi thi ...",
+      "restored_suggestion": "Sanitize ICU floors and remove biological sharps immediately",
+      "inferred_complexity": "moderate",
+      "text_length": 110,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC454",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai hospital ward boy ne attendant se medicine lane ke liye...",
+      "restored_suggestion": "Enforce strict anti-tipping policies for hospital attendants",
+      "inferred_complexity": "moderate",
+      "text_length": 98,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "HC474",
+      "source_file": "HC.csv",
+      "text_snippet": "bhai billing desk ne ICU charges add kar diye jabki patient ...",
+      "restored_suggestion": "Ensure ward transfer timestamps reflect on daily billing",
+      "inferred_complexity": "moderate",
+      "text_length": 124,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC011",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai customer support executive itna arrogant hai seedhe muh...",
+      "restored_suggestion": "Train call center agents in polite grievance handling",
+      "inferred_complexity": "moderate",
+      "text_length": 115,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC025",
+      "source_file": "TC.csv",
+      "text_snippet": "Pathetic telecom provider kept porting request pending for t...",
+      "restored_suggestion": "Clear MNP requests within standard statutory windows",
+      "inferred_complexity": "complex",
+      "text_length": 131,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC030",
+      "source_file": "TC.csv",
+      "text_snippet": "Customer care executive abruptly terminated the phone call a...",
+      "restored_suggestion": "Monitor and penalize abrupt agent call drop-offs",
+      "inferred_complexity": "complex",
+      "text_length": 140,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC050",
+      "source_file": "TC.csv",
+      "text_snippet": "terrible experience technician demanded 500 cash bribe under...",
+      "restored_suggestion": "Strictly prohibit unauthorized cash collections by repair staff",
+      "inferred_complexity": "moderate",
+      "text_length": 117,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC059",
+      "source_file": "TC.csv",
+      "text_snippet": "broadband installation delayed by two weeks despite paying t...",
+      "restored_suggestion": "Ensure committed installation turnaround within 48 hours",
+      "inferred_complexity": "moderate",
+      "text_length": 109,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC080",
+      "source_file": "TC.csv",
+      "text_snippet": "fraudulent agent cloned my phone number through unauthorized...",
+      "restored_suggestion": "Enforce biometric and government ID verification on all SIM swaps",
+      "inferred_complexity": "complex",
+      "text_length": 130,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC088",
+      "source_file": "TC.csv",
+      "text_snippet": "worst mobile network ever every single call drops within ten...",
+      "restored_suggestion": "Optimize antenna tilt and coverage in dead residential pockets",
+      "inferred_complexity": "moderate",
+      "text_length": 114,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC118",
+      "source_file": "TC.csv",
+      "text_snippet": "customer care representative mocked my regional pronunciatio...",
+      "restored_suggestion": "Penalize staff exhibiting disrespectful behavior toward subscribers",
+      "inferred_complexity": "complex",
+      "text_length": 142,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC122",
+      "source_file": "TC.csv",
+      "text_snippet": "rogue store personnel activated unauthorized postpaid connec...",
+      "restored_suggestion": "Enforce biometric matching to prevent unauthorized SIM activations",
+      "inferred_complexity": "complex",
+      "text_length": 126,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC142",
+      "source_file": "TC.csv",
+      "text_snippet": "Never using this telecom service again, deducted 400 rupees ...",
+      "restored_suggestion": "Audit international SMS transmission logs for billing errors",
+      "inferred_complexity": "moderate",
+      "text_length": 123,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC160",
+      "source_file": "TC.csv",
+      "text_snippet": "Broadband sales representative was deceptive, promised free ...",
+      "restored_suggestion": "Ensure transparent communication of upfront installation fees",
+      "inferred_complexity": "moderate",
+      "text_length": 124,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC163",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai international roaming pack me 100 free SMS advertise ki...",
+      "restored_suggestion": "Ensure incoming OTPs remain free while international roaming",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC180",
+      "source_file": "TC.csv",
+      "text_snippet": "utter rubbish service broadband line disconnected for six da...",
+      "restored_suggestion": "Provide accurate technician dispatch updates without false promises",
+      "inferred_complexity": "complex",
+      "text_length": 142,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC185",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai technician ne optical fiber wire router ke peeche itna ...",
+      "restored_suggestion": "Instruct technicians on minimum bend radius for fiber cables",
+      "inferred_complexity": "moderate",
+      "text_length": 118,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC199",
+      "source_file": "TC.csv",
+      "text_snippet": "field repair technician demanded 200 rupees cash bribe claim...",
+      "restored_suggestion": "Prohibit unreceipted field wire charges by technicians",
+      "inferred_complexity": "moderate",
+      "text_length": 124,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC215",
+      "source_file": "TC.csv",
+      "text_snippet": "Disgusting telecom scam, deducted 500 rupees for premium hor...",
+      "restored_suggestion": "Abolish auto-activation of unsolicited paid value-added services",
+      "inferred_complexity": "complex",
+      "text_length": 131,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC221",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai optical fiber cut hone ke baad customer care ko call ki...",
+      "restored_suggestion": "Ensure emergency fiber cut reports reach human operators",
+      "inferred_complexity": "moderate",
+      "text_length": 118,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC234",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai customer support executive ne call disconnect kar di ja...",
+      "restored_suggestion": "Ensure support agents resolve persistent refund grievances",
+      "inferred_complexity": "complex",
+      "text_length": 133,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC236",
+      "source_file": "TC.csv",
+      "text_snippet": "Local cable broadband operator severed competing fiber wires...",
+      "restored_suggestion": "Prosecute local cable operator vandalism against open fiber ducts",
+      "inferred_complexity": "complex",
+      "text_length": 134,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC254",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai technician ne optical fiber wire society gate ke upar s...",
+      "restored_suggestion": "Ensure minimum overhead clearance for fiber cable crossings",
+      "inferred_complexity": "moderate",
+      "text_length": 124,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC261",
+      "source_file": "TC.csv",
+      "text_snippet": "pathetic customer care helpline bot keeps looping automated ...",
+      "restored_suggestion": "Provide direct one-key human agent escalation on helpline",
+      "inferred_complexity": "complex",
+      "text_length": 137,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC274",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai outdoor optical wire ko technician ne ped ki daali se b...",
+      "restored_suggestion": "Secure outdoor fiber cables to designated poles only",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC281",
+      "source_file": "TC.csv",
+      "text_snippet": "Worst telecom provider, disconnected active prepaid connecti...",
+      "restored_suggestion": "Verify KYC address mismatches before disconnecting old numbers",
+      "inferred_complexity": "complex",
+      "text_length": 138,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC293",
+      "source_file": "TC.csv",
+      "text_snippet": "fraudulent telemarketers spoofing official telecom helpline ...",
+      "restored_suggestion": "Implement strict cryptographic caller ID validation on telemarketers",
+      "inferred_complexity": "complex",
+      "text_length": 130,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC297",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai technician ne optical distribution box ko itna loose ch...",
+      "restored_suggestion": "Ensure field distribution boxes are bolted securely to poles",
+      "inferred_complexity": "moderate",
+      "text_length": 116,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC312",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai field technician ne complaint attend kiye bina 'custome...",
+      "restored_suggestion": "Audit false technician premise-visit cancellation reports",
+      "inferred_complexity": "moderate",
+      "text_length": 123,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC325",
+      "source_file": "TC.csv",
+      "text_snippet": "fraudulent customer care scammer tried to fish for bank OTP ...",
+      "restored_suggestion": "Issue consumer warnings regarding fraudulent 5G upgrade calls",
+      "inferred_complexity": "complex",
+      "text_length": 128,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC336",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai customer support phone line pe 30 minute wait karwaya a...",
+      "restored_suggestion": "Monitor agent call transfers to prevent unauthorized drops",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC346",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai customer care executive ne rude tone me bola 'jahan com...",
+      "restored_suggestion": "Take disciplinary action against rude customer service agents",
+      "inferred_complexity": "complex",
+      "text_length": 138,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC362",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai outdoor fiber cable tree branches me ulajh kar break ho...",
+      "restored_suggestion": "Dispatch technicians to repair tree-tangled drop cables promptly",
+      "inferred_complexity": "moderate",
+      "text_length": 115,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC365",
+      "source_file": "TC.csv",
+      "text_snippet": "Broadband provider added mandatory monthly equipment mainten...",
+      "restored_suggestion": "Prohibit unconsented maintenance fees on active plans",
+      "inferred_complexity": "complex",
+      "text_length": 131,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC370",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai international roaming me data pack activate kiya par ai...",
+      "restored_suggestion": "Ensure international roaming activates automatically upon departure",
+      "inferred_complexity": "complex",
+      "text_length": 130,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC377",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai technician ne optical wire splice karte waqt core tod d...",
+      "restored_suggestion": "Ensure technicians finish active emergency splices before shift end",
+      "inferred_complexity": "complex",
+      "text_length": 127,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC392",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai optical drop wire building ke entrance pe aisi latak ra...",
+      "restored_suggestion": "Fasten overhead fiber cables with proper structural clearance",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC407",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai customer support executive ne call disconnect kar di ja...",
+      "restored_suggestion": "Ensure support agents resolve persistent service complaints",
+      "inferred_complexity": "complex",
+      "text_length": 140,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC423",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai outdoor fiber cable tree branches me ulajh kar toot gay...",
+      "restored_suggestion": "Reroute fiber cables away from tree branches",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC454",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai unauthorized postpaid connection activate kar diya meri...",
+      "restored_suggestion": "Enforce biometric verification on all SIM activations",
+      "inferred_complexity": "moderate",
+      "text_length": 106,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TC474",
+      "source_file": "TC.csv",
+      "text_snippet": "bhai unauthorized roaming charge lag gaya 500 ka customer ca...",
+      "restored_suggestion": "Ensure immediate phone pick-up for billing disputes",
+      "inferred_complexity": "moderate",
+      "text_length": 106,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR011",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai front desk manager itna batameez aur arrogant hai room ...",
+      "restored_suggestion": "Train hospitality staff in courteous conflict resolution",
+      "inferred_complexity": "moderate",
+      "text_length": 103,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR025",
+      "source_file": "TR.csv",
+      "text_snippet": "Pathetic fraud hotel took advance tariff online and when rea...",
+      "restored_suggestion": "Physically audit listed hotel properties on booking portals",
+      "inferred_complexity": "complex",
+      "text_length": 132,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR030",
+      "source_file": "TR.csv",
+      "text_snippet": "Receptionist was extremely dismissive, scrolled personal pho...",
+      "restored_suggestion": "Ensure front desk staff remain attentive to arriving guests",
+      "inferred_complexity": "complex",
+      "text_length": 134,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR050",
+      "source_file": "TR.csv",
+      "text_snippet": "terrible experience hotel staff entered room without knockin...",
+      "restored_suggestion": "Enforce strict knock-and-announce protocols for housekeeping",
+      "inferred_complexity": "complex",
+      "text_length": 136,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR059",
+      "source_file": "TR.csv",
+      "text_snippet": "sleeper bus operator skipped designated city pickup point wi...",
+      "restored_suggestion": "Mandate passenger phone contact before bus departures",
+      "inferred_complexity": "moderate",
+      "text_length": 118,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR080",
+      "source_file": "TR.csv",
+      "text_snippet": "hotel desk sold our confirmed room to walking cash customers...",
+      "restored_suggestion": "Prosecute hoteliers selling pre-paid confirmed rooms to walk-ins",
+      "inferred_complexity": "moderate",
+      "text_length": 118,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR088",
+      "source_file": "TR.csv",
+      "text_snippet": "worst bus travel ever sleeper coach AC was leaking water dir...",
+      "restored_suggestion": "Service air conditioning ducts in sleeper buses regularly",
+      "inferred_complexity": "moderate",
+      "text_length": 116,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR118",
+      "source_file": "TR.csv",
+      "text_snippet": "hotel security guard misbehaved violently with female guests...",
+      "restored_suggestion": "Train security personnel in polite and professional conduct",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR122",
+      "source_file": "TR.csv",
+      "text_snippet": "fraud hotel took advance booking online then denied room say...",
+      "restored_suggestion": "De-list non-operational properties from travel portals",
+      "inferred_complexity": "moderate",
+      "text_length": 111,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR142",
+      "source_file": "TR.csv",
+      "text_snippet": "Never staying at this filthy lodge again bedbugs bit all ove...",
+      "restored_suggestion": "Perform professional extermination for bedbugs immediately",
+      "inferred_complexity": "moderate",
+      "text_length": 110,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR160",
+      "source_file": "TR.csv",
+      "text_snippet": "Hotel front desk clerk was hostile, refused to explain WiFi ...",
+      "restored_suggestion": "Ensure front desk staff provide basic amenities politely",
+      "inferred_complexity": "moderate",
+      "text_length": 118,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR163",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai travel package me sightseeing bus included thi par morn...",
+      "restored_suggestion": "Provide guaranteed backup vehicles for tour packages",
+      "inferred_complexity": "moderate",
+      "text_length": 114,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR180",
+      "source_file": "TR.csv",
+      "text_snippet": "hotel manager verbally abused my elderly father over acciden...",
+      "restored_suggestion": "Train hotel management in polite hospitality behavior",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR199",
+      "source_file": "TR.csv",
+      "text_snippet": "bus conductor demanded hundred rupees extra for placing stan...",
+      "restored_suggestion": "Prohibit illegal baggage surcharges on scheduled buses",
+      "inferred_complexity": "moderate",
+      "text_length": 122,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR215",
+      "source_file": "TR.csv",
+      "text_snippet": "Disgusting hygiene, breakfast buffet scrambled eggs had a de...",
+      "restored_suggestion": "Maintain food covers and kitchen insect controls",
+      "inferred_complexity": "moderate",
+      "text_length": 121,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR221",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai room me AC remote nahi tha aur manual buttons broken th...",
+      "restored_suggestion": "Ensure functional remote controls for all room appliances",
+      "inferred_complexity": "moderate",
+      "text_length": 114,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR234",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai bus operator ne AC sleeper bol ke ordinary non-AC bus b...",
+      "restored_suggestion": "Ensure dispatched bus category matches booked ticket",
+      "inferred_complexity": "moderate",
+      "text_length": 110,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR236",
+      "source_file": "TR.csv",
+      "text_snippet": "Hotel receptionist assaulted passenger with wooden rod after...",
+      "restored_suggestion": "Permanently blacklist and report violent staff to police",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR254",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai sleeper bus berth pe stained bedsheet mili thi conducto...",
+      "restored_suggestion": "Provide fresh sanitized bed linen on sleeper buses",
+      "inferred_complexity": "moderate",
+      "text_length": 110,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR261",
+      "source_file": "TR.csv",
+      "text_snippet": "pathetic airline support bot keeps repeating automated refun...",
+      "restored_suggestion": "Provide live human agent escalation for airline refunds",
+      "inferred_complexity": "moderate",
+      "text_length": 117,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR274",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai hotel me power cut ho gaya aur backup generator 2 ghant...",
+      "restored_suggestion": "Ensure automatic power backup switches in hotels",
+      "inferred_complexity": "moderate",
+      "text_length": 105,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR281",
+      "source_file": "TR.csv",
+      "text_snippet": "Worst resort experience ever staff entered room with duplica...",
+      "restored_suggestion": "Strictly restrict master key access to emergencies",
+      "inferred_complexity": "moderate",
+      "text_length": 112,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR293",
+      "source_file": "TR.csv",
+      "text_snippet": "fraud travel agent took full payment for tour package and di...",
+      "restored_suggestion": "Verify agency credentials before listing tour packages",
+      "inferred_complexity": "moderate",
+      "text_length": 120,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR297",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai hotel staff ne room me luggage shift karne ke liye 200 ...",
+      "restored_suggestion": "Strictly prohibit staff from soliciting forced tips",
+      "inferred_complexity": "moderate",
+      "text_length": 108,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR312",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai travel agent ne confirmed flight ticket bol kar duplica...",
+      "restored_suggestion": "Verify agency authenticity to stop fake PNR issuance",
+      "inferred_complexity": "moderate",
+      "text_length": 123,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR325",
+      "source_file": "TR.csv",
+      "text_snippet": "hotel manager demanded extra five hundred cash at midnight c...",
+      "restored_suggestion": "Prohibit front desk from demanding extra cash over confirmed vouchers",
+      "inferred_complexity": "moderate",
+      "text_length": 124,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR336",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai hotel food me hair strand nikla soup ke andar waiter ne...",
+      "restored_suggestion": "Enforce hairnets and hygiene standards in hotel kitchens",
+      "inferred_complexity": "moderate",
+      "text_length": 101,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR346",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai sleeper bus driver ne pure raste rash driving ki multip...",
+      "restored_suggestion": "Monitor bus driving telemetry and penalize rash driving",
+      "inferred_complexity": "moderate",
+      "text_length": 123,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR362",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai car ka AC filter itna choked tha ki hawa aane ki jagah ...",
+      "restored_suggestion": "Service and sanitize automotive AC filters periodically",
+      "inferred_complexity": "moderate",
+      "text_length": 108,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR365",
+      "source_file": "TR.csv",
+      "text_snippet": "Driver started abusing loudly and threatened violence when a...",
+      "restored_suggestion": "Permanently ban drivers resorting to abusive behavior",
+      "inferred_complexity": "moderate",
+      "text_length": 117,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR370",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai pickup pin correct dali thi par driver 600 meter door f...",
+      "restored_suggestion": "Improve driver navigation to exact pickup pins",
+      "inferred_complexity": "moderate",
+      "text_length": 114,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR377",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai driver ne offline cash maanga mana karne par sunsan roa...",
+      "restored_suggestion": "Deactivate drivers abandoning passengers over payment disputes",
+      "inferred_complexity": "moderate",
+      "text_length": 112,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR392",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai optical drop wire building ke entrance pe aisi latak ra...",
+      "restored_suggestion": "Ensure safe transit clearances on airport drop lanes",
+      "inferred_complexity": "moderate",
+      "text_length": 119,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR407",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai customer support executive ne call disconnect kar di ja...",
+      "restored_suggestion": "Ensure support agents resolve persistent refund requests",
+      "inferred_complexity": "complex",
+      "text_length": 140,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR423",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai outdoor fiber cable tree branches me ulajh kar toot gay...",
+      "restored_suggestion": "Reroute transit paths away from hazardous road debris",
+      "inferred_complexity": "moderate",
+      "text_length": 113,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR454",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai unauthorized postpaid connection activate kar diya meri...",
+      "restored_suggestion": "Enforce biometric verification on passenger accounts",
+      "inferred_complexity": "moderate",
+      "text_length": 106,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    },
+    {
+      "id": "TR474",
+      "source_file": "TR.csv",
+      "text_snippet": "bhai unauthorized roaming charge lag gaya 500 ka customer ca...",
+      "restored_suggestion": "Ensure immediate phone pick-up for fare disputes",
+      "inferred_complexity": "moderate",
+      "text_length": 106,
+      "rule": "11-column shift repair: restored suggestion, reconstructed complexity via text length specification"
+    }
+  ],
+  "shifted_rows_count": 369,
+  "sentiment_corrections": [
+    {
+      "id": "FD034",
+      "source_file": "FD.csv",
+      "original_sentiment": "low",
+      "corrected_sentiment": "negative",
+      "justification": "Text describes an unfulfilled cutlery opt-out preference; behavior is complaint; 'low' was duplicated from severity."
+    }
+  ],
+  "complexity_normalizations": [
+    {
+      "id": "ED272",
+      "source_file": "ED.csv",
+      "original_complexity": "medium",
+      "normalized_complexity": "moderate",
+      "justification": "Standard schema defines 'moderate'; 'medium' is a synonymous typographical variation."
+    },
+    {
+      "id": "HC272",
+      "source_file": "HC.csv",
+      "original_complexity": "medium",
+      "normalized_complexity": "moderate",
+      "justification": "Standard schema defines 'moderate'; 'medium' is a synonymous typographical variation."
+    },
+    {
+      "id": "TC272",
+      "source_file": "TC.csv",
+      "original_complexity": "medium",
+      "normalized_complexity": "moderate",
+      "justification": "Standard schema defines 'moderate'; 'medium' is a synonymous typographical variation."
+    }
+  ],
+  "id_corrections": [
+    {
+      "source_file": "CB.csv",
+      "original_id": "ED028",
+      "corrected_id": "CB028",
+      "justification": "Cab transport dataset row with incorrect ED prefix typo"
+    },
+    {
+      "source_file": "TC.csv",
+      "original_id": "ED009",
+      "corrected_id": "TC009",
+      "justification": "Telecom dataset row with incorrect ED prefix typo"
+    },
+    {
+      "source_file": "TC.csv",
+      "original_id": "ED028",
+      "corrected_id": "TC028",
+      "justification": "Telecom dataset row with incorrect ED prefix typo"
+    },
+    {
+      "source_file": "TC.csv",
+      "original_id": "ED482",
+      "corrected_id": "TC482",
+      "justification": "Telecom dataset row with incorrect ED prefix typo"
+    },
+    {
+      "source_file": "TR.csv",
+      "original_id": "CB035",
+      "corrected_id": "TR035",
+      "justification": "Travel hotels dataset row with incorrect CB prefix typo"
+    }
+  ],
+  "service_corrections": [
+    {
+      "id": "BK085",
+      "source_file": "BK.csv",
+      "original_service": "ecommerce",
+      "corrected_service": "banking_upi",
+      "text": "bhai cheque deposit kiya tha drop box me 4 din pehle abhi tak clearing update nahi aaya",
+      "justification": "Feedback describes cheque deposit clearing delay in bank branch drop box; unambiguously banking_upi."
+    },
+    {
+      "id": "CB217",
+      "source_file": "CB.csv",
+      "original_service": "telecom_internet",
+      "corrected_service": "cab_transport",
+      "text": "Customer support desk took twelve days to respond to my complaint regarding a driver overcharging for toll taxes, useless team.",
+      "justification": "Feedback describes cab driver overcharging for toll taxes; unambiguously cab_transport."
+    }
+  ],
+  "duplicate_text_stats": {
+    "total_duplicate_rows": 497,
+    "unique_duplicate_phrases": 165,
+    "cross_file_phrases": 149,
+    "intra_file_phrases": 16,
+    "sharing_patterns": {
+      "FD.csv, GR.csv": 5,
+      "CB.csv, TC.csv, TR.csv": 101,
+      "CB.csv, TR.csv": 19,
+      "CB.csv, CS.csv, TC.csv, TR.csv": 22,
+      "CS.csv, TR.csv": 1,
+      "CB.csv, CS.csv": 1
+    }
+  },
+  "validation_results": {
+    "total_records": 5000,
+    "columns_match": true,
+    "null_counts": {},
+    "empty_text_count": 0,
+    "duplicate_rows": 0,
+    "duplicate_ids": 0,
+    "invalid_sentiments": {},
+    "invalid_languages": {},
+    "invalid_behaviors": {},
+    "invalid_abuse": {},
+    "invalid_severity": {},
+    "invalid_complexity": {},
+    "sentiment_distribution": {
+      "negative": 1698,
+      "positive": 1359,
+      "neutral": 1154,
+      "mixed": 789
+    },
+    "language_distribution": {
+      "english": 3601,
+      "hinglish": 1399
+    },
+    "behavior_distribution": {
+      "complaint": 2089,
+      "appreciation": 1490,
+      "question": 727,
+      "suggestion": 520,
+      "informational": 174
+    },
+    "abuse_distribution": {
+      "none": 4631,
+      "mild": 204,
+      "severe": 165
+    },
+    "severity_distribution": {
+      "none": 2527,
+      "medium": 876,
+      "low": 822,
+      "high": 775
+    },
+    "complexity_distribution": {
+      "moderate": 3344,
+      "simple": 1355,
+      "complex": 301
+    },
+    "service_distribution": {
+      "banking_upi": 500,
+      "cab_transport": 500,
+      "customer_support": 500,
+      "ecommerce": 500,
+      "education": 500,
+      "grocery_delivery": 500,
+      "healthcare": 500,
+      "telecom_internet": 500,
+      "travel_hotels": 500,
+      "food_delivery": 348,
+      "restaurant": 152
+    }
+  }
+}

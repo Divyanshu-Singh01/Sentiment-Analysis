@@ -47,7 +47,7 @@ Sentiment Analysis/
 │   │   │   └── TC.csv               # Telecom/Internet (500 records)
 │   │   └── travel_hotels/
 │   │       └── TR.csv               # Travel/Hotels (500 records)
-│   └── processed/                    # (Empty — for future processed/training data)
+│   └── processed/                    # Processed training dataset (sentiment_dataset.csv, cleaning_log.json)
 │
 ├── ml/                               # Machine learning code and artifacts
 │   ├── models/                       # Serialized model artifacts
@@ -56,7 +56,8 @@ Sentiment Analysis/
 │   ├── preprocessing/                # Data preprocessing scripts
 │   │   ├── preprocessing.py          # Text cleaning pipeline
 │   │   ├── data_check.py            # Dataset inspection/stats
-│   │   └── validate_datasets.py     # Reusable dataset validator (Phase 2)
+│   │   ├── validate_datasets.py     # Reusable dataset validator (Phase 2)
+│   │   └── clean_datasets.py        # Dataset cleaning & normalization pipeline (Phase 3)
 │   ├── training/                     # Model training scripts
 │   │   ├── train_model.py            # Train LogisticRegression + TF-IDF
 │   │   ├── train_test_split.py       # Check train/test split distribution
@@ -250,20 +251,15 @@ From `package.json`:
 10. ✅ Root `.gitignore` prevents tracking of `venv/`, `__pycache__/`, `db.sqlite3`, `.pkl`.
 11. ✅ Python dependencies documented in `requirements.txt`.
 12. ✅ Reusable dataset validator (`ml/preprocessing/validate_datasets.py`) verifies all 10 raw datasets; findings documented in `docs/DATASET_VALIDATION.md`.
+13. ✅ Cleaned and validated 5,000-record training dataset created at `data/processed/sentiment_dataset.csv` via `ml/preprocessing/clean_datasets.py`; findings documented in `docs/DATASET_CLEANING.md`.
 
 ---
 
 ## Known Issues (Remaining)
 
-### 1. ML Scripts Not Yet Runnable
-- The ML scripts (`preprocessing.py`, `train_model.py`, etc.) have been updated to
-  reference `data/processed/` and `data/raw/`, but `data/processed/` is empty.
-- The preprocessing script's `main()` function still has the old TSV-loading logic
-  and needs to be updated to handle the new CSV format (Phase 2/3 work).
-- Running `train_model.py` or `evaluate_model.py` will fail because
-  `data/processed/cleaned_sentiment_dataset.csv` does not yet exist.
-- This is expected — these scripts will be updated when the processed dataset is
-  created in Phase 3.
+### 1. ML Scripts Not Yet Runnable on New Dataset
+- The processed dataset `data/processed/sentiment_dataset.csv` is ready.
+- The ML training scripts (`train_model.py`, `evaluate_model.py`) currently still have legacy 2-column paths and will be updated in Phase 4 to train on the new 4-class multi-service dataset.
 
 ### 2. Model Version Mismatch (Minor)
 - The model `.pkl` was saved with scikit-learn 1.9.1 but the local environment
@@ -275,7 +271,7 @@ From `package.json`:
 
 ---
 
-## Issues Resolved in Phase 1
+## Issues Resolved in Phase 1 & Phase 2 & Phase 3
 
 1. ~~Model Directory Mismatch~~ → Model path in `analyzer/views.py` now correctly
    points to `ml/models/`. Model loads successfully.
@@ -288,6 +284,8 @@ From `package.json`:
 7. ~~Datasets flat in `data/`~~ → Organized into `data/raw/{service}/`.
 8. ~~Old deleted files still in Git index~~ → Removed from tracking
    (`model/*.pkl`, `data/sentiment_dataset.csv`, `data/cleaned_sentiment_dataset.csv`).
+9. ~~Raw dataset validation missing~~ → Implemented in `ml/preprocessing/validate_datasets.py`.
+10. ~~Raw dataset defects uncleaned~~ → Resolved via deterministic pipeline in `ml/preprocessing/clean_datasets.py` (369 shifted rows repaired, 1 invalid sentiment corrected, 3 complexity typos normalized, 5 duplicate IDs fixed, 2 service mismatches fixed).
 
 ---
 
@@ -295,13 +293,13 @@ From `package.json`:
 
 | Aspect                  | Current State                              | Planned Design                           |
 | ----------------------- | ------------------------------------------ | ---------------------------------------- |
-| Sentiment classes       | 2 (positive, negative)                     | 4 (positive, negative, neutral, mixed)   |
+| Sentiment classes       | 2 (positive, negative in current model)    | 4 (positive, negative, neutral, mixed)   |
 | Training data           | ~1,000 generic reviews (model artifact)    | 5,000 service-specific records (10 CSVs) |
 | Dataset columns         | Model trained on 2 cols (text, sentiment)  | 12 (id, text, language, service, ...)    |
 | API response            | `{ sentiment }` only                       | Multiple fields (aspect, severity, etc.) |
-| ML scripts              | Paths updated, but logic needs Phase 3     | Full pipeline for new datasets           |
+| ML scripts              | Ready for Phase 4 retraining update        | Full pipeline for new datasets           |
 | UI result display       | Binary positive/negative only              | Multi-class + structured info            |
-| Processed dataset       | `data/processed/` is empty                 | Combined, cleaned training CSV           |
+| Processed dataset       | `data/processed/sentiment_dataset.csv`     | Combined, cleaned training CSV           |
 
 ---
 
