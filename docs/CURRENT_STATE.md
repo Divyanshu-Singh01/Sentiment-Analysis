@@ -62,17 +62,17 @@ Sentiment Analysis/
 │   │   ├── sentiment_best_vectorizer.pkl # Phase 5 winning vectorizer (gitignored)
 │   │   ├── best_model_metadata.json  # Phase 5 winning model metadata
 │   │   ├── experiment_results.json   # Phase 5 all 5 experiment metrics
-│   │   ├── sentiment_final_model.pkl # Phase 6.3 retrained winning model on 6k records (gitignored)
-│   │   ├── sentiment_final_vectorizer.pkl # Phase 6.3 retrained vectorizer (gitignored)
-│   │   ├── final_model_metadata.json # Phase 6.3 final model metadata
-│   │   └── final_challenge_evaluation.json # Phase 6.3 challenge evaluation results
+│   │   ├── sentiment_final_model.pkl # Phase 6.6 retrained winning model on 8k records (gitignored)
+│   │   ├── sentiment_final_vectorizer.pkl # Phase 6.6 retrained vectorizer (gitignored)
+│   │   ├── final_model_metadata.json # Phase 6.6 final model metadata
+│   │   └── final_challenge_evaluation.json # Phase 6.6 challenge evaluation results
 │   ├── preprocessing/                # Data preprocessing scripts
 │   │   ├── preprocessing.py          # Text cleaning pipeline
 │   │   ├── data_check.py            # Dataset inspection/stats
 │   │   ├── validate_datasets.py     # Reusable dataset validator (Phase 2)
 │   │   └── clean_datasets.py        # Dataset cleaning & normalization pipeline (Phase 3)
 │   ├── training/                     # Model training scripts
-│   │   ├── train_final.py            # Phase 6.3 final model retraining pipeline
+│   │   ├── train_final.py            # Phase 6.6 final model retraining pipeline
 │   │   ├── train_experiments.py      # Phase 5 controlled experiments pipeline
 │   │   ├── train_baseline.py         # Multi-class baseline training pipeline (Phase 4)
 │   │   ├── train_model.py            # Legacy binary training script
@@ -287,19 +287,19 @@ From `package.json`:
 19. ✅ Phase 6.3 Retrained final Exp3 model on 6,000 records (`ml/training/train_final.py`) and evaluated on frozen 90-record challenge dataset (`ml/evaluation/evaluate_final.py`). Holdout accuracy: **90.83%** (macro F1: **0.9107**), strict unseen-text accuracy: **91.42%** (macro F1: **0.9123**). On the frozen challenge set, accuracy surged from **47.8% (43/90)** to **66.7% (60/90)**, macro F1 jumped from **0.4316** to **0.6688**, and errors dropped from 47 to 30. Major blind spots resolved: factual/neutral (14.3% → 85.7%), sarcasm (25.0% → 100.0%), "bhai" bias (54.5% → 90.9%), indirect complaints (50.0% → 75.0%), Hinglish challenge (48.6% → 64.9%). Persistent weaknesses identified: polite complaints (20.0%) and short expressions (50.0%). Status: **PARTIAL IMPROVEMENT**. Documented in `docs/FINAL_MODEL_EVALUATION.md`.
 20. ✅ Phase 6.4 Targeted dataset expansion: added exactly 2,000 new high-quality, service-specific records across all 10 raw datasets (IDs 601–800 per prefix, 200/service), expanding raw data from 6,000 to 8,000 records targeting remaining weaknesses (polite complaints, ultra-short feedback, transliteration variations, negation, mixed sentiment).
 21. ✅ Phase 6.5 Processed expanded dataset regenerated via `ml/preprocessing/clean_datasets.py`: 8,000 clean training records with 0 nulls, 0 duplicate IDs, and 100% valid schema and categorical labels saved to `data/processed/sentiment_dataset.csv` and logged in `data/processed/cleaning_log.json`.
+22. ✅ Phase 6.6 Retrained final Exp3 model on 8,000 records (`ml/training/train_final.py`) and evaluated on frozen 90-record challenge dataset (`ml/evaluation/evaluate_final.py`). Standard holdout accuracy: **90.87%** (macro F1: **0.9032**), strict unseen-text accuracy: **90.32%** (macro F1: **0.9015**). On the frozen challenge set, accuracy surged to **73.33% (66/90)**, macro F1 jumped to **0.7293**, and errors dropped from 30 to 24. Key improvements: polite complaints (20.0% → 60.0%), transliteration (75.0% → 100.0%), factual/neutral (85.7% → 100.0%), short expressions (59.3% → 70.4%), and Hinglish challenge accuracy (64.9% → 73.0%). Classification: **CLEAR IMPROVEMENT**. Documented in `docs/FINAL_MODEL_EVALUATION.md`.
+23. ✅ Phase 6.7 Final model integration & application validation: Updated Django REST API (`analyzer/views.py`) to load the final 8,000-record model (`sentiment_final_model.pkl`) and vectorizer (`sentiment_final_vectorizer.pkl`). Verified 100% consistency between direct model predictions and Django REST API responses across 10 diverse test cases (positive, negative, neutral, mixed, polite complaint, short text, Hinglish, transliteration, negation). Legacy binary artifacts (`sentiment_model.pkl`, `tfidf_vectorizer.pkl`) verified unreferenced by production code.
 
 ---
 
 ## Known Issues (Remaining)
 
-### 1. Production Model Still Uses Legacy Binary Model
-- Multi-class candidate artifacts are saved: Phase 4 baseline (`sentiment_baseline_*.pkl`), Phase 5 candidate (`sentiment_best_*.pkl`), and Phase 6.3 final candidate (`sentiment_final_*.pkl`).
-- Django (`analyzer/views.py`) still loads the old binary model (`sentiment_model.pkl`) until Phase 7 (Django REST Integration).
-- Legacy 2-column scripts (`train_model.py`, `evaluate_model.py`) remain for backward reference.
+### 1. Legacy Model Reference Scripts
+- Legacy binary scripts (`train_model.py`, `evaluate_model.py`) and legacy binary artifacts (`sentiment_model.pkl`, `tfidf_vectorizer.pkl`) remain for historical benchmark reference only; application code now exclusively uses the final 8k model.
 
 ### 2. Model Version Mismatch (Minor)
 - The legacy model `.pkl` was saved with scikit-learn 1.9.1 but the local environment
-  has 1.9.0. This produces a warning but does not break functionality. New Phase 4 & Phase 5 models are trained and saved using current scikit-learn 1.9.0.
+  has 1.9.0. Final Phase 6.6 model is trained and saved using current scikit-learn 1.9.0.
 
 ### 3. No Project README.md
 - No root `README.md` exists (only `frontend/README.md` which is the default

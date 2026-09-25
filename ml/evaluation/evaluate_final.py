@@ -1,31 +1,32 @@
 #!/usr/bin/env python3
 """
-Final Model Evaluation on Frozen Challenge Dataset (Phase 6.3).
+Final Model Evaluation on Frozen Challenge Dataset (Phase 6.6).
 
-Evaluates the retrained final model (sentiment_final_model.pkl) on the frozen
-90-record challenge dataset (data/test/challenge_dataset.csv) and compares directly
-against Phase 6 baseline performance.
+Evaluates the retrained final model (sentiment_final_model.pkl trained on 8,000 records)
+on the frozen 90-record challenge dataset (data/test/challenge_dataset.csv) and compares
+directly against Phase 5 (5k Exp3) and Phase 6.3 (6k Exp3) performance.
 
 Evaluations Reported:
 1. Overall accuracy, macro F1, weighted F1, total errors
 2. Per-class precision, recall, F1-score
 3. Confusion matrix
-4. Category-specific performance across all 12 categories:
-   - transliteration
-   - typos
-   - ordinary English
-   - bhai
-   - mixed clauses (mixed_sentiment)
-   - indirect complaints
-   - short <=5 words
-   - Hinglish
+4. Category-specific performance across all 13 categories/slices:
    - sarcasm
-   - ambiguous
    - factual/neutral
+   - bhai/conversational
+   - indirect complaints
+   - ambiguous
    - polite complaints
+   - Hinglish
+   - ordinary English
+   - mixed clauses
+   - transliteration
+   - short tagged
+   - short length <=5 words
+   - typos
 5. Language performance on challenge set (English vs Hinglish)
-6. Side-by-side Old vs New comparison table
-7. Detailed error analysis (fixed, regressed, remaining errors)
+6. 3-Way Model Comparison Table (5k vs 6k vs 8k)
+7. Transition & regression analysis against previous 6k model
 
 Usage:
     python ml/evaluation/evaluate_final.py
@@ -49,7 +50,7 @@ from sklearn.metrics import (
 # Canonical class labels
 TARGET_CLASSES = ["positive", "negative", "neutral", "mixed"]
 
-# Challenge category mapping (identical to Phase 6)
+# Challenge category mapping (identical to Phase 6 / 6.3)
 CATEGORY_TAGS = {
     # Short positive
     "CH001": ["short"], "CH002": ["short"], "CH053": ["short", "hinglish"],
@@ -110,15 +111,11 @@ CATEGORY_TAGS = {
     "CH069": ["hinglish"], "CH070": ["hinglish"],
 }
 
-# Previous Phase 6 baseline numbers for direct comparison
-PHASE6_BASELINE = {
+# Previous Phase 5 Exp3 (5k dataset) challenge metrics
+PHASE5_EXP3_BASELINE = {
     "overall": {
         "accuracy": 0.4778,
-        "macro_precision": 0.4573,
-        "macro_recall": 0.4489,
         "macro_f1": 0.4316,
-        "weighted_precision": 0.4712,
-        "weighted_recall": 0.4778,
         "weighted_f1": 0.4589,
         "total_errors": 47,
     },
@@ -129,24 +126,86 @@ PHASE6_BASELINE = {
         "mixed": {"precision": 0.4091, "recall": 0.5625, "f1_score": 0.4737, "support": 16},
     },
     "categories": {
-        "transliteration": 0.875,
-        "typos": 0.750,
-        "ordinary": 0.667,
+        "sarcasm": 0.250,
+        "factual": 0.143,
         "bhai": 0.545,
-        "mixed_sentiment": 0.538,
         "indirect_complaint": 0.500,
+        "ambiguous": 0.200,
+        "polite_complaint": 0.000,
+        "hinglish": 0.486,
+        "ordinary": 0.667,
+        "mixed_sentiment": 0.538,
+        "transliteration": 0.875,
         "short": 0.500,
         "short_len<=5": 0.593,
-        "hinglish": 0.486,
-        "sarcasm": 0.250,
-        "ambiguous": 0.200,
-        "factual": 0.143,
-        "polite_complaint": 0.000,
+        "typos": 0.750,
     },
     "languages": {
         "english": 0.472,
         "hinglish": 0.486,
     },
+}
+
+# Phase 6.3 (6k dataset) challenge metrics
+PHASE6_3_BASELINE = {
+    "overall": {
+        "accuracy": 0.6667,
+        "macro_f1": 0.6688,
+        "weighted_f1": 0.6669,
+        "total_errors": 30,
+    },
+    "per_class": {
+        "positive": {"precision": 0.7647, "recall": 0.5652, "f1_score": 0.6500, "support": 23},
+        "negative": {"precision": 0.6047, "recall": 0.7429, "f1_score": 0.6667, "support": 35},
+        "neutral": {"precision": 0.7857, "recall": 0.6875, "f1_score": 0.7333, "support": 16},
+        "mixed": {"precision": 0.6250, "recall": 0.6250, "f1_score": 0.6250, "support": 16},
+    },
+    "categories": {
+        "sarcasm": 1.000,
+        "factual": 0.857,
+        "bhai": 0.909,
+        "indirect_complaint": 0.750,
+        "ambiguous": 0.400,
+        "polite_complaint": 0.200,
+        "hinglish": 0.649,
+        "ordinary": 0.778,
+        "mixed_sentiment": 0.615,
+        "transliteration": 0.750,
+        "short": 0.500,
+        "short_len<=5": 0.593,
+        "typos": 0.750,
+    },
+    "languages": {
+        "english": 0.679,
+        "hinglish": 0.649,
+    },
+}
+
+# Exact predictions from Phase 6.3 (6k model) on the 90 challenge samples
+PREDICTIONS_6K = {
+    "CH001": "positive", "CH002": "negative", "CH003": "positive", "CH004": "negative",
+    "CH005": "neutral", "CH006": "mixed", "CH007": "mixed", "CH008": "neutral",
+    "CH009": "negative", "CH010": "positive", "CH011": "positive", "CH012": "positive",
+    "CH013": "negative", "CH014": "negative", "CH015": "positive", "CH016": "negative",
+    "CH017": "neutral", "CH018": "negative", "CH019": "negative", "CH020": "negative",
+    "CH021": "negative", "CH022": "neutral", "CH023": "mixed", "CH024": "negative",
+    "CH025": "mixed", "CH026": "mixed", "CH027": "negative", "CH028": "negative",
+    "CH029": "negative", "CH030": "negative", "CH031": "negative", "CH032": "mixed",
+    "CH033": "mixed", "CH034": "neutral", "CH035": "positive", "CH036": "negative",
+    "CH037": "neutral", "CH038": "positive", "CH039": "positive", "CH040": "negative",
+    "CH041": "positive", "CH042": "positive", "CH043": "negative", "CH044": "negative",
+    "CH045": "negative", "CH046": "neutral", "CH047": "neutral", "CH048": "neutral",
+    "CH049": "positive", "CH050": "negative", "CH051": "mixed", "CH052": "mixed",
+    "CH053": "negative", "CH054": "positive", "CH055": "neutral", "CH056": "positive",
+    "CH057": "negative", "CH058": "negative", "CH059": "negative", "CH060": "negative",
+    "CH061": "mixed", "CH062": "negative", "CH063": "mixed", "CH064": "mixed",
+    "CH065": "positive", "CH066": "negative", "CH067": "negative", "CH068": "negative",
+    "CH069": "negative", "CH070": "negative", "CH071": "positive", "CH072": "negative",
+    "CH073": "neutral", "CH074": "mixed", "CH075": "neutral", "CH076": "negative",
+    "CH077": "mixed", "CH078": "mixed", "CH079": "positive", "CH080": "neutral",
+    "CH081": "negative", "CH082": "mixed", "CH083": "negative", "CH084": "negative",
+    "CH085": "neutral", "CH086": "negative", "CH087": "negative", "CH088": "negative",
+    "CH089": "negative", "CH090": "negative"
 }
 
 
@@ -267,16 +326,12 @@ def evaluate_model_on_challenge(
     }
 
 
-def compare_with_old(
+def compare_with_6k(
     df: pd.DataFrame,
-    old_model: Any,
-    old_vec: Any,
     new_results: Dict[str, Any],
 ) -> Dict[str, Any]:
-    """Compare predictions on every challenge record."""
-    X = df["text"].astype(str)
+    """Compare 8k predictions with previous 6k model predictions on every challenge record."""
     y_true = df["sentiment"].str.strip().str.lower()
-    old_preds = old_model.predict(old_vec.transform(X))
     new_preds = np.array(new_results["predictions"])
 
     fixed = []
@@ -286,18 +341,18 @@ def compare_with_old(
 
     for i, row in df.iterrows():
         act = y_true.iloc[i]
-        o_p = old_preds[i]
-        n_p = new_preds[i]
         tid = row["id"]
+        o_p = PREDICTIONS_6K.get(tid, "unknown")
+        n_p = new_preds[i]
         txt = row["text"]
         cats = CATEGORY_TAGS.get(tid, [])
 
         if o_p != act and n_p == act:
-            fixed.append({"id": tid, "actual": act, "old_pred": o_p, "text": txt, "categories": cats})
+            fixed.append({"id": tid, "actual": act, "old_6k_pred": o_p, "new_8k_pred": n_p, "text": txt, "categories": cats})
         elif o_p == act and n_p != act:
-            regressed.append({"id": tid, "actual": act, "new_pred": n_p, "text": txt, "categories": cats})
+            regressed.append({"id": tid, "actual": act, "old_6k_pred": o_p, "new_8k_pred": n_p, "text": txt, "categories": cats})
         elif o_p != act and n_p != act:
-            still_error.append({"id": tid, "actual": act, "old_pred": o_p, "new_pred": n_p, "text": txt, "categories": cats})
+            still_error.append({"id": tid, "actual": act, "old_6k_pred": o_p, "new_8k_pred": n_p, "text": txt, "categories": cats})
         else:
             both_correct.append({"id": tid, "actual": act, "text": txt, "categories": cats})
 
@@ -306,6 +361,7 @@ def compare_with_old(
         "regressed_count": len(regressed),
         "still_error_count": len(still_error),
         "both_correct_count": len(both_correct),
+        "net_improvement": len(fixed) - len(regressed),
         "fixed_examples": fixed,
         "regressed_examples": regressed,
         "still_error_examples": still_error,
@@ -334,18 +390,6 @@ def main() -> int:
         help="Path to retrained final vectorizer",
     )
     parser.add_argument(
-        "--old-model",
-        type=Path,
-        default=base_dir / "ml" / "models" / "sentiment_best_model.pkl",
-        help="Path to Phase 5 best model",
-    )
-    parser.add_argument(
-        "--old-vectorizer",
-        type=Path,
-        default=base_dir / "ml" / "models" / "sentiment_best_vectorizer.pkl",
-        help="Path to Phase 5 best vectorizer",
-    )
-    parser.add_argument(
         "--output-json",
         type=Path,
         default=base_dir / "ml" / "models" / "final_challenge_evaluation.json",
@@ -354,7 +398,7 @@ def main() -> int:
     args = parser.parse_args()
 
     print("=" * 78)
-    print("PHASE 6.3: FINAL MODEL EVALUATION ON FROZEN CHALLENGE SET")
+    print("PHASE 6.6: FINAL 8,000-RECORD MODEL EVALUATION ON FROZEN CHALLENGE SET")
     print("=" * 78)
 
     if not args.challenge_dataset.is_file():
@@ -375,21 +419,28 @@ def main() -> int:
     results = evaluate_model_on_challenge(df_challenge, final_model, final_vec)
     ov = results["overall"]
 
-    print("-" * 78)
-    print("EVALUATION 2 — FROZEN 90-RECORD CHALLENGE SET RESULTS:")
-    print(f"  Accuracy:    {ov['accuracy']:.2%} ({ov['total_samples'] - ov['total_errors']}/{ov['total_samples']})  [Phase 6 Baseline: 47.8% (43/90)]")
-    print(f"  Macro F1:    {ov['macro_f1']:.4f}               [Phase 6 Baseline: 0.4316]")
-    print(f"  Weighted F1: {ov['weighted_f1']:.4f}            [Phase 6 Baseline: 0.4589]")
-    print(f"  Total Errors:{ov['total_errors']} / {ov['total_samples']}                 [Phase 6 Baseline: 47 / 90]")
-    print()
+    # 6k transition analysis
+    trans_6k = compare_with_6k(df_challenge, results)
 
-    print("PER-CLASS METRICS ON CHALLENGE SET:")
-    print(f"{'Class':<10} {'Precision':<10} {'Recall':<10} {'F1-Score':<10} {'Support':<8} {'Phase 6 F1'}")
-    print("-" * 65)
+    print("-" * 78)
+    print("EVALUATION 1 — 3-WAY OVERALL CHALLENGE COMPARISON:")
+    print(f"{'Metric':<20} {'5k Exp3 (Phase 5)':<20} {'6k Exp3 (Phase 6.3)':<20} {'8k Final (Phase 6.6)'}")
+    print("-" * 78)
+    print(f"{'Accuracy':<20} {'47.78% (43/90)':<20} {'66.67% (60/90)':<20} {ov['accuracy']:.2%} ({ov['total_samples'] - ov['total_errors']}/{ov['total_samples']})")
+    print(f"{'Macro F1':<20} {'0.4316':<20} {'0.6688':<20} {ov['macro_f1']:.4f}")
+    print(f"{'Weighted F1':<20} {'0.4589':<20} {'0.6669':<20} {ov['weighted_f1']:.4f}")
+    print(f"{'Total Errors':<20} {'47 / 90':<20} {'30 / 90':<20} {ov['total_errors']} / {ov['total_samples']}")
+
+    print()
+    print("-" * 78)
+    print("EVALUATION 2 — PER-CLASS METRICS (8k FINAL MODEL):")
+    print(f"{'Class':<10} {'Precision':<10} {'Recall':<10} {'F1-Score':<10} {'Support':<8} {'6k F1':<10} {'5k F1'}")
+    print("-" * 75)
     for c in TARGET_CLASSES:
         pc = results["per_class"][c]
-        b_f1 = PHASE6_BASELINE["per_class"][c]["f1_score"]
-        print(f"{c:<10} {pc['precision']:<10.4f} {pc['recall']:<10.4f} {pc['f1_score']:<10.4f} {pc['support']:<8} {b_f1:.4f}")
+        f1_6k = PHASE6_3_BASELINE["per_class"][c]["f1_score"]
+        f1_5k = PHASE5_EXP3_BASELINE["per_class"][c]["f1_score"]
+        print(f"{c:<10} {pc['precision']:<10.4f} {pc['recall']:<10.4f} {pc['f1_score']:<10.4f} {pc['support']:<8} {f1_6k:<10.4f} {f1_5k:.4f}")
 
     print()
     print("CONFUSION MATRIX ON CHALLENGE SET (rows=actual, cols=pred [positive, negative, neutral, mixed]):")
@@ -397,62 +448,68 @@ def main() -> int:
         print(f"  {r}")
 
     print("-" * 78)
-    print("EVALUATION 3 — CHALLENGE CATEGORY ANALYSIS:")
-    print(f"{'Category':<22} {'Samples':<8} {'Old Acc':<10} {'New Acc':<10} {'Diff':<8} {'Status'}")
-    print("-" * 68)
+    print("EVALUATION 3 — CHALLENGE CATEGORY 3-WAY COMPARISON:")
+    print(f"{'Category':<22} {'Samples':<8} {'5k Exp3':<10} {'6k Exp3':<10} {'8k Final':<10} {'vs 6k Diff':<10}")
+    print("-" * 78)
 
     category_display_map = [
-        ("factual", "factual/neutral", PHASE6_BASELINE["categories"]["factual"]),
-        ("sarcasm", "sarcasm", PHASE6_BASELINE["categories"]["sarcasm"]),
-        ("bhai", "bhai", PHASE6_BASELINE["categories"]["bhai"]),
-        ("indirect_complaint", "indirect complaints", PHASE6_BASELINE["categories"]["indirect_complaint"]),
-        ("ambiguous", "ambiguous", PHASE6_BASELINE["categories"]["ambiguous"]),
-        ("polite_complaint", "polite complaints", PHASE6_BASELINE["categories"]["polite_complaint"]),
-        ("ordinary", "ordinary English", PHASE6_BASELINE["categories"]["ordinary"]),
-        ("mixed_sentiment", "mixed clauses", PHASE6_BASELINE["categories"]["mixed_sentiment"]),
-        ("hinglish", "Hinglish", PHASE6_BASELINE["categories"]["hinglish"]),
-        ("typos", "typos", PHASE6_BASELINE["categories"]["typos"]),
-        ("short", "short <=5 words (tag)", PHASE6_BASELINE["categories"]["short"]),
-        ("short_len<=5", "short <=5 words (len)", PHASE6_BASELINE["categories"]["short_len<=5"]),
-        ("transliteration", "transliteration", PHASE6_BASELINE["categories"]["transliteration"]),
+        ("sarcasm", "sarcasm", PHASE5_EXP3_BASELINE["categories"]["sarcasm"], PHASE6_3_BASELINE["categories"]["sarcasm"]),
+        ("factual", "factual/neutral", PHASE5_EXP3_BASELINE["categories"]["factual"], PHASE6_3_BASELINE["categories"]["factual"]),
+        ("bhai", "bhai/conversational", PHASE5_EXP3_BASELINE["categories"]["bhai"], PHASE6_3_BASELINE["categories"]["bhai"]),
+        ("indirect_complaint", "indirect complaints", PHASE5_EXP3_BASELINE["categories"]["indirect_complaint"], PHASE6_3_BASELINE["categories"]["indirect_complaint"]),
+        ("ambiguous", "ambiguous", PHASE5_EXP3_BASELINE["categories"]["ambiguous"], PHASE6_3_BASELINE["categories"]["ambiguous"]),
+        ("polite_complaint", "polite complaints", PHASE5_EXP3_BASELINE["categories"]["polite_complaint"], PHASE6_3_BASELINE["categories"]["polite_complaint"]),
+        ("hinglish", "Hinglish", PHASE5_EXP3_BASELINE["categories"]["hinglish"], PHASE6_3_BASELINE["categories"]["hinglish"]),
+        ("ordinary", "ordinary English", PHASE5_EXP3_BASELINE["categories"]["ordinary"], PHASE6_3_BASELINE["categories"]["ordinary"]),
+        ("mixed_sentiment", "mixed clauses", PHASE5_EXP3_BASELINE["categories"]["mixed_sentiment"], PHASE6_3_BASELINE["categories"]["mixed_sentiment"]),
+        ("transliteration", "transliteration", PHASE5_EXP3_BASELINE["categories"]["transliteration"], PHASE6_3_BASELINE["categories"]["transliteration"]),
+        ("short", "short tagged", PHASE5_EXP3_BASELINE["categories"]["short"], PHASE6_3_BASELINE["categories"]["short"]),
+        ("short_len<=5", "short len <= 5", PHASE5_EXP3_BASELINE["categories"]["short_len<=5"], PHASE6_3_BASELINE["categories"]["short_len<=5"]),
+        ("typos", "typos", PHASE5_EXP3_BASELINE["categories"]["typos"], PHASE6_3_BASELINE["categories"]["typos"]),
     ]
 
-    for key, disp_name, old_acc in category_display_map:
+    for key, disp_name, c_5k, c_6k in category_display_map:
         if key in results["categories"]:
             cat_data = results["categories"][key]
-            new_acc = cat_data["accuracy"]
-            diff = new_acc - old_acc
+            c_8k = cat_data["accuracy"]
+            diff = c_8k - c_6k
             diff_str = f"{diff:+.1%}"
-            status = "IMPROVED" if diff > 0.05 else ("REGRESSED" if diff < -0.05 else "NEUTRAL")
-            print(f"{disp_name:<22} {cat_data['total']:<8} {old_acc:<10.1%} {new_acc:<10.1%} {diff_str:<8} {status}")
+            print(f"{disp_name:<22} {cat_data['total']:<8} {c_5k:<10.1%} {c_6k:<10.1%} {c_8k:<10.1%} {diff_str:<10}")
 
     print("-" * 78)
-    print("EVALUATION 5 — CHALLENGE LANGUAGE PERFORMANCE:")
+    print("EVALUATION 4 — CHALLENGE LANGUAGE PERFORMANCE:")
     for lang in ["english", "hinglish"]:
         l_res = results["languages"][lang]
-        old_l = PHASE6_BASELINE["languages"][lang]
-        diff = l_res["accuracy"] - old_l
-        print(f"  {lang.capitalize():<10}: New={l_res['accuracy']:.2%} ({l_res['correct']}/{l_res['total']}) | Old={old_l:.2%} | Diff: {diff:+.1%}")
+        l_6k = PHASE6_3_BASELINE["languages"][lang]
+        l_5k = PHASE5_EXP3_BASELINE["languages"][lang]
+        diff_6k = l_res["accuracy"] - l_6k
+        print(f"  {lang.capitalize():<10}: 8k={l_res['accuracy']:.2%} ({l_res['correct']}/{l_res['total']}) | 6k={l_6k:.2%} | 5k={l_5k:.2%} | vs 6k: {diff_6k:+.1%}")
 
-    # Detailed comparison with old model if available
-    diff_analysis = {}
-    if args.old_model.is_file() and args.old_vectorizer.is_file():
-        old_model = joblib.load(args.old_model)
-        old_vec = joblib.load(args.old_vectorizer)
-        diff_analysis = compare_with_old(df_challenge, old_model, old_vec, results)
-        print("-" * 78)
-        print("MODEL TRANSITION COMPARISON (Old Phase 5 vs New Phase 6.3):")
-        print(f"  Fixed Samples (Old Wrong -> New Correct):      {diff_analysis['fixed_count']}")
-        print(f"  Regressed Samples (Old Correct -> New Wrong):   {diff_analysis['regressed_count']}")
-        print(f"  Consistently Correct (Both Correct):            {diff_analysis['both_correct_count']}")
-        print(f"  Persistent Errors (Still Incorrect):            {diff_analysis['still_error_count']}")
-        print(f"  Net Correct Improvement:                        +{diff_analysis['fixed_count'] - diff_analysis['regressed_count']} samples")
+    print("-" * 78)
+    print("EVALUATION 5 — 6k -> 8k TRANSITION & REGRESSION ANALYSIS:")
+    print(f"  Fixed Samples (6k Wrong -> 8k Correct):       {trans_6k['fixed_count']}")
+    print(f"  Regressed Samples (6k Correct -> 8k Wrong):    {trans_6k['regressed_count']}")
+    print(f"  Consistently Correct (Both Correct):           {trans_6k['both_correct_count']}")
+    print(f"  Persistent Errors (Both Incorrect):            {trans_6k['still_error_count']}")
+    print(f"  Net Correct Improvement:                       {trans_6k['net_improvement']:+d} samples")
+
+    if trans_6k["fixed_examples"]:
+        print("\n  Sample Fixed Records (6k Wrong -> 8k Correct):")
+        for fix in trans_6k["fixed_examples"][:5]:
+            print(f"    [{fix['id']}] act={fix['actual']} | 6k_pred={fix['old_6k_pred']} | text=\"{fix['text']}\"")
+
+    if trans_6k["regressed_examples"]:
+        print("\n  Sample Regressed Records (6k Correct -> 8k Wrong):")
+        for reg in trans_6k["regressed_examples"][:5]:
+            print(f"    [{reg['id']}] act={reg['actual']} | 8k_pred={reg['new_8k_pred']} | text=\"{reg['text']}\"")
 
     # Save output JSON
     output_data = {
+        "evaluation_phase": "Phase 6.6 (8,000 records)",
         "final_evaluation": results,
-        "transition_analysis": diff_analysis,
-        "phase6_baseline": PHASE6_BASELINE,
+        "transition_from_6k": trans_6k,
+        "phase5_exp3_baseline": PHASE5_EXP3_BASELINE,
+        "phase6_3_baseline": PHASE6_3_BASELINE,
     }
     with open(args.output_json, "w", encoding="utf-8") as f:
         json.dump(output_data, f, indent=2)

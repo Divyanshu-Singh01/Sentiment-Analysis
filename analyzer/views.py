@@ -7,8 +7,8 @@ from rest_framework.response import Response
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-MODEL_PATH = BASE_DIR / "ml" / "models" / "sentiment_model.pkl"
-VECTORIZER_PATH = BASE_DIR / "ml" / "models" / "tfidf_vectorizer.pkl"
+MODEL_PATH = BASE_DIR / "ml" / "models" / "sentiment_final_model.pkl"
+VECTORIZER_PATH = BASE_DIR / "ml" / "models" / "sentiment_final_vectorizer.pkl"
 
 model = joblib.load(MODEL_PATH)
 vectorizer = joblib.load(VECTORIZER_PATH)

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Final Model Retraining Pipeline (Phase 6.3).
+Final Model Retraining Pipeline (Phase 6.6).
 
-Retrains the winning Phase 5 Exp3 architecture on the expanded 6,000-record
+Retrains the winning Phase 5 Exp3 architecture on the expanded 8,000-record
 processed dataset (data/processed/sentiment_dataset.csv).
 
 Model Architecture:
@@ -12,8 +12,8 @@ Model Architecture:
 - Classifier: LogisticRegression(max_iter=1000, class_weight=None, random_state=42)
 
 Evaluations:
-1. Standard 80/20 Stratified Holdout (4,800 train, 1,200 test)
-2. Strict Unseen-Text Holdout (GroupShuffleSplit on text, 4,788 train, 1,212 test)
+1. Standard 80/20 Stratified Holdout (6,400 train, 1,600 test)
+2. Strict Unseen-Text Holdout (GroupShuffleSplit on text)
 3. Language Slices (English vs. Hinglish) on standard holdout
 
 Artifacts Saved:
@@ -134,7 +134,7 @@ def main() -> int:
         "--dataset",
         type=Path,
         default=base_dir / "data" / "processed" / "sentiment_dataset.csv",
-        help="Path to processed training dataset (expected 6,000 records)",
+        help="Path to processed training dataset (expected 8,000 records)",
     )
     parser.add_argument(
         "--models-dir",
@@ -151,7 +151,7 @@ def main() -> int:
     args = parser.parse_args()
 
     print("=" * 78)
-    print("PHASE 6.3: RETRAIN EXP3 ON EXPANDED 6,000-RECORD DATASET")
+    print("PHASE 6.6: RETRAIN EXP3 ON EXPANDED 8,000-RECORD DATASET")
     print("=" * 78)
 
     if not args.dataset.is_file():
@@ -159,8 +159,8 @@ def main() -> int:
         return 1
 
     df = pd.read_csv(args.dataset)
-    if len(df) != 6000:
-        print(f"WARNING: Expected 6,000 records, got {len(df)}", file=sys.stderr)
+    if len(df) != 8000:
+        print(f"WARNING: Expected 8,000 records, got {len(df)}", file=sys.stderr)
 
     X = df["text"].astype(str)
     y = df["sentiment"].str.strip().str.lower()
@@ -235,11 +235,11 @@ def main() -> int:
 
     print(f"Strict Split:   Train={len(X_train_strict):,}, Test={len(X_test_strict):,} (0 text overlap)")
     print("-" * 78)
-    print("EVALUATION 1 — STANDARD HOLDOUT (1,200 samples):")
-    print(f"  Accuracy:    {std_metrics['accuracy']:.2%} ({1200 - std_metrics['total_errors']}/1,200)")
+    print(f"EVALUATION 1 — STANDARD HOLDOUT ({len(X_test_std):,} samples):")
+    print(f"  Accuracy:    {std_metrics['accuracy']:.2%} ({len(X_test_std) - std_metrics['total_errors']}/{len(X_test_std):,})")
     print(f"  Macro F1:    {std_metrics['macro_f1']:.4f}")
     print(f"  Weighted F1: {std_metrics['weighted_f1']:.4f}")
-    print(f"  Total Errors:{std_metrics['total_errors']} / 1,200")
+    print(f"  Total Errors:{std_metrics['total_errors']} / {len(X_test_std):,}")
     print("  Per-Class Metrics:")
     for c, sc in std_metrics["per_class"].items():
         print(f"    {c:<8}: P={sc['precision']:.4f} | R={sc['recall']:.4f} | F1={sc['f1_score']:.4f} (n={sc['support']})")
@@ -248,14 +248,14 @@ def main() -> int:
         print(f"    {row}")
 
     print("-" * 78)
-    print("EVALUATION 4 — STRICT UNSEEN TEXT (1,212 samples):")
-    print(f"  Accuracy:    {strict_metrics['accuracy']:.2%} ({len(X_test_strict) - strict_metrics['total_errors']}/{len(X_test_strict)})")
+    print(f"EVALUATION 2 — STRICT UNSEEN TEXT ({len(X_test_strict):,} samples):")
+    print(f"  Accuracy:    {strict_metrics['accuracy']:.2%} ({len(X_test_strict) - strict_metrics['total_errors']}/{len(X_test_strict):,})")
     print(f"  Macro F1:    {strict_metrics['macro_f1']:.4f}")
     print(f"  Weighted F1: {strict_metrics['weighted_f1']:.4f}")
     print(f"  Train Size:  {len(X_train_strict):,}, Test Size: {len(X_test_strict):,}")
 
     print("-" * 78)
-    print("EVALUATION 5 — LANGUAGE PERFORMANCE (Standard Holdout):")
+    print("EVALUATION 3 — LANGUAGE PERFORMANCE (Standard Holdout):")
     print(f"  English:  {lang_metrics['english']['accuracy']:.2%} ({lang_metrics['english']['correct']}/{lang_metrics['english']['total']}, {lang_metrics['english']['errors']} errors)")
     print(f"  Hinglish: {lang_metrics['hinglish']['accuracy']:.2%} ({lang_metrics['hinglish']['correct']}/{lang_metrics['hinglish']['total']}, {lang_metrics['hinglish']['errors']} errors)")
 
@@ -269,7 +269,7 @@ def main() -> int:
     joblib.dump(vec_final, final_vec_path)
 
     metadata = {
-        "model_name": "Phase 6.3 Final Model (Exp3 Architecture Retrained on 6,000 Records)",
+        "model_name": "Phase 6.6 Final Model (Exp3 Architecture Retrained on 8,000 Records)",
         "base_architecture": "Exp3 (FeatureUnion: Word TF-IDF + Character n-grams TF-IDF)",
         "vectorizer": {
             "word": {

@@ -1,92 +1,93 @@
 {
+  "evaluation_phase": "Phase 6.6 (8,000 records)",
   "final_evaluation": {
     "overall": {
-      "accuracy": 0.6667,
-      "macro_precision": 0.695,
-      "macro_recall": 0.6551,
-      "macro_f1": 0.6687,
-      "weighted_precision": 0.6814,
-      "weighted_recall": 0.6667,
-      "weighted_f1": 0.6669,
+      "accuracy": 0.7333,
+      "macro_precision": 0.7602,
+      "macro_recall": 0.7177,
+      "macro_f1": 0.7293,
+      "weighted_precision": 0.7506,
+      "weighted_recall": 0.7333,
+      "weighted_f1": 0.7341,
       "total_samples": 90,
-      "total_errors": 30
+      "total_errors": 24
     },
     "per_class": {
       "positive": {
-        "precision": 0.7647,
-        "recall": 0.5652,
-        "f1_score": 0.65,
+        "precision": 0.8,
+        "recall": 0.6957,
+        "f1_score": 0.7442,
         "support": 23
       },
       "negative": {
-        "precision": 0.6047,
-        "recall": 0.7429,
-        "f1_score": 0.6667,
+        "precision": 0.7,
+        "recall": 0.8,
+        "f1_score": 0.7467,
         "support": 35
       },
       "neutral": {
-        "precision": 0.7857,
-        "recall": 0.6875,
-        "f1_score": 0.7333,
+        "precision": 0.9091,
+        "recall": 0.625,
+        "f1_score": 0.7407,
         "support": 16
       },
       "mixed": {
-        "precision": 0.625,
-        "recall": 0.625,
-        "f1_score": 0.625,
+        "precision": 0.6316,
+        "recall": 0.75,
+        "f1_score": 0.6857,
         "support": 16
       }
     },
     "confusion_matrix": [
       [
-        13,
-        9,
+        16,
+        5,
         0,
-        1
+        2
       ],
       [
-        4,
-        26,
-        2,
+        3,
+        28,
+        1,
         3
       ],
       [
         0,
-        3,
-        11,
+        4,
+        10,
         2
       ],
       [
-        0,
-        5,
         1,
-        10
+        3,
+        0,
+        12
       ]
     ],
     "categories": {
       "ambiguous": {
-        "accuracy": 0.4,
+        "accuracy": 0.2,
         "total": 5,
-        "correct": 2,
-        "errors": 3
+        "correct": 1,
+        "errors": 4
       },
       "bhai": {
-        "accuracy": 0.9091,
+        "accuracy": 0.8182,
         "total": 11,
-        "correct": 10,
-        "errors": 1
+        "correct": 9,
+        "errors": 2
       },
       "factual": {
-        "accuracy": 0.8571,
+        "accuracy": 1.0,
         "total": 7,
-        "correct": 6,
-        "errors": 1
+        "correct": 7,
+        "errors": 0
       },
       "hinglish": {
-        "accuracy": 0.6486,
+        "accuracy": 0.7297,
         "total": 37,
-        "correct": 24,
-        "errors": 13
+        "correct": 27,
+        "errors": 10
       },
       "indirect_complaint": {
         "accuracy": 0.75,
@@ -95,22 +96,22 @@
         "errors": 1
       },
       "mixed_sentiment": {
-        "accuracy": 0.6154,
+        "accuracy": 0.6923,
         "total": 13,
-        "correct": 8,
-        "errors": 5
+        "correct": 9,
+        "errors": 4
       },
       "ordinary": {
-        "accuracy": 0.7778,
+        "accuracy": 0.8889,
         "total": 9,
-        "correct": 7,
-        "errors": 2
+        "correct": 8,
+        "errors": 1
       },
       "polite_complaint": {
-        "accuracy": 0.2,
+        "accuracy": 0.6,
         "total": 5,
-        "correct": 1,
-        "errors": 4
+        "correct": 3,
+        "errors": 2
       },
       "sarcasm": {
         "accuracy": 1.0,
@@ -119,16 +120,16 @@
         "errors": 0
       },
       "short": {
-        "accuracy": 0.5,
+        "accuracy": 0.5625,
         "total": 16,
-        "correct": 8,
-        "errors": 8
+        "correct": 9,
+        "errors": 7
       },
       "transliteration": {
-        "accuracy": 0.75,
+        "accuracy": 1.0,
         "total": 8,
-        "correct": 6,
-        "errors": 2
+        "correct": 8,
+        "errors": 0
       },
       "typos": {
         "accuracy": 0.75,
@@ -137,24 +138,24 @@
         "errors": 1
       },
       "short_len<=5": {
-        "accuracy": 0.5926,
+        "accuracy": 0.7037,
         "total": 27,
-        "correct": 16,
-        "errors": 11
+        "correct": 19,
+        "errors": 8
       }
     },
     "languages": {
       "english": {
-        "accuracy": 0.6792,
+        "accuracy": 0.7358,
         "total": 53,
-        "correct": 36,
-        "errors": 17
+        "correct": 39,
+        "errors": 14
       },
       "hinglish": {
-        "accuracy": 0.6486,
+        "accuracy": 0.7297,
         "total": 37,
-        "correct": 24,
-        "errors": 13
+        "correct": 27,
+        "errors": 10
       }
     },
     "errors": [
@@ -164,7 +165,7 @@
         "language": "english",
         "actual": "positive",
         "predicted": "negative",
-        "confidence": 0.6352,
+        "confidence": 0.5032,
         "categories": [
           "short"
         ]
@@ -175,7 +176,18 @@
         "language": "english",
         "actual": "negative",
         "predicted": "positive",
-        "confidence": 0.7285,
+        "confidence": 0.4607,
+        "categories": [
+          "short"
+        ]
+      },
+      {
+        "id": "CH005",
+        "text": "okay product",
+        "language": "english",
+        "actual": "neutral",
+        "predicted": "mixed",
+        "confidence": 0.297,
         "categories": [
           "short"
         ]
@@ -186,44 +198,9 @@
         "language": "english",
         "actual": "neutral",
         "predicted": "mixed",
-        "confidence": 0.3972,
+        "confidence": 0.406,
         "categories": [
           "short"
-        ]
-      },
-      {
-        "id": "CH008",
-        "text": "nice food bad delivery",
-        "language": "english",
-        "actual": "mixed",
-        "predicted": "neutral",
-        "confidence": 0.3713,
-        "categories": [
-          "short"
-        ]
-      },
-      {
-        "id": "CH009",
-        "text": "bahut acha tha service",
-        "language": "hinglish",
-        "actual": "positive",
-        "predicted": "negative",
-        "confidence": 0.4669,
-        "categories": [
-          "hinglish",
-          "transliteration"
-        ]
-      },
-      {
-        "id": "CH015",
-        "text": "bohot kharab service thi",
-        "language": "hinglish",
-        "actual": "negative",
-        "predicted": "positive",
-        "confidence": 0.4712,
-        "categories": [
-          "hinglish",
-          "transliteration"
         ]
       },
       {
@@ -232,7 +209,7 @@
         "language": "hinglish",
         "actual": "neutral",
         "predicted": "negative",
-        "confidence": 0.4752,
+        "confidence": 0.5306,
         "categories": [
           "hinglish"
         ]
@@ -243,7 +220,7 @@
         "language": "english",
         "actual": "negative",
         "predicted": "neutral",
-        "confidence": 0.6803,
+        "confidence": 0.6199,
         "categories": [
           "indirect_complaint"
         ]
@@ -254,7 +231,7 @@
         "language": "english",
         "actual": "mixed",
         "predicted": "negative",
-        "confidence": 0.7191,
+        "confidence": 0.7798,
         "categories": [
           "mixed_sentiment"
         ]
@@ -265,7 +242,7 @@
         "language": "english",
         "actual": "negative",
         "predicted": "mixed",
-        "confidence": 0.7337,
+        "confidence": 0.4886,
         "categories": [
           "polite_complaint"
         ]
@@ -276,18 +253,7 @@
         "language": "english",
         "actual": "negative",
         "predicted": "mixed",
-        "confidence": 0.8926,
-        "categories": [
-          "polite_complaint"
-        ]
-      },
-      {
-        "id": "CH034",
-        "text": "With all due respect the current system is not working for most users",
-        "language": "english",
-        "actual": "negative",
-        "predicted": "neutral",
-        "confidence": 0.4764,
+        "confidence": 0.8863,
         "categories": [
           "polite_complaint"
         ]
@@ -298,7 +264,7 @@
         "language": "english",
         "actual": "positive",
         "predicted": "negative",
-        "confidence": 0.6408,
+        "confidence": 0.675,
         "categories": [
           "ordinary"
         ]
@@ -309,21 +275,9 @@
         "language": "english",
         "actual": "negative",
         "predicted": "mixed",
-        "confidence": 0.4814,
+        "confidence": 0.6007,
         "categories": [
           "typos"
-        ]
-      },
-      {
-        "id": "CH053",
-        "text": "bahut acha",
-        "language": "hinglish",
-        "actual": "positive",
-        "predicted": "negative",
-        "confidence": 0.4786,
-        "categories": [
-          "short",
-          "hinglish"
         ]
       },
       {
@@ -332,7 +286,7 @@
         "language": "hinglish",
         "actual": "negative",
         "predicted": "positive",
-        "confidence": 0.6708,
+        "confidence": 0.518,
         "categories": [
           "short",
           "hinglish"
@@ -344,7 +298,7 @@
         "language": "english",
         "actual": "neutral",
         "predicted": "negative",
-        "confidence": 0.3698,
+        "confidence": 0.3866,
         "categories": [
           "short"
         ]
@@ -355,21 +309,9 @@
         "language": "english",
         "actual": "positive",
         "predicted": "negative",
-        "confidence": 0.4962,
+        "confidence": 0.4767,
         "categories": [
           "short"
-        ]
-      },
-      {
-        "id": "CH062",
-        "text": "Teacher ka padhane ka tarika acha tha lekin class me bahut shor tha concentrate nhi ho paya",
-        "language": "hinglish",
-        "actual": "mixed",
-        "predicted": "negative",
-        "confidence": 0.6943,
-        "categories": [
-          "mixed_sentiment",
-          "hinglish"
         ]
       },
       {
@@ -378,7 +320,7 @@
         "language": "hinglish",
         "actual": "positive",
         "predicted": "negative",
-        "confidence": 0.8842,
+        "confidence": 0.6924,
         "categories": [
           "bhai",
           "hinglish"
@@ -390,20 +332,9 @@
         "language": "hinglish",
         "actual": "positive",
         "predicted": "negative",
-        "confidence": 0.6249,
+        "confidence": 0.5968,
         "categories": [
           "hinglish"
-        ]
-      },
-      {
-        "id": "CH074",
-        "text": "The medicine was available at the pharmacy counter on the ground floor",
-        "language": "english",
-        "actual": "neutral",
-        "predicted": "mixed",
-        "confidence": 0.3997,
-        "categories": [
-          "factual"
         ]
       },
       {
@@ -411,22 +342,22 @@
         "text": "acha bhi hai aur bura bhi depends on your expectations honestly",
         "language": "hinglish",
         "actual": "mixed",
-        "predicted": "negative",
-        "confidence": 0.6142,
+        "predicted": "positive",
+        "confidence": 0.4456,
         "categories": [
           "mixed_sentiment",
           "hinglish"
         ]
       },
       {
-        "id": "CH079",
-        "text": "I'm not angry just disappointed with how things were handled this time",
+        "id": "CH080",
+        "text": "It works I guess nothing to write home about really",
         "language": "english",
-        "actual": "negative",
-        "predicted": "positive",
-        "confidence": 0.5128,
+        "actual": "neutral",
+        "predicted": "negative",
+        "confidence": 0.6624,
         "categories": [
-          "polite_complaint"
+          "ambiguous"
         ]
       },
       {
@@ -435,7 +366,7 @@
         "language": "hinglish",
         "actual": "mixed",
         "predicted": "negative",
-        "confidence": 0.6205,
+        "confidence": 0.4541,
         "categories": [
           "mixed_sentiment",
           "hinglish"
@@ -447,7 +378,7 @@
         "language": "english",
         "actual": "positive",
         "predicted": "mixed",
-        "confidence": 0.7956,
+        "confidence": 0.8013,
         "categories": [
           "ambiguous"
         ]
@@ -458,9 +389,21 @@
         "language": "hinglish",
         "actual": "mixed",
         "predicted": "negative",
-        "confidence": 0.6699,
+        "confidence": 0.5225,
         "categories": [
           "mixed_sentiment",
+          "hinglish"
+        ]
+      },
+      {
+        "id": "CH086",
+        "text": "bhai pehle toh acha tha ab ekdum wahiyat hogaya hai sab",
+        "language": "hinglish",
+        "actual": "negative",
+        "predicted": "positive",
+        "confidence": 0.3773,
+        "categories": [
+          "bhai",
           "hinglish"
         ]
       },
@@ -469,8 +412,8 @@
         "text": "mene socha tha bura hoga par acha nikla surprisingly",
         "language": "hinglish",
         "actual": "positive",
-        "predicted": "negative",
-        "confidence": 0.3835,
+        "predicted": "mixed",
+        "confidence": 0.4762,
         "categories": [
           "ambiguous",
           "hinglish"
@@ -482,21 +425,10 @@
         "language": "hinglish",
         "actual": "neutral",
         "predicted": "negative",
-        "confidence": 0.5038,
+        "confidence": 0.4642,
         "categories": [
           "ambiguous",
           "hinglish"
-        ]
-      },
-      {
-        "id": "CH089",
-        "text": "Absolutely loved the whole experience from start to finish would come back again",
-        "language": "english",
-        "actual": "positive",
-        "predicted": "negative",
-        "confidence": 0.3582,
-        "categories": [
-          "ordinary"
         ]
       }
     ],
@@ -505,84 +437,16 @@
       "negative",
       "positive",
       "negative",
-      "neutral",
       "mixed",
       "mixed",
-      "neutral",
-      "negative",
+      "mixed",
+      "mixed",
+      "positive",
       "positive",
       "positive",
       "positive",
       "negative",
       "negative",
-      "positive",
-      "negative",
-      "neutral",
-      "negative",
-      "negative",
-      "negative",
-      "negative",
-      "neutral",
-      "mixed",
-      "negative",
-      "mixed",
-      "mixed",
-      "negative",
-      "negative",
-      "negative",
-      "negative",
-      "negative",
-      "mixed",
-      "mixed",
-      "neutral",
-      "positive",
-      "negative",
-      "neutral",
-      "positive",
-      "positive",
-      "negative",
-      "positive",
-      "positive",
-      "negative",
-      "negative",
-      "negative",
-      "neutral",
-      "neutral",
-      "neutral",
-      "positive",
-      "negative",
-      "mixed",
-      "mixed",
-      "negative",
-      "positive",
-      "neutral",
-      "positive",
-      "negative",
-      "negative",
-      "negative",
-      "negative",
-      "mixed",
-      "negative",
-      "mixed",
-      "mixed",
-      "positive",
-      "negative",
-      "negative",
-      "negative",
-      "negative",
-      "negative",
-      "positive",
-      "negative",
-      "neutral",
-      "mixed",
-      "neutral",
-      "negative",
-      "mixed",
-      "mixed",
-      "positive",
-      "neutral",
-      "negative",
-      "mixed",
       "negative",
       "negative",
       "neutral",
@@ -590,227 +454,90 @@
       "negative",
       "negative",
       "negative",
+      "neutral",
+      "mixed",
+      "negative",
+      "mixed",
+      "mixed",
+      "negative",
+      "negative",
+      "negative",
+      "negative",
+      "negative",
+      "mixed",
+      "mixed",
+      "negative",
+      "positive",
+      "negative",
+      "neutral",
+      "positive",
+      "positive",
+      "negative",
+      "positive",
+      "positive",
+      "negative",
+      "negative",
+      "negative",
+      "neutral",
+      "neutral",
+      "neutral",
+      "positive",
+      "negative",
+      "mixed",
+      "mixed",
+      "positive",
+      "positive",
+      "neutral",
+      "positive",
+      "negative",
+      "negative",
+      "negative",
+      "negative",
+      "mixed",
+      "mixed",
+      "mixed",
+      "mixed",
+      "positive",
+      "negative",
+      "negative",
+      "negative",
+      "negative",
+      "negative",
+      "positive",
+      "negative",
+      "neutral",
+      "neutral",
+      "neutral",
+      "positive",
+      "mixed",
+      "mixed",
+      "negative",
+      "negative",
+      "negative",
+      "mixed",
+      "negative",
+      "negative",
+      "neutral",
+      "positive",
+      "mixed",
+      "negative",
+      "positive",
       "negative"
     ]
   },
-  "transition_analysis": {
-    "fixed_count": 22,
-    "regressed_count": 5,
-    "still_error_count": 25,
-    "both_correct_count": 38,
+  "transition_from_6k": {
+    "fixed_count": 9,
+    "regressed_count": 3,
+    "still_error_count": 21,
+    "both_correct_count": 57,
+    "net_improvement": 6,
     "fixed_examples": [
       {
-        "id": "CH005",
-        "actual": "neutral",
-        "old_pred": "mixed",
-        "text": "okay product",
-        "categories": [
-          "short"
-        ]
-      },
-      {
-        "id": "CH017",
-        "actual": "neutral",
-        "old_pred": "negative",
-        "text": "theek thaak tha kuch khaas nhi",
-        "categories": [
-          "hinglish"
-        ]
-      },
-      {
-        "id": "CH021",
-        "actual": "negative",
-        "old_pred": "neutral",
-        "text": "Is there any reason the support team takes 3 hours to respond to a simple query?",
-        "categories": [
-          "indirect_complaint"
-        ]
-      },
-      {
-        "id": "CH027",
-        "actual": "negative",
-        "old_pred": "positive",
-        "text": "Oh wow what a fantastic experience waiting 45 minutes for cold food",
-        "categories": [
-          "sarcasm"
-        ]
-      },
-      {
-        "id": "CH028",
-        "actual": "negative",
-        "old_pred": "positive",
-        "text": "Sure the app works great if you enjoy watching loading screens all day",
-        "categories": [
-          "sarcasm"
-        ]
-      },
-      {
-        "id": "CH030",
-        "actual": "negative",
-        "old_pred": "positive",
-        "text": "Thank you so much for the wonderful experience of being put on hold for an hour",
-        "categories": [
-          "sarcasm"
-        ]
-      },
-      {
-        "id": "CH031",
-        "actual": "negative",
-        "old_pred": "mixed",
-        "text": "I understand these things happen but the repeated delays are getting frustrating",
-        "categories": [
-          "polite_complaint"
-        ]
-      },
-      {
-        "id": "CH037",
-        "actual": "neutral",
-        "old_pred": "negative",
-        "text": "bhai theek hai nothing special",
-        "categories": [
-          "bhai",
-          "hinglish"
-        ]
-      },
-      {
-        "id": "CH038",
-        "actual": "positive",
-        "old_pred": "negative",
-        "text": "bhai speed test kiya bhot fast tha network loving it",
-        "categories": [
-          "bhai",
-          "hinglish"
-        ]
-      },
-      {
-        "id": "CH039",
-        "actual": "positive",
-        "old_pred": "negative",
-        "text": "bhai ye loan approval process bahut smooth tha seedha account me paisa aa gaya",
-        "categories": [
-          "bhai",
-          "hinglish"
-        ]
-      },
-      {
-        "id": "CH041",
-        "actual": "positive",
-        "old_pred": "mixed",
-        "text": "The new update has improved the interface significantly and everything runs smoothly now",
-        "categories": [
-          "ordinary"
-        ]
-      },
-      {
-        "id": "CH046",
-        "actual": "neutral",
-        "old_pred": "mixed",
-        "text": "Delivery was on schedule and the items matched the description",
-        "categories": [
-          "factual"
-        ]
-      },
-      {
-        "id": "CH047",
-        "actual": "neutral",
-        "old_pred": "negative",
-        "text": "Received the standard confirmation email after placing the order",
-        "categories": [
-          "factual"
-        ]
-      },
-      {
-        "id": "CH048",
-        "actual": "neutral",
-        "old_pred": "mixed",
-        "text": "The account statement was generated on the 1st of every month as per schedule",
-        "categories": [
-          "factual"
-        ]
-      },
-      {
-        "id": "CH055",
-        "actual": "neutral",
-        "old_pred": "negative",
-        "text": "theek hai",
-        "categories": [
-          "short",
-          "hinglish"
-        ]
-      },
-      {
-        "id": "CH065",
-        "actual": "positive",
-        "old_pred": "negative",
-        "text": "bhai UPI payment instant hua koi dikkat nhi",
-        "categories": [
-          "bhai",
-          "hinglish"
-        ]
-      },
-      {
-        "id": "CH072",
-        "actual": "negative",
-        "old_pred": "mixed",
-        "text": "I have been trying to reach customer support for 5 days but nobody picks up the phone",
-        "categories": [
-          "ordinary"
-        ]
-      },
-      {
-        "id": "CH073",
-        "actual": "neutral",
-        "old_pred": "positive",
-        "text": "Flight departed at 6 AM and landed at 8:30 AM at terminal 2",
-        "categories": [
-          "factual"
-        ]
-      },
-      {
-        "id": "CH075",
-        "actual": "neutral",
-        "old_pred": "positive",
-        "text": "Registration was completed at the front desk between 9 AM and 10 AM",
-        "categories": [
-          "factual"
-        ]
-      },
-      {
-        "id": "CH077",
+        "id": "CH008",
         "actual": "mixed",
-        "old_pred": "positive",
-        "text": "service fast thi par attitude bohot rude tha staff ka",
-        "categories": [
-          "mixed_sentiment",
-          "hinglish"
-        ]
-      },
-      {
-        "id": "CH078",
-        "actual": "mixed",
-        "old_pred": "negative",
-        "text": "khana tasty tha par plates gande the hygiene zero",
-        "categories": [
-          "mixed_sentiment",
-          "hinglish"
-        ]
-      },
-      {
-        "id": "CH084",
-        "actual": "negative",
-        "old_pred": "mixed",
-        "text": "The return policy says 7 days but my return request was rejected on day 5 without explanation",
-        "categories": [
-          "ambiguous"
-        ]
-      }
-    ],
-    "regressed_examples": [
-      {
-        "id": "CH002",
-        "actual": "positive",
-        "new_pred": "negative",
-        "text": "loved it",
+        "old_6k_pred": "neutral",
+        "new_8k_pred": "mixed",
+        "text": "nice food bad delivery",
         "categories": [
           "short"
         ]
@@ -818,7 +545,8 @@
       {
         "id": "CH009",
         "actual": "positive",
-        "new_pred": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "positive",
         "text": "bahut acha tha service",
         "categories": [
           "hinglish",
@@ -826,18 +554,31 @@
         ]
       },
       {
-        "id": "CH024",
-        "actual": "mixed",
-        "new_pred": "negative",
-        "text": "I appreciate the quick delivery however the item was completely different from what was shown",
+        "id": "CH015",
+        "actual": "negative",
+        "old_6k_pred": "positive",
+        "new_8k_pred": "negative",
+        "text": "bohot kharab service thi",
         "categories": [
-          "mixed_sentiment"
+          "hinglish",
+          "transliteration"
+        ]
+      },
+      {
+        "id": "CH034",
+        "actual": "negative",
+        "old_6k_pred": "neutral",
+        "new_8k_pred": "negative",
+        "text": "With all due respect the current system is not working for most users",
+        "categories": [
+          "polite_complaint"
         ]
       },
       {
         "id": "CH053",
         "actual": "positive",
-        "new_pred": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "positive",
         "text": "bahut acha",
         "categories": [
           "short",
@@ -845,21 +586,96 @@
         ]
       },
       {
+        "id": "CH062",
+        "actual": "mixed",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "mixed",
+        "text": "Teacher ka padhane ka tarika acha tha lekin class me bahut shor tha concentrate nhi ho paya",
+        "categories": [
+          "mixed_sentiment",
+          "hinglish"
+        ]
+      },
+      {
+        "id": "CH074",
+        "actual": "neutral",
+        "old_6k_pred": "mixed",
+        "new_8k_pred": "neutral",
+        "text": "The medicine was available at the pharmacy counter on the ground floor",
+        "categories": [
+          "factual"
+        ]
+      },
+      {
+        "id": "CH079",
+        "actual": "negative",
+        "old_6k_pred": "positive",
+        "new_8k_pred": "negative",
+        "text": "I'm not angry just disappointed with how things were handled this time",
+        "categories": [
+          "polite_complaint"
+        ]
+      },
+      {
         "id": "CH089",
         "actual": "positive",
-        "new_pred": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "positive",
         "text": "Absolutely loved the whole experience from start to finish would come back again",
         "categories": [
           "ordinary"
         ]
       }
     ],
+    "regressed_examples": [
+      {
+        "id": "CH005",
+        "actual": "neutral",
+        "old_6k_pred": "neutral",
+        "new_8k_pred": "mixed",
+        "text": "okay product",
+        "categories": [
+          "short"
+        ]
+      },
+      {
+        "id": "CH080",
+        "actual": "neutral",
+        "old_6k_pred": "neutral",
+        "new_8k_pred": "negative",
+        "text": "It works I guess nothing to write home about really",
+        "categories": [
+          "ambiguous"
+        ]
+      },
+      {
+        "id": "CH086",
+        "actual": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "positive",
+        "text": "bhai pehle toh acha tha ab ekdum wahiyat hogaya hai sab",
+        "categories": [
+          "bhai",
+          "hinglish"
+        ]
+      }
+    ],
     "still_error_examples": [
+      {
+        "id": "CH002",
+        "actual": "positive",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "negative",
+        "text": "loved it",
+        "categories": [
+          "short"
+        ]
+      },
       {
         "id": "CH003",
         "actual": "negative",
-        "old_pred": "positive",
-        "new_pred": "positive",
+        "old_6k_pred": "positive",
+        "new_8k_pred": "positive",
         "text": "very bad",
         "categories": [
           "short"
@@ -868,39 +684,18 @@
       {
         "id": "CH006",
         "actual": "neutral",
-        "old_pred": "mixed",
-        "new_pred": "mixed",
+        "old_6k_pred": "mixed",
+        "new_8k_pred": "mixed",
         "text": "it was fine",
         "categories": [
           "short"
         ]
       },
       {
-        "id": "CH008",
-        "actual": "mixed",
-        "old_pred": "positive",
-        "new_pred": "neutral",
-        "text": "nice food bad delivery",
-        "categories": [
-          "short"
-        ]
-      },
-      {
-        "id": "CH015",
-        "actual": "negative",
-        "old_pred": "positive",
-        "new_pred": "positive",
-        "text": "bohot kharab service thi",
-        "categories": [
-          "hinglish",
-          "transliteration"
-        ]
-      },
-      {
         "id": "CH018",
         "actual": "neutral",
-        "old_pred": "negative",
-        "new_pred": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "negative",
         "text": "chalega koi baat nhi",
         "categories": [
           "hinglish"
@@ -909,18 +704,28 @@
       {
         "id": "CH022",
         "actual": "negative",
-        "old_pred": "neutral",
-        "new_pred": "neutral",
+        "old_6k_pred": "neutral",
+        "new_8k_pred": "neutral",
         "text": "What exactly is the point of premium membership if benefits keep changing?",
         "categories": [
           "indirect_complaint"
         ]
       },
       {
+        "id": "CH024",
+        "actual": "mixed",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "negative",
+        "text": "I appreciate the quick delivery however the item was completely different from what was shown",
+        "categories": [
+          "mixed_sentiment"
+        ]
+      },
+      {
         "id": "CH032",
         "actual": "negative",
-        "old_pred": "mixed",
-        "new_pred": "mixed",
+        "old_6k_pred": "mixed",
+        "new_8k_pred": "mixed",
         "text": "Not to complain but the service has been consistently below expectations",
         "categories": [
           "polite_complaint"
@@ -929,19 +734,9 @@
       {
         "id": "CH033",
         "actual": "negative",
-        "old_pred": "mixed",
-        "new_pred": "mixed",
+        "old_6k_pred": "mixed",
+        "new_8k_pred": "mixed",
         "text": "I wish I could say something positive but the quality has really gone down",
-        "categories": [
-          "polite_complaint"
-        ]
-      },
-      {
-        "id": "CH034",
-        "actual": "negative",
-        "old_pred": "neutral",
-        "new_pred": "neutral",
-        "text": "With all due respect the current system is not working for most users",
         "categories": [
           "polite_complaint"
         ]
@@ -949,8 +744,8 @@
       {
         "id": "CH043",
         "actual": "positive",
-        "old_pred": "negative",
-        "new_pred": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "negative",
         "text": "Excellent value for money I would definitely recommend this to everyone",
         "categories": [
           "ordinary"
@@ -959,8 +754,8 @@
       {
         "id": "CH051",
         "actual": "negative",
-        "old_pred": "mixed",
-        "new_pred": "mixed",
+        "old_6k_pred": "mixed",
+        "new_8k_pred": "mixed",
         "text": "delievry was late and produt was damaegd",
         "categories": [
           "typos"
@@ -969,8 +764,8 @@
       {
         "id": "CH054",
         "actual": "negative",
-        "old_pred": "positive",
-        "new_pred": "positive",
+        "old_6k_pred": "positive",
+        "new_8k_pred": "positive",
         "text": "bohot bura",
         "categories": [
           "short",
@@ -980,8 +775,8 @@
       {
         "id": "CH058",
         "actual": "neutral",
-        "old_pred": "negative",
-        "new_pred": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "negative",
         "text": "ok",
         "categories": [
           "short"
@@ -990,29 +785,18 @@
       {
         "id": "CH060",
         "actual": "positive",
-        "old_pred": "negative",
-        "new_pred": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "negative",
         "text": "love",
         "categories": [
           "short"
         ]
       },
       {
-        "id": "CH062",
-        "actual": "mixed",
-        "old_pred": "negative",
-        "new_pred": "negative",
-        "text": "Teacher ka padhane ka tarika acha tha lekin class me bahut shor tha concentrate nhi ho paya",
-        "categories": [
-          "mixed_sentiment",
-          "hinglish"
-        ]
-      },
-      {
         "id": "CH067",
         "actual": "positive",
-        "old_pred": "negative",
-        "new_pred": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "negative",
         "text": "bhai doctor ne time pe dekha aur dawai bhi sahi di",
         "categories": [
           "bhai",
@@ -1022,28 +806,18 @@
       {
         "id": "CH069",
         "actual": "positive",
-        "old_pred": "negative",
-        "new_pred": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "negative",
         "text": "ye product toh sach me kamaal ka hai quality top notch hai",
         "categories": [
           "hinglish"
         ]
       },
       {
-        "id": "CH074",
-        "actual": "neutral",
-        "old_pred": "mixed",
-        "new_pred": "mixed",
-        "text": "The medicine was available at the pharmacy counter on the ground floor",
-        "categories": [
-          "factual"
-        ]
-      },
-      {
         "id": "CH076",
         "actual": "mixed",
-        "old_pred": "positive",
-        "new_pred": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "positive",
         "text": "acha bhi hai aur bura bhi depends on your expectations honestly",
         "categories": [
           "mixed_sentiment",
@@ -1051,20 +825,10 @@
         ]
       },
       {
-        "id": "CH079",
-        "actual": "negative",
-        "old_pred": "positive",
-        "new_pred": "positive",
-        "text": "I'm not angry just disappointed with how things were handled this time",
-        "categories": [
-          "polite_complaint"
-        ]
-      },
-      {
         "id": "CH081",
         "actual": "mixed",
-        "old_pred": "negative",
-        "new_pred": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "negative",
         "text": "paise toh zyada lge par quality dekhke lagta hai sahi hai",
         "categories": [
           "mixed_sentiment",
@@ -1074,8 +838,8 @@
       {
         "id": "CH082",
         "actual": "positive",
-        "old_pred": "mixed",
-        "new_pred": "mixed",
+        "old_6k_pred": "mixed",
+        "new_8k_pred": "mixed",
         "text": "Honestly I expected much worse but it turned out to be decent enough",
         "categories": [
           "ambiguous"
@@ -1084,8 +848,8 @@
       {
         "id": "CH083",
         "actual": "mixed",
-        "old_pred": "negative",
-        "new_pred": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "negative",
         "text": "wifi speed thik thi par raat ko signal gayab ho jata tha",
         "categories": [
           "mixed_sentiment",
@@ -1095,8 +859,8 @@
       {
         "id": "CH087",
         "actual": "positive",
-        "old_pred": "negative",
-        "new_pred": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "mixed",
         "text": "mene socha tha bura hoga par acha nikla surprisingly",
         "categories": [
           "ambiguous",
@@ -1106,8 +870,8 @@
       {
         "id": "CH088",
         "actual": "neutral",
-        "old_pred": "negative",
-        "new_pred": "negative",
+        "old_6k_pred": "negative",
+        "new_8k_pred": "negative",
         "text": "koi complaint nhi hai sab normal tha as expected",
         "categories": [
           "ambiguous",
@@ -1116,14 +880,10 @@
       }
     ]
   },
-  "phase6_baseline": {
+  "phase5_exp3_baseline": {
     "overall": {
       "accuracy": 0.4778,
-      "macro_precision": 0.4573,
-      "macro_recall": 0.4489,
       "macro_f1": 0.4316,
-      "weighted_precision": 0.4712,
-      "weighted_recall": 0.4778,
       "weighted_f1": 0.4589,
       "total_errors": 47
     },
@@ -1154,23 +914,76 @@
       }
     },
     "categories": {
-      "transliteration": 0.875,
-      "typos": 0.75,
-      "ordinary": 0.667,
+      "sarcasm": 0.25,
+      "factual": 0.143,
       "bhai": 0.545,
-      "mixed_sentiment": 0.538,
       "indirect_complaint": 0.5,
+      "ambiguous": 0.2,
+      "polite_complaint": 0.0,
+      "hinglish": 0.486,
+      "ordinary": 0.667,
+      "mixed_sentiment": 0.538,
+      "transliteration": 0.875,
       "short": 0.5,
       "short_len<=5": 0.593,
-      "hinglish": 0.486,
-      "sarcasm": 0.25,
-      "ambiguous": 0.2,
-      "factual": 0.143,
-      "polite_complaint": 0.0
+      "typos": 0.75
     },
     "languages": {
       "english": 0.472,
       "hinglish": 0.486
+    }
+  },
+  "phase6_3_baseline": {
+    "overall": {
+      "accuracy": 0.6667,
+      "macro_f1": 0.6688,
+      "weighted_f1": 0.6669,
+      "total_errors": 30
+    },
+    "per_class": {
+      "positive": {
+        "precision": 0.7647,
+        "recall": 0.5652,
+        "f1_score": 0.65,
+        "support": 23
+      },
+      "negative": {
+        "precision": 0.6047,
+        "recall": 0.7429,
+        "f1_score": 0.6667,
+        "support": 35
+      },
+      "neutral": {
+        "precision": 0.7857,
+        "recall": 0.6875,
+        "f1_score": 0.7333,
+        "support": 16
+      },
+      "mixed": {
+        "precision": 0.625,
+        "recall": 0.625,
+        "f1_score": 0.625,
+        "support": 16
+      }
+    },
+    "categories": {
+      "sarcasm": 1.0,
+      "factual": 0.857,
+      "bhai": 0.909,
+      "indirect_complaint": 0.75,
+      "ambiguous": 0.4,
+      "polite_complaint": 0.2,
+      "hinglish": 0.649,
+      "ordinary": 0.778,
+      "mixed_sentiment": 0.615,
+      "transliteration": 0.75,
+      "short": 0.5,
+      "short_len<=5": 0.593,
+      "typos": 0.75
+    },
+    "languages": {
+      "english": 0.679,
+      "hinglish": 0.649
     }
   }
 }
