@@ -8,18 +8,18 @@ of annotated customer feedback.
 
 ## Services
 
-| Code | File     | Service Domain         |
-| ---- | -------- | ---------------------- |
-| FD   | FD.csv   | Food Delivery / Restaurant |
-| EC   | EC.csv   | E-commerce             |
-| BK   | BK.csv   | Banking / UPI          |
-| HC   | HC.csv   | Healthcare             |
-| ED   | ED.csv   | Education              |
-| TC   | TC.csv   | Telecom / Internet     |
-| CB   | CB.csv   | Cab / Transport        |
-| TR   | TR.csv   | Travel / Hotels        |
-| GR   | GR.csv   | Grocery Delivery       |
-| CS   | CS.csv   | Customer Support       |
+| Code | Relative Path | Service Domain |
+| ---- | ------------- | -------------- |
+| FD   | `data/raw/food_delivery/FD.csv` | Food Delivery / Restaurant |
+| EC   | `data/raw/ecommerce/EC.csv` | E-commerce |
+| BK   | `data/raw/banking_upi/BK.csv` | Banking / UPI |
+| HC   | `data/raw/healthcare/HC.csv` | Healthcare |
+| ED   | `data/raw/education/ED.csv` | Education |
+| TC   | `data/raw/telecom/TC.csv` | Telecom / Internet |
+| CB   | `data/raw/cab_transport/CB.csv` | Cab / Transport |
+| TR   | `data/raw/travel_hotels/TR.csv` | Travel / Hotels |
+| GR   | `data/raw/grocery_delivery/GR.csv` | Grocery Delivery |
+| CS   | `data/raw/customer_support/CS.csv` | Customer Support |
 
 ## Dataset Structure (12 Columns)
 

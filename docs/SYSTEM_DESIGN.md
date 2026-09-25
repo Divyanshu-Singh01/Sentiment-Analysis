@@ -68,29 +68,29 @@ React renders SentimentResult component
 | -------------------------- | ------------------------------------- |
 | API endpoint               | `analyzer/urls.py` → `POST /api/predict/` |
 | Request handling           | `analyzer/views.py` → `predict_sentiment` |
-| Model loading              | `joblib.load()` at module import time |
+| Model loading              | `joblib.load()` from `ml/models/` at startup |
 | Text preprocessing (API)   | `.lower()` only (minimal)             |
 | Prediction                 | `vectorizer.transform` → `model.predict` |
 | Response format            | `{ "sentiment": "positive" | "negative" }` |
 | Django project config      | `config/` directory (settings, urls)  |
 
-**Note:** The `sentiment` Django app is registered in `INSTALLED_APPS` but is not
-actively used by the API. It contains standalone ML scripts (preprocessing, training,
-evaluation) that are run manually from the command line, not through Django views.
+**Note:** In Phase 1, ML code was completely separated from the Django backend.
+The empty `sentiment` Django app was removed from `INSTALLED_APPS` and its ML scripts
+were moved into the dedicated `ml/` workspace.
 
 ## ML Responsibilities
 
 | Responsibility             | Implementation                        |
 | -------------------------- | ------------------------------------- |
-| Text preprocessing         | `sentiment/preprocessing.py` (lowercase, remove non-alpha, collapse whitespace) |
+| Text preprocessing         | `ml/preprocessing/preprocessing.py` (clean text) |
 | Feature extraction         | TF-IDF vectorizer (`TfidfVectorizer`)  |
 | Model                      | Logistic Regression (`max_iter=1000`)  |
-| Training                   | `sentiment/train_model.py`             |
-| Evaluation                 | `sentiment/evaluate_model.py`          |
-| Data inspection            | `sentiment/data_check.py`              |
-| TF-IDF inspection          | `sentiment/tfidf_test.py`              |
-| Train/test split check     | `sentiment/train_test_split.py`        |
-| Saved artifacts            | `.pkl` files (model + vectorizer)      |
+| Training                   | `ml/training/train_model.py`           |
+| Evaluation                 | `ml/evaluation/evaluate_model.py`      |
+| Data inspection            | `ml/preprocessing/data_check.py`       |
+| TF-IDF inspection          | `ml/training/tfidf_test.py`            |
+| Train/test split check     | `ml/training/train_test_split.py`      |
+| Saved artifacts            | `ml/models/` (`.pkl` files)            |
 
 ## Planned Architecture (Future)
 
@@ -116,10 +116,16 @@ Processed Dataset (5,000 records, 10 services)
 
 ```
 frontend/          → All React/UI code. No ML or Python.
-analyzer/          → Django REST API views and URL routing only.
-sentiment/         → ML scripts (preprocessing, training, evaluation).
-                     Not exposed through Django views.
-config/            → Django project configuration.
-data/              → Raw and processed CSV datasets.
-ml/ (or model/)    → Serialized model artifacts (.pkl files).
+analyzer/          → Django REST API views and URL routing only (loads model from ml/models/).
+config/            → Django project configuration (settings, urls).
+ml/                → Machine learning workspace:
+                     ├── models/        → Serialized model artifacts (.pkl files)
+                     ├── preprocessing/ → Data inspection and cleaning
+                     ├── training/      → Model training and TF-IDF scripts
+                     └── evaluation/    → Evaluation metrics and reporting
+data/              → Data storage by pipeline stage:
+                     ├── raw/           → 10 service datasets in dedicated folders
+                     └── processed/     → Cleaned, combined training datasets
+docs/              → Architecture, planning, and design documentation.
 ```
+

@@ -1,0 +1,501 @@
+id,text,language,service,behavior,sentiment,aspect,issue,severity,abuse,complexity,suggestion
+FD001,"Food was good.",english,food_delivery,appreciation,positive,food_quality,none,none,none,simple,none
+FD002,"The biryani was flavorful and piping hot, but the delivery executive took an extra 35 minutes roaming in the wrong colony.",english,food_delivery,complaint,mixed,delivery_time,late_delivery,medium,none,complex,"Improve GPS navigation for delivery partners"
+FD003,"bhai refund abhi tak account me credit nahi hua 4 din ho gaye",hinglish,food_delivery,complaint,negative,refund,refund_delay,high,none,simple,"Speed up refund processing"
+FD004,"Is it possible to schedule dinner orders three hours in advance on this app?",english,food_delivery,question,neutral,app,none,none,none,moderate,none
+FD005,"Dosa crispy tha aur sambar mast garam tha maza aa gaya",hinglish,restaurant,appreciation,positive,taste,none,none,none,simple,none
+FD006,"Restaurants should really switch to spill-proof containers for curries and gravies.",english,food_delivery,suggestion,neutral,packaging,damaged_packaging,low,none,moderate,"Use spill proof containers"
+FD007,"dal makhani leaked entirely inside the polythene bag, completely ruined the rotis",english,food_delivery,complaint,negative,packaging,damaged_packaging,high,none,moderate,"Improve liquid packaging"
+FD008,"Not the worst burger in town, but definitely not ordering again.",english,restaurant,complaint,negative,taste,poor_taste,low,none,moderate,none
+FD009,"paneer butter masala order kiya tha but sent chicken curry directly, pure veg family ruined",english,food_delivery,complaint,negative,wrong_item,wrong_item,high,none,complex,"Strictly verify veg and non-veg tags"
+FD10,"I ordered lunch at 1:15 PM and it arrived at 1:50 PM as promised.",english,food_delivery,informational,neutral,delivery_time,none,none,none,simple,none
+FD011,"bhai kya bakwaas service hai ek ghante se rider ek hi jagah khada hai idiot",hinglish,food_delivery,complaint,negative,delivery_partner,late_delivery,medium,mild,"Monitor idle delivery riders"
+FD012,"Packaging was top notch with tamper-evident seal and eco-friendly boxes.",english,food_delivery,appreciation,positive,packaging,none,none,none,simple,none
+FD013,"Can I swap the white rice in the regular thali for two tandoori rotis?",english,restaurant,question,neutral,order_accuracy,none,none,none,moderate,none
+FD014,"pizza cold and rubbery crust completely hardened like stone",english,food_delivery,complaint,negative,temperature,cold_food,medium,none,simple,"Use insulated delivery bags"
+FD015,"gulab jamun was missing from the executive combo meal",english,food_delivery,complaint,negative,missing_item,missing_item,medium,none,simple,"Check bag contents before dispatch"
+FD016,"portion size bohot kam tha bhai 350 rupay me do chammach sabzi di hai",hinglish,food_delivery,complaint,negative,portion_size,small_portion,medium,none,moderate,"Increase portion size"
+FD017,"The pasta was surprisingly authentic and creamy, defying my low expectations.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD018,"Delivery partners should carry exact change for cash on delivery orders.",english,food_delivery,suggestion,neutral,payment,payment_issue,low,none,moderate,"Prompt riders to carry cash change"
+FD019,"bhai coupon code apply ho gaya par discount amount minus nahi hua final bill me",hinglish,food_delivery,complaint,negative,discount,app_issue,medium,none,moderate,"Fix checkout coupon calculation"
+FD020,"Rider politely called when he reached the main society gate and delivered with a smile.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD021,"Although the momos were delicious and spicy, the chutney pouch had burst inside.",english,food_delivery,complaint,mixed,packaging,damaged_packaging,low,none,complex,"Seal chutney packets properly"
+FD022,"taste was utterly pathetic and smelled like stale oil",english,restaurant,complaint,negative,freshness,poor_quality,high,none,simple,"Ensure fresh cooking oil is used"
+FD023,"khaana theek thak tha na bura na bohot lajawab",hinglish,food_delivery,informational,neutral,food_quality,none,none,none,simple,none
+FD024,"Do you guys provide GST invoices for corporate team lunch orders?",english,food_delivery,question,neutral,app,none,none,none,moderate,none
+FD025,"Pathetic third-class support agents keep closing tickets without resolving the refund issue bloody fraud",english,food_delivery,complaint,negative,customer_support,poor_support,high,severe,"Train support staff properly"
+FD026,"chole bhature ekdum fresh aur non-greasy the",hinglish,restaurant,appreciation,positive,food_quality,none,none,none,simple,none
+FD027,"I wouldn't call it an awful meal, but the chicken pieces were noticeably rubbery.",english,restaurant,complaint,mixed,food_quality,poor_quality,low,none,complex,none
+FD028,"Late night cravings sorted within 20 mins, superb speed!",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD029,"kya restaurant table reserve karne ka option available hai?",hinglish,restaurant,question,neutral,restaurant,none,none,none,simple,none
+FD030,"Delivery boy was rude, he refused to climb to the second floor and argued endlessly.",english,food_delivery,complaint,negative,delivery_partner,poor_support,medium,none,moderate,"Train riders in customer etiquette"
+FD031,"Salad didn't look fresh, cucumber edges were dried out and yellowing.",english,restaurant,complaint,negative,freshness,poor_quality,medium,none,moderate,"Use fresh salad ingredients"
+FD032,"App crashed twice while processing UPI payment and money got debited anyway.",english,food_delivery,complaint,negative,payment,payment_issue,high,none,moderate,"Improve payment gateway stability"
+FD033,"Food arrived warm, but the garlic naan had become like leather during transit.",english,food_delivery,complaint,mixed,food_quality,poor_quality,low,none,moderate,"Improve naan packaging ventilation"
+FD034,"bhai cutlery opt out kiya tha fir bhi plastic spoons bhej diye",hinglish,food_delivery,complaint,low,order_accuracy,none,low,none,simple,"Respect cutlery opt-out preference"
+FD035,"Amazing hakka noodles, perfect wok hei aroma and crisp veggies.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD036,"kya ye food pure jain preparation follow karta hai bina pyaaz lehsun ke?",hinglish,restaurant,question,neutral,food_quality,none,none,none,moderate,none
+FD037,"Rider was completely drenched in rain yet delivered our dinner without spilling a single drop.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,complex,none
+FD038,"Quantity was huge, one single veg fried rice easily served two adults.",english,restaurant,appreciation,positive,portion_size,none,none,none,moderate,none
+FD039,"Found a dead housefly floating right on top of the tomato soup disgusting hygiene.",english,restaurant,complaint,negative,hygiene,hygiene_issue,high,none,moderate,"Enforce strict kitchen hygiene"
+FD040,"delivry bhut late hui aur food thanda ho gya",hinglish,food_delivery,complaint,negative,delivery_time,late_delivery,medium,none,simple,"Improve delivery speed"
+FD041,"While the mutton korma was undeniably rich and flavorful, the delivery took over ninety minutes.",english,food_delivery,complaint,mixed,delivery_time,late_delivery,medium,none,complex,"Optimize kitchen prep time"
+FD042,"Can customer service please call me back regarding my missing beverage?",english,food_delivery,question,neutral,customer_support,missing_item,low,none,moderate,"Enable immediate callback option"
+FD043,"price bohot high hai relative to quality and portion",hinglish,restaurant,complaint,negative,price,high_price,medium,none,simple,"Re-evaluate menu pricing"
+FD044,"Everything was fine until I noticed that one item from the order was missing.",english,food_delivery,complaint,mixed,missing_item,missing_item,medium,none,moderate,"Cross check dispatch items"
+FD045,"Add live tracking for the kitchen preparation stage, not just after rider pick-up.",english,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Provide kitchen prep tracking"
+FD046,"sandwich bread was hard and tasteless, filling was barely there",english,restaurant,complaint,negative,taste,poor_taste,medium,none,simple,"Use fresh soft bread"
+FD047,"bhaiya ne polite way me packet hand over kiya thank you",hinglish,food_delivery,appreciation,positive,delivery_partner,none,none,none,simple,none
+FD048,"Is tipping mandatory or optional for delivery partners during rainy days?",english,food_delivery,question,neutral,delivery_partner,none,none,none,moderate,none
+FD049,"Food was good, service wasn't.",english,restaurant,complaint,mixed,customer_support,poor_support,medium,none,simple,"Enhance floor service speed"
+FD050,"terrible experience, ordered paneer tikka and received burnt raw capsicum cubes instead nonsense",hinglish,restaurant,complaint,negative,food_quality,poor_quality,medium,mild,"Ensure proper tandoor cooking"
+FD051,"Food arrived well within 25 minutes, warm and perfectly seasoned.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD052,"bhai parcel deliver mark kar diya bina deliver kiye fraud rider",hinglish,food_delivery,complaint,negative,delivery,late_delivery,high,mild,"Verify delivery OTP before closing"
+FD053,"Honestly, I expected much worse considering the reviews, but the food turned out to be surprisingly decent.",english,restaurant,appreciation,mixed,food_quality,none,none,none,complex,none
+FD054,"App shows restaurant open but rejects order immediately after deduction.",english,food_delivery,complaint,negative,app,app_issue,medium,none,moderate,"Sync restaurant open status dynamically"
+FD055,"kya hostel gate tak aake delivery boy call karega ya room aayega?",hinglish,food_delivery,question,neutral,delivery,none,none,none,moderate,none
+FD056,"Rider had no thermal insulation bag, ice cream tub completely melted into liquid soup.",english,food_delivery,complaint,negative,temperature,cold_food,high,none,moderate,"Equip riders with cold packs"
+FD057,"Pav bhaji was extremely buttery and street-style authentic, loved it completely.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD058,"Offer clearer calorie counts and macronutrient breakdowns on everyday meal bowls.",english,food_delivery,suggestion,neutral,food_quality,none,none,none,moderate,"Show calorie details on menu"
+FD059,"order delayed by 50 mins no update in tracking app useless nonsense",english,food_delivery,complaint,negative,delivery_time,late_delivery,medium,mild,"Provide proactive delay updates"
+FD060,"The fish curry was fresh and authentic, though salt was slightly on the higher side.",english,restaurant,appreciation,mixed,taste,none,none,none,moderate,none
+FD061,"refund??? abhi tk nhi mila",hinglish,food_delivery,question,negative,refund,refund_delay,medium,none,simple,"Speed up refund processing"
+FD062,"Very neat paper container used instead of toxic plastic wraps, kudos.",english,restaurant,appreciation,positive,packaging,none,none,none,simple,none
+FD063,"Customer care bot kept looping in circles without connecting to an actual human agent.",english,food_delivery,complaint,negative,customer_support,poor_support,medium,none,moderate,"Provide easy agent escalation"
+FD064,"thali me papad aur pickle gayab tha har baar ka yahi hai",hinglish,food_delivery,complaint,negative,missing_item,missing_item,low,none,moderate,"Check side items before packing"
+FD065,"Is there any student discount coupon valid for campus deliveries?",english,food_delivery,question,neutral,discount,none,none,none,moderate,none
+FD066,"Delivery boy called 5 times asking directions when map marker was 100% pinpoint.",english,food_delivery,complaint,negative,delivery_partner,delivery_partner,low,none,moderate,"Improve rider map training"
+FD067,"Hot garlic sauce had genuine punch, spring rolls remained crunchy despite distance.",english,food_delivery,appreciation,positive,taste,none,none,none,moderate,none
+FD068,"bhai extra chutney manga tha special instructions me, ek packet bhi nahi diya",hinglish,food_delivery,complaint,negative,order_accuracy,missing_item,low,none,moderate,"Display special cooking instructions prominently"
+FD069,"The meal itself was excellent, although the delivery experience left quite a lot to be desired.",english,food_delivery,complaint,mixed,delivery,late_delivery,medium,none,complex,"Enhance dispatch speed"
+FD070,"How long does the refund take to reflect back into Paytm wallet?",english,food_delivery,question,neutral,refund,none,none,none,simple,none
+FD071,"Sweet lassi leaked all over the samosas, total mess inside the bag.",english,food_delivery,complaint,negative,packaging,damaged_packaging,high,none,moderate,"Pack beverages separately"
+FD072,"crispy corn was tasty but oil smell was too heavy",english,restaurant,complaint,mixed,taste,poor_quality,low,none,simple,none
+FD073,"raat ko 2 baje bhi garam khana mil gaya thank you so much team",hinglish,food_delivery,appreciation,positive,food_quality,none,none,none,simple,none
+FD074,"You should allow customers to customize spice levels with a slider from mild to spicy.",english,restaurant,suggestion,neutral,taste,none,none,none,moderate,"Add spice customization option"
+FD075,"food bilkul tasteless tha hospital diet jaisa",hinglish,restaurant,complaint,negative,taste,poor_taste,medium,none,simple,"Improve seasoning and taste"
+FD076,"Ordered 2 paneer rolls, received 2 egg rolls instead, huge issue for vegetarians.",english,food_delivery,complaint,negative,wrong_item,wrong_item,high,none,moderate,"Double check non veg labeling"
+FD077,"Driver was courteous and handled the multi-storey apartment elevator instructions flawlessly.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD078,"Does the restaurant use refined oil or cold pressed mustard oil for preparing fish?",english,restaurant,question,neutral,food_quality,none,none,none,moderate,none
+FD079,"I wouldn't say the food was terrible, but I definitely wouldn't order it again.",english,restaurant,complaint,mixed,food_quality,poor_quality,low,none,complex,none
+FD080,"waste of money total garbage tasteless rubber chicken pathetic useless staff",english,restaurant,complaint,negative,taste,poor_taste,high,severe,"Improve meat quality standards"
+FD081,"Delivered right to the library entrance on campus, fast service.",english,food_delivery,appreciation,positive,delivery,none,none,none,simple,none
+FD082,"app me live location stuck ho jati hai bar bar fix this bug",hinglish,food_delivery,complaint,negative,app,app_issue,medium,none,simple,"Fix live tracking freeze"
+FD083,"The biryani rice was cooked to perfection and aromatic, though chicken pieces were slightly dry.",english,restaurant,appreciation,mixed,taste,none,none,none,complex,none
+FD084,"Are delivery fees higher during nighttime and rain surges?",english,food_delivery,question,neutral,price,none,none,none,simple,none
+FD085,"bhai pizza box daba hua tha puri cheese lid pe chipak gayi thi",hinglish,food_delivery,complaint,negative,packaging,damaged_packaging,medium,none,moderate,"Use pizza box risers"
+FD086,"Butter chicken gravy was velvety and sweet-tangy, exact Delhi taste.",english,restaurant,appreciation,positive,taste,none,none,none,simple,none
+FD087,"Please introduce reusable cloth delivery bag options to curb single-use plastics.",english,food_delivery,suggestion,neutral,packaging,none,none,none,moderate,"Offer reusable delivery bags"
+FD088,"worst experience ever food came after 2 hours completely frozen like ice",english,food_delivery,complaint,negative,temperature,cold_food,high,mild,"Reduce delivery transit time"
+FD089,"ordered plain dosa received masala dosa with cold aloo",hinglish,food_delivery,complaint,negative,wrong_item,wrong_item,medium,none,simple,"Verify order before handoff"
+FD090,"A pleasant and hassle-free lunch delivery for our office colleagues today.",english,food_delivery,informational,positive,delivery,none,none,none,simple,none
+FD091,"bhai khana mast tha bas thoda spicy kam rakha karo next time",hinglish,restaurant,suggestion,mixed,taste,none,low,none,moderate,"Offer mild spice tier"
+FD092,"Why was my saved credit card charged twice for a single failed order attempt?",english,food_delivery,question,negative,payment,payment_issue,high,none,moderate,"Fix double billing glitch"
+FD093,"The soup arrived in a sturdy screw-top plastic tub without any trace of leakage.",english,food_delivery,appreciation,positive,packaging,none,none,none,moderate,none
+FD094,"bhai rider ne call cut kar diya aur parcel gate keeper ko deke chala gaya",hinglish,food_delivery,complaint,negative,delivery_partner,delivery_partner,medium,none,moderate,"Rider should verify handoff recipient"
+FD095,"Not exactly the quickest delivery I've experienced, but at least the food arrived warm.",english,food_delivery,informational,mixed,delivery_time,late_delivery,low,none,complex,none
+FD096,"chicken was undercooked and pink near the bone dangerous health hazard",english,restaurant,complaint,negative,hygiene,hygiene_issue,high,none,moderate,"Ensure thorough cooking of poultry"
+FD097,"chutney aur sambar refill maanga to waiter ne sunna hi band kar diya",hinglish,restaurant,complaint,negative,customer_support,poor_support,medium,none,moderate,"Improve floor staff responsiveness"
+FD098,"Can we track rider contact details directly if GPS stops moving?",english,food_delivery,question,neutral,app,none,none,none,moderate,none
+FD099,"Exemplary service, hot delicious meal delivered during heavy monsoon downpour.",english,food_delivery,appreciation,positive,delivery,none,none,none,simple,none
+FD100,"bhai discount coupon laga ke bhi final price itna high kyu banate ho hidden taxes se",hinglish,food_delivery,complaint,negative,price,high_price,medium,none,moderate,"Display transparent pricing upfront"
+FD101,"Delivery rider touched the food packaging after smoking, smelled terrible.",english,food_delivery,complaint,negative,hygiene,hygiene_issue,medium,none,moderate,"Mandate hygiene checks for delivery agents"
+FD102,"idli was super soft and fluffy, coconut chutney was fresh as morning.",english,restaurant,appreciation,positive,freshness,none,none,none,simple,none
+FD103,"bhai momos thande the aur mayo ka packet fat gaya tha pura",hinglish,food_delivery,complaint,negative,packaging,damaged_packaging,medium,none,simple,"Secure sauce sachets"
+FD104,"Please mention allergen warnings for peanut oil or dairy ingredients on dish descriptions.",english,restaurant,suggestion,neutral,food_quality,none,none,none,moderate,"Add allergen markers"
+FD105,"Where do I report that the restaurant bill generated inside does not match app invoice?",english,food_delivery,question,neutral,payment,payment_issue,medium,none,moderate,"Sync restaurant bill with app bill"
+FD106,"Super quick turnaround, ordered at 8:05 and delivered hot at 8:22 PM.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD107,"The fish had an unmistakably stale aftertaste that ruined the entire dinner platter.",english,restaurant,complaint,negative,freshness,poor_quality,high,none,moderate,"Check raw fish freshness daily"
+FD108,"bhai roti ekdum kadi thi chabayi bhi nahi ja rahi thi",hinglish,food_delivery,complaint,negative,food_quality,poor_quality,medium,none,simple,"Use thermal wrapping for flatbreads"
+FD109,"While the biryani spices were wonderfully fragrant, the chicken portion was shockingly meager.",english,food_delivery,complaint,mixed,portion_size,small_portion,medium,none,complex,"Standardize meat portions"
+FD110,"Rider spoke politely, waited patiently outside the gate without honking.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD111,"refund processed within five minutes of reporting missing fries, impressive support response.",english,food_delivery,appreciation,positive,refund,none,none,none,moderate,none
+FD112,"chole bhature me bhatura oil se bhara tha soaked completely oily mess",hinglish,restaurant,complaint,negative,food_quality,poor_quality,medium,none,simple,"Drain fried items properly"
+FD113,"Why is delivery fee charged separately when I pay for the monthly gold membership?",english,food_delivery,question,negative,price,high_price,medium,none,moderate,"Clarify membership benefits"
+FD114,"Allow customers to add last-minute items within 60 seconds of placing the order.",english,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Allow cart additions post order"
+FD115,"Food wasn't terrible, but it certainly lacked any punch of authentic South Indian spices.",english,restaurant,complaint,mixed,taste,poor_taste,low,none,moderate,none
+FD116,"bhai parcel poora ulta tha cake ki decoration barbaad ho gayi",hinglish,food_delivery,complaint,negative,packaging,damaged_packaging,high,none,simple,"Instruct riders to keep cake boxes flat"
+FD117,"Warm crispy jalebis paired with thick rabdi, heavenly late-night dessert experience.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD118,"rider abused my security guard at the gate completely unacceptable behavior by your personnel",english,food_delivery,complaint,negative,delivery_partner,poor_support,high,mild,"Take disciplinary action on rider"
+FD119,"Can I request extra onion and green chillies without paying extra addon charges?",english,restaurant,question,neutral,restaurant,none,none,none,moderate,none
+FD120,"khana fresh tha aur packaging bhi sealed thi safely",hinglish,food_delivery,appreciation,positive,packaging,none,none,none,simple,none
+FD121,"The veg noodles were flavorful but arrived lukewarm, requiring a microwave reheat.",english,food_delivery,informational,mixed,temperature,cold_food,low,none,moderate,none
+FD122,"fraud app deducted money 3 times for one single paneer tikka order return my money idiots",english,food_delivery,complaint,negative,payment,payment_issue,high,severe,"Automate immediate payment reversal"
+FD123,"Include an option to request zero cutlery and no disposable tissue napkins to save trees.",english,food_delivery,suggestion,neutral,packaging,none,none,none,moderate,"Offer opt-out for tissues"
+FD124,"daal tadka was smoky and authentic, delivered steaming hot.",english,restaurant,appreciation,positive,taste,none,none,none,simple,none
+FD125,"bhai biryani me raita gayab tha sukhi biryani khaye kya ab",hinglish,food_delivery,complaint,negative,missing_item,missing_item,medium,none,simple,"Verify bundled items like raita"
+FD126,"Is there an ETA threshold after which an order can be cancelled without penalties?",english,food_delivery,question,neutral,delivery_time,none,none,none,moderate,none
+FD127,"I received someone else's order containing chicken biryani instead of my paneer pulao.",english,food_delivery,complaint,negative,wrong_item,wrong_item,high,none,moderate,"Check receipt labels before delivery"
+FD128,"Smooth experience, quick delivery and fresh hot veg momos.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD129,"bhaiya ne bina kisi jhanjhat ke gate pe drop kar diya time pe",hinglish,food_delivery,appreciation,positive,delivery_partner,none,none,none,simple,none
+FD130,"The burger patty had good seasoning, although the bun was somewhat soggy from excess sauce.",english,restaurant,appreciation,mixed,food_quality,poor_quality,low,none,complex,none
+FD131,"customer support executive closed the chat abruptly while I was explaining my payment deduction",english,food_delivery,complaint,negative,customer_support,poor_support,high,none,moderate,"Improve chat support resolution protocols"
+FD132,"kya ye combo meal 2 logo ke liye sufficient quantity provide karta hai?",hinglish,restaurant,question,neutral,portion_size,none,none,none,moderate,none
+FD133,"Clean packaging, hot food, and the rider followed no-contact delivery instructions precisely.",english,food_delivery,appreciation,positive,delivery,none,none,none,moderate,none
+FD134,"food smelled completely fermented and sour, spoiled curd used in dahi vada",english,restaurant,complaint,negative,freshness,poor_quality,high,none,moderate,"Discard expired fermented batches"
+FD135,"bhai bill me extra packaging charge 50 rupay kyu lagaya hai jab normal box use kiya",hinglish,food_delivery,complaint,negative,price,high_price,medium,none,moderate,"Justify packaging charges"
+FD136,"Restaurants should provide an option to choose less oil for North Indian gravies.",english,restaurant,suggestion,neutral,food_quality,none,none,none,moderate,"Allow less oil customization"
+FD137,"Crispy chicken wings arrived fresh and still crunchy, excellent steam-vented packaging.",english,food_delivery,appreciation,positive,packaging,none,none,none,moderate,none
+FD138,"How do I delete my old saved addresses from the profile tab?",english,food_delivery,question,neutral,app,none,none,none,simple,none
+FD139,"food was okay okay type not worth the premium price tag",hinglish,restaurant,complaint,mixed,price,high_price,low,none,simple,none
+FD140,"The delivery person was extremely polite and apologized for a 5-minute traffic delay.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD141,"bhai khana cold tha aur container crack ho rakha tha raste me",hinglish,food_delivery,complaint,negative,packaging,damaged_packaging,medium,none,simple,"Use shock-resistant meal containers"
+FD142,"Never ordering again from this filthy restaurant found human hair strand inside dal fry yuk",english,restaurant,complaint,negative,hygiene,hygiene_issue,high,mild,"Ensure hairnets are worn in kitchen"
+FD143,"Is cash on delivery available for orders exceeding two thousand rupees?",english,food_delivery,question,neutral,payment,none,none,none,moderate,none
+FD144,"Paneer butter masala was velvety and well-balanced, thoroughly enjoyed lunch.",english,restaurant,appreciation,positive,taste,none,none,none,simple,none
+FD145,"Delivery was quick, but they sent thin salted fries instead of peri peri potato wedges.",english,food_delivery,complaint,mixed,wrong_item,wrong_item,medium,none,moderate,"Ensure accurate item packing"
+FD146,"bhai support team ko call karne ka koi direct number kyu nahi hai app me?",hinglish,food_delivery,question,negative,customer_support,none,low,none,moderate,"Provide direct helpline number"
+FD147,"Great food overall, though the promised mint chutney was missing.",english,food_delivery,informational,mixed,missing_item,missing_item,low,none,simple,none
+FD148,"Rider took a massive 15 km detour for no apparent reason, tracking was bizarre.",english,food_delivery,complaint,negative,delivery,late_delivery,medium,none,moderate,"Improve route navigation algorithm"
+FD149,"khana bilkul garam tha jaise abhi kadhai se utra ho",hinglish,food_delivery,appreciation,positive,temperature,none,none,none,simple,none
+FD150,"Delivery apps should show real-time weather alerts if delivery delays are expected.",english,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Display weather delay advisories"
+FD151,"bhai pizza cold aaya aur oregano ke sachets bhi gayab the",hinglish,food_delivery,complaint,negative,missing_item,cold_food,medium,none,simple,"Include condiment sachets"
+FD152,"The mutton rogan josh was rich and aromatic, totally authentic Kashmiri style.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD153,"Are tips transferred 100% directly to the delivery partner's account?",english,food_delivery,question,neutral,delivery_partner,none,none,none,moderate,none
+FD154,"Food was good, but portion size was surprisingly small for the price paid.",english,food_delivery,complaint,mixed,portion_size,small_portion,low,none,simple,none
+FD155,"bhai payment fail ho gaya account se kat gaye paise aur order bhi place nahi hua",hinglish,food_delivery,complaint,negative,payment,payment_issue,high,none,moderate,"Implement instant UPI reversal"
+FD156,"App interface is clean and tracking was updated every thirty seconds accurately.",english,food_delivery,appreciation,positive,app,none,none,none,moderate,none
+FD157,"terrible tasteless watery dal makhani, had zero butter or cream just brown colored water",english,restaurant,complaint,negative,food_quality,poor_quality,medium,none,moderate,"Maintain standard recipe consistency"
+FD158,"bhai khana time se 10 min pehle hi aa gaya super fast",hinglish,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD159,"Does this restaurant use separate cooking utensils and fryers for pure vegetarian items?",english,restaurant,question,neutral,food_quality,none,none,none,complex,none
+FD160,"Delivery agent was very impatient, kept ringing the bell repeatedly while I walked to door.",english,food_delivery,complaint,negative,delivery_partner,poor_support,low,none,moderate,"Sensitize riders on doorbell etiquette"
+FD161,"The pasta was well-seasoned and creamy, but arrived in a crushed container.",english,food_delivery,complaint,mixed,packaging,damaged_packaging,medium,none,moderate,"Use rigid containers for pasta"
+FD162,"biryani was fragrant, meat was soft, salan was delicious.",english,restaurant,appreciation,positive,taste,none,none,none,simple,none
+FD163,"bhai discount coupon fake dikhata hai, apply karne par minimum order threshold badha deta hai",hinglish,food_delivery,complaint,negative,discount,app_issue,medium,none,moderate,"State clear terms on discount coupons"
+FD164,"Provide an option to opt for paper bags instead of non-recyclable black polythenes.",english,food_delivery,suggestion,neutral,packaging,none,none,none,moderate,"Offer eco-friendly paper packaging"
+FD165,"How can I update my registered contact number on active orders?",english,food_delivery,question,neutral,app,none,none,none,simple,none
+FD166,"Super fresh sandwiches, crisp lettuce, soft multi-grain bread, thoroughly pleased.",english,restaurant,appreciation,positive,freshness,none,none,none,moderate,none
+FD167,"bhai khana aane me 80 minute lage, bhookh se dimag kharab ho gaya bilkul",hinglish,food_delivery,complaint,negative,delivery_time,late_delivery,medium,mild,"Keep delivery within 45 minutes"
+FD168,"The food was decent, but nothing to write home about.",english,restaurant,informational,neutral,food_quality,none,none,none,simple,none
+FD169,"chicken tikka pieces were burnt black from the corners, tasted bitter like charcoal",english,restaurant,complaint,negative,taste,poor_taste,medium,none,moderate,"Control tandoor heat"
+FD170,"Rider delivered quietly without ringing bell as instructed in note for sleeping baby, kudos.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,complex,none
+FD171,"bhai payment wallet balance automatically debit kyu nahi hua checkout pe?",hinglish,food_delivery,question,neutral,payment,none,low,none,moderate,none
+FD172,"Although the chicken burger was juicy and flavorful, the accompanying fries were cold and soggy.",english,food_delivery,complaint,mixed,temperature,cold_food,low,none,complex,"Vent fry packaging"
+FD173,"Customer care resolved my wrong item query within 2 minutes and issued a prompt refund.",english,food_delivery,appreciation,positive,customer_support,none,none,none,moderate,none
+FD174,"bhai sabzi me itna namak tha ki khaya hi nahi gaya pura fekna pada",hinglish,restaurant,complaint,negative,taste,poor_taste,high,none,simple,"Balance salt proportion in gravy"
+FD175,"Restaurants should list detailed preparation time during heavy peak rush hours.",english,food_delivery,suggestion,neutral,delivery_time,none,none,none,moderate,"Show accurate kitchen prep time"
+FD176,"Is the paneer prepared in-house or sourced frozen from commercial vendors?",english,restaurant,question,neutral,freshness,none,none,none,moderate,none
+FD177,"Tastiest momos in South Delhi, authentic darjeeling red chilli paste.",english,restaurant,appreciation,positive,taste,none,none,none,simple,none
+FD178,"bhai delivery boy ne location pe aake call cut kiya aur unreachable ho gaya",hinglish,food_delivery,complaint,negative,delivery_partner,late_delivery,high,none,moderate,"Ensure rider connectivity"
+FD179,"The soup was hot and soothing, but they forgot to enclose disposable soup spoons.",english,food_delivery,complaint,mixed,missing_item,missing_item,low,none,moderate,"Verify cutlery pack"
+FD180,"utter rubbish service rider took food ate it and marked delivered bloody thief",english,food_delivery,complaint,negative,delivery_partner,poor_support,high,severe,"Investigate stolen delivery cases"
+FD181,"Crisp dosas packed with cardboard separators so they don't get soggy, brilliant idea.",english,food_delivery,appreciation,positive,packaging,none,none,none,moderate,none
+FD182,"kya ye resturant 12 baje ke baad bhi orders accept karta hai?",hinglish,restaurant,question,neutral,restaurant,none,none,none,simple,none
+FD183,"Rider was polite, reached within 20 mins and followed all navigation cues.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,simple,none
+FD184,"thali quantity was barely enough for a child, complete rip-off for 280 rupees",english,restaurant,complaint,negative,portion_size,small_portion,medium,none,moderate,"Increase thali portions"
+FD185,"bhai sandwich ke andar cockroach ka wing mila hygiene level bilkul zero hai tumhara",hinglish,restaurant,complaint,negative,hygiene,hygiene_issue,high,mild,"Conduct immediate pest control"
+FD186,"Can I choose delivery vehicle type like electric bike to lower carbon footprint?",english,food_delivery,suggestion,neutral,delivery,none,none,none,moderate,"Introduce EV delivery preferences"
+FD187,"The chole was authentic Amritsari style, but the bhatura had soaked up way too much oil.",english,restaurant,appreciation,mixed,food_quality,poor_quality,low,none,complex,none
+FD188,"order placed at 9:00 PM and received hot at 9:28 PM.",english,food_delivery,informational,positive,delivery_time,none,none,none,simple,none
+FD189,"bhaiya ne bina location puche direct flat bell bajayi, best rider ever",hinglish,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD190,"Why is GST charged on delivery charge and packaging fee as well?",english,food_delivery,question,neutral,price,none,none,none,moderate,none
+FD191,"Packaging leaked entirely, gravy ruined my sofa and carpet, utterly irresponsible handling.",english,food_delivery,complaint,negative,packaging,damaged_packaging,high,none,moderate,"Use heavy duty spill proof containers"
+FD192,"Delicious authentic filter coffee, packed hot in a smart thermal flask container.",english,restaurant,appreciation,positive,packaging,none,none,none,moderate,none
+FD193,"bhai food tasty tha par bilkul thanda ho chuka tha aate aate",hinglish,food_delivery,complaint,mixed,temperature,cold_food,medium,none,simple,"Use heated delivery bags"
+FD194,"Please give an option to split bill with multiple UPI IDs on group orders.",english,food_delivery,suggestion,neutral,payment,none,none,none,moderate,"Enable split bill payment"
+FD195,"I wouldn't recommend this place if you are looking for authentic Hyderabadi flavor.",english,restaurant,complaint,negative,taste,poor_taste,low,none,moderate,none
+FD196,"bhai refund kab aayega account me? 3 din ho gaye ticket open kiye hue",hinglish,food_delivery,question,negative,refund,refund_delay,medium,none,moderate,"Resolve refund tickets promptly"
+FD197,"Great discounts on the mega feast combo, saved around 250 bucks.",english,food_delivery,appreciation,positive,discount,none,none,none,simple,none
+FD198,"The noodles were decent, but the manchurian balls tasted like pure refined flour dough.",english,restaurant,complaint,mixed,taste,poor_quality,low,none,moderate,"Use vegetable fillings in manchurian"
+FD199,"delivery boy demanded extra cash for parking charges at apartment gate, ridiculous nonsense",english,food_delivery,complaint,negative,delivery_partner,payment_issue,medium,mild,"Advise riders against asking cash"
+FD200,"Dosa was paper-thin and crisp, coconut and tomato chutneys were exceptionally fresh.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD201,"bhai kya app pe order cancel karne ka timer 60 seconds se badha sakte ho?",hinglish,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Extend order cancellation window"
+FD202,"Food was warm and well packed, but portion size has shrunk compared to last month.",english,food_delivery,complaint,mixed,portion_size,small_portion,low,none,moderate,"Maintain consistent portion sizes"
+FD203,"Found tiny gravel stones inside the dal khichdi, nearly chipped my molar tooth.",english,restaurant,complaint,negative,hygiene,hygiene_issue,high,none,moderate,"Sort and wash lentils thoroughly"
+FD204,"Quick delivery, polite executive, hot and fresh food, full marks.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD205,"bhai butter naan order ki thi plain tandoori roti bhej di wo bhi jali hui",hinglish,food_delivery,complaint,negative,wrong_item,wrong_item,medium,none,simple,"Cross check items at packing desk"
+FD206,"Does this restaurant offer customized no-sugar options for fresh fruit juices?",english,restaurant,question,neutral,food_quality,none,none,none,moderate,none
+FD207,"Honestly, the taste was surprisingly good given how cheap the lunch combo was.",english,restaurant,appreciation,positive,price,none,none,none,moderate,none
+FD208,"bhai map location bilkul galat dikha raha tha rider 2 gali chhod ke ghum raha tha",hinglish,food_delivery,complaint,negative,app,app_issue,medium,none,moderate,"Update mapping coordinates accuracy"
+FD209,"App should allow saving personalized dietary preferences like vegan or gluten-free.",english,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Add dietary filter preferences"
+FD210,"The garlic naan had zero garlic flavor, just ordinary dry dough slapped with coriander.",english,restaurant,complaint,negative,taste,poor_taste,low,none,moderate,none
+FD211,"Quick and polite service, food reached 15 minutes before the estimated time.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD212,"bhai parcel poora geela ho gaya baarish ki wajah se cover use nahi kiya rider ne",hinglish,food_delivery,complaint,negative,packaging,damaged_packaging,high,none,moderate,"Provide waterproof delivery bags"
+FD213,"Can I tip the delivery partner after the delivery is successfully completed?",english,food_delivery,question,neutral,delivery_partner,none,none,none,moderate,none
+FD214,"Food was hot and tasty, but delivery partner forgot the two cans of cold coke.",english,food_delivery,complaint,mixed,missing_item,missing_item,medium,none,moderate,"Double check beverage orders"
+FD215,"Disgusting oily mess, the fried rice was floating in rancid grease, threw it away directly.",english,restaurant,complaint,negative,food_quality,poor_quality,high,mild,"Control grease and oil usage"
+FD216,"bhai gulab jamun ekdum soft aur garam the maza aa gaya khaake",hinglish,restaurant,appreciation,positive,taste,none,none,none,simple,none
+FD217,"Customer support team was unhelpful and kept repeating templated scripts without listening.",english,food_delivery,complaint,negative,customer_support,poor_support,medium,none,moderate,"Train agents in empathetic listening"
+FD218,"Include an option to request less packaging to reduce plastic waste.",english,food_delivery,suggestion,neutral,packaging,none,none,none,moderate,"Provide reduced packaging toggle"
+FD219,"Is there a minimum order amount for free delivery during late night hours?",english,food_delivery,question,neutral,price,none,none,none,moderate,none
+FD220,"The Hakka noodles were savory and smoky, though the chilli chicken gravy was somewhat bland.",english,restaurant,appreciation,mixed,taste,none,none,none,complex,none
+FD221,"bhai rider ne phone karke rude tone me bola gate pe aao mai upar nahi aaunga",hinglish,food_delivery,complaint,negative,delivery_partner,poor_support,medium,none,moderate,"Ensure doorstep delivery protocol"
+FD222,"Ordered lunch for 10 people at office, everything was neatly labeled with individual names.",english,food_delivery,appreciation,positive,packaging,none,none,none,moderate,none
+FD223,"Chicken was totally uncooked inside red raw meat, absolutely disgusting and unsafe.",english,restaurant,complaint,negative,hygiene,hygiene_issue,high,none,moderate,"Check internal cooking temperature"
+FD224,"bhai tracking screen par delivery time 20 min se 55 min ho gaya achanak kyu?",hinglish,food_delivery,question,negative,delivery_time,late_delivery,medium,none,moderate,"Explain sudden ETA surges"
+FD225,"The food was decent enough, but not worth the 45-minute wait time.",english,food_delivery,complaint,mixed,delivery_time,late_delivery,low,none,simple,none
+FD226,"Super crispy samosas delivered steaming hot with mint and saunth chutneys.",english,restaurant,appreciation,positive,food_quality,none,none,none,simple,none
+FD227,"bhai bill me platform fee 10 rupay kyu add ho gayi bina bataye",hinglish,food_delivery,complaint,negative,price,high_price,low,none,simple,"Disclose platform fees clearly"
+FD228,"Restaurants should mention portion sizes in grams or milliliters to set expectations.",english,food_delivery,suggestion,neutral,portion_size,none,none,none,moderate,"List portions in standard units"
+FD229,"Rider drove carefully, handed over the pastry boxes upright without a scratch.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD230,"The rasgullas were sour and syrup was cloudy, clearly past expiration date.",english,restaurant,complaint,negative,freshness,poor_quality,high,none,moderate,"Inspect shelf life of dairy sweets"
+FD231,"bhai kya app par UPI autopay mandate cancel karne ka seedha tarika hai?",hinglish,food_delivery,question,neutral,payment,none,low,none,moderate,none
+FD232,"Delivery was super fast, but they gave me butter roti instead of garlic naan.",english,food_delivery,complaint,mixed,wrong_item,wrong_item,low,none,moderate,"Verify bread items before bagging"
+FD233,"Fluffy bhaturas and perfectly spiced pindi chole, classic Sunday morning treat.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD234,"bhai support wale ne call disconnect kar di bina solution diye dumb staff",hinglish,food_delivery,complaint,negative,customer_support,poor_support,medium,mild,"Monitor agent call drop rates"
+FD235,"Please allow filtering restaurants based on strict zero-plastic packaging standards.",english,food_delivery,suggestion,neutral,packaging,none,none,none,moderate,"Add sustainable packaging filter"
+FD236,"Ordered biryani received just plain white rice with yellow food dye shameless cheating restaurant",english,restaurant,complaint,negative,food_quality,wrong_item,high,mild,"Investigate restaurant fraud"
+FD237,"Food arrived within twenty minutes, nicely sealed with safety hologram tapes.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD238,"kya hostel gate pe rider contactless drop kar sakta hai security ke pass?",hinglish,food_delivery,question,neutral,delivery,none,none,none,moderate,none
+FD239,"The crust of the pizza was airy and light, but tomato sauce was somewhat acidic.",english,restaurant,appreciation,mixed,taste,none,none,none,moderate,none
+FD240,"bhai discount coupon laga ke 100 rupay bache par delivery charge 80 rupay le liya",hinglish,food_delivery,complaint,mixed,price,high_price,low,none,moderate,none
+FD241,"Rider wandered for 25 minutes around my landmark because his GPS app had cached old routes.",english,food_delivery,complaint,negative,delivery,late_delivery,medium,none,moderate,"Update rider mapping navigation"
+FD242,"Melt-in-mouth galouti kebabs with delicate roomali rotis, outstanding culinary craftsmanship.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD243,"Can we schedule bulk food deliveries for corporate events 24 hours prior?",english,food_delivery,question,neutral,food_delivery,none,none,none,moderate,none
+FD244,"bhai extra mayo ke 30 rupay charge kiye par pouch ek bhi nahi diya",hinglish,food_delivery,complaint,negative,missing_item,missing_item,low,none,simple,"Pack paid add-ons carefully"
+FD245,"Not terrible at all, but the dal makhani lacked the slow-cooked smokiness I craved.",english,restaurant,informational,mixed,taste,poor_taste,low,none,moderate,none
+FD246,"Delivery boy handled the tiered birthday cake with utmost care, not a swirl disturbed.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD247,"bhai paneer itna hard tha jaise rubber chaba rahe ho bilkul bekaar quality",hinglish,restaurant,complaint,negative,food_quality,poor_quality,medium,none,simple,"Use fresh malai paneer"
+FD248,"Apps should let users blacklist specific rogue restaurants from ever appearing in feeds.",english,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Add restaurant blocking feature"
+FD249,"Piping hot veg manchow soup along with crispy noodles delivered inside 20 mins.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD250,"bhai rider ne wrong building me drop kar diya parcel dhundne me 20 min lage",hinglish,food_delivery,complaint,negative,delivery,late_delivery,medium,none,moderate,"Confirm flat address upon arrival"
+FD251,"The thali offered decent variety, though the dessert was shockingly minuscule.",english,restaurant,complaint,mixed,portion_size,small_portion,low,none,moderate,none
+FD252,"Why does the app show discounts that disappear automatically at the final checkout screen?",english,food_delivery,question,negative,discount,app_issue,medium,none,moderate,"Fix checkout coupon bug"
+FD253,"Flawless breakfast delivery, crisp vadas and steaming sambar right at 7:30 AM.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,moderate,none
+FD254,"bhai food me se smell aa rahi thi basera ho chuka tha kheer me",hinglish,restaurant,complaint,negative,freshness,poor_quality,high,none,simple,"Discard sour and spoiled sweets"
+FD255,"I wouldn't say the delivery was terribly late, but 45 minutes for two sandwiches is steep.",english,food_delivery,complaint,mixed,delivery_time,late_delivery,low,none,moderate,none
+FD256,"Delivery apps should prompt riders to sanitize hands before handling packed meal bags.",english,food_delivery,suggestion,neutral,hygiene,none,none,none,moderate,"Enforce rider hygiene guidelines"
+FD257,"Rider was polite and courteous, came up to the 4th floor without complaining once.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD258,"bhai extra raita manga tha charges le liye par pack karna bhool gaye",hinglish,food_delivery,complaint,negative,missing_item,missing_item,medium,none,simple,"Audit bag contents for paid addons"
+FD259,"Is it possible to request unspiced khichdi for a sick patient at home?",english,restaurant,question,neutral,food_quality,none,none,none,moderate,none
+FD260,"Crispy masala papad, hot veg biryani and cool cucumber raita, comforting sunday meal.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD261,"pathetic customer support bot keeps repeating same useless automated replies solve my refund issue",english,food_delivery,complaint,negative,customer_support,poor_support,high,mild,"Provide human escalation"
+FD262,"bhai parcel poora leak ho ke polythene me puddle ban gaya tha",hinglish,food_delivery,complaint,negative,packaging,damaged_packaging,high,none,simple,"Seal container lids firmly"
+FD263,"Food was surprisingly warm, considering the distance between restaurant and my flat.",english,food_delivery,appreciation,positive,temperature,none,none,none,moderate,none
+FD264,"The mutton seekh was succulent and juicy, but the roomali roti was tough to chew.",english,restaurant,appreciation,mixed,food_quality,poor_quality,low,none,complex,none
+FD265,"Can we change delivery address once the restaurant accepts our order?",english,food_delivery,question,neutral,app,none,none,none,moderate,none
+FD266,"Rider navigated the narrow hostel lanes easily and called once at the main porch.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD267,"bhai khane me do bal nikle paneer lababdar me ulti aa gayi dekh kar",hinglish,restaurant,complaint,negative,hygiene,hygiene_issue,high,mild,"Strict kitchen hygiene checks"
+FD268,"Allow customers to track kitchen live via kitchen-cam streams to ensure hygiene.",english,food_delivery,suggestion,neutral,hygiene,none,none,none,complex,"Introduce kitchen hygiene visibility"
+FD269,"Super crisp french fries, properly salted and still warm upon delivery.",english,food_delivery,appreciation,positive,food_quality,none,none,none,simple,none
+FD270,"bhai coupon apply kiya 150 off wala bill pe sirf 50 off dikha raha hai kyu?",hinglish,food_delivery,question,negative,discount,app_issue,medium,none,moderate,"Resolve coupon discount calculations"
+FD271,"The veg fried rice was decent, but manchurian gravy had an overwhelming raw ginger taste.",english,restaurant,complaint,mixed,taste,poor_taste,low,none,moderate,none
+FD272,"Rider dropped the package directly on the dirty door mat without ringing bell and left.",english,food_delivery,complaint,negative,delivery_partner,poor_support,medium,none,moderate,"Hand over parcels respectfully"
+FD273,"Authentic Malabari parotta with rich spicy kurma, reminded me of home.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD274,"bhai biryani me pieces bohot dry the juicy bilkul nahi the",hinglish,restaurant,complaint,negative,food_quality,poor_quality,low,none,simple,"Use tender chicken pieces"
+FD275,"Are delivery partners provided insurance coverage during severe heavy monsoon shifts?",english,food_delivery,question,neutral,delivery_partner,none,none,none,moderate,none
+FD276,"Delivery took 75 minutes, but the pizza was still warm and cheese was intact.",english,food_delivery,informational,mixed,delivery_time,late_delivery,low,none,moderate,none
+FD277,"Food reached in just 18 minutes, fresh hot and neatly packaged.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD278,"bhai parcel deliver mark kar diya par mere haath me khana nahi aaya abhi tak",hinglish,food_delivery,complaint,negative,delivery,late_delivery,high,none,moderate,"Require OTP verification before completion"
+FD279,"Include an option to order half-plates to avoid tragic food wastage for solo eaters.",english,restaurant,suggestion,neutral,portion_size,none,none,none,moderate,"Offer half portion options"
+FD280,"The soup was soothing and hot, though crispy noodles were crushed into dust.",english,food_delivery,appreciation,mixed,packaging,damaged_packaging,low,none,moderate,"Pack crispy fried sides separately"
+FD281,"Worst food experience, fish curry smelled like rotten gutter water, throw this trash away.",english,restaurant,complaint,negative,freshness,poor_quality,high,severe,"Ensure raw fish quality checks"
+FD282,"bhaiya ne smiling face ke saath order deliver kiya bohot accha laga",hinglish,food_delivery,appreciation,positive,delivery_partner,none,none,none,simple,none
+FD283,"Why did the customer support agent leave chat before initiating my refund request?",english,food_delivery,question,negative,customer_support,poor_support,high,none,moderate,"Improve chat resolution guidelines"
+FD284,"Ordered cold coffee, arrived as hot sugary liquid without any trace of ice.",english,food_delivery,complaint,negative,temperature,cold_food,medium,none,moderate,"Use thermal insulation for cold drinks"
+FD285,"The hakka noodles were tasty and non-sticky, vegetable crunch was very pleasing.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD286,"bhai parcel seal tooti hui thi aisa laga kisi ne khol ke check kiya hai raste me",hinglish,food_delivery,complaint,negative,packaging,damaged_packaging,high,none,moderate,"Use tamper-proof seal stickers"
+FD287,"Delivery was fairly quick, though the app took three attempts to process debit card payment.",english,food_delivery,informational,mixed,payment,payment_issue,low,none,moderate,none
+FD288,"Offer a voice-note instruction option for delivery partners to locate complex hostel gates.",english,food_delivery,suggestion,neutral,delivery_partner,none,none,none,moderate,"Add audio navigation notes"
+FD289,"Amazing tandoori paneer tikka, smoky marinade and crisp mint sauce.",english,restaurant,appreciation,positive,taste,none,none,none,simple,none
+FD290,"bhai payment double kat gayi app glitch ki wajah se refund kab tak milega?",hinglish,food_delivery,question,negative,payment,payment_issue,high,none,moderate,"Speed up duplicate payment refund"
+FD291,"The chole tasted nice, but bhaturas were overly leathery by the time they reached me.",english,food_delivery,complaint,mixed,food_quality,poor_quality,low,none,moderate,none
+FD292,"Delivery rider called politely and followed gate entry passcode instructions without any hassle.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD293,"fraud restaurant sent raw chicken inside veg roll, hurt religious sentiments idiots",english,restaurant,complaint,negative,wrong_item,wrong_item,high,severe,"Strictly segregate veg kitchen items"
+FD294,"bhai thali me gulab jamun ki jagah plain boondi ka chammach bhar diya bekaar",hinglish,food_delivery,complaint,negative,wrong_item,wrong_item,medium,none,simple,"Stick to listed thali menu"
+FD295,"Does this restaurant use cold-pressed oil for preparing their diet meal bowls?",english,restaurant,question,neutral,food_quality,none,none,none,moderate,none
+FD296,"Delicious garlic noodles, well-packaged, and delivered under 25 minutes.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD297,"bhai driver ne parking me gaadi thoki aur argument karne laga ridiculous fellow",hinglish,food_delivery,complaint,negative,delivery_partner,poor_support,high,mild,"Ensure safe driving behavior by riders"
+FD298,"Apps should give an option to donate round-off change directly to rider welfare funds.",english,food_delivery,suggestion,neutral,delivery_partner,none,none,none,moderate,"Enable rider welfare round-off"
+FD299,"The chicken biryani was rich and aromatic, but the raita was unpleasantly sour.",english,food_delivery,complaint,mixed,freshness,poor_quality,low,none,moderate,"Provide fresh raita"
+FD300,"Smooth delivery, food arrived hot and fresh as always.",english,food_delivery,appreciation,positive,food_quality,none,none,none,simple,none
+FD301,"bhai refund policy itni complex kyu bana rakhi hai direct UPI transfer kyu nahi hota?",hinglish,food_delivery,question,negative,refund,refund_delay,medium,none,moderate,"Simplify instant refund options"
+FD302,"The pizza arrived stone cold, crust was damp from vapor trapped inside cardboard box.",english,food_delivery,complaint,negative,temperature,cold_food,medium,none,moderate,"Use vented pizza packaging"
+FD303,"Crispy thin crust pizza, fresh basil leaves, exquisite balance of mozzarella cheese.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD304,"bhai 40 min ka wait tha 90 min ho gaye khane ka ata pata nahi hai",hinglish,food_delivery,complaint,negative,delivery_time,late_delivery,medium,none,simple,"Adhere to stated delivery estimates"
+FD305,"Not the most authentic ramen broth, but certainly tasty and filling for a rainy evening.",english,restaurant,appreciation,mixed,taste,none,none,none,moderate,none
+FD306,"Can we request completely plastic-free paper containers for hot curry orders?",english,food_delivery,suggestion,neutral,packaging,none,none,none,moderate,"Offer biodegradable packaging options"
+FD307,"Rider was polite, reached fast, and had change ready for my cash payment.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD308,"bhai soup me hair strand nikla pura mood kharab ho gaya dinner ka",hinglish,restaurant,complaint,negative,hygiene,hygiene_issue,high,none,simple,"Maintain food hygiene checks"
+FD309,"Why do restaurant prices on this app appear 30% higher than their dine-in menu card?",english,food_delivery,question,negative,price,high_price,medium,none,moderate,"Regulate restaurant markup prices"
+FD310,"Delicious hot pav bhaji, soft butter-toasted pavs, and crunchy fresh onion rings.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD311,"The burger was flavorful, but the delivery person had dropped the bag sideways resulting in mashed food.",english,food_delivery,complaint,mixed,packaging,damaged_packaging,medium,none,complex,"Train riders on keeping packages upright"
+FD312,"bhai customer support executive chat terminate karke bhaag gaya bina jawab diye",hinglish,food_delivery,complaint,negative,customer_support,poor_support,high,mild,"Ensure support agents resolve queries"
+FD313,"Delivery arrived right on time, hot soup in leak-proof screw-cap containers.",english,food_delivery,appreciation,positive,packaging,none,none,none,simple,none
+FD314,"bhai kya order tracking screen me rider ka live phone number visible rehta hai?",hinglish,food_delivery,question,neutral,app,none,none,none,simple,none
+FD315,"Food quality was decent, but paying 60 rupees for delivery inside 1 km distance feels excessive.",english,food_delivery,complaint,mixed,price,high_price,low,none,moderate,"Lower short-distance delivery fees"
+FD316,"Allow customers to schedule orders up to 24 hours ahead for planned home parties.",english,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Enable advance scheduling feature"
+FD317,"Softest idlis I've ever had in Delhi, gunpowder podi and pure ghee took it to next level.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD318,"bhai khana bilkul cold tha microwave me dobara garam karna pada pura",hinglish,food_delivery,complaint,negative,temperature,cold_food,medium,none,simple,"Use thermal insulation bags"
+FD319,"Is there any student discount coupon currently running for university hostels?",english,food_delivery,question,neutral,discount,none,none,none,simple,none
+FD320,"The chicken rolls were delicious, though they forgot to include the extra green mint chutney requested.",english,food_delivery,informational,mixed,missing_item,missing_item,low,none,moderate,none
+FD321,"Rider arrived within 15 minutes, food was boiling hot, exceptional service.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD322,"bhai mutton seekh kebab bilkul burnt tha kadwa lag raha tha",hinglish,restaurant,complaint,negative,food_quality,poor_quality,medium,none,simple,"Prevent burning during tandoor grilling"
+FD323,"Can we opt for no plastic cutlery by default on all orders to reduce landfill pollution?",english,food_delivery,suggestion,neutral,packaging,none,none,none,moderate,"Set no-cutlery as default"
+FD324,"I wouldn't say the meal was bad, but the rice was somewhat clumpy and lacked freshness.",english,restaurant,complaint,mixed,food_quality,poor_quality,low,none,complex,none
+FD325,"fraud app charged money 2 times and deducted 750 rupees without booking order bloody thieves",english,food_delivery,complaint,negative,payment,payment_issue,high,severe,"Resolve double debit issues instantly"
+FD326,"bhai biryani ke saath salan aur raita dono theek se pack kiye the mast experience",hinglish,food_delivery,appreciation,positive,packaging,none,none,none,moderate,none
+FD327,"How long does customer support take to answer live chat during peak weekend hours?",english,food_delivery,question,neutral,customer_support,none,none,none,moderate,none
+FD328,"The butter naan was soft and pillowy, paired splendidly with the creamy paneer pasanda.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD329,"bhai delivery guy ne gate keeper ko packet de diya aur mujhe inform bhi nahi kiya",hinglish,food_delivery,complaint,negative,delivery_partner,delivery_partner,medium,none,moderate,"Send notification upon drop off"
+FD330,"Food arrived quite quickly, though the portion was slightly smaller than advertised in menu pictures.",english,food_delivery,complaint,mixed,portion_size,small_portion,low,none,moderate,"Match photos with realistic portions"
+FD331,"Prompt delivery, hot tea in heat-retaining thermos pouch, absolutely brilliant packaging design.",english,food_delivery,appreciation,positive,packaging,none,none,none,moderate,none
+FD332,"bhai sabzi me paneer ke 3 chhote tukde the baaki pura paani jaisi gravy thi rip off",hinglish,restaurant,complaint,negative,portion_size,small_portion,medium,none,moderate,"Ensure reasonable paneer pieces count"
+FD333,"Show nutritional info such as protein, carbs and fats on health-food menu items.",english,food_delivery,suggestion,neutral,food_quality,none,none,none,moderate,"Display macronutrient information"
+FD334,"Can an order be cancelled without penalty if the rider hasn't moved for 30 minutes?",english,food_delivery,question,neutral,delivery_time,none,medium,none,moderate,none
+FD335,"Crispy fried chicken was juicy inside, seasoned with authentic fiery spices.",english,restaurant,appreciation,positive,taste,none,none,none,simple,none
+FD336,"bhai rider ne lift me thook rakha tha disgusting fellow teach basic civic sense",hinglish,food_delivery,complaint,negative,delivery_partner,hygiene_issue,high,mild,"Strictly enforce rider behavioral guidelines"
+FD337,"The sweet corn soup had great flavor, though it arrived only lukewarm.",english,food_delivery,appreciation,mixed,temperature,cold_food,low,none,simple,none
+FD338,"Delivery partner followed the GPS pin accurately and delivered with polite greetings.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD339,"bhai discount coupon apply karte hi error code 404 show karta hai checkout pe",hinglish,food_delivery,complaint,negative,discount,app_issue,medium,none,moderate,"Fix promo code error 404"
+FD340,"Is the chicken served halal certified across all partnering restaurant branches?",english,restaurant,question,neutral,food_quality,none,none,none,moderate,none
+FD341,"Hot piping veg thali delivered inside 30 minutes, clean steel-finish meal tray.",english,food_delivery,appreciation,positive,packaging,none,none,none,moderate,none
+FD342,"bhai packaging itni kharab thi ki poora sambar bag me phail chuka tha",hinglish,food_delivery,complaint,negative,packaging,damaged_packaging,high,none,simple,"Use tight lids for sambar"
+FD343,"The burger was flavorful, but the bun was slightly dry around the corners.",english,restaurant,informational,mixed,food_quality,poor_quality,low,none,moderate,none
+FD344,"Allow users to rate food items individually instead of a single overall restaurant rating.",english,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Enable dish-level rating system"
+FD345,"Superb aromatic biryani, rice grains were separate, succulent mutton pieces, thoroughly enjoyed.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD346,"bhai rider ne phone karke rude language use ki jab maine location samjhaya idiot",hinglish,food_delivery,complaint,negative,delivery_partner,poor_support,high,mild,"Take strict action on rider rudeness"
+FD347,"What is the standard procedure to claim refund for items damaged in transit?",english,food_delivery,question,neutral,refund,none,none,none,moderate,none
+FD348,"Delivered in 25 mins, food was warm, well-portioned, and tasted fantastic.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD349,"bhai thali me sweet dish gayab thi har baar kuch na kuch chhod dete hai",hinglish,food_delivery,complaint,negative,missing_item,missing_item,medium,none,moderate,"Check items list before bag seal"
+FD350,"The fried rice was fresh and light, though chili chicken pieces were slightly rubbery.",english,restaurant,appreciation,mixed,food_quality,poor_quality,low,none,moderate,none
+FD351,"Delivery partner patiently waited outside my hostel gate for 5 minutes without complaint.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD352,"bhai app baar baar crash ho raha hai payment gateway pe",hinglish,food_delivery,complaint,negative,app,app_issue,high,none,simple,"Improve payment flow stability"
+FD353,"Please introduce dynamic combo builders where customers can select custom gravies and breads.",english,restaurant,suggestion,neutral,restaurant,none,none,none,moderate,"Offer customizable meal combos"
+FD354,"Crispy vadas, steaming hot sambar and spicy coconut chutney, top tier breakfast.",english,restaurant,appreciation,positive,food_quality,none,none,none,moderate,none
+FD355,"bhai pizza crust itna hard tha ki chabana mushkil ho gaya stale lag raha tha",hinglish,restaurant,complaint,negative,freshness,poor_quality,medium,none,moderate,"Bake with fresh dough"
+FD356,"Can I schedule recurring daily tiffin delivery orders for weekdays?",english,food_delivery,question,neutral,app,none,none,none,moderate,none
+FD357,"Food was tasty and authentic, but delivery arrived forty minutes after estimated schedule.",english,food_delivery,complaint,mixed,delivery_time,late_delivery,medium,none,moderate,"Provide accurate time estimations"
+FD358,"Quick drop-off, contactless instructions respected, meal arrived hot.",english,food_delivery,appreciation,positive,delivery,none,none,none,simple,none
+FD359,"bhai cold coffee warm milk ban chuki thi aate aate pura mood kharab ho gaya",hinglish,food_delivery,complaint,negative,temperature,cold_food,medium,none,simple,"Maintain cold chain for beverages"
+FD360,"Allow tipping directly via wallet balance during the checkout phase.",english,food_delivery,suggestion,neutral,payment,none,none,none,moderate,"Enable wallet balance tipping"
+FD361,"The dal makhani was rich and creamy, though the tandoori rotis were slightly burnt at edges.",english,restaurant,appreciation,mixed,food_quality,poor_quality,low,none,moderate,none
+FD362,"bhai refund ticket resolve mark kar di bina bank me paise bheje shameless cheats",hinglish,food_delivery,complaint,negative,refund,refund_delay,high,mild,"Verify bank refund before closing ticket"
+FD363,"Clean eco-friendly paper packaging, hot and crispy samosas, fantastic experience.",english,food_delivery,appreciation,positive,packaging,none,none,none,moderate,none
+FD364,"Where do I track the current active location of the assigned delivery partner?",english,food_delivery,question,neutral,app,none,none,none,simple,none
+FD365,"Ordered veg thali received chicken curry instead, gross negligence by packaging staff.",english,food_delivery,complaint,negative,wrong_item,wrong_item,high,none,moderate,"Ensure strict veg/non-veg labeling"
+FD366,"bhai delivery rider bohot polite tha greeting di acche se",hinglish,food_delivery,appreciation,positive,delivery_partner,none,none,none,simple,none
+FD367,"The burger had good seasoning, but French fries were soggy and cold.",english,food_delivery,complaint,mixed,temperature,cold_food,low,none,simple,none
+FD368,"Provide real-time updates when an item ordered is out of stock at restaurant.",english,food_delivery,suggestion,neutral,order_accuracy,none,none,none,moderate,"Notify stock-outs instantly"
+FD369,"Tender mutton chunks in spicy nihari gravy, delivered warm in secure plastic containers.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD370,"bhai app ne coupon automatically remove kar diya payment karte waqt scam hai ye",hinglish,food_delivery,complaint,negative,discount,app_issue,medium,mild,"Keep coupon valid until final step"
+FD371,"Can we add delivery instructions for specific apartment tower entrances?",english,food_delivery,question,neutral,app,none,none,none,moderate,none
+FD372,"Delivered within 22 minutes, food was piping hot and cutlery was included.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD373,"bhai momos bilkul thande the aur chutney ka packet phat gaya tha box me",hinglish,food_delivery,complaint,negative,packaging,damaged_packaging,medium,none,simple,"Seal chutney packs securely"
+FD374,"The paneer was soft and fresh, although the gravy was excessively sweet for my liking.",english,restaurant,informational,mixed,taste,poor_taste,low,none,moderate,none
+FD375,"Apps should provide estimated preparation time before placing the order.",english,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Show prep time before checkout"
+FD376,"Exceptional South Indian meal, rasam was tangy and spicy, papad stayed crisp.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD377,"bhai rider ne phone karke gaali di jab maine flat floor pucha useless fellow",hinglish,food_delivery,complaint,negative,delivery_partner,poor_support,high,severe,"Terminate abusive rider"
+FD378,"Does the restaurant offer contact numbers for direct special dietary requests?",english,restaurant,question,neutral,restaurant,none,none,none,moderate,none
+FD379,"Delivery was super prompt, but one cold drink bottle was completely missing from bag.",english,food_delivery,complaint,mixed,missing_item,missing_item,medium,none,moderate,"Cross check beverage bottles"
+FD380,"bhai food fresh tha aur delivery boy ne mask pehna hua tha hygiene 10/10",hinglish,food_delivery,appreciation,positive,hygiene,none,none,none,moderate,none
+FD381,"The packaging was leak-proof and solid, keeping the mutton stew piping hot.",english,food_delivery,appreciation,positive,packaging,none,none,none,moderate,none
+FD382,"bhai customer care ne 40 minute wait karwaya chat pe still no answer",hinglish,food_delivery,complaint,negative,customer_support,poor_support,medium,none,simple,"Reduce support chat response time"
+FD383,"Offer options for biodegradable wooden cutlery instead of single-use plastic forks.",english,food_delivery,suggestion,neutral,packaging,none,none,none,moderate,"Adopt wooden biodegradable cutlery"
+FD384,"Can I pay using international credit cards on the checkout page?",english,food_delivery,question,neutral,payment,none,none,none,simple,none
+FD385,"The hakka noodles were tasty, but manchurian gravy was too salty to finish.",english,restaurant,complaint,mixed,taste,poor_taste,low,none,moderate,"Reduce salt in manchurian"
+FD386,"Piping hot veg biryani delivered in 20 minutes, aromatic and fresh.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD387,"bhai sabzi me se foul smell aa rahi thi bilkul baasi khana bhej diya",hinglish,restaurant,complaint,negative,freshness,poor_quality,high,none,simple,"Strict check against stale food"
+FD388,"Delivery driver brought change for 500 note as requested in comments, very thoughtful.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD389,"bhai khana order kiya 1 baje deliver hua 2:30 baje cold food",hinglish,food_delivery,complaint,negative,delivery_time,late_delivery,medium,none,simple,"Speed up transit times"
+FD390,"Allow customers to request call-before-arrival feature directly on order tracker.",english,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Add call before arrival checkbox"
+FD391,"Crisp golden dosas, thick flavorful sambar, and fresh coconut chutney, loved it.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD392,"bhai rider ne gate pe parcel patka aur chala gaya container crack ho gaya",hinglish,food_delivery,complaint,negative,packaging,damaged_packaging,medium,none,moderate,"Instruct careful parcel handling"
+FD393,"Is it possible to track the kitchen preparation live via web cam?",english,food_delivery,question,neutral,app,none,none,none,moderate,none
+FD394,"The meal was wholesome and hearty, though the accompanying pickle was overly sour.",english,restaurant,informational,mixed,taste,none,low,none,moderate,none
+FD395,"Fast delivery, pleasant rider, hot food, flawless experience throughout.",english,food_delivery,appreciation,positive,delivery,none,none,none,simple,none
+FD396,"bhai butter chicken me chicken ke hard bones the boneless order kiya tha maine",hinglish,food_delivery,complaint,negative,order_accuracy,wrong_item,medium,none,moderate,"Ensure accurate boneless cuts"
+FD397,"Include calorie and nutrient labels on all breakfast items for gym goers.",english,food_delivery,suggestion,neutral,food_quality,none,none,none,moderate,"Provide nutritional breakdown"
+FD398,"The momos were spicy and hot, but soup bowl was crushed and leaked completely.",english,food_delivery,complaint,mixed,packaging,damaged_packaging,medium,none,moderate,"Use sturdy bowls for soups"
+FD399,"bhai discount code apply kiya par bill pe zero discount dikha raha hai kyu?",hinglish,food_delivery,question,negative,discount,app_issue,low,none,moderate,"Ensure valid discounts reflect"
+FD400,"Great portion size, hot delicious chole bhature, definitely ordering again.",english,restaurant,appreciation,positive,portion_size,none,none,none,simple,none
+FD401,"Rider was polite, delivered right to my hostel doorstep quietly at night.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD402,"bhai pizza cold tha aur cheese dry papdi jaisi ho chuki thi",hinglish,food_delivery,complaint,negative,temperature,cold_food,medium,none,simple,"Use thermal heat bags"
+FD403,"Can we tip the rider through UPI directly after order completion?",english,food_delivery,question,neutral,delivery_partner,none,none,none,simple,none
+FD404,"The fried rice was nicely cooked, but chilli paneer was excessively sweet and gloopy.",english,restaurant,complaint,mixed,taste,poor_taste,low,none,moderate,"Balance sauce sweetness"
+FD405,"Apps should provide an automatic refund if order ETA exceeds 60 minutes delay.",english,food_delivery,suggestion,neutral,refund,none,none,none,moderate,"Automate delayed order refunds"
+FD406,"Delivered in 20 minutes, food was boiling hot, packaging was immaculate.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD407,"bhai support wale ne issue resolve kiye bina ticket close kar di nonsense service",hinglish,food_delivery,complaint,negative,customer_support,poor_support,high,mild,"Ensure ticket resolution before closing"
+FD408,"Fragrant basmati rice, tender chicken, and chilled creamy raita, fantastic lunch.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD409,"bhai biryani me namak bohot zyada tha khaya nahi gaya pura plate fekna pada",hinglish,restaurant,complaint,negative,taste,poor_taste,medium,none,simple,"Control salt measurement"
+FD410,"Does the app support split payments across two different UPI IDs?",english,food_delivery,question,neutral,payment,none,none,none,moderate,none
+FD411,"The burger was juicy and tasty, though fries were limp and lacked crispiness.",english,restaurant,appreciation,mixed,food_quality,poor_quality,low,none,moderate,none
+FD412,"Delivery boy handled the delicate cake box carefully, no smudging of frosting.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD413,"bhai 2 burger order kiye the 1 hi bheja restaurant ne packet me",hinglish,food_delivery,complaint,negative,missing_item,missing_item,medium,none,simple,"Verify order item quantity"
+FD414,"Provide an option for smaller eco-friendly cutlery kits instead of heavy plastic sets.",english,food_delivery,suggestion,neutral,packaging,none,none,none,moderate,"Offer minimalist cutlery sets"
+FD415,"Hot dal tadka with jeera rice delivered in record time, truly satisfying.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD416,"bhai refund 5 din se pending dikha raha hai bank me koi credit nahi hua abhi tak",hinglish,food_delivery,complaint,negative,refund,refund_delay,high,none,moderate,"Expedite refund settlements"
+FD417,"Are all tandoori items prepared using charcoal tandoor or electric ovens?",english,restaurant,question,neutral,food_quality,none,none,none,moderate,none
+FD418,"The pasta sauce was flavorful, but the garlic bread slices were burnt black.",english,restaurant,complaint,mixed,food_quality,poor_quality,low,none,moderate,"Avoid burning bread in oven"
+FD419,"Rider was polite, reached promptly, and greeted with a genuine smile.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,simple,none
+FD420,"bhai app me delivery partner ka live GPS location freeze ho jata hai bar bar",hinglish,food_delivery,complaint,negative,app,app_issue,medium,none,moderate,"Fix GPS map freeze bug"
+FD421,"Enable customers to customize exact sugar levels in tea and coffee orders.",english,food_delivery,suggestion,neutral,food_quality,none,none,none,moderate,"Allow sugar customization"
+FD422,"Crispy flaky parottas paired with aromatic vegetable salna, top notch South Indian fare.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD423,"bhai paneer butter masala me dead insect mila hygiene standard bilkul zero hai",hinglish,restaurant,complaint,negative,hygiene,hygiene_issue,high,mild,"Ensure strict kitchen pest management"
+FD424,"Can I change my registered phone number directly through profile settings?",english,food_delivery,question,neutral,app,none,none,none,simple,none
+FD425,"Delivery arrived within promised time, food was warm, though napkins were forgotten.",english,food_delivery,informational,mixed,missing_item,none,low,none,simple,none
+FD426,"Outstanding chicken shawarma, garlic toum was authentic, pita was fresh and soft.",english,restaurant,appreciation,positive,taste,none,none,none,moderate,none
+FD427,"bhai payment cancel hui par bank account se paise kat gaye reverse kab honge?",hinglish,food_delivery,question,negative,payment,payment_issue,medium,none,moderate,"Provide instant failed payment refunds"
+FD428,"The noodles had great wok flavor, but the spring rolls were soggy from steam.",english,food_delivery,complaint,mixed,packaging,damaged_packaging,low,none,moderate,"Use vented boxes for fried rolls"
+FD429,"Delivery partner climbed up to 3rd floor without elevator, polite and humble.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD430,"bhai delivery boy ne address nahi milne par phone par चिल्लाना shuru kar diya bad behavior",hinglish,food_delivery,complaint,negative,delivery_partner,poor_support,high,mild,"Train delivery riders in polite communication"
+FD431,"Restaurants should include small wet wipes with oily street food orders.",english,restaurant,suggestion,neutral,packaging,none,none,none,moderate,"Include wet wipes with finger food"
+FD432,"Steaming hot momos with authentic spicy red chutney, fast 20 min delivery.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD433,"bhai khana bilkul cold tha aate aate 70 min lag gaye",hinglish,food_delivery,complaint,negative,delivery_time,late_delivery,medium,none,simple,"Cut down transit times"
+FD434,"Does this combo meal include curd and pickle or do we order separately?",english,restaurant,question,neutral,order_accuracy,none,none,none,moderate,none
+FD435,"The veg thali had decent quantity, though dal was somewhat watery and diluted.",english,restaurant,complaint,mixed,food_quality,poor_quality,low,none,moderate,"Maintain thick dal consistency"
+FD436,"Neat paper packaging, zero spills, hot delicious food, very impressed.",english,food_delivery,appreciation,positive,packaging,none,none,none,simple,none
+FD437,"bhai extra cheese ke paise le liye par pizza pe plain cheese thi cheating hai",hinglish,restaurant,complaint,negative,order_accuracy,wrong_item,medium,none,moderate,"Verify paid add-on toppings"
+FD438,"Allow customers to report missing individual items directly from the digital receipt screen.",english,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Enable instant missing item reporting"
+FD439,"Delicious crispy dosas, fresh hot sambar, arrived right on time for breakfast.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD440,"bhai delivery guy ne parcel gate pe chhod diya bina bataye lost ho sakta tha",hinglish,food_delivery,complaint,negative,delivery_partner,delivery_partner,medium,none,moderate,"Mandate customer handoff verification"
+FD441,"Is there any midnight delivery surcharge applied for orders placed after 1 AM?",english,food_delivery,question,neutral,price,none,none,none,moderate,none
+FD442,"The chicken tikka was well-cooked, but mint chutney was thin and lacked salt.",english,restaurant,informational,mixed,taste,none,low,none,moderate,none
+FD443,"Rider followed all landmark instructions perfectly, reached smoothly without calling once.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD444,"bhai pasta pura dry tha sauce bilkul gayab thi dry macaroni lag raha tha",hinglish,restaurant,complaint,negative,food_quality,poor_quality,medium,none,simple,"Add adequate pasta sauce"
+FD445,"Show restaurant cleanliness certification scores directly under restaurant names on app.",english,food_delivery,suggestion,neutral,hygiene,none,none,none,moderate,"Display hygiene ratings on menu"
+FD446,"Fluffy bhaturas and authentic spicy pindi chole, arrived piping hot within 25 minutes.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,moderate,none
+FD447,"bhai coupon code checkout screen par validate nahi ho raha server error throw kar raha hai",hinglish,food_delivery,complaint,negative,discount,app_issue,medium,none,moderate,"Fix promo code server errors"
+FD448,"Can we request no-onion no-garlic preparation on Chinese food items?",english,restaurant,question,neutral,food_quality,none,none,none,moderate,none
+FD449,"The burger patty was seasoned well, but tomato slices were overripe and soggy.",english,restaurant,complaint,mixed,freshness,poor_quality,low,none,moderate,"Use crisp fresh vegetables"
+FD450,"Polite rider, super fast delivery, hot delicious biryani, 5 stars.",english,food_delivery,appreciation,positive,delivery,none,none,none,simple,none
+FD451,"bhai thali me kheer bilkul kharab ho chuki thi khatti smell aa rahi thi",hinglish,restaurant,complaint,negative,freshness,poor_quality,high,none,simple,"Ensure fresh milk desserts"
+FD452,"Provide option to save customized spice preference profiles on user account.",english,food_delivery,suggestion,neutral,food_quality,none,none,none,moderate,"Add default spice preferences"
+FD453,"Steaming hot filter coffee delivered in insulated thermos flask, brilliant touch.",english,food_delivery,appreciation,positive,packaging,none,none,none,moderate,none
+FD454,"bhai order deliver mark ho gaya par mujhe receive nahi hua fraud delivery boy",hinglish,food_delivery,complaint,negative,delivery_partner,late_delivery,high,mild,"Ensure OTP delivery handoff"
+FD455,"How can I get an itemized tax breakdown invoice for official company reimbursement?",english,food_delivery,question,neutral,app,none,none,none,moderate,none
+FD456,"The mutton curry was rich and authentic, though portions of meat pieces were scanty.",english,restaurant,complaint,mixed,portion_size,small_portion,low,none,moderate,"Ensure fair meat portioning"
+FD457,"Delivery partner handled the pastry box gently, spotless condition upon delivery.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,moderate,none
+FD458,"bhai gravy poori polythene me leak ho gayi packaging bilkul cheap use karte ho",hinglish,food_delivery,complaint,negative,packaging,damaged_packaging,high,none,simple,"Upgrade gravy packaging quality"
+FD459,"Prompt customer support agent credited refund for missing fries within two minutes.",english,food_delivery,appreciation,positive,refund,none,none,none,moderate,none
+FD460,"bhai sandwich me extra cheese add kiya tha par single slice bhi nahi thi",hinglish,food_delivery,complaint,negative,order_accuracy,missing_item,low,none,simple,"Check custom ingredients"
+FD461,"Can we select contactless drop-off with photo proof uploaded by the rider?",english,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Add photo proof for drop-off"
+FD462,"The fish fry was crunchy on outside, though slightly oily towards center.",english,restaurant,informational,mixed,taste,none,low,none,moderate,none
+FD463,"Quick delivery, polite delivery partner, delicious hot food.",english,food_delivery,appreciation,positive,delivery,none,none,none,simple,none
+FD464,"bhai rider ne lift na chalne par aane se mana kar diya aur order cancel karwa diya",hinglish,food_delivery,complaint,negative,delivery_partner,poor_support,high,none,moderate,"Mandate stair climb for low floors"
+FD465,"Does the restaurant offer eco-friendly packaging options without extra surcharge?",english,food_delivery,question,neutral,packaging,none,none,none,moderate,none
+FD466,"Crispy honey chilli potatoes, perfect sweetness and crunch, delivered inside 20 mins.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,moderate,none
+FD467,"bhai daal me namak itna kam tha ki bilkul fiki thi taste kharab ho gaya",hinglish,restaurant,complaint,negative,taste,poor_taste,low,none,simple,"Check seasoning before packing"
+FD468,"Allow customers to add live cooking notes directly visible to the chef.",english,restaurant,suggestion,neutral,restaurant,none,none,none,moderate,"Forward custom cooking notes to kitchen"
+FD469,"Hot authentic Hakka noodles, crunchy shredded vegetables, delivered piping hot.",english,restaurant,appreciation,positive,taste,none,none,none,simple,none
+FD470,"bhai payment wallet balance kat gaya par transaction failed dikha raha hai",hinglish,food_delivery,complaint,negative,payment,payment_issue,high,none,simple,"Resolve wallet debit failures"
+FD471,"Is there an estimated time for rider reassignment if first rider cancels?",english,food_delivery,question,neutral,delivery_partner,none,none,none,moderate,none
+FD472,"The chicken tikka was flavorful, though the onions accompanying it were dry and unpickled.",english,restaurant,informational,mixed,food_quality,none,low,none,moderate,none
+FD473,"Super fast delivery, polite rider, food steaming hot, thoroughly satisfied.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD474,"bhai burger ke andar stone piece nikla daant toot jata abhi mera idiot restaurant",hinglish,restaurant,complaint,negative,hygiene,hygiene_issue,high,mild,"Ensure thorough ingredient screening"
+FD475,"Allow users to pause active subscription meal plans when traveling out of city.",english,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Add meal plan pause option"
+FD476,"Steaming hot dal makhani, soft garlic butter naan, delightful dinner at home.",english,restaurant,appreciation,positive,taste,none,none,none,simple,none
+FD477,"bhai tracking me rider 10 min se stationary khada hai koi movement nahi hai",hinglish,food_delivery,complaint,negative,delivery,late_delivery,medium,none,simple,"Track rider idle halts"
+FD478,"Can we track order status through WhatsApp notifications instead of app alerts?",english,food_delivery,question,neutral,app,none,none,none,moderate,none
+FD479,"The momos were decent, but the dipping chutney was excessively watered down.",english,restaurant,complaint,mixed,taste,poor_taste,low,none,moderate,"Maintain thick sauce consistency"
+FD480,"Delivered on time, polite partner, tamper-evident packaging intact.",english,food_delivery,appreciation,positive,packaging,none,none,none,simple,none
+FD481,"bhai biryani me pieces dry the bilkul maza nahi aaya paise waste ho gaye",hinglish,restaurant,complaint,negative,food_quality,poor_quality,medium,none,simple,"Ensure juicy marinated meat"
+FD482,"Offer round-up savings where spare cents go into user discount wallets.",english,food_delivery,suggestion,neutral,payment,none,none,none,moderate,"Introduce spare change round-up savings"
+FD483,"Warm crisp vadas, piping hot sambar, perfect morning breakfast delivered on time.",english,food_delivery,appreciation,positive,food_quality,none,none,none,moderate,none
+FD484,"bhai rider ne delivery instructions follow nahi kiye aur doorbell loud baja di baby jaag gaya",hinglish,food_delivery,complaint,negative,delivery_partner,poor_support,low,none,moderate,"Follow no-doorbell instructions"
+FD485,"Where can I check if a restaurant has valid municipal FSSAI food safety licenses?",english,food_delivery,question,neutral,hygiene,none,none,none,moderate,none
+FD486,"The noodles were savory and smoky, but spring rolls lacked any crispiness.",english,food_delivery,informational,mixed,food_quality,poor_quality,low,none,moderate,none
+FD487,"Piping hot veg soup delivered within 18 minutes, exceptional monsoon evening comfort.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,moderate,none
+FD488,"bhai restaurant ne cutlery nahi bheji ab hostel me haath se noodles khaye kya",hinglish,food_delivery,complaint,negative,missing_item,missing_item,medium,none,simple,"Send cutlery when requested"
+FD489,"Enable dark mode on the mobile app interface for comfortable nighttime browsing.",english,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Implement dark mode UI"
+FD490,"Soft rotis, rich paneer butter masala, hot and fresh delivery, full marks.",english,food_delivery,appreciation,positive,food_quality,none,none,none,simple,none
+FD491,"bhai refund initiate hue 7 din ho gaye support wale koi update nahi de rahe",hinglish,food_delivery,complaint,negative,refund,refund_delay,high,none,moderate,"Resolve pending refund tickets"
+FD492,"Is there an option to order from two nearby restaurants in a single delivery batch?",english,food_delivery,question,neutral,app,none,none,none,moderate,none
+FD493,"The chicken shawarma had great tahini dressing, though pita bread was somewhat chewy.",english,restaurant,appreciation,mixed,food_quality,none,low,none,moderate,none
+FD494,"Polite executive, fast doorstep delivery, hot fresh food.",english,food_delivery,appreciation,positive,delivery_partner,none,none,none,simple,none
+FD495,"bhai pizza cold aaya aur crust soggy ho chuka tha transit me",hinglish,food_delivery,complaint,negative,temperature,cold_food,medium,none,simple,"Use vented heat-retaining pizza bags"
+FD496,"Apps should provide emergency cancellation button within 90 seconds of accidental placement.",english,food_delivery,suggestion,neutral,app,none,none,none,moderate,"Introduce 90-sec cancellation buffer"
+FD497,"Steaming hot thali delivered right at lunch hour, wholesome and fresh.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+FD498,"bhai coupon auto apply hone ke baad bill increase ho gaya hidden convenience fee se",hinglish,food_delivery,complaint,negative,price,high_price,medium,none,moderate,"Remove hidden fees post-coupon"
+FD499,"Can delivery partners see customer contact numbers directly or are calls masked?",english,food_delivery,question,neutral,app,none,none,none,moderate,none
+FD500,"Crispy dosas, authentic flavorful sambar, hot filter coffee, exemplary breakfast service.",english,food_delivery,appreciation,positive,taste,none,none,none,moderate,none

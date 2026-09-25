@@ -34,20 +34,24 @@ of the current state, architecture, data flow, dataset design, and improvement p
 ## Phase 1 — Project Organization
 
 **Objective:** Organize the project structure so files are in consistent,
-logical locations without breaking existing functionality.
+logical locations, separating raw datasets, ML code, and Django backend without
+breaking existing functionality.
 
 **What it does:**
-- Resolves the `model/` vs `ml/` directory inconsistency.
-- Adds a root `.gitignore` (for `venv/`, `__pycache__/`, `*.pyc`, etc.).
-- Removes tracked `__pycache__` and `.pyc` files from Git.
-- Ensures the `analyzer/views.py` model path matches the actual file location.
-- Minor organizational cleanup.
+- Resolves the `model/` vs `ml/` directory inconsistency by establishing `ml/models/`.
+- Separates ML code from Django into `ml/` (`preprocessing/`, `training/`, `evaluation/`).
+- Organizes raw datasets into separate service folders under `data/raw/<service>/`.
+- Creates an empty `data/processed/` directory ready for future combined data.
+- Adds a root `.gitignore` (for `venv/`, `__pycache__/`, `*.pyc`, `db.sqlite3`, etc.).
+- Adds `requirements.txt` documenting Python dependencies.
+- Removes dead `sentiment` app from `INSTALLED_APPS` in Django.
+- Fixes model loading in `analyzer/views.py` so the Django API runs cleanly.
 
 **What it does NOT do:**
 - Does not change application functionality.
-- Does not modify the ML model or training code logic.
+- Does not modify ML model weights or prediction logic.
 - Does not modify the React UI.
-- Does not touch the datasets.
+- Does not alter raw dataset contents.
 
 **Dependencies:** Phase 0 (documentation must exist first).
 
