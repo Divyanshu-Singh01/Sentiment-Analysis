@@ -55,7 +55,8 @@ Sentiment Analysis/
 │   │   └── tfidf_vectorizer.pkl      # Fitted TF-IDF vectorizer (gitignored)
 │   ├── preprocessing/                # Data preprocessing scripts
 │   │   ├── preprocessing.py          # Text cleaning pipeline
-│   │   └── data_check.py            # Dataset inspection/stats
+│   │   ├── data_check.py            # Dataset inspection/stats
+│   │   └── validate_datasets.py     # Reusable dataset validator (Phase 2)
 │   ├── training/                     # Model training scripts
 │   │   ├── train_model.py            # Train LogisticRegression + TF-IDF
 │   │   ├── train_test_split.py       # Check train/test split distribution
@@ -248,6 +249,7 @@ From `package.json`:
 9. ✅ ML scripts have correct paths to `data/processed/` and `ml/models/`.
 10. ✅ Root `.gitignore` prevents tracking of `venv/`, `__pycache__/`, `db.sqlite3`, `.pkl`.
 11. ✅ Python dependencies documented in `requirements.txt`.
+12. ✅ Reusable dataset validator (`ml/preprocessing/validate_datasets.py`) verifies all 10 raw datasets; findings documented in `docs/DATASET_VALIDATION.md`.
 
 ---
 

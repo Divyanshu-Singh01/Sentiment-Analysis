@@ -56,6 +56,7 @@ of annotated customer feedback.
 - `complaint` — Reporting a problem
 - `question` — Asking for information
 - `suggestion` — Recommending an improvement
+- `informational` — Factual statements or status updates (observed in all 10 datasets)
 
 ### Abuse
 - `none`
