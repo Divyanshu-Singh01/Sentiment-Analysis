@@ -25,7 +25,26 @@ SECRET_KEY = 'django-insecure-43o26pm#4#npy@*1t2m+$5001k1x5ph8^t$msl0$9kf$^v4ch@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "testserver"]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://[::1]:5173",
+    "http://localhost:5174",
+    "http://127.0.0.1:5174",
+    "http://[::1]:5174",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+]
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "analyzer.authentication.CsrfEnforcedSessionAuthentication",
+    ],
+}
 
 
 # Application definition
