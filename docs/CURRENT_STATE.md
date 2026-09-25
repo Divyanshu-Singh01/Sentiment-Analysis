@@ -1,7 +1,7 @@
 # Current State
 
-> **This document reflects the actual repository state after Phase 7 (Final Application Testing) and Phase 8 (Final Documentation).**  
-> Implementation is frozen. Everything here is verified against actual codebase files, test logs, and runtime behavior.
+> **This document reflects the actual repository state after Phase 6.10 (Promotion of Phase 6.9 Candidate to Production).**  
+> Everything here is verified against actual codebase files, test logs, and runtime behavior.
 
 ---
 
@@ -184,25 +184,31 @@ Sentiment Analysis/
 
 ## Current ML Model (Production)
 
-- **Architecture:** Exp3 (FeatureUnion of Word TF-IDF + Character n-grams TF-IDF with Logistic Regression).
+- **Version & Status:** **Phase 6.9 Promoted Production Model** (promoted in Phase 6.10).
+- **Backup Location of Previous 8k Baseline:** `ml/models/experiments/pre_phase_6_10/` (preserved untouched).
+- **Architecture:** Exp3 (`FeatureUnion` of Word TF-IDF + Character n-grams TF-IDF with Multi-class Logistic Regression).
 - **Algorithm:** Multi-class Logistic Regression (`sklearn.linear_model.LogisticRegression`).
   - `max_iter=1000`
   - `class_weight=None`
   - `random_state=42`
-- **Features:** 37,640 combined features via `FeatureUnion`:
-  - **Word TF-IDF:** Word unigrams (1,1), `min_df=2`, `sublinear_tf=True` (7,358 features).
-  - **Character TF-IDF:** `char_wb` 3–5 grams, `min_df=3`, `sublinear_tf=True` (30,282 features).
+- **Features:** 34,592 combined sparse features via `FeatureUnion`:
+  - **Word TF-IDF:** Word unigrams (1,1), `min_df=2`, `sublinear_tf=True`.
+  - **Character TF-IDF:** `char_wb` 3–5 grams, `min_df=3`, `sublinear_tf=True`.
 - **Classification:** 4 classes (`positive`, `negative`, `neutral`, `mixed`).
-- **Training Data:** 8,000 processed service feedback records from `data/processed/sentiment_dataset.csv` (80/20 stratified split: 6,400 train / 1,600 test).
+- **Training Data:** 8,520 records total (`data/test/phase_6_9_experiment_dataset.csv`):
+  - 8,000 canonical processed records (`data/processed/sentiment_dataset.csv` - foundation dataset, unchanged).
+  - 400 Phase 6.8 targeted generic English records (`data/experiments/phase_6_8_targeted/targeted_records.csv`).
+  - 120 Phase 6.9 targeted Hinglish negation records (`data/test/phase_6_9_hinglish_negation.csv`).
 - **Production Artifacts:**
-  - `ml/models/sentiment_final_model.pkl` (gitignored)
-  - `ml/models/sentiment_final_vectorizer.pkl` (gitignored)
-  - `ml/models/final_model_metadata.json`
-  - `ml/models/final_challenge_evaluation.json`
-- **Evaluation Performance (Phase 6.6):**
-  - Standard Holdout (1,600 samples): **90.87%** accuracy, **0.9032** macro F1, **0.9086** weighted F1.
-  - Strict Unseen-Text (1,581 samples): **90.32%** accuracy, **0.9015** macro F1, **0.9033** weighted F1.
-  - Frozen Adversarial Challenge Set (90 diagnostic samples): **73.33%** accuracy (66/90), **0.7293** macro F1.
+  - `ml/models/sentiment_final_model.pkl` (promoted Phase 6.9 model, gitignored)
+  - `ml/models/sentiment_final_vectorizer.pkl` (promoted Phase 6.9 vectorizer, gitignored)
+  - `ml/models/final_model_metadata.json` (Phase 6.9 promoted metadata)
+- **Evaluation Performance (Phase 6.9 / 6.10):**
+  - Standard Holdout (1,704 samples): **91.43%** accuracy, **0.9090** macro F1, **0.9140** weighted F1.
+  - Strict Unseen-Text: **90.48%** accuracy, **0.9022** macro F1.
+  - Frozen Adversarial Challenge Benchmark (90 diagnostic samples): **75.56%** accuracy (68/90 correct; errors reduced to 22), **0.7553** macro F1.
+  - Controlled Diagnostic Suite (10 cases): **100.0% (10/10)** correct (*"I absolutely loved this product."* predicted as positive with 89.5% confidence; Hinglish negations resolved).
+  - Real-Time Live Suite (29 diverse cases): **89.66%** accuracy (26/29).
 
 ---
 

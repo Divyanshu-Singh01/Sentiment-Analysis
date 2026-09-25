@@ -1,0 +1,985 @@
+{
+  "target_results": [
+    {
+      "text": "acha nahi laga",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.2855559527328515,
+        "negative": 0.5411077272746837,
+        "neutral": 0.013151069797516084,
+        "positive": 0.1601852501949487
+      },
+      "p68": "negative",
+      "p68_probs": {
+        "mixed": 0.2683940528292261,
+        "negative": 0.5736287378091196,
+        "neutral": 0.012851555631046058,
+        "positive": 0.14512565373060815
+      },
+      "p69": "negative",
+      "p69_probs": {
+        "mixed": 0.0852510441559793,
+        "negative": 0.8071315391895509,
+        "neutral": 0.004805545927895441,
+        "positive": 0.10281187072657413
+      },
+      "expected": "negative"
+    },
+    {
+      "text": "acha nhi laga",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.31417595478041593,
+        "negative": 0.4025533783555324,
+        "neutral": 0.05797181249071945,
+        "positive": 0.22529885437333222
+      },
+      "p68": "negative",
+      "p68_probs": {
+        "mixed": 0.314858394264974,
+        "negative": 0.3939874551762769,
+        "neutral": 0.057080648669825734,
+        "positive": 0.23407350188892334
+      },
+      "p69": "negative",
+      "p69_probs": {
+        "mixed": 0.08441723318566902,
+        "negative": 0.7648867350411861,
+        "neutral": 0.019930840434738823,
+        "positive": 0.13076519133840597
+      },
+      "expected": "negative"
+    },
+    {
+      "text": "mujhe acha nahi laga",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.18627480692468046,
+        "negative": 0.5911669332460081,
+        "neutral": 0.0233275157870067,
+        "positive": 0.19923074404230479
+      },
+      "p68": "negative",
+      "p68_probs": {
+        "mixed": 0.11247692279978366,
+        "negative": 0.532131410190709,
+        "neutral": 0.013530003809546902,
+        "positive": 0.3418616631999605
+      },
+      "p69": "negative",
+      "p69_probs": {
+        "mixed": 0.030377930355349445,
+        "negative": 0.7604634916484899,
+        "neutral": 0.004898614458838152,
+        "positive": 0.20425996353732254
+      },
+      "expected": "negative"
+    },
+    {
+      "text": "mujhe bilkul acha nahi laga",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.1450413458403036,
+        "negative": 0.5562836263901135,
+        "neutral": 0.011827152004472118,
+        "positive": 0.2868478757651107
+      },
+      "p68": "negative",
+      "p68_probs": {
+        "mixed": 0.09686006496134227,
+        "negative": 0.5186316789714641,
+        "neutral": 0.007596940465333987,
+        "positive": 0.3769113156018596
+      },
+      "p69": "negative",
+      "p69_probs": {
+        "mixed": 0.025676725473683958,
+        "negative": 0.7652837193956341,
+        "neutral": 0.002707928756101641,
+        "positive": 0.2063316263745803
+      },
+      "expected": "negative"
+    },
+    {
+      "text": "service achi nahi thi",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.033583811004177344,
+        "negative": 0.9077441449146785,
+        "neutral": 0.003067084069537254,
+        "positive": 0.0556049600116069
+      },
+      "p68": "negative",
+      "p68_probs": {
+        "mixed": 0.05037333316821167,
+        "negative": 0.7908013444134685,
+        "neutral": 0.007930065498507133,
+        "positive": 0.15089525691981262
+      },
+      "p69": "negative",
+      "p69_probs": {
+        "mixed": 0.07253145394528178,
+        "negative": 0.8300946886337662,
+        "neutral": 0.0053577428478627466,
+        "positive": 0.09201611457308899
+      },
+      "expected": "negative"
+    },
+    {
+      "text": "product acha nahi tha",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.20628789204318881,
+        "negative": 0.6259223488504371,
+        "neutral": 0.01889132137683067,
+        "positive": 0.14889843772954342
+      },
+      "p68": "negative",
+      "p68_probs": {
+        "mixed": 0.16241759842038875,
+        "negative": 0.6716156400944591,
+        "neutral": 0.015170710299903328,
+        "positive": 0.15079605118524883
+      },
+      "p69": "negative",
+      "p69_probs": {
+        "mixed": 0.07469160984534169,
+        "negative": 0.8285067344482097,
+        "neutral": 0.00795107451572745,
+        "positive": 0.08885058119072127
+      },
+      "expected": "negative"
+    },
+    {
+      "text": "bahut bura tha",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.13389224435876462,
+        "negative": 0.5160982277967524,
+        "neutral": 0.2043584523769433,
+        "positive": 0.14565107546753964
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.2489259405567915,
+        "negative": 0.20086165062604835,
+        "neutral": 0.108910214043171,
+        "positive": 0.4413021947739892
+      },
+      "p69": "negative",
+      "p69_probs": {
+        "mixed": 0.18121465394256248,
+        "negative": 0.4385078066341542,
+        "neutral": 0.08933006878025952,
+        "positive": 0.29094747064302395
+      },
+      "expected": "negative"
+    },
+    {
+      "text": "bohot bura tha",
+      "prod": "positive",
+      "prod_probs": {
+        "mixed": 0.23958154697326808,
+        "negative": 0.3355055665384101,
+        "neutral": 0.06254360159499936,
+        "positive": 0.3623692848933223
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.2468572787078198,
+        "negative": 0.33763028689881136,
+        "neutral": 0.031245952436015998,
+        "positive": 0.3842664819573528
+      },
+      "p69": "negative",
+      "p69_probs": {
+        "mixed": 0.165316032817994,
+        "negative": 0.6318207930735298,
+        "neutral": 0.02759881969552336,
+        "positive": 0.17526435441295293
+      },
+      "expected": "negative"
+    },
+    {
+      "text": "bahut bekar tha",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.03876850666910372,
+        "negative": 0.8859052771259134,
+        "neutral": 0.04357152682792894,
+        "positive": 0.03175468937705391
+      },
+      "p68": "negative",
+      "p68_probs": {
+        "mixed": 0.11932554981485727,
+        "negative": 0.6326385527288999,
+        "neutral": 0.06061530363785179,
+        "positive": 0.18742059381839107
+      },
+      "p69": "negative",
+      "p69_probs": {
+        "mixed": 0.14759818616022644,
+        "negative": 0.6379652474096651,
+        "neutral": 0.04357650811056534,
+        "positive": 0.17086005831954304
+      },
+      "expected": "negative"
+    },
+    {
+      "text": "ekdum bekar",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.039136135366245724,
+        "negative": 0.5286503225487555,
+        "neutral": 0.10870380009738967,
+        "positive": 0.32350974198760907
+      },
+      "p68": "negative",
+      "p68_probs": {
+        "mixed": 0.02830333496010877,
+        "negative": 0.5038261464830512,
+        "neutral": 0.07777548627733978,
+        "positive": 0.3900950322795002
+      },
+      "p69": "negative",
+      "p69_probs": {
+        "mixed": 0.03568448371599266,
+        "negative": 0.49609960381143325,
+        "neutral": 0.06634019070236317,
+        "positive": 0.4018757217702111
+      },
+      "expected": "negative"
+    },
+    {
+      "text": "ghatiya service",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.021062212322384765,
+        "negative": 0.8490934257375706,
+        "neutral": 0.06030718123964314,
+        "positive": 0.06953718070040153
+      },
+      "p68": "negative",
+      "p68_probs": {
+        "mixed": 0.019078441907216272,
+        "negative": 0.843450465168038,
+        "neutral": 0.05725944380531342,
+        "positive": 0.08021164911943239
+      },
+      "p69": "negative",
+      "p69_probs": {
+        "mixed": 0.015106382668652009,
+        "negative": 0.8642630930214306,
+        "neutral": 0.048031937983439014,
+        "positive": 0.07259858632647821
+      },
+      "expected": "negative"
+    },
+    {
+      "text": "bakwaas service",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.0631774744525198,
+        "negative": 0.45521857220130174,
+        "neutral": 0.22010606693156506,
+        "positive": 0.26149788641461347
+      },
+      "p68": "negative",
+      "p68_probs": {
+        "mixed": 0.05559733539417547,
+        "negative": 0.4733562860865779,
+        "neutral": 0.18802550673992546,
+        "positive": 0.283020871779321
+      },
+      "p69": "negative",
+      "p69_probs": {
+        "mixed": 0.047227171019881484,
+        "negative": 0.5278446601518115,
+        "neutral": 0.1610925240981407,
+        "positive": 0.26383564473016624
+      },
+      "expected": "negative"
+    },
+    {
+      "text": "bahut bura tha ye sab",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.09191358916548738,
+        "negative": 0.4796308563131435,
+        "neutral": 0.2681964701492353,
+        "positive": 0.16025908437213376
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.1301196304535168,
+        "negative": 0.24811114699120942,
+        "neutral": 0.1484877403199704,
+        "positive": 0.47328148223530336
+      },
+      "p69": "negative",
+      "p69_probs": {
+        "mixed": 0.0824178843528366,
+        "negative": 0.500668349866065,
+        "neutral": 0.11399006196381568,
+        "positive": 0.30292370381728284
+      },
+      "expected": "negative"
+    },
+    {
+      "text": "acha nhi laga mujhe",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.21171070737114187,
+        "negative": 0.46996251956099533,
+        "neutral": 0.06623472355142251,
+        "positive": 0.25209204951644015
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.1345075994513525,
+        "negative": 0.3805324214258092,
+        "neutral": 0.04112444044191595,
+        "positive": 0.4438355386809224
+      },
+      "p69": "negative",
+      "p69_probs": {
+        "mixed": 0.031914830062412865,
+        "negative": 0.7297363790956117,
+        "neutral": 0.014246110022822315,
+        "positive": 0.2241026808191531
+      },
+      "expected": "negative"
+    },
+    {
+      "text": "bahut acha laga",
+      "prod": "mixed",
+      "prod_probs": {
+        "mixed": 0.38430031778450696,
+        "negative": 0.1681983030540188,
+        "neutral": 0.0937684371675675,
+        "positive": 0.3537329419939067
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.361035306609862,
+        "negative": 0.03551339327918858,
+        "neutral": 0.04100109299416269,
+        "positive": 0.5624502071167868
+      },
+      "p69": "positive",
+      "p69_probs": {
+        "mixed": 0.1643706358785494,
+        "negative": 0.04784705974234388,
+        "neutral": 0.020717581768892074,
+        "positive": 0.7670647226102146
+      },
+      "expected": "positive"
+    },
+    {
+      "text": "mujhe acha laga",
+      "prod": "positive",
+      "prod_probs": {
+        "mixed": 0.3275938957575446,
+        "negative": 0.2079959511781161,
+        "neutral": 0.10517230673606712,
+        "positive": 0.35923784632827205
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.1758117075019978,
+        "negative": 0.1301954371387037,
+        "neutral": 0.053061800817910745,
+        "positive": 0.6409310545413879
+      },
+      "p69": "positive",
+      "p69_probs": {
+        "mixed": 0.06400668321574982,
+        "negative": 0.2212871497176922,
+        "neutral": 0.02844117102066602,
+        "positive": 0.686264996045892
+      },
+      "expected": "positive"
+    },
+    {
+      "text": "service achi thi",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.16255824380126666,
+        "negative": 0.5104332147189521,
+        "neutral": 0.04812033756457302,
+        "positive": 0.2788882039152082
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.1340608628978024,
+        "negative": 0.31336617940638517,
+        "neutral": 0.054113202281299386,
+        "positive": 0.4984597554145129
+      },
+      "p69": "positive",
+      "p69_probs": {
+        "mixed": 0.2283008754221894,
+        "negative": 0.29373176553982194,
+        "neutral": 0.04458275666158354,
+        "positive": 0.4333846023764053
+      },
+      "expected": "positive"
+    },
+    {
+      "text": "product acha tha",
+      "prod": "mixed",
+      "prod_probs": {
+        "mixed": 0.4154095074199859,
+        "negative": 0.174692909995084,
+        "neutral": 0.11295816482038543,
+        "positive": 0.29693941776454463
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.3598001680756055,
+        "negative": 0.16960716960798974,
+        "neutral": 0.09300855816269082,
+        "positive": 0.37758410415371396
+      },
+      "p69": "positive",
+      "p69_probs": {
+        "mixed": 0.23747793810466394,
+        "negative": 0.26399636947856214,
+        "neutral": 0.07536295054021996,
+        "positive": 0.423162741876554
+      },
+      "expected": "positive"
+    },
+    {
+      "text": "bilkul badhiya tha",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.11958707844281724,
+        "negative": 0.44150960267437467,
+        "neutral": 0.055709622768452365,
+        "positive": 0.38319369611435566
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.12295650548929542,
+        "negative": 0.3895943948811444,
+        "neutral": 0.07307176658126766,
+        "positive": 0.41437733304829255
+      },
+      "p69": "positive",
+      "p69_probs": {
+        "mixed": 0.13536196226146893,
+        "negative": 0.2938654829098267,
+        "neutral": 0.054240046391585826,
+        "positive": 0.5165325084371185
+      },
+      "expected": "positive"
+    },
+    {
+      "text": "experience accha raha",
+      "prod": "positive",
+      "prod_probs": {
+        "mixed": 0.043507830393888794,
+        "negative": 0.15700288851822605,
+        "neutral": 0.05529511757881809,
+        "positive": 0.7441941635090671
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.04668275847759578,
+        "negative": 0.3190448919499792,
+        "neutral": 0.040958662499551934,
+        "positive": 0.5933136870728731
+      },
+      "p69": "positive",
+      "p69_probs": {
+        "mixed": 0.03084697517825764,
+        "negative": 0.21795887398106617,
+        "neutral": 0.02946912045852507,
+        "positive": 0.7217250303821512
+      },
+      "expected": "positive"
+    },
+    {
+      "text": "food acha tha but service achi nahi thi",
+      "prod": "mixed",
+      "prod_probs": {
+        "mixed": 0.9405132303354775,
+        "negative": 0.05570681011167512,
+        "neutral": 0.00031343665219720667,
+        "positive": 0.003466522900650319
+      },
+      "p68": "mixed",
+      "p68_probs": {
+        "mixed": 0.9380875428723292,
+        "negative": 0.052742942335756646,
+        "neutral": 0.0006452282691695205,
+        "positive": 0.008524286522744763
+      },
+      "p69": "mixed",
+      "p69_probs": {
+        "mixed": 0.9323530125069841,
+        "negative": 0.06264938609479595,
+        "neutral": 0.0003400346748107378,
+        "positive": 0.00465756672340911
+      },
+      "expected": "mixed"
+    },
+    {
+      "text": "product theek tha lekin delivery bahut bekar thi",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.26897550550329324,
+        "negative": 0.543451813525258,
+        "neutral": 0.1553359570108371,
+        "positive": 0.03223672396061162
+      },
+      "p68": "mixed",
+      "p68_probs": {
+        "mixed": 0.4158007146120911,
+        "negative": 0.36598248897989183,
+        "neutral": 0.1344193487715769,
+        "positive": 0.0837974476364402
+      },
+      "p69": "mixed",
+      "p69_probs": {
+        "mixed": 0.6055959410466214,
+        "negative": 0.24851686814702997,
+        "neutral": 0.0911454093780921,
+        "positive": 0.05474178142825666
+      },
+      "expected": "mixed"
+    },
+    {
+      "text": "I absolutely loved this product.",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.020928477577265427,
+        "negative": 0.4316702620200799,
+        "neutral": 0.13163001639657942,
+        "positive": 0.4157712440060751
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.001668430075411127,
+        "negative": 0.07353401901159572,
+        "neutral": 0.008258149051168003,
+        "positive": 0.916539401861825
+      },
+      "p69": "positive",
+      "p69_probs": {
+        "mixed": 0.0015862536185815266,
+        "negative": 0.07239204709454174,
+        "neutral": 0.0076264298390553474,
+        "positive": 0.9183952694478213
+      },
+      "expected": "positive"
+    },
+    {
+      "text": "I loved this product.",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.013595668504705349,
+        "negative": 0.45020208075394647,
+        "neutral": 0.1794689856380821,
+        "positive": 0.3567332651032661
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.0025713609122070095,
+        "negative": 0.2382413024600632,
+        "neutral": 0.030892825768907065,
+        "positive": 0.7282945108588227
+      },
+      "p69": "positive",
+      "p69_probs": {
+        "mixed": 0.0029822411901505915,
+        "negative": 0.28227040823359534,
+        "neutral": 0.03254361460756188,
+        "positive": 0.6822037359686922
+      },
+      "expected": "positive"
+    },
+    {
+      "text": "I loved the product.",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.07070539613348506,
+        "negative": 0.4973340856557679,
+        "neutral": 0.06472720840845526,
+        "positive": 0.3672333098022917
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.03503335367799066,
+        "negative": 0.29160840340749383,
+        "neutral": 0.021756644337009683,
+        "positive": 0.6516015985775057
+      },
+      "p69": "positive",
+      "p69_probs": {
+        "mixed": 0.042073221988485565,
+        "negative": 0.3288690011610595,
+        "neutral": 0.02410803840715282,
+        "positive": 0.604949738443302
+      },
+      "expected": "positive"
+    },
+    {
+      "text": "I absolutely love this product.",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.0407703740747428,
+        "negative": 0.3821033799247753,
+        "neutral": 0.28775435395786314,
+        "positive": 0.28937189204261876
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.005220047453143846,
+        "negative": 0.12437096469213262,
+        "neutral": 0.024322373872083705,
+        "positive": 0.8460866139826398
+      },
+      "p69": "positive",
+      "p69_probs": {
+        "mixed": 0.004459869998228368,
+        "negative": 0.1047680780671429,
+        "neutral": 0.019991174990361446,
+        "positive": 0.8707808769442672
+      },
+      "expected": "positive"
+    },
+    {
+      "text": "I really loved this product.",
+      "prod": "negative",
+      "prod_probs": {
+        "mixed": 0.017688961901190497,
+        "negative": 0.416909934545649,
+        "neutral": 0.1828695532639628,
+        "positive": 0.3825315502891978
+      },
+      "p68": "positive",
+      "p68_probs": {
+        "mixed": 0.003011229432202008,
+        "negative": 0.16197411646534665,
+        "neutral": 0.021421020164937427,
+        "positive": 0.8135936339375138
+      },
+      "p69": "positive",
+      "p69_probs": {
+        "mixed": 0.0028420985290929807,
+        "negative": 0.14061444220321953,
+        "neutral": 0.017955533835948057,
+        "positive": 0.8385879254317394
+      },
+      "expected": "positive"
+    }
+  ],
+  "live_suite_changes": [
+    {
+      "text": "kya bakwaas service hai ekdum bekar",
+      "expected": "negative",
+      "prod": "neutral",
+      "p68": "negative",
+      "p69": "negative"
+    },
+    {
+      "text": "I have a 30 Mbps broadband plan.",
+      "expected": "neutral",
+      "prod": "neutral",
+      "p68": "neutral",
+      "p69": "negative"
+    },
+    {
+      "text": "horrible experience",
+      "expected": "negative",
+      "prod": "positive",
+      "p68": "negative",
+      "p69": "negative"
+    }
+  ],
+  "challenge_transitions": [
+    {
+      "id": "CH002",
+      "text": "loved it",
+      "expected": "positive",
+      "prod": "negative",
+      "p68": "positive",
+      "p69": "positive",
+      "p69_correct": true
+    },
+    {
+      "id": "CH006",
+      "text": "it was fine",
+      "expected": "neutral",
+      "prod": "mixed",
+      "p68": "mixed",
+      "p69": "negative",
+      "p69_correct": false
+    },
+    {
+      "id": "CH014",
+      "text": "bahut bura tha ye sab",
+      "expected": "negative",
+      "prod": "negative",
+      "p68": "positive",
+      "p69": "negative",
+      "p69_correct": true
+    },
+    {
+      "id": "CH016",
+      "text": "acha nhi laga mujhe",
+      "expected": "negative",
+      "prod": "negative",
+      "p68": "positive",
+      "p69": "negative",
+      "p69_correct": true
+    },
+    {
+      "id": "CH054",
+      "text": "bohot bura",
+      "expected": "negative",
+      "prod": "positive",
+      "p68": "positive",
+      "p69": "negative",
+      "p69_correct": true
+    },
+    {
+      "id": "CH060",
+      "text": "love",
+      "expected": "positive",
+      "prod": "negative",
+      "p68": "positive",
+      "p69": "positive",
+      "p69_correct": true
+    },
+    {
+      "id": "CH065",
+      "text": "bhai UPI payment instant hua koi dikkat nhi",
+      "expected": "positive",
+      "prod": "positive",
+      "p68": "positive",
+      "p69": "negative",
+      "p69_correct": false
+    },
+    {
+      "id": "CH076",
+      "text": "acha bhi hai aur bura bhi depends on your expectations honestly",
+      "expected": "mixed",
+      "prod": "positive",
+      "p68": "positive",
+      "p69": "negative",
+      "p69_correct": false
+    },
+    {
+      "id": "CH087",
+      "text": "mene socha tha bura hoga par acha nikla surprisingly",
+      "expected": "positive",
+      "prod": "mixed",
+      "p68": "mixed",
+      "p69": "negative",
+      "p69_correct": false
+    }
+  ],
+  "coef_comparison": {
+    "word__loved": {
+      "mixed": {
+        "p68": -0.9292699255430994,
+        "p69": -0.8916613384127805,
+        "diff": 0.03760858713031889
+      },
+      "negative": {
+        "p68": 0.4487678668159667,
+        "p69": 0.5031397697532835,
+        "diff": 0.05437190293731675
+      },
+      "neutral": {
+        "p68": -1.0121258280034606,
+        "p69": -1.0102261594280726,
+        "diff": 0.001899668575388036
+      },
+      "positive": {
+        "p68": 1.4926278867305978,
+        "p69": 1.3987477280875669,
+        "diff": -0.0938801586430309
+      }
+    },
+    "word__love": {
+      "mixed": {
+        "p68": -0.23337453055321244,
+        "p69": -0.22323356126100907,
+        "diff": 0.010140969292203372
+      },
+      "negative": {
+        "p68": 0.1679427021354656,
+        "p69": 0.09869245832924593,
+        "diff": -0.06925024380621968
+      },
+      "neutral": {
+        "p68": -0.4495706059311185,
+        "p69": -0.49117009027359704,
+        "diff": -0.04159948434247851
+      },
+      "positive": {
+        "p68": 0.5150024343488653,
+        "p69": 0.6157111932053614,
+        "diff": 0.1007087588564961
+      }
+    },
+    "word__acha": {
+      "mixed": {
+        "p68": 1.13857767581554,
+        "p69": 0.7687385901516676,
+        "diff": -0.36983908566387236
+      },
+      "negative": {
+        "p68": -0.7891649251870108,
+        "p69": -0.49743526775490665,
+        "diff": 0.2917296574321041
+      },
+      "neutral": {
+        "p68": -0.4696892645497913,
+        "p69": -0.6258549409236372,
+        "diff": -0.15616567637384593
+      },
+      "positive": {
+        "p68": 0.12027651392126293,
+        "p69": 0.35455161852687694,
+        "diff": 0.23427510460561402
+      }
+    },
+    "word__accha": {
+      "mixed": {
+        "p68": 0.1866022726572543,
+        "p69": 0.18930417345750072,
+        "diff": 0.0027019008002464318
+      },
+      "negative": {
+        "p68": -0.6078608004712207,
+        "p69": -0.68531860751319,
+        "diff": -0.07745780704196925
+      },
+      "neutral": {
+        "p68": -0.1602613423340957,
+        "p69": -0.19384863500127045,
+        "diff": -0.03358729266717475
+      },
+      "positive": {
+        "p68": 0.581519870148062,
+        "p69": 0.6898630690569582,
+        "diff": 0.10834319890889621
+      }
+    },
+    "word__bahut": {
+      "mixed": {
+        "p68": 0.25504324083252095,
+        "p69": 0.2415877166473003,
+        "diff": -0.01345552418522064
+      },
+      "negative": {
+        "p68": -0.8339575170180399,
+        "p69": -0.7901306851599775,
+        "diff": 0.043826831858062354
+      },
+      "neutral": {
+        "p68": -0.3421842270023852,
+        "p69": -0.45455931209858774,
+        "diff": -0.11237508509620253
+      },
+      "positive": {
+        "p68": 0.9210985031879019,
+        "p69": 1.0031022806112657,
+        "diff": 0.08200377742336384
+      }
+    },
+    "word__bura": {
+      "mixed": {
+        "p68": -0.06214844961451759,
+        "p69": -0.18145418309090972,
+        "diff": -0.11930573347639212
+      },
+      "negative": {
+        "p68": 0.004375495623830476,
+        "p69": 0.5732000216261133,
+        "diff": 0.5688245260022828
+      },
+      "neutral": {
+        "p68": 0.142053783957543,
+        "p69": 0.04510108591575892,
+        "diff": -0.09695269804178408
+      },
+      "positive": {
+        "p68": -0.08428082996685606,
+        "p69": -0.4368469244509623,
+        "diff": -0.35256609448410625
+      }
+    },
+    "word__bekar": {
+      "mixed": {
+        "p68": -0.20475176827845534,
+        "p69": -0.020330155943837757,
+        "diff": 0.1844216123346176
+      },
+      "negative": {
+        "p68": 0.8275142861961456,
+        "p69": 0.782612421024828,
+        "diff": -0.04490186517131767
+      },
+      "neutral": {
+        "p68": -0.24740229838461503,
+        "p69": -0.3043184381068054,
+        "diff": -0.056916139722190395
+      },
+      "positive": {
+        "p68": -0.3753602195330771,
+        "p69": -0.4579638269741828,
+        "diff": -0.08260360744110573
+      }
+    },
+    "word__nahi": {
+      "mixed": {
+        "p68": -0.18582223126325698,
+        "p69": -0.13853095430876558,
+        "diff": 0.047291276954491396
+      },
+      "negative": {
+        "p68": 2.482469842501983,
+        "p69": 2.734070718734349,
+        "diff": 0.25160087623236604
+      },
+      "neutral": {
+        "p68": -1.765436573065983,
+        "p69": -1.7870743273451124,
+        "diff": -0.021637754279129506
+      },
+      "positive": {
+        "p68": -0.5312110381727436,
+        "p69": -0.808465437080475,
+        "diff": -0.2772543989077314
+      }
+    },
+    "word__nhi": {
+      "mixed": {
+        "p68": -0.17778035987856336,
+        "p69": -0.35417689172899136,
+        "diff": -0.176396531850428
+      },
+      "negative": {
+        "p68": 0.927333260083872,
+        "p69": 1.5816750527770862,
+        "diff": 0.6543417926932142
+      },
+      "neutral": {
+        "p68": -0.45026273715606424,
+        "p69": -0.5676411329678218,
+        "diff": -0.11737839581175757
+      },
+      "positive": {
+        "p68": -0.29929016304924405,
+        "p69": -0.6598570280802724,
+        "diff": -0.3605668650310283
+      }
+    }
+  }
+}

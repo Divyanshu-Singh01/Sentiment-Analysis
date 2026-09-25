@@ -1,0 +1,121 @@
+id,text,language,service,behavior,sentiment,aspect,issue,severity,abuse,complexity,suggestion
+P69-001,mujhe ye service bilkul acha nahi laga,hinglish,customer_support,complaint,negative,support,poor_service,medium,none,simple,Train staff better
+P69-002,app ka payment flow acha nahi laga mujhe,hinglish,banking_upi,complaint,negative,app,ui_issue,low,none,simple,Improve payment flow
+P69-003,khana bilkul acha nahi laga is baar,hinglish,food_delivery,complaint,negative,food,poor_taste,medium,none,simple,Check restaurant quality
+P69-004,driver ka behaviour bilkul acha nahi tha,hinglish,cab_transport,complaint,negative,driver,rude_behavior,medium,none,simple,Warn driver
+P69-005,ye product quality wise acha nahi tha,hinglish,ecommerce,complaint,negative,product,defective,medium,none,simple,Exchange product
+P69-006,hotel room bilkul acha nahi tha bohot ganda tha,hinglish,travel,complaint,negative,room,cleanliness,high,none,moderate,Clean rooms properly
+P69-007,doctor ka response bilkul acha nahi laga,hinglish,healthcare,complaint,negative,doctor,consultation_issue,medium,none,simple,Improve doctor response
+P69-008,network speed bilkul achi nahi thi,hinglish,telecom_internet,complaint,negative,network,slow_speed,high,none,simple,Upgrade tower bandwidth
+P69-009,course lecture explanation acha nahi tha,hinglish,education,complaint,negative,course,poor_content,medium,none,simple,Improve lecture clarity
+P69-010,grocery items bilkul achi nahi thi sadi hui thi,hinglish,grocery_delivery,complaint,negative,grocery,spoiled_items,high,none,moderate,Refund for rotten items
+P69-011,mujhe ye banking update acha nahi laga,hinglish,banking_upi,complaint,negative,app,bad_update,low,none,simple,Fix app layout
+P69-012,customer care response acha nahi tha,hinglish,customer_support,complaint,negative,support,no_resolution,medium,none,simple,Resolve tickets faster
+P69-013,cab condition bilkul achi nahi thi AC off tha,hinglish,cab_transport,complaint,negative,cab,ac_not_working,medium,none,simple,Ensure AC works
+P69-014,cloth material acha nahi tha bilkul cheap hai,hinglish,ecommerce,complaint,negative,product,fabric_issue,medium,none,simple,Provide refund
+P69-015,delivery timing achi nahi lagi mujhe,hinglish,food_delivery,complaint,negative,delivery,late_delivery,medium,none,simple,Speed up delivery
+P69-016,vegetables fresh nahi thi bilkul achi nahi aayi,hinglish,grocery_delivery,complaint,negative,vegetables,stale_food,high,none,simple,Deliver fresh stock
+P69-017,consultation time acha nahi tha doctor jaldi me the,hinglish,healthcare,complaint,negative,doctor,rushed_visit,medium,none,simple,Give proper time
+P69-018,broadband connectivity achi nahi thi bar bar disconnect hui,hinglish,telecom_internet,complaint,negative,broadband,frequent_disconnection,high,none,moderate,Fix line stability
+P69-019,study material acha nahi tha bohot outdated hai,hinglish,education,complaint,negative,study_material,outdated_content,medium,none,simple,Update study notes
+P69-020,room service bilkul achi nahi lagi mujhe,hinglish,travel,complaint,negative,room_service,slow_service,medium,none,simple,Fast service required
+P69-021,overall experience bilkul acha nahi raha,hinglish,ecommerce,complaint,negative,order,bad_experience,medium,none,simple,Improve user experience
+P69-022,parcel packaging achi nahi thi damage ho gaya,hinglish,ecommerce,complaint,negative,packaging,box_damaged,high,none,simple,Use bubble wrap
+P69-023,ye delivery agent polite nahi tha bilkul acha nahi laga,hinglish,food_delivery,complaint,negative,delivery_agent,rude_delivery_person,medium,none,simple,Train delivery staff
+P69-024,recharge confirmation acha nahi laga kafi time lagaya,hinglish,telecom_internet,complaint,negative,recharge,delayed_credit,medium,none,simple,Instant recharge credit
+P69-025,app ka UI update acha nahi tha bohot confusing hai,hinglish,banking_upi,complaint,negative,app,ui_clutter,low,none,simple,Simplify user interface
+P69-026,support team ka attitude acha nahi laga,hinglish,customer_support,complaint,negative,support,unprofessional_staff,medium,none,simple,Improve support attitude
+P69-027,online class audio stream achi nahi thi,hinglish,education,complaint,negative,class,audio_lag,medium,none,simple,Fix mic quality
+P69-028,cab interior clean nahi tha bilkul acha nahi laga,hinglish,cab_transport,complaint,negative,cab,dirty_cab,medium,none,simple,Keep cab clean
+P69-029,medicine delivery time acha nahi tha emergency me der ki,hinglish,healthcare,complaint,negative,medicine,delayed_medicine,high,none,moderate,Priority emergency delivery
+P69-030,train ticket booking confirmation acha nahi tha pending raha,hinglish,travel,complaint,negative,booking,booking_pending,high,none,simple,Fast PNR confirmation
+P69-031,bahut bura tha ye order delivery experience,hinglish,food_delivery,complaint,negative,delivery,terrible_delivery,high,none,simple,Fix delivery partner
+P69-032,bohot bura tha support team ka rude behavior,hinglish,customer_support,complaint,negative,support,rude_agent,high,none,simple,Take disciplinary action
+P69-033,bahut bekar tha cab ride ka experience,hinglish,cab_transport,complaint,negative,cab,bad_ride,high,none,simple,Improve ride quality
+P69-034,ekdum bekar app hai bar bar crash ho jata hai,hinglish,banking_upi,complaint,negative,app,crash_loop,high,none,simple,Fix app crash
+P69-035,ghatiya service hai refund abhi tak nahi diya,hinglish,ecommerce,complaint,negative,refund,delayed_refund,high,none,simple,Process refund now
+P69-036,kharab experience tha doctor consultation ka,hinglish,healthcare,complaint,negative,doctor,poor_diagnosis,high,none,simple,Consult senior doctor
+P69-037,bakwaas service hai call drop bar bar ho rahi hai,hinglish,telecom_internet,complaint,negative,network,call_drop,high,none,simple,Fix tower signal
+P69-038,bilkul bekar sabziya aayi thi sadi hui bilkul,hinglish,grocery_delivery,complaint,negative,vegetables,rotten_food,high,none,simple,Send fresh replacement
+P69-039,bahut bura tha course ka doubt support,hinglish,education,complaint,negative,support,unresponsive_tutor,high,none,simple,Assign active mentor
+P69-040,hotel management bohot bura tha check in me 2 ghante lage,hinglish,travel,complaint,negative,hotel,checkin_delay,high,none,moderate,Speed up check in
+P69-041,bohot bura tha ye net banking update totally useless,hinglish,banking_upi,complaint,negative,app,broken_update,high,none,simple,Roll back update
+P69-042,bahut bekar packaging thi pura food leak ho gaya,hinglish,food_delivery,complaint,negative,packaging,food_leakage,high,none,simple,Use sealed containers
+P69-043,ekdum bekar cab service hai driver ne beech raste me utar diya,hinglish,cab_transport,complaint,negative,cab,driver_dropped_midway,high,none,moderate,Deplatform driver
+P69-044,ghatiya quality ka dress bheja hai bilkul rough,hinglish,ecommerce,complaint,negative,product,inferior_quality,high,none,simple,Provide full refund
+P69-045,kharab experience raha customer executive ne call cut kar diya,hinglish,customer_support,complaint,negative,support,call_disconnected,high,none,simple,Escalate to manager
+P69-046,bakwaas service hai 3 din se internet band hai,hinglish,telecom_internet,complaint,negative,broadband,total_outage,high,none,moderate,Restore fiber connection
+P69-047,bilkul bekar fruits the kache aur kharab,hinglish,grocery_delivery,complaint,negative,fruits,bad_produce,high,none,simple,Provide refund
+P69-048,bahut bura treatment tha staff bohot uncooperative tha,hinglish,healthcare,complaint,negative,hospital,unhelpful_staff,high,none,simple,Improve patient care
+P69-049,bohot bekar online coaching platform hai server error aata hai,hinglish,education,complaint,negative,platform,server_down,high,none,simple,Upgrade class servers
+P69-050,flight cancellation ke baad bohot bura response mila support se,hinglish,travel,complaint,negative,support,no_cancellation_help,high,none,moderate,Help with rebooking
+P69-051,bahut acha laga mujhe ye order time par mila,hinglish,food_delivery,appreciation,positive,delivery,none,none,none,simple,none
+P69-052,mujhe acha laga driver ka polite behaviour,hinglish,cab_transport,appreciation,positive,driver,none,none,none,simple,none
+P69-053,service achi thi customer care ne jaldi issue solve kiya,hinglish,customer_support,appreciation,positive,support,none,none,none,simple,none
+P69-054,product acha tha fabric aur fitting dono perfect hai,hinglish,ecommerce,appreciation,positive,product,none,none,none,simple,none
+P69-055,bilkul badhiya tha net banking transaction smoothly ho gaya,hinglish,banking_upi,appreciation,positive,transaction,none,none,none,simple,none
+P69-056,experience accha raha doctor ne sab kuch dhang se samjhaya,hinglish,healthcare,appreciation,positive,doctor,none,none,none,simple,none
+P69-057,quality achi lagi vegetables ekdum fresh aayi thi,hinglish,grocery_delivery,appreciation,positive,vegetables,none,none,none,simple,none
+P69-058,internet speed bohot achi thi video streaming seamlessly hui,hinglish,telecom_internet,appreciation,positive,internet,none,none,none,simple,none
+P69-059,course content mujhe bahut acha laga practical teaching hai,hinglish,education,appreciation,positive,course,none,none,none,simple,none
+P69-060,hotel room aur hospitality bilkul badhiya thi,hinglish,travel,appreciation,positive,hotel,none,none,none,simple,none
+P69-061,bahut acha laga app ka naya fast scan feature,hinglish,banking_upi,appreciation,positive,feature,none,none,none,simple,none
+P69-062,mujhe acha laga packaging bohot neat aur clean thi,hinglish,food_delivery,appreciation,positive,packaging,none,none,none,simple,none
+P69-063,service achi thi cab time se 5 minute pehle pahuch gayi,hinglish,cab_transport,appreciation,positive,cab,none,none,none,simple,none
+P69-064,product acha tha original item receive hua,hinglish,ecommerce,appreciation,positive,product,none,none,none,simple,none
+P69-065,bilkul badhiya service hai instant refund credit ho gaya,hinglish,customer_support,appreciation,positive,refund,none,none,none,simple,none
+P69-066,experience accha raha nurse aur doctor bohot cooperative the,hinglish,healthcare,appreciation,positive,staff,none,none,none,simple,none
+P69-067,quality achi lagi dairy products bilkul fresh the,hinglish,grocery_delivery,appreciation,positive,grocery,none,none,none,simple,none
+P69-068,call connection aur 5G signal bohot acha raha,hinglish,telecom_internet,appreciation,positive,signal,none,none,none,simple,none
+P69-069,mentor ka doubt session mujhe bahut acha laga,hinglish,education,appreciation,positive,mentor,none,none,none,simple,none
+P69-070,hotel stay experience accha raha staff bohot courteous tha,hinglish,travel,appreciation,positive,hotel,none,none,none,simple,none
+P69-071,mujhe ye delivery experience accha nhi laga bilkul,hinglish,food_delivery,complaint,negative,delivery,poor_delivery,medium,none,simple,none
+P69-072,product quality bilkul acchi nahi thi bohot light material hai,hinglish,ecommerce,complaint,negative,product,cheap_material,medium,none,simple,none
+P69-073,driver route sahi nhi tha kafi lamba rasta liya,hinglish,cab_transport,complaint,negative,driver,long_route,medium,none,simple,none
+P69-074,refund abhi tak account me credit nhi hua,hinglish,banking_upi,complaint,negative,refund,refund_delay,high,none,simple,Check refund
+P69-075,customer support se koi satisfactory response nhi mila,hinglish,customer_support,complaint,negative,support,unhelpful,medium,none,simple,none
+P69-076,fruits fresh nhi the bohot bekar quality thi,hinglish,grocery_delivery,complaint,negative,produce,not_fresh,medium,none,simple,none
+P69-077,doctor time par available nhi the appointment delay hua,hinglish,healthcare,complaint,negative,doctor,doctor_delay,medium,none,simple,none
+P69-078,broadband router connection sahi nhi chal raha hai,hinglish,telecom_internet,complaint,negative,broadband,intermittent,high,none,simple,none
+P69-079,live lecture me screen share clear nhi tha,hinglish,education,complaint,negative,lecture,screen_blur,medium,none,simple,none
+P69-080,hotel bathroom saaf nhi tha bohot ganda tha,hinglish,travel,complaint,negative,hotel,dirty_room,high,none,simple,none
+P69-081,mujhe app ka transaction speed accha nhi laga,hinglish,banking_upi,complaint,negative,app,slow_upi,medium,none,simple,none
+P69-082,parcel receive hone par packing acchi nhi thi,hinglish,ecommerce,complaint,negative,packaging,bad_packing,medium,none,simple,none
+P69-083,rider ka behaviour polite nhi tha bohot rude tha,hinglish,food_delivery,complaint,negative,rider,rude_rider,medium,none,simple,none
+P69-084,SIM activation abhi tak nhi hua 48 ghante ho gaye,hinglish,telecom_internet,complaint,negative,activation,activation_delay,high,none,moderate,Activate SIM
+P69-085,prescription bill me medicine detail sahi nhi thi,hinglish,healthcare,complaint,negative,billing,bill_error,medium,none,simple,none
+P69-086,food acha tha but delivery service achi nahi thi bohot late aaya,hinglish,food_delivery,feedback,mixed,food_delivery,mixed_delivery,low,none,moderate,none
+P69-087,product theek tha lekin delivery timing bahut bekar thi,hinglish,ecommerce,feedback,mixed,product_delivery,mixed_experience,low,none,moderate,none
+P69-088,service achi thi par customer care follow up bilkul acha nahi laga,hinglish,customer_support,feedback,mixed,support,mixed_service,low,none,moderate,none
+P69-089,cab clean thi lekin driver ka driving style bilkul accha nahi tha,hinglish,cab_transport,feedback,mixed,cab_ride,mixed_ride,low,none,moderate,none
+P69-090,doctor bohot ache the par clinic ka waiting time bahut bura tha,hinglish,healthcare,feedback,mixed,clinic,mixed_consultation,low,none,moderate,none
+P69-091,UPI transfer fast tha but passbook update feature acha nahi laga,hinglish,banking_upi,feedback,mixed,banking,mixed_app,low,none,moderate,none
+P69-092,grocery items fresh thi lekin bag charges bohot extra the,hinglish,grocery_delivery,feedback,mixed,grocery,mixed_pricing,low,none,moderate,none
+P69-093,teacher ka explanation accha tha lekin audio streaming achi nahi thi,hinglish,education,feedback,mixed,class,mixed_tech,low,none,moderate,none
+P69-094,data speed achi hai par calling coverage bilkul acchi nahi hai,hinglish,telecom_internet,feedback,mixed,telecom,mixed_connectivity,low,none,moderate,none
+P69-095,resort location bohot achi thi par room service bilkul bekar thi,hinglish,travel,feedback,mixed,resort,mixed_stay,low,none,moderate,none
+P69-096,taste badhiya tha lekin food thanda ho gaya tha raste me,hinglish,food_delivery,feedback,mixed,food,mixed_food,low,none,moderate,none
+P69-097,clothes ki design achi thi par stitching quality bilkul achi nahi thi,hinglish,ecommerce,feedback,mixed,apparel,mixed_apparel,low,none,moderate,none
+P69-098,support agent polite tha lekin problem solve nahi kar paya,hinglish,customer_support,feedback,mixed,support,mixed_resolution,low,none,moderate,none
+P69-099,ride affordable thi par cab AC properly work nahi kar raha tha,hinglish,cab_transport,feedback,mixed,cab,mixed_comfort,low,none,moderate,none
+P69-100,app features acche hai lekin crash bohot frequent hota hai,hinglish,banking_upi,feedback,mixed,app,mixed_stability,low,none,moderate,none
+P69-101,acha nahi laga bilkul,hinglish,ecommerce,complaint,negative,overall,dislike,medium,none,simple,none
+P69-102,bilkul bekar response,hinglish,customer_support,complaint,negative,support,poor_response,medium,none,simple,none
+P69-103,bohot acha laga ye,hinglish,food_delivery,appreciation,positive,overall,none,none,none,simple,none
+P69-104,mast experience tha,hinglish,cab_transport,appreciation,positive,overall,none,none,none,simple,none
+P69-105,kharab tha service,hinglish,telecom_internet,complaint,negative,service,poor_service,medium,none,simple,none
+P69-106,nhi pasand aaya mujhe,hinglish,ecommerce,complaint,negative,overall,dislike,medium,none,simple,none
+P69-107,accha raha experience,hinglish,healthcare,appreciation,positive,overall,none,none,none,simple,none
+P69-108,bohot bura service tha,hinglish,grocery_delivery,complaint,negative,service,bad_service,medium,none,simple,none
+P69-109,bilkul badhiya experience,hinglish,education,appreciation,positive,overall,none,none,none,simple,none
+P69-110,ghatiya tha bilkul ye,hinglish,travel,complaint,negative,overall,terrible,high,none,simple,none
+P69-111,I did not like the product quality at all.,english,ecommerce,complaint,negative,product,poor_quality,medium,none,simple,none
+P69-112,I did not enjoy the service during my stay.,english,travel,complaint,negative,service,poor_service,medium,none,simple,none
+P69-113,This was not good for an urgent doctor consultation.,english,healthcare,complaint,negative,doctor,inadequate_visit,medium,none,simple,none
+P69-114,The experience was not great with this internet provider.,english,telecom_internet,complaint,negative,isp,poor_experience,medium,none,simple,none
+P69-115,"I really liked the product, excellent build and design.",english,ecommerce,appreciation,positive,product,none,none,none,simple,none
+P69-116,"This was excellent food delivery, arrived hot and fast.",english,food_delivery,appreciation,positive,delivery,none,none,none,simple,none
+P69-117,"I do not recommend this cab service, driver was very reckless.",english,cab_transport,complaint,negative,driver,reckless_driving,high,none,simple,none
+P69-118,We did not receive our refund after the order was canceled.,english,banking_upi,complaint,negative,refund,missing_refund,high,none,moderate,Issue refund
+P69-119,I really appreciated this quick response from customer care.,english,customer_support,appreciation,positive,support,none,none,none,simple,none
+P69-120,This grocery package was definitely not worth the price paid.,english,grocery_delivery,complaint,negative,grocery,overpriced,medium,none,simple,none

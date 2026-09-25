@@ -37,9 +37,10 @@ db.sqlite3
 Thumbs.db
 
 # ML artifacts
-# Intermediate and historical experiment models are ignored
+# Intermediate, backup, and historical experiment models are ignored recursively across subdirectories
+ml/models/**/*.pkl
 ml/models/*.pkl
-# The final production model artifacts are required by the Django application at startup
+# The promoted production model artifacts are required by the Django application at startup
 !ml/models/sentiment_final_model.pkl
 !ml/models/sentiment_final_vectorizer.pkl
 

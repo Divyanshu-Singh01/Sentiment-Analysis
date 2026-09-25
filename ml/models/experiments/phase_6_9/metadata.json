@@ -1,0 +1,23 @@
+{
+  "experiment": "Phase 6.9 Targeted Hinglish Negation Correction",
+  "dataset_size": 8520,
+  "train_samples": 6816,
+  "test_samples": 1704,
+  "num_features": 34592,
+  "holdout_accuracy": 0.9143192488262911,
+  "holdout_macro_f1": 0.9089635132079501,
+  "holdout_weighted_f1": 0.9140462344812506,
+  "strict_unseen_accuracy": 0.9048178613396005,
+  "strict_unseen_macro_f1": 0.9022134983848658,
+  "live_29_accuracy": 0.896551724137931,
+  "live_29_macro_f1": 0.8971298664393292,
+  "challenge_accuracy": 0.7555555555555555,
+  "challenge_macro_f1": 0.7552817552817552,
+  "challenge_hinglish_accuracy": 0.7297297297297297,
+  "classes": [
+    "mixed",
+    "negative",
+    "neutral",
+    "positive"
+  ]
+}

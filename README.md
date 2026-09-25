@@ -10,10 +10,13 @@ Customer reviews and feedback often go beyond simple positive or negative remark
 
 This project demonstrates an end-to-end machine learning engineering workflow designed for educational demonstration and academic evaluation:
 - Ingests and cleans 8,000 multi-domain service feedback records across 10 industry sectors.
+- Augmented with 520 targeted experiment records (400 generic English + 120 Hinglish negation) to train the promoted Phase 6.9 production model on 8,520 records.
 - Extracts sub-word and word-level patterns using combined Word and Character TF-IDF n-grams.
 - Trains and optimizes an interpretable multi-class Logistic Regression classifier.
 - Exposes inference through a lightweight Django REST Framework API.
 - Delivers real-time predictions via an interactive React single-page application.
+
+> **Runtime & Reproducibility Note:** The application runs using the serialized Phase 6.9 production model and vectorizer. Historical experiments and targeted training records are retained for reproducibility and research transparency but are not required at runtime.
 
 ---
 
@@ -77,9 +80,9 @@ The application uses a decoupled client-server architecture:
 │             Text Preprocessing & Vectorization         │
 │     FeatureUnion: Word TF-IDF + Char n-grams TF-IDF     │
 └──────────────────────────┬─────────────────────────────┘
-                           │ 37,640 Sparse Features
+                           │ 34,592 Sparse Features
 ┌──────────────────────────▼─────────────────────────────┐
-│             Final Sentiment Model (8k)                │
+│          Production Sentiment Model (Phase 6.9)        │
 │       Multi-class Logistic Regression Classifier       │
 └──────────────────────────┬─────────────────────────────┘
                            │ Predicted label
@@ -103,29 +106,34 @@ Deterministic Cleaning Pipeline (`ml/preprocessing/clean_datasets.py`)
 - Normalizes complexity typos and service mismatches
 - Resolves cross-dataset duplicate ID prefix typos
                         ↓
-Canonical Processed Dataset (`data/processed/sentiment_dataset.csv`)
+Canonical Foundation Dataset (`data/processed/sentiment_dataset.csv` - 8,000 records)
                         ↓
-Train / Test Split (80/20 Stratified: 6,400 train / 1,600 test)
+Targeted Empirical Augmentations (Phase 6.8 & 6.9):
+  ├── Phase 6.8: +400 targeted generic English sentiment records
+  └── Phase 6.9: +120 targeted Hinglish negation & strong negative records
                         ↓
-Feature Extraction (`sklearn.pipeline.FeatureUnion`):
+Production Training Dataset (`data/test/phase_6_9_experiment_dataset.csv` - 8,520 records)
+                        ↓
+Feature Extraction (`sklearn.pipeline.FeatureUnion` - 34,592 features):
   ├── Word TF-IDF: analyzer='word', ngram_range=(1,1), min_df=2, sublinear_tf=True
   └── Char TF-IDF: analyzer='char_wb', ngram_range=(3,5), min_df=3, sublinear_tf=True
                         ↓
 Classifier: Logistic Regression (max_iter=1000, class_weight=None, random_state=42)
                         ↓
-Evaluation & Diagnostics (Holdout, Strict Unseen-Text, Frozen Challenge Set)
-                        ↓
-Serialized Artifacts (`ml/models/sentiment_final_model.pkl`, `sentiment_final_vectorizer.pkl`)
+Promoted Production Artifacts (`ml/models/sentiment_final_model.pkl`, `sentiment_final_vectorizer.pkl`)
 ```
 
 ---
 
 ## 6. Dataset
 
-The final training dataset ([`data/processed/sentiment_dataset.csv`](file:///c:/Users/hp/OneDrive/Desktop/Sentiment%20Analysis/data/processed/sentiment_dataset.csv)) contains **8,000 records** generated from 10 distinct consumer service domains.
+The production model is trained on **8,520 records**, built from the canonical 8,000-record multi-domain foundation plus 520 targeted diagnostic records:
+1. **Canonical Foundation Dataset ([`data/processed/sentiment_dataset.csv`](file:///c:/Users/hp/OneDrive/Desktop/Sentiment%20Analysis/data/processed/sentiment_dataset.csv)):** 8,000 records across 10 service domains (remains intact and unchanged).
+2. **Phase 6.8 Targeted Generic Expansion ([`data/experiments/phase_6_8_targeted/targeted_records.csv`](file:///c:/Users/hp/OneDrive/Desktop/Sentiment%20Analysis/data/experiments/phase_6_8_targeted/targeted_records.csv)):** 400 records addressing generic English praise (*"loved"*, *"amazing"*, first-person sentences).
+3. **Phase 6.9 Targeted Hinglish Negation ([`data/test/phase_6_9_hinglish_negation.csv`](file:///c:/Users/hp/OneDrive/Desktop/Sentiment%20Analysis/data/test/phase_6_9_hinglish_negation.csv)):** 120 records addressing Hinglish negation patterns (*"acha nahi laga"*, *"bahut bura tha"*).
 
 ### Service Domain Distribution
-Each domain contains exactly 800 records (10.0% of the dataset):
+The base dataset contains exactly 800 records per domain (10.0% each):
 - Banking & UPI
 - Cab & Transport
 - Customer Support
@@ -137,17 +145,11 @@ Each domain contains exactly 800 records (10.0% of the dataset):
 - Telecom & Broadband
 - Travel & Hospitality
 
-### Class & Language Distribution
-The dataset is naturally weighted rather than artificially forced into equal class splits, reflecting real-world customer service communication:
-
-- **Sentiment:**
-  - Negative: 3,275 records (40.9%)
-  - Positive: 1,761 records (22.0%)
-  - Neutral: 1,734 records (21.7%)
-  - Mixed: 1,230 records (15.4%)
-- **Language:**
-  - English: 4,967 records (62.1%)
-  - Hinglish (Roman Hindi): 3,033 records (37.9%)
+### Class Distribution (8,520 Production Training Records)
+- **Negative:** 3,523 records (41.3%)
+- **Positive:** 1,978 records (23.2%)
+- **Neutral:** 1,754 records (20.6%)
+- **Mixed:** 1,265 records (14.8%)
 
 ### Canonical 12-Column Schema
 `id`, `text`, `language`, `service`, `behavior`, `sentiment`, `aspect`, `issue`, `severity`, `abuse`, `complexity`, `suggestion`.
@@ -156,8 +158,9 @@ The dataset is naturally weighted rather than artificially forced into equal cla
 
 ## 7. Model Specification
 
+- **Current Production Model:** Phase 6.9 Promoted Final Model
 - **Algorithm:** Multi-class Logistic Regression (`sklearn.linear_model.LogisticRegression`)
-- **Features:** Combined via `FeatureUnion` (37,640 total feature columns)
+- **Features:** Combined via `FeatureUnion` (34,592 sparse feature columns)
   - **Word TF-IDF:** Word unigrams (1, 1), `min_df=2`, `sublinear_tf=True`, L2 normalization
   - **Character TF-IDF:** Character boundary n-grams (3, 5), `min_df=3`, `sublinear_tf=True`, L2 normalization
 - **Hyperparameters:** `max_iter=1000`, `class_weight=None`, `random_state=42`
@@ -167,35 +170,36 @@ The dataset is naturally weighted rather than artificially forced into equal cla
 
 ## 8. Evaluation Results
 
-Performance was evaluated across three distinct evaluation protocols. These metrics represent experimental evaluation results and should not be interpreted as universal real-world accuracy guarantees:
+Performance was evaluated across multiple rigorous evaluation protocols. These metrics represent experimental evaluation results and should not be interpreted as universal real-world accuracy guarantees:
 
-### A. Standard 80/20 Stratified Holdout (1,600 samples)
-- **Accuracy:** **90.87%** (1,454 / 1,600)
-- **Macro F1:** **0.9032**
-- **Weighted F1:** **0.9086**
-- **Per-Class F1:** Negative: 0.9156 | Positive: 0.9167 | Neutral: 0.9244 | Mixed: 0.8559
-- **Language Slices:** English: 91.35% | Hinglish: 89.98%
+### A. Standard 80/20 Stratified Holdout (1,704 samples)
+- **Accuracy:** **91.43%** (1,558 / 1,704)
+- **Macro F1:** **0.9090**
+- **Weighted F1:** **0.9140**
+- **Per-Class F1:** Negative: 0.9204 | Positive: 0.9229 | Neutral: 0.9242 | Mixed: 0.8683
 
-### B. Strict Unseen-Text Holdout (1,581 samples)
+### B. Strict Unseen-Text Holdout (Group-partitioned)
 Evaluated with zero identical text phrases permitted between training and test splits:
-- **Accuracy:** **90.32%** (1,428 / 1,581)
-- **Macro F1:** **0.9015**
-- **Weighted F1:** **0.9033**
+- **Accuracy:** **90.48%**
+- **Macro F1:** **0.9022**
 
 ### C. Frozen Adversarial Challenge Set (90 diagnostic samples)
-A manually curated adversarial dataset targeting subtle linguistic failure modes:
-- **Accuracy:** **73.33%** (66 / 90 correct; up from 47.78% in initial baseline)
-- **Macro F1:** **0.7293**
-- **Weighted F1:** **0.7341**
+A manually curated adversarial benchmark ([`data/test/challenge_dataset.csv`](file:///c:/Users/hp/OneDrive/Desktop/Sentiment%20Analysis/data/test/challenge_dataset.csv)) targeting subtle linguistic failure modes:
+- **Accuracy:** **75.56%** (68 / 90 correct; up from 47.78% in initial baseline, 73.33% in Phase 6.6)
+- **Macro F1:** **0.7553** (up from 0.4316 in initial baseline, 0.7293 in Phase 6.6)
+- **Total Challenge Errors:** **22** (down from 47 in baseline, 24 in Phase 6.6)
 - **Key Diagnostic Slices:**
   - Sarcasm: 100.0% (4/4)
   - Factual / Neutral: 100.0% (7/7)
-  - Transliteration Variations: 100.0% (8/8)
-  - Ordinary English: 88.9% (8/9)
   - Hinglish Challenge Text: 73.0% (27/37)
-  - Short Text (length ≤ 5 words): 70.4% (19/27)
+  - Short Text: 68.8% (11/16)
+  - Ordinary English: 88.9% (8/9)
   - Mixed Clauses: 69.2% (9/13)
-  - Polite Complaints: 60.0% (3/5)
+
+### D. Controlled Diagnostic Suite (10 cases)
+- **Accuracy:** **100.0% (10/10)**
+- `"I absolutely loved this product."` → predicted **`positive`** (89.5% confidence; resolved from historical negative failure).
+- `"bahut bura tha ye sab"` and `"acha nhi laga mujhe"` → predicted **`negative`** (Hinglish negation resolved).
 
 ---
 

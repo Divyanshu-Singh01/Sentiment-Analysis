@@ -1,0 +1,401 @@
+id,text,language,service,behavior,sentiment,aspect,issue,severity,abuse,complexity,suggestion
+P68-001,"I absolutely loved this banking app, transactions are fast and reliable.",english,banking_upi,appreciation,positive,app,none,none,none,simple,none
+P68-002,I really loved how smoothly the UPI payment went through.,english,banking_upi,appreciation,positive,upi,none,none,none,simple,none
+P68-003,"This banking app is amazing, never had a single failure.",english,banking_upi,appreciation,positive,app,none,none,none,simple,none
+P68-004,This was an excellent experience while opening my digital savings account.,english,banking_upi,appreciation,positive,account,none,none,none,moderate,none
+P68-005,"I enjoyed using this new scan and pay feature, works seamlessly.",english,banking_upi,appreciation,positive,upi,none,none,none,simple,none
+P68-006,Highly satisfied with the instant money transfer feature.,english,banking_upi,appreciation,positive,transfer,none,none,none,simple,none
+P68-007,"bhai payment experience ekdum mast tha, loved it.",hinglish,banking_upi,appreciation,positive,payment,none,none,none,simple,none
+P68-008,"mujhe ye banking app bahut pasand aaya, kaafi fast hai.",hinglish,banking_upi,appreciation,positive,app,none,none,none,simple,none
+P68-009,"I hated this net banking update, it keeps crashing on login.",english,banking_upi,complaint,negative,app,login_crash,high,none,moderate,Fix login crash
+P68-010,This product was horrible during my urgent electricity bill payment.,english,banking_upi,complaint,negative,bill_payment,transaction_failure,high,none,moderate,Improve server reliability
+P68-011,"I am very unhappy with this bank service, server is always down.",english,banking_upi,complaint,negative,server,server_down,medium,none,moderate,none
+P68-012,This was a terrible experience trying to complete a simple UPI transfer.,english,banking_upi,complaint,negative,upi,transfer_delay,high,none,moderate,Speed up transfers
+P68-013,"mujhe ye service bilkul pasand nahi aayi, paise atak gaye.",hinglish,banking_upi,complaint,negative,upi,money_stuck,high,none,simple,Jaldi refund do
+P68-014,"ye payment app ekdum ghatiya hai, har baar error dikhata hai.",hinglish,banking_upi,complaint,negative,app,app_error,medium,none,simple,none
+P68-015,I loved the instant transaction notification and receipt generation.,english,banking_upi,appreciation,positive,notification,none,none,none,simple,none
+P68-016,I am very satisfied with how quickly the money was credited.,english,banking_upi,appreciation,positive,transfer,none,none,none,simple,none
+P68-017,I absolutely love this product for all my daily UPI payments.,english,banking_upi,appreciation,positive,upi,none,none,none,simple,none
+P68-018,"maine payment experience ko kaafi enjoy kiya, bahut smooth tha.",hinglish,banking_upi,appreciation,positive,payment,none,none,none,simple,none
+P68-019,"mujhe ye UPI app bahut acha laga, transfer turant ho gaya.",hinglish,banking_upi,appreciation,positive,upi,none,none,none,simple,none
+P68-020,Absolutely loved the app,english,banking_upi,appreciation,positive,app,none,none,none,simple,none
+P68-021,Really amazing banking service,english,banking_upi,appreciation,positive,service,none,none,none,simple,none
+P68-022,Loved the quick transfer,english,banking_upi,appreciation,positive,transfer,none,none,none,simple,none
+P68-023,Works perfectly every time,english,banking_upi,appreciation,positive,app,none,none,none,simple,none
+P68-024,Hated the payment delay,english,banking_upi,complaint,negative,transfer,transfer_delay,medium,none,simple,none
+P68-025,Really disappointing banking app,english,banking_upi,complaint,negative,app,app_issues,medium,none,simple,none
+P68-026,Awful transfer experience,english,banking_upi,complaint,negative,transfer,failed_transfer,high,none,simple,none
+P68-027,Loved waiting three full working days for a simple UPI reversal.,english,banking_upi,complaint,negative,refund,refund_delay,high,none,moderate,Automate reversals
+P68-028,I absolutely loved being charged a penalty fee for their technical server failure.,english,banking_upi,complaint,negative,fees,wrong_penalty,high,none,complex,Remove penalty charges
+P68-029,Loved how the banking app conveniently went under maintenance right during bill payment.,english,banking_upi,complaint,negative,app,downtime,high,none,complex,none
+P68-030,"loved the drama, 500 rupay kat gaye par samne wale ko mile hi nahi.",hinglish,banking_upi,complaint,negative,upi,money_deducted,high,none,moderate,Paise wapas karo
+P68-031,"I don't love this new transaction layout, feels cluttered.",english,banking_upi,complaint,negative,ui,confusing_ui,low,none,simple,Simplify layout
+P68-032,I wouldn't call this instant payment service fast at all.,english,banking_upi,complaint,negative,speed,slow_service,medium,none,simple,none
+P68-033,"mujhe ye naya update utna acha nahi laga, purana wala behtar tha.",hinglish,banking_upi,complaint,negative,ui,poor_update,low,none,moderate,none
+P68-034,"I loved the fixed deposit booking process, very intuitive.",english,banking_upi,appreciation,positive,fd,none,none,none,simple,none
+P68-035,"I hated the fixed deposit withdrawal process, too complicated.",english,banking_upi,complaint,negative,fd,complex_withdrawal,medium,none,simple,none
+P68-036,"ye UPI system kaafi reliable hai, har baar kaam karta hai.",hinglish,banking_upi,appreciation,positive,upi,none,none,none,simple,none
+P68-037,My UPI transaction ID for this payment is 948210384.,english,banking_upi,informational,neutral,transaction,none,none,none,simple,none
+P68-038,mera bank account branch me successfully transfer ho gaya hai.,hinglish,banking_upi,informational,neutral,account,none,none,none,simple,none
+P68-039,I loved the fast transfer speed but hated the high convenience charge.,english,banking_upi,suggestion,mixed,charges,high_fee,low,none,moderate,Reduce fees
+P68-040,app ka interface bahut badhiya hai par server response thoda slow hai.,hinglish,banking_upi,suggestion,mixed,performance,slow_speed,low,none,moderate,Speed badhao
+P68-041,"I absolutely loved this cab ride, the driver was courteous and punctual.",english,cab_transport,appreciation,positive,driver,none,none,none,simple,none
+P68-042,I really loved the clean car and smooth driving during peak traffic.,english,cab_transport,appreciation,positive,cleanliness,none,none,none,moderate,none
+P68-043,"This cab service is amazing, arrived in less than three minutes.",english,cab_transport,appreciation,positive,punctuality,none,none,none,simple,none
+P68-044,"This was an excellent journey to the airport, highly professional.",english,cab_transport,appreciation,positive,ride,none,none,none,simple,none
+P68-045,"I enjoyed using this electric cab, very quiet and comfortable ride.",english,cab_transport,appreciation,positive,comfort,none,none,none,simple,none
+P68-046,Highly satisfied with the polite driver and exact fare calculation.,english,cab_transport,appreciation,positive,pricing,none,none,none,simple,none
+P68-047,"bhai cab ride ekdum mast thi, AC bhi full chal raha tha.",hinglish,cab_transport,appreciation,positive,comfort,none,none,none,simple,none
+P68-048,"mujhe ye taxi service bahut pasand aayi, driver time pe aa gaya.",hinglish,cab_transport,appreciation,positive,punctuality,none,none,none,simple,none
+P68-049,"I hated this driver's behavior, he refused to turn on the air conditioner.",english,cab_transport,complaint,negative,driver,ac_refusal,medium,none,moderate,Mandate AC usage
+P68-050,"This product was horrible, the taxi booking app crashed while assigning a cab.",english,cab_transport,complaint,negative,app,booking_crash,high,none,moderate,Fix app crash
+P68-051,"I am very unhappy with this cab service, driver cancelled after making me wait.",english,cab_transport,complaint,negative,driver,cancellation,high,none,moderate,Penalize cancellations
+P68-052,"This was a terrible experience, driver demanded extra cash outside the app.",english,cab_transport,complaint,negative,pricing,cash_demand,high,none,moderate,Stop extra cash demands
+P68-053,"mujhe ye cab ride bilkul pasand nahi aayi, gaadi bahut gandi thi.",hinglish,cab_transport,complaint,negative,cleanliness,dirty_car,medium,none,simple,Gaadi saaf rakho
+P68-054,"ye cab service ekdum ghatiya hai, 25 minute baad trip cancel kar diya.",hinglish,cab_transport,complaint,negative,punctuality,late_cancellation,high,none,simple,none
+P68-055,I loved the smooth highway drive and polite conversation.,english,cab_transport,appreciation,positive,driver,none,none,none,simple,none
+P68-056,I am very satisfied with the safety features and live tracking.,english,cab_transport,appreciation,positive,safety,none,none,none,simple,none
+P68-057,I absolutely love this app for daily office commute.,english,cab_transport,appreciation,positive,app,none,none,none,simple,none
+P68-058,"maine ride ko kaafi enjoy kiya, driver ne shortcut liya aur time bachaya.",hinglish,cab_transport,appreciation,positive,route,none,none,none,moderate,none
+P68-059,"mujhe ye cab booking bahut achi lagi, gaadi ekdum clean thi.",hinglish,cab_transport,appreciation,positive,cleanliness,none,none,none,simple,none
+P68-060,Absolutely loved the ride,english,cab_transport,appreciation,positive,ride,none,none,none,simple,none
+P68-061,Really amazing cab service,english,cab_transport,appreciation,positive,service,none,none,none,simple,none
+P68-062,Loved the smooth driving,english,cab_transport,appreciation,positive,driving,none,none,none,simple,none
+P68-063,Arrived on time perfectly,english,cab_transport,appreciation,positive,punctuality,none,none,none,simple,none
+P68-064,Hated the driver's attitude,english,cab_transport,complaint,negative,driver,rude_driver,medium,none,simple,none
+P68-065,Really disappointing cab trip,english,cab_transport,complaint,negative,ride,bad_trip,medium,none,simple,none
+P68-066,Awful rush driving experience,english,cab_transport,complaint,negative,safety,rash_driving,high,none,simple,none
+P68-067,Loved the complimentary detour taking me 8 kilometers away from my drop location.,english,cab_transport,complaint,negative,route,wrong_route,medium,none,moderate,Check route navigation
+P68-068,I absolutely loved waiting 20 minutes only for the driver to ask me where I want to go and cancel.,english,cab_transport,complaint,negative,driver,cancellation,high,none,complex,Strict cancellation policy
+P68-069,Loved the deafening music and non-functional windows in the middle of summer heat.,english,cab_transport,complaint,negative,comfort,ac_issues,medium,none,moderate,none
+P68-070,"loved the free thrill, driver bhai highway pe phone pe baat karte hue 100 chala rahe the.",hinglish,cab_transport,complaint,negative,safety,reckless_driving,high,none,complex,Driver ko warn karo
+P68-071,I don't love the new surge pricing policy during light rains.,english,cab_transport,complaint,negative,pricing,surge_pricing,medium,none,simple,Cap surge price
+P68-072,I wouldn't call this driver polite or helpful by any metric.,english,cab_transport,complaint,negative,driver,rude_driver,low,none,simple,none
+P68-073,"mujhe car ka condition bilkul pasand nahi aaya, seat fati hui thi.",hinglish,cab_transport,complaint,negative,cleanliness,torn_seats,low,none,moderate,none
+P68-074,"I loved the morning commute, driver arrived exactly on time.",english,cab_transport,appreciation,positive,punctuality,none,none,none,simple,none
+P68-075,"I hated the morning commute, driver was thirty minutes late.",english,cab_transport,complaint,negative,punctuality,late_arrival,high,none,simple,none
+P68-076,"cab ka route navigation ekdum perfect tha, bilkul jam nahi mila.",hinglish,cab_transport,appreciation,positive,route,none,none,none,simple,none
+P68-077,The cab registration number is DL 1Y 4829 and vehicle model is Dzire.,english,cab_transport,informational,neutral,vehicle,none,none,none,simple,none
+P68-078,cab location terminal two ke departure gate par show ho rahi hai.,hinglish,cab_transport,informational,neutral,location,none,none,none,simple,none
+P68-079,I loved the quick cab arrival but hated the noisy interior rattles.,english,cab_transport,suggestion,mixed,vehicle,noise,low,none,moderate,Maintain vehicles
+P68-080,driver ka behavior bahut acha tha par gaadi me AC bilkul nahi chal raha tha.,hinglish,cab_transport,suggestion,mixed,comfort,ac_issue,medium,none,moderate,AC theek karwao
+P68-081,I absolutely loved how quickly the support agent resolved my ticket.,english,customer_support,appreciation,positive,agent,none,none,none,simple,none
+P68-082,"I really loved the helpful guidance provided on call, very patient.",english,customer_support,appreciation,positive,helpfulness,none,none,none,simple,none
+P68-083,"This support team is amazing, issue was fixed in under five minutes.",english,customer_support,appreciation,positive,resolution,none,none,none,simple,none
+P68-084,"This was an excellent customer service experience, highly professional.",english,customer_support,appreciation,positive,service,none,none,none,simple,none
+P68-085,"I enjoyed chatting with the virtual assistant, it provided instant answers.",english,customer_support,appreciation,positive,bot,none,none,none,simple,none
+P68-086,Highly satisfied with the empathy and prompt follow-up from the representative.,english,customer_support,appreciation,positive,agent,none,none,none,simple,none
+P68-087,"bhai customer support ka response ekdum mast tha, turant problem solve kar di.",hinglish,customer_support,appreciation,positive,resolution,none,none,none,simple,none
+P68-088,"mujhe customer care ka behavior bahut pasand aaya, kaafi polite the.",hinglish,customer_support,appreciation,positive,agent,none,none,none,simple,none
+P68-089,I hated waiting forty-five minutes on hold only to get disconnected.,english,customer_support,complaint,negative,wait_time,call_drop,high,none,moderate,Improve call connectivity
+P68-090,"This product was horrible, the chatbot looped the same useless answer four times.",english,customer_support,complaint,negative,bot,bot_loop,medium,none,moderate,Allow human transfer
+P68-091,I am very unhappy with the rude tone of the support executive.,english,customer_support,complaint,negative,agent,rude_agent,high,none,simple,Train agents properly
+P68-092,"This was a terrible experience, my issue has been pending for three weeks without update.",english,customer_support,complaint,negative,ticket,no_update,high,none,moderate,Expedite pending tickets
+P68-093,"mujhe support team ka response bilkul pasand nahi aaya, koi dhyan nahi de raha.",hinglish,customer_support,complaint,negative,service,poor_response,medium,none,simple,Jaldi solve karo
+P68-094,"ye customer service ekdum bekar hai, call cut kar di bina bataye.",hinglish,customer_support,complaint,negative,call,abrupt_disconnect,high,none,simple,none
+P68-095,I loved the clear explanation and step-by-step assistance provided.,english,customer_support,appreciation,positive,guidance,none,none,none,simple,none
+P68-096,I am very satisfied with how my billing complaint was handled.,english,customer_support,appreciation,positive,resolution,none,none,none,simple,none
+P68-097,"I absolutely love this support system, live chat works like a charm.",english,customer_support,appreciation,positive,chat,none,none,none,simple,none
+P68-098,"maine support agent se baat karke kaafi acha feel kiya, problem hal ho gayi.",hinglish,customer_support,appreciation,positive,agent,none,none,none,moderate,none
+P68-099,"mujhe executive ki honesty bahut achi lagi, clear bataya kab tak theek hoga.",hinglish,customer_support,appreciation,positive,transparency,none,none,none,moderate,none
+P68-100,Absolutely loved the support,english,customer_support,appreciation,positive,support,none,none,none,simple,none
+P68-101,Really amazing support executive,english,customer_support,appreciation,positive,agent,none,none,none,simple,none
+P68-102,Loved the prompt response,english,customer_support,appreciation,positive,speed,none,none,none,simple,none
+P68-103,Resolved my problem perfectly,english,customer_support,appreciation,positive,resolution,none,none,none,simple,none
+P68-104,Hated the long wait,english,customer_support,complaint,negative,wait_time,long_queue,medium,none,simple,none
+P68-105,Really disappointing customer care,english,customer_support,complaint,negative,support,unhelpful,medium,none,simple,none
+P68-106,Awful robotic bot replies,english,customer_support,complaint,negative,bot,bot_issue,low,none,simple,none
+P68-107,Loved how the support agent closed my ticket as resolved while my issue still exists.,english,customer_support,complaint,negative,ticket,false_resolution,high,none,complex,Do not close open tickets
+P68-108,I absolutely loved listening to your flute elevator music on loop for forty minutes.,english,customer_support,complaint,negative,hold_time,excessive_wait,medium,none,moderate,Reduce hold duration
+P68-109,Loved the agent telling me to restart my phone for an account verification problem on your end.,english,customer_support,complaint,negative,agent,incompetent_advice,medium,none,complex,Train staff
+P68-110,"loved the customer service, pehle 1 ghanta hold pe rakha phir bolte hain system down hai.",hinglish,customer_support,complaint,negative,call,wasted_time,high,none,complex,System theek karo
+P68-111,"I don't love this automated phone menu, impossible to reach a human.",english,customer_support,complaint,negative,ivr,complex_ivr,medium,none,simple,Direct human option
+P68-112,I wouldn't call this representative well-trained on company policies.,english,customer_support,complaint,negative,agent,poor_knowledge,low,none,simple,none
+P68-113,"mujhe agent ka explanation bilkul samajh nahi aaya, confusing tha.",hinglish,customer_support,complaint,negative,clarity,confusing_reply,low,none,moderate,none
+P68-114,"I loved the email support follow-up, received detailed reply in an hour.",english,customer_support,appreciation,positive,email,none,none,none,moderate,none
+P68-115,"I hated the email support follow-up, received generic template after five days.",english,customer_support,complaint,negative,email,template_reply,medium,none,moderate,none
+P68-116,"support team ka helpline number kaafi useful hai, direct connect hua.",hinglish,customer_support,appreciation,positive,call,none,none,none,simple,none
+P68-117,Your support ticket reference number is TKT-492041.,english,customer_support,informational,neutral,ticket,none,none,none,simple,none
+P68-118,customer care executive ne bola ki verification email send kar diya gaya hai.,hinglish,customer_support,informational,neutral,process,none,none,none,simple,none
+P68-119,I loved the agent's friendly attitude but hated that they lacked tools to fix the issue.,english,customer_support,suggestion,mixed,agent,unempowered_agent,medium,none,complex,Give agents more tools
+P68-120,executive baat bahut tameez se kar raha tha par solution dene me kaafi time lagaya.,hinglish,customer_support,suggestion,mixed,speed,slow_resolution,low,none,moderate,Speed badhao
+P68-121,"I absolutely loved this product, the build quality exceeded all my expectations.",english,ecommerce,appreciation,positive,product_quality,none,none,none,simple,none
+P68-122,I really loved the careful packaging and lightning fast delivery.,english,ecommerce,appreciation,positive,delivery,none,none,none,simple,none
+P68-123,"This product is amazing, works like a charm right out of the box.",english,ecommerce,appreciation,positive,product,none,none,none,simple,none
+P68-124,"This was an excellent shopping experience, genuine item with warranty card.",english,ecommerce,appreciation,positive,authenticity,none,none,none,simple,none
+P68-125,"I enjoyed buying from this seller, quick dispatch and great communication.",english,ecommerce,appreciation,positive,seller,none,none,none,simple,none
+P68-126,"Highly satisfied with the product features, totally worth every rupee spent.",english,ecommerce,appreciation,positive,value,none,none,none,simple,none
+P68-127,"bhai product ki quality ekdum mast hai, loved it completely.",hinglish,ecommerce,appreciation,positive,quality,none,none,none,simple,none
+P68-128,"mujhe ye item bahut pasand aaya, jaisa photo me tha waisa hi mila.",hinglish,ecommerce,appreciation,positive,authenticity,none,none,none,simple,none
+P68-129,"I hated this product, it broke within two days of normal usage.",english,ecommerce,complaint,negative,quality,defective_item,high,none,simple,Improve quality check
+P68-130,"This product was horrible, completely cheap plastic material and defective motor.",english,ecommerce,complaint,negative,product,poor_material,high,none,moderate,Refund immediately
+P68-131,"I am very unhappy with the seller, received a used and scratched product.",english,ecommerce,complaint,negative,condition,used_item,high,none,moderate,Take action on seller
+P68-132,"This was a terrible experience, order was marked delivered but never arrived.",english,ecommerce,complaint,negative,delivery,fake_delivery,high,none,moderate,Investigate courier
+P68-133,"mujhe ye product bilkul pasand nahi aaya, duplicate lag raha hai.",hinglish,ecommerce,complaint,negative,authenticity,fake_product,high,none,simple,Original product bhejo
+P68-134,"ye shopping app ekdum bekar hai, return request baar baar reject kar rahe hain.",hinglish,ecommerce,complaint,negative,returns,return_rejection,high,none,moderate,Return accept karo
+P68-135,I loved the elegant finish and sturdy design of this product.,english,ecommerce,appreciation,positive,design,none,none,none,simple,none
+P68-136,I am very satisfied with the battery backup and performance.,english,ecommerce,appreciation,positive,performance,none,none,none,simple,none
+P68-137,I absolutely love this online store for gadgets and electronics.,english,ecommerce,appreciation,positive,store,none,none,none,simple,none
+P68-138,"maine product ko use kiya aur kaafi enjoy kiya, bilkul perfect hai.",hinglish,ecommerce,appreciation,positive,product,none,none,none,simple,none
+P68-139,"mujhe ye deal kaafi achi lagi, itne kam price me branded item mil gaya.",hinglish,ecommerce,appreciation,positive,price,none,none,none,moderate,none
+P68-140,Absolutely loved this product,english,ecommerce,appreciation,positive,product,none,none,none,simple,none
+P68-141,Really amazing product quality,english,ecommerce,appreciation,positive,quality,none,none,none,simple,none
+P68-142,Loved the fast order delivery,english,ecommerce,appreciation,positive,delivery,none,none,none,simple,none
+P68-143,Excellent product works well,english,ecommerce,appreciation,positive,performance,none,none,none,simple,none
+P68-144,Hated the defective product,english,ecommerce,complaint,negative,quality,defective,high,none,simple,none
+P68-145,Really disappointing material quality,english,ecommerce,complaint,negative,quality,bad_material,medium,none,simple,none
+P68-146,Awful online shopping experience,english,ecommerce,complaint,negative,service,poor_service,medium,none,simple,none
+P68-147,"Loved the mystery parcel experience, ordered running shoes and got two bars of soap.",english,ecommerce,complaint,negative,delivery,wrong_item,high,none,complex,Check warehouse dispatch
+P68-148,I absolutely loved paying express shipping charges for delivery that took two weeks.,english,ecommerce,complaint,negative,shipping,shipping_delay,high,none,complex,Refund shipping charges
+P68-149,Loved the indestructible seal on the package that ruined the product inside while opening.,english,ecommerce,complaint,negative,packaging,bad_packaging,low,none,moderate,none
+P68-150,"loved the return process, delivery boy ne gate pe aake bina doorbell bajaye customer not available likh diya.",hinglish,ecommerce,complaint,negative,returns,fake_attempt,high,none,complex,Delivery agent badlo
+P68-151,"I don't love the color shade, looks dull compared to the catalog picture.",english,ecommerce,complaint,negative,appearance,color_difference,low,none,simple,Accurate pictures
+P68-152,I wouldn't call this plastic casing premium or durable.,english,ecommerce,complaint,negative,durability,cheap_build,medium,none,simple,none
+P68-153,"ye jacket utni achi nahi nikli jitna description me likha tha, kapda thoda rough hai.",hinglish,ecommerce,complaint,negative,fabric,rough_fabric,low,none,moderate,none
+P68-154,"I loved the headphones, sound is crystal clear with rich bass.",english,ecommerce,appreciation,positive,audio,none,none,none,simple,none
+P68-155,"I hated the headphones, left earbud stopped working on day two.",english,ecommerce,complaint,negative,audio,broken_earbud,high,none,simple,none
+P68-156,ye smart watch kaafi accurate hai aur battery bhi do din chalti hai.,hinglish,ecommerce,appreciation,positive,battery,none,none,none,simple,none
+P68-157,The package was dispatched via Bluedart with tracking number 8920194.,english,ecommerce,informational,neutral,logistics,none,none,none,simple,none
+P68-158,product ka return window agle mangalwar tak open hai.,hinglish,ecommerce,informational,neutral,returns,none,none,none,simple,none
+P68-159,I loved the sleek design of the phone but hated the weak camera performance in low light.,english,ecommerce,suggestion,mixed,camera,poor_camera,medium,none,complex,Improve sensor
+P68-160,product ki fitting bahut achi hai par kapde ka color pehli wash me fade ho gaya.,hinglish,ecommerce,complaint,mixed,fabric,color_fade,medium,none,moderate,Color fastness improve karo
+P68-161,"I absolutely loved this course, the mentor explained difficult concepts effortlessly.",english,education,appreciation,positive,instructor,none,none,none,simple,none
+P68-162,I really loved the practical hands-on coding assignments in this module.,english,education,appreciation,positive,curriculum,none,none,none,simple,none
+P68-163,"This learning platform is amazing, helped me clear my certification exam.",english,education,appreciation,positive,platform,none,none,none,simple,none
+P68-164,This was an excellent lecture series on data structures and algorithms.,english,education,appreciation,positive,content,none,none,none,simple,none
+P68-165,I enjoyed solving the interactive quizzes after each video chapter.,english,education,appreciation,positive,quizzes,none,none,none,simple,none
+P68-166,Highly satisfied with the personalized feedback received on my project submission.,english,education,appreciation,positive,feedback,none,none,none,simple,none
+P68-167,"bhai class ka content ekdum mast tha, teacher ne sab kuch aasaani se samjha diya.",hinglish,education,appreciation,positive,teaching,none,none,none,moderate,none
+P68-168,"mujhe ye course bahut pasand aaya, kaafi helpful practical knowledge mili.",hinglish,education,appreciation,positive,content,none,none,none,simple,none
+P68-169,"I hated the rushed pace of live classes, doubts were completely ignored.",english,education,complaint,negative,teaching,pacing_issue,medium,none,moderate,Slow down pace
+P68-170,"This product was horrible, the video player keeps buffering even on high speed broadband.",english,education,complaint,negative,player,buffering,medium,none,moderate,Optimize video server
+P68-171,"I am very unhappy with the outdated syllabus, technologies from ten years ago.",english,education,complaint,negative,curriculum,outdated_content,high,none,simple,Update curriculum
+P68-172,"This was a terrible experience, faculty failed to show up for three consecutive lectures.",english,education,complaint,negative,faculty,absenteeism,high,none,moderate,Ensure teacher presence
+P68-173,"mujhe teaching method bilkul pasand nahi aaya, sirf slide read kar rahe the.",hinglish,education,complaint,negative,teaching,poor_pedagogy,medium,none,moderate,Practical samjhao
+P68-174,"ye learning app ekdum bekar hai, login karne pe blank screen aati hai.",hinglish,education,complaint,negative,app,blank_screen,high,none,simple,App fix karo
+P68-175,I loved the detailed explanation and real-world case studies in class.,english,education,appreciation,positive,content,none,none,none,simple,none
+P68-176,I am very satisfied with my exam score after completing these test series.,english,education,appreciation,positive,results,none,none,none,simple,none
+P68-177,I absolutely love this educational app for preparing competitive exams.,english,education,appreciation,positive,app,none,none,none,simple,none
+P68-178,"maine course ko kaafi enjoy kiya, concepts ab crystal clear hain.",hinglish,education,appreciation,positive,concepts,none,none,none,simple,none
+P68-179,"mujhe mentor ka teaching style bahut acha laga, doubt turant clear kiya.",hinglish,education,appreciation,positive,instructor,none,none,none,simple,none
+P68-180,Absolutely loved the course,english,education,appreciation,positive,course,none,none,none,simple,none
+P68-181,Really amazing learning platform,english,education,appreciation,positive,platform,none,none,none,simple,none
+P68-182,Loved the practical lectures,english,education,appreciation,positive,teaching,none,none,none,simple,none
+P68-183,Explained all concepts perfectly,english,education,appreciation,positive,clarity,none,none,none,simple,none
+P68-184,Hated the boring lectures,english,education,complaint,negative,content,monotonous,medium,none,simple,none
+P68-185,Really disappointing course content,english,education,complaint,negative,content,poor_quality,medium,none,simple,none
+P68-186,Awful live class connection,english,education,complaint,negative,streaming,audio_video_lags,high,none,simple,none
+P68-187,Loved how the professor spent forty minutes diagnosing why his microphone was muted.,english,education,complaint,negative,audio,tech_glitch,medium,none,complex,Test audio prior to class
+P68-188,I absolutely loved paying thirty thousand rupees to read publicly available documentation.,english,education,complaint,negative,curriculum,poor_value,high,none,complex,Provide original material
+P68-189,Loved the interactive doubt session where the tutor answered exactly zero questions from the chat.,english,education,complaint,negative,instructor,ignored_doubts,high,none,complex,Address student queries
+P68-190,"loved the exam portal, paper submit karte hi server crash ho gaya aur attempt zero dikha raha hai.",hinglish,education,complaint,negative,exam_portal,portal_crash,high,none,complex,Re-exam allow karo
+P68-191,"I don't love the assignment grading system, feels arbitrary and unhelpful.",english,education,complaint,negative,grading,opaque_evaluation,low,none,moderate,Transparent grading rubrics
+P68-192,"I wouldn't call this batch beginner friendly, skipped core basics.",english,education,complaint,negative,difficulty,steep_curve,medium,none,simple,Cover basics first
+P68-193,"mujhe ye test series utni informative nahi lagi, previous year questions repeat the.",hinglish,education,complaint,negative,tests,repeated_questions,low,none,moderate,New questions daalo
+P68-194,"I loved the machine learning module, the assignments were challenging.",english,education,appreciation,positive,curriculum,none,none,none,simple,none
+P68-195,"I hated the machine learning module, the assignment questions had syntax errors.",english,education,complaint,negative,curriculum,buggy_code,medium,none,moderate,none
+P68-196,"course ka discussion forum kaafi helpful hai, batchmates help kar dete hain.",hinglish,education,appreciation,positive,community,none,none,none,simple,none
+P68-197,The live webinar is scheduled for Saturday at 5 PM on Google Meet.,english,education,informational,neutral,schedule,none,none,none,simple,none
+P68-198,module three ke notes student dashboard pe PDF format me available hain.,hinglish,education,informational,neutral,resources,none,none,none,simple,none
+P68-199,I loved the theoretical concepts but hated the absence of real coding projects.,english,education,suggestion,mixed,curriculum,lack_of_projects,medium,none,moderate,Add projects
+P68-200,instructor ka samjhane ka dhang bahut acha tha par background noise bohot zyada aa rahi thi.,hinglish,education,suggestion,mixed,audio,noise,low,none,moderate,Mic improve karo
+P68-201,"I absolutely loved this meal, the flavors were authentic and food arrived piping hot.",english,food_delivery,appreciation,positive,taste,none,none,none,simple,none
+P68-202,I really loved the careful packaging and spill-proof containers used by the restaurant.,english,food_delivery,appreciation,positive,packaging,none,none,none,simple,none
+P68-203,"This food delivery service is amazing, delivered in twenty minutes flat.",english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+P68-204,"This was an excellent dinner experience, restaurant sent complimentary dessert.",english,food_delivery,appreciation,positive,food,none,none,none,simple,none
+P68-205,"I enjoyed ordering from this cloud kitchen, fresh ingredients and generous portions.",english,food_delivery,appreciation,positive,portion,none,none,none,simple,none
+P68-206,Highly satisfied with the rider's polite attitude and contactless drop-off.,english,food_delivery,appreciation,positive,rider,none,none,none,simple,none
+P68-207,"bhai khana ekdum mast tha, loved the butter chicken and garlic naan.",hinglish,food_delivery,appreciation,positive,taste,none,none,none,simple,none
+P68-208,"mujhe biryani ka taste bahut pasand aaya, masala aur rice perfectly cooked tha.",hinglish,food_delivery,appreciation,positive,taste,none,none,none,simple,none
+P68-209,I hated how cold and soggy the burger arrived after a two-hour delivery delay.,english,food_delivery,complaint,negative,quality,cold_food,high,none,moderate,Improve thermal bags
+P68-210,"This product was horrible, the curry was spoiled and smelled foul.",english,food_delivery,complaint,negative,hygiene,stale_food,high,none,simple,Check restaurant hygiene
+P68-211,"I am very unhappy with this delivery app, half of my order was missing.",english,food_delivery,complaint,negative,order,missing_items,high,none,simple,Verify bag contents
+P68-212,"This was a terrible experience, driver spilled all the soup inside the delivery bag.",english,food_delivery,complaint,negative,spill,leakage,medium,none,moderate,Better drink holders
+P68-213,"mujhe khana bilkul pasand nahi aaya, sabzi me bohot zyada tel aur namak tha.",hinglish,food_delivery,complaint,negative,taste,too_salty,medium,none,moderate,Taste standard maintain karo
+P68-214,"ye food delivery app ekdum ghatiya hai, order cancel kar diya par refund nahi diya.",hinglish,food_delivery,complaint,negative,refund,refund_issue,high,none,moderate,Refund turant do
+P68-215,I loved the fresh aroma and restaurant-quality taste of the pasta.,english,food_delivery,appreciation,positive,quality,none,none,none,simple,none
+P68-216,I am very satisfied with the speedy delivery and warm food.,english,food_delivery,appreciation,positive,speed,none,none,none,simple,none
+P68-217,I absolutely love this food app for ordering late-night snacks.,english,food_delivery,appreciation,positive,app,none,none,none,simple,none
+P68-218,"maine khana family ke saath enjoy kiya, sabko taste bahut acha laga.",hinglish,food_delivery,appreciation,positive,taste,none,none,none,simple,none
+P68-219,"mujhe delivery boy ka polite behavior bahut acha laga, gate par respectfully deliver kiya.",hinglish,food_delivery,appreciation,positive,rider,none,none,none,moderate,none
+P68-220,Absolutely loved the food,english,food_delivery,appreciation,positive,food,none,none,none,simple,none
+P68-221,Really amazing pizza crust,english,food_delivery,appreciation,positive,taste,none,none,none,simple,none
+P68-222,Loved the speedy hot delivery,english,food_delivery,appreciation,positive,delivery_time,none,none,none,simple,none
+P68-223,Fresh hot food delivered,english,food_delivery,appreciation,positive,quality,none,none,none,simple,none
+P68-224,Hated the cold food,english,food_delivery,complaint,negative,food,cold_food,medium,none,simple,none
+P68-225,Really disappointing tasteless curry,english,food_delivery,complaint,negative,taste,bad_taste,medium,none,simple,none
+P68-226,Awful late delivery experience,english,food_delivery,complaint,negative,delivery,late_delivery,high,none,simple,none
+P68-227,Loved receiving ice-cold dosa and spilled sambar after waiting ninety minutes.,english,food_delivery,complaint,negative,food,cold_spilled_food,high,none,moderate,Faster delivery routes
+P68-228,I absolutely loved paying thirty rupees platform fee for a rider who refused to come upstairs.,english,food_delivery,complaint,negative,rider,delivery_refusal,medium,none,complex,Doorstep delivery mandate
+P68-229,"Loved how the restaurant accepted my order, waited forty minutes, and then cancelled it.",english,food_delivery,complaint,negative,restaurant,late_cancellation,high,none,complex,Compensate cancellation
+P68-230,"loved the free diet plan, 3 ghante baad restaurant ne bola ki kitchen close ho gaya.",hinglish,food_delivery,complaint,negative,cancellation,late_rejection,high,none,complex,Timely update do
+P68-231,"I don't love the portion size of this thali, barely enough for one person.",english,food_delivery,complaint,negative,portion,small_portion,low,none,simple,Increase portion size
+P68-232,I wouldn't call this restaurant hygienic based on the hair found in food.,english,food_delivery,complaint,negative,hygiene,foreign_object,high,none,moderate,Strict quality inspection
+P68-233,"ye burger utna fresh nahi tha jitna expect kiya tha, bun kafi dry tha.",hinglish,food_delivery,complaint,negative,food,stale_bun,low,none,moderate,Fresh buns use karo
+P68-234,"I loved the breakfast combo, hot parathas with fresh curd.",english,food_delivery,appreciation,positive,food,none,none,none,simple,none
+P68-235,"I hated the breakfast combo, parathas were burnt and curd was sour.",english,food_delivery,complaint,negative,food,burnt_food,medium,none,simple,none
+P68-236,"order time se pehle deliver ho gaya, food quality bhi zabardast thi.",hinglish,food_delivery,appreciation,positive,delivery,none,none,none,simple,none
+P68-237,The delivery rider is currently waiting at the restaurant pickup counter.,english,food_delivery,informational,neutral,tracking,none,none,none,simple,none
+P68-238,order number 783921 me restaurant ne cutlery include nahi ki hai.,hinglish,food_delivery,informational,neutral,order,none,none,none,simple,none
+P68-239,I loved the delicious pizza taste but hated the forty-minute delivery delay.,english,food_delivery,suggestion,mixed,delivery,delay,medium,none,moderate,Improve delivery speed
+P68-240,khana bahut lajawab tha par packing kharab hone ki wajah se daal thodi leak ho gayi.,hinglish,food_delivery,suggestion,mixed,packaging,leakage,low,none,moderate,Packaging better karo
+P68-241,I absolutely loved the freshness of the fruits and vegetables in this delivery.,english,grocery_delivery,appreciation,positive,produce,none,none,none,simple,none
+P68-242,I really loved how neatly the dairy and bakery items were packed separately.,english,grocery_delivery,appreciation,positive,packaging,none,none,none,simple,none
+P68-243,"This quick grocery service is amazing, arrived in exactly ten minutes.",english,grocery_delivery,appreciation,positive,speed,none,none,none,simple,none
+P68-244,"This was an excellent grocery shopping experience, all requested brands in stock.",english,grocery_delivery,appreciation,positive,availability,none,none,none,simple,none
+P68-245,"I enjoyed buying weekly groceries here, great bundle discounts and cashbacks.",english,grocery_delivery,appreciation,positive,discounts,none,none,none,simple,none
+P68-246,Highly satisfied with the crisp apples and farm-fresh spinach delivered today.,english,grocery_delivery,appreciation,positive,quality,none,none,none,simple,none
+P68-247,"bhai sabzi aur fruits ekdum taaza the, loved the quick 10 minute delivery.",hinglish,grocery_delivery,appreciation,positive,freshness,none,none,none,simple,none
+P68-248,"mujhe grocery delivery service bahut pasand aayi, sabhi items sahi expiry date ke the.",hinglish,grocery_delivery,appreciation,positive,quality,none,none,none,moderate,none
+P68-249,I hated finding rotten tomatoes and squished bananas at the bottom of the bag.,english,grocery_delivery,complaint,negative,produce,rotten_items,high,none,moderate,Train packing staff
+P68-250,"This product was horrible, the milk packet was leaking and soaked the bread.",english,grocery_delivery,complaint,negative,leakage,damaged_goods,high,none,moderate,Replace milk packet
+P68-251,"I am very unhappy with the delivery partner, dropped the egg tray on the floor.",english,grocery_delivery,complaint,negative,handling,broken_eggs,high,none,moderate,Compensate broken eggs
+P68-252,"This was a terrible experience, delivered expired yogurt with yesterday's date.",english,grocery_delivery,complaint,negative,safety,expired_product,high,none,simple,Strict expiry audits
+P68-253,"mujhe sabziyon ki quality bilkul pasand nahi aayi, aalu purane aur gale hue the.",hinglish,grocery_delivery,complaint,negative,produce,bad_potatoes,medium,none,moderate,Fresh stock bhejo
+P68-254,"ye grocery app ekdum bekar hai, teen items out of stock the phir bhi bill kar liya.",hinglish,grocery_delivery,complaint,negative,billing,wrong_billing,high,none,moderate,Extra paise refund karo
+P68-255,I loved the clean packaging and unbruised mangoes received today.,english,grocery_delivery,appreciation,positive,quality,none,none,none,simple,none
+P68-256,I am very satisfied with the quick replacement provided for the missing butter.,english,grocery_delivery,appreciation,positive,support,none,none,none,simple,none
+P68-257,I absolutely love this grocery app for all my early morning milk and bread orders.,english,grocery_delivery,appreciation,positive,convenience,none,none,none,simple,none
+P68-258,"maine fresh vegetables mangwaye aur kaafi enjoy kiya, bilkul mandi jaisi freshness hai.",hinglish,grocery_delivery,appreciation,positive,freshness,none,none,none,moderate,none
+P68-259,"mujhe 10 minute delivery ka concept bahut acha laga, emergency me grocery mil gayi.",hinglish,grocery_delivery,appreciation,positive,speed,none,none,none,simple,none
+P68-260,Absolutely loved the fresh veggies,english,grocery_delivery,appreciation,positive,produce,none,none,none,simple,none
+P68-261,Really amazing grocery delivery,english,grocery_delivery,appreciation,positive,delivery,none,none,none,simple,none
+P68-262,Loved the prompt service,english,grocery_delivery,appreciation,positive,speed,none,none,none,simple,none
+P68-263,Delivered fresh items perfectly,english,grocery_delivery,appreciation,positive,quality,none,none,none,simple,none
+P68-264,Hated the rotten vegetables,english,grocery_delivery,complaint,negative,produce,rotten_food,high,none,simple,none
+P68-265,Really disappointing broken eggs,english,grocery_delivery,complaint,negative,damage,broken_eggs,medium,none,simple,none
+P68-266,Awful expired milk delivery,english,grocery_delivery,complaint,negative,dairy,expired_milk,high,none,simple,none
+P68-267,Loved the artistic egg crush technique inside the bag by dumping 5 kg atta on top.,english,grocery_delivery,complaint,negative,packaging,crushed_eggs,high,none,moderate,Do not put heavy items on eggs
+P68-268,I absolutely loved waiting one hour for ten-minute instant grocery delivery.,english,grocery_delivery,complaint,negative,delivery_time,false_promise,medium,none,moderate,Honest ETA estimates
+P68-269,Loved how the delivery agent marked the order delivered while sitting 2 km away.,english,grocery_delivery,complaint,negative,delivery,fake_status,high,none,complex,Real time rider verification
+P68-270,"loved the surprise, 1 kilo seb mangwaye the aur aadhe kide lage hue nikle.",hinglish,grocery_delivery,complaint,negative,produce,pest_infested,high,none,complex,Quality check improve karo
+P68-271,"I don't love the quality of bread delivered today, hard crust and dry inside.",english,grocery_delivery,complaint,negative,bakery,dry_bread,low,none,simple,Deliver fresh batches
+P68-272,"I wouldn't call these bananas fresh, already turning black and overripe.",english,grocery_delivery,complaint,negative,produce,overripe,low,none,simple,none
+P68-273,"ye papita utna meetha nahi nikla jitna socha tha, andar se fika hai.",hinglish,grocery_delivery,complaint,negative,produce,tasteless,low,none,moderate,none
+P68-274,"I loved the fresh paneer, soft and freshly made.",english,grocery_delivery,appreciation,positive,dairy,none,none,none,simple,none
+P68-275,"I hated the fresh paneer, sour smell and hard texture.",english,grocery_delivery,complaint,negative,dairy,stale_paneer,medium,none,simple,none
+P68-276,"dry fruits ki packaging kaafi vacuum tight thi, quality maintain rahi.",hinglish,grocery_delivery,appreciation,positive,packaging,none,none,none,simple,none
+P68-277,The grocery packet contains six items weighing 3.4 kilograms in total.,english,grocery_delivery,informational,neutral,order,none,none,none,simple,none
+P68-278,delivery boy store se order pick karke nikal chuka hai.,hinglish,grocery_delivery,informational,neutral,status,none,none,none,simple,none
+P68-279,I loved the ultra-fast delivery speed but hated the missing packet of coriander.,english,grocery_delivery,suggestion,mixed,order,missing_item,low,none,moderate,Verify bag contents
+P68-280,sabziyan bilkul taaza aayi hain par delivery charge 40 rupay thoda zyada laga.,hinglish,grocery_delivery,suggestion,mixed,charges,high_delivery_fee,low,none,moderate,Delivery fee kam karo
+P68-281,I absolutely loved how patiently the doctor listened to all my health symptoms.,english,healthcare,appreciation,positive,doctor,none,none,none,simple,none
+P68-282,"I really loved the digital prescription feature, easy to download and understand.",english,healthcare,appreciation,positive,prescription,none,none,none,simple,none
+P68-283,"This online clinic service is amazing, booked specialist appointment in two minutes.",english,healthcare,appreciation,positive,booking,none,none,none,simple,none
+P68-284,"This was an excellent consultation, doctor explained dosage clearly without hurry.",english,healthcare,appreciation,positive,consultation,none,none,none,moderate,none
+P68-285,"I enjoyed using this health app for lab test booking, phlebotomist was on time.",english,healthcare,appreciation,positive,lab_test,none,none,none,simple,none
+P68-286,Highly satisfied with the polite nursing staff and clean clinic environment.,english,healthcare,appreciation,positive,staff,none,none,none,simple,none
+P68-287,"bhai doctor ka nature ekdum mast tha, pura dhyan se checkup kiya.",hinglish,healthcare,appreciation,positive,doctor,none,none,none,simple,none
+P68-288,"mujhe online consultation bahut pasand aaya, ghar baithe specialist ki advice mil gayi.",hinglish,healthcare,appreciation,positive,consultation,none,none,none,moderate,none
+P68-289,I hated waiting two hours in the clinic reception despite having a confirmed appointment.,english,healthcare,complaint,negative,wait_time,long_delay,high,none,moderate,Respect appointment slots
+P68-290,"This product was horrible, the video call kept freezing during emergency consultation.",english,healthcare,complaint,negative,video,call_failure,high,none,moderate,Improve video infrastructure
+P68-291,"I am very unhappy with the clinic staff, rude behavior at billing counter.",english,healthcare,complaint,negative,staff,rude_reception,medium,none,simple,Staff etiquette training
+P68-292,"This was a terrible experience, diagnostic lab mixed up my blood sample reports.",english,healthcare,complaint,negative,lab_test,wrong_report,high,none,moderate,Lab sample verification
+P68-293,"mujhe doctor ka behavior bilkul pasand nahi aaya, bina sune dava likh di.",hinglish,healthcare,complaint,negative,doctor,dismissive_doctor,high,none,simple,Patients ko dhyan se suno
+P68-294,"ye health app ekdum bekar hai, consultation cancel ho gaya aur paise deduct ho gaye.",hinglish,healthcare,complaint,negative,billing,unauthorized_deduction,high,none,moderate,Paise wapas do
+P68-295,I loved the detailed dietary guidance and lifestyle advice provided.,english,healthcare,appreciation,positive,guidance,none,none,none,simple,none
+P68-296,I am very satisfied with the painless blood sample collection at home.,english,healthcare,appreciation,positive,phlebotomist,none,none,none,simple,none
+P68-297,I absolutely love this medical app for ordering monthly diabetes medicines.,english,healthcare,appreciation,positive,pharmacy,none,none,none,simple,none
+P68-298,"maine consultation ko kaafi helpful paya, doctor ne saare doubts solve kiye.",hinglish,healthcare,appreciation,positive,doctor,none,none,none,simple,none
+P68-299,"mujhe lab test ki home collection service bahut achi lagi, exact time pe aaye.",hinglish,healthcare,appreciation,positive,punctuality,none,none,none,simple,none
+P68-300,Absolutely loved the doctor's advice,english,healthcare,appreciation,positive,doctor,none,none,none,simple,none
+P68-301,Really amazing medical care,english,healthcare,appreciation,positive,care,none,none,none,simple,none
+P68-302,Loved the prompt consultation,english,healthcare,appreciation,positive,speed,none,none,none,simple,none
+P68-303,Handled health query perfectly,english,healthcare,appreciation,positive,resolution,none,none,none,simple,none
+P68-304,Hated the clinic wait,english,healthcare,complaint,negative,wait_time,long_wait,medium,none,simple,none
+P68-305,Really disappointing doctor attitude,english,healthcare,complaint,negative,doctor,rude,medium,none,simple,none
+P68-306,Awful diagnostic lab service,english,healthcare,complaint,negative,lab,delay,high,none,simple,none
+P68-307,Loved spending three hours in the waiting room while the doctor took personal calls.,english,healthcare,complaint,negative,doctor,unprofessional,high,none,complex,Adhere to schedule
+P68-308,I absolutely loved being charged a thousand rupees consultation fee for a ninety second talk.,english,healthcare,complaint,negative,fee,overpriced,high,none,complex,Fair consultation duration
+P68-309,Loved the diagnostic report arriving four days late when the fever had already subsided.,english,healthcare,complaint,negative,report,delayed_report,high,none,complex,Deliver reports on time
+P68-310,"loved the hospital management, emergency me bolte hain pehle counter number 4 pe slip banwao.",hinglish,healthcare,complaint,negative,admin,bureaucracy,high,none,complex,Emergency fast track karo
+P68-311,I don't love how expensive these diagnostic scans are on the platform.,english,healthcare,complaint,negative,pricing,costly_tests,low,none,simple,Affordable test pricing
+P68-312,I wouldn't call this specialist approachable or willing to answer questions.,english,healthcare,complaint,negative,doctor,unapproachable,medium,none,simple,none
+P68-313,"ye medicine delivery utni fast nahi thi, painkiller aane me 4 ghante lag gaye.",hinglish,healthcare,complaint,negative,pharmacy,medicine_delay,high,none,moderate,Emergency medicine fast bhejo
+P68-314,"I loved the physiotherapist, guided through every exercise carefully.",english,healthcare,appreciation,positive,therapy,none,none,none,simple,none
+P68-315,"I hated the physiotherapist, was distracted and texting on phone throughout.",english,healthcare,complaint,negative,therapy,unprofessional,high,none,simple,none
+P68-316,"doctor ne dawaon ke side effects clearly explain kiye, kaafi honest lage.",hinglish,healthcare,appreciation,positive,clarity,none,none,none,simple,none
+P68-317,Your blood test report is ready for download in PDF format under reports tab.,english,healthcare,informational,neutral,report,none,none,none,simple,none
+P68-318,doctor ne subah aur sham khana khane ke baad dawa lene ko bola hai.,hinglish,healthcare,informational,neutral,prescription,none,none,none,simple,none
+P68-319,I loved the knowledgeable doctor but hated the forty-minute clinic waiting room delay.,english,healthcare,suggestion,mixed,wait_time,clinic_delay,medium,none,moderate,Manage appointment slots
+P68-320,doctor ki advice bahut faaydemand thi par clinic me baithne ki jagah bohot kam thi.,hinglish,healthcare,suggestion,mixed,infrastructure,crowded_waiting_area,low,none,moderate,Seating space badhao
+P68-321,"I absolutely loved the consistent gigabit internet speed, zero downtime all month.",english,telecom_internet,appreciation,positive,speed,none,none,none,simple,none
+P68-322,I really loved how quickly the fiber broadband connection was installed.,english,telecom_internet,appreciation,positive,installation,none,none,none,simple,none
+P68-323,"This broadband service is amazing, video streaming in 4K without buffer.",english,telecom_internet,appreciation,positive,streaming,none,none,none,simple,none
+P68-324,"This was an excellent network upgrade, 5G signals are strong even indoors.",english,telecom_internet,appreciation,positive,signal,none,none,none,simple,none
+P68-325,"I enjoyed playing online games with this fiber plan, ultra-low latency.",english,telecom_internet,appreciation,positive,latency,none,none,none,simple,none
+P68-326,Highly satisfied with the competitive monthly recharge plans and data rollover.,english,telecom_internet,appreciation,positive,plans,none,none,none,simple,none
+P68-327,"bhai internet speed ekdum mast hai, 100 Mbps continuous mil raha hai.",hinglish,telecom_internet,appreciation,positive,speed,none,none,none,simple,none
+P68-328,"mujhe fiber connection bahut pasand aaya, technician ne aake free me router set kiya.",hinglish,telecom_internet,appreciation,positive,installation,none,none,none,moderate,none
+P68-329,I hated the frequent broadband disconnection during my remote office hours.,english,telecom_internet,complaint,negative,connection,frequent_disconnection,high,none,moderate,Stabilize fiber line
+P68-330,"This product was horrible, the Wi-Fi router overheats and drops internet every hour.",english,telecom_internet,complaint,negative,router,hardware_issue,high,none,moderate,Replace faulty router
+P68-331,"I am very unhappy with telecom coverage, continuous call drops inside my home.",english,telecom_internet,complaint,negative,network,call_drop,high,none,simple,Install booster
+P68-332,"This was a terrible experience, broadband down for three days without technician visit.",english,telecom_internet,complaint,negative,outage,slow_repair,high,none,moderate,Dispatch technician urgently
+P68-333,"mujhe ye network bilkul pasand nahi aaya, internet speed 2G jaisi aa rahi hai.",hinglish,telecom_internet,complaint,negative,speed,slow_data,high,none,simple,Speed check karo
+P68-334,"ye telecom service ekdum bekar hai, bina bataye balance me se paise cut ho gaye.",hinglish,telecom_internet,complaint,negative,billing,unauthorized_deduction,high,none,moderate,Balance refund karo
+P68-335,I loved the clear voice quality and lack of call drops on VoLTE.,english,telecom_internet,appreciation,positive,voice,none,none,none,simple,none
+P68-336,I am very satisfied with the technician's prompt repair work within two hours.,english,telecom_internet,appreciation,positive,repair,none,none,none,simple,none
+P68-337,I absolutely love this fiber provider for reliable work-from-home internet.,english,telecom_internet,appreciation,positive,broadband,none,none,none,simple,none
+P68-338,"maine naya 5G SIM liya aur kaafi enjoy kiya, download speed kamaal ki hai.",hinglish,telecom_internet,appreciation,positive,speed,none,none,none,simple,none
+P68-339,"mujhe inka prepaid plan bahut acha laga, unlimited calling aur daily 2GB data hai.",hinglish,telecom_internet,appreciation,positive,plans,none,none,none,simple,none
+P68-340,Absolutely loved the internet speed,english,telecom_internet,appreciation,positive,speed,none,none,none,simple,none
+P68-341,Really amazing fiber connection,english,telecom_internet,appreciation,positive,fiber,none,none,none,simple,none
+P68-342,Loved the zero downtime,english,telecom_internet,appreciation,positive,reliability,none,none,none,simple,none
+P68-343,Works smoothly with high speed,english,telecom_internet,appreciation,positive,speed,none,none,none,simple,none
+P68-344,Hated the frequent disconnections,english,telecom_internet,complaint,negative,connection,frequent_drops,high,none,simple,none
+P68-345,Really disappointing broadband speed,english,telecom_internet,complaint,negative,speed,slow_speed,medium,none,simple,none
+P68-346,Awful mobile network signal,english,telecom_internet,complaint,negative,network,poor_signal,high,none,simple,none
+P68-347,Loved the high-speed fiber offering a grand download speed of forty kilobytes per second.,english,telecom_internet,complaint,negative,speed,terrible_speed,high,none,complex,Restore plan speed
+P68-348,I absolutely loved the automated SMS saying network restored while the red LOS light blinks on router.,english,telecom_internet,complaint,negative,service,false_restoration,high,none,complex,Fix fiber cut
+P68-349,Loved being billed twenty-eight days for what your marketing team proudly calls a monthly pack.,english,telecom_internet,complaint,negative,billing,28_day_cycle,low,none,complex,True 30 day validity
+P68-350,"loved the service, complaint lodge kiye 4 din ho gaye par technician abhi tak raste me hi hai.",hinglish,telecom_internet,complaint,negative,repair,delayed_visit,high,none,complex,Technician bhejo
+P68-351,"I don't love the router signal range, signal completely drops in the next bedroom.",english,telecom_internet,complaint,negative,range,poor_range,medium,none,simple,Provide dual-band router
+P68-352,I wouldn't call this high-latency broadband connection suitable for gaming.,english,telecom_internet,complaint,negative,latency,high_ping,low,none,simple,Optimize routing
+P68-353,"ye 5G network utna fast nahi chal raha, 4G se bhi slow load ho raha hai.",hinglish,telecom_internet,complaint,negative,speed,slow_5g,medium,none,moderate,none
+P68-354,"I loved the customer support chat, engineer resolved router configuration in minutes.",english,telecom_internet,appreciation,positive,support,none,none,none,simple,none
+P68-355,"I hated the customer support chat, gave automated replies without understanding the line fault.",english,telecom_internet,complaint,negative,support,unhelpful_bot,medium,none,moderate,none
+P68-356,"fiber cable ki underground laying achi hai, baarish me bhi connection break nahi hua.",hinglish,telecom_internet,appreciation,positive,reliability,none,none,none,simple,none
+P68-357,Your broadband plan validity expires on 24th October with 450 GB remaining.,english,telecom_internet,informational,neutral,account,none,none,none,simple,none
+P68-358,router ke piche blue color ki WAN cable connect karni hoti hai.,hinglish,telecom_internet,informational,neutral,setup,none,none,none,simple,none
+P68-359,I loved the fast download speed but hated the frequent packet loss during video conferences.,english,telecom_internet,suggestion,mixed,stability,packet_loss,medium,none,moderate,Fix packet loss
+P68-360,broadband speed bahut achi aati hai par customer care me call connect karna bohot mushkil hai.,hinglish,telecom_internet,suggestion,mixed,support,call_wait,low,none,moderate,Helpline queue kam karo
+P68-361,"I absolutely loved this hotel stay, the room was spotless and staff was welcoming.",english,travel_hotels,appreciation,positive,hospitality,none,none,none,simple,none
+P68-362,I really loved the mountain view from the balcony and delicious complimentary breakfast.,english,travel_hotels,appreciation,positive,view,none,none,none,simple,none
+P68-363,"This resort experience is amazing, beautiful swimming pool and tranquil atmosphere.",english,travel_hotels,appreciation,positive,amenities,none,none,none,simple,none
+P68-364,"This was an excellent holiday booking, smooth flight check-in and hotel transfers.",english,travel_hotels,appreciation,positive,package,none,none,none,simple,none
+P68-365,"I enjoyed the sightseeing tour organized by the travel desk, very informative guide.",english,travel_hotels,appreciation,positive,tour,none,none,none,simple,none
+P68-366,Highly satisfied with the cozy bedding and quiet ambiance of the hotel room.,english,travel_hotels,appreciation,positive,room,none,none,none,simple,none
+P68-367,"bhai hotel ka ambiance ekdum mast tha, loved the breakfast buffet and pool.",hinglish,travel_hotels,appreciation,positive,amenities,none,none,none,simple,none
+P68-368,"mujhe ye resort stay bahut pasand aaya, room clean tha aur staff kaafi cooperative tha.",hinglish,travel_hotels,appreciation,positive,staff,none,none,none,moderate,none
+P68-369,I hated finding stained bedsheets and hair in the bathroom upon check-in.,english,travel_hotels,complaint,negative,cleanliness,dirty_room,high,none,moderate,Strict housekeeping check
+P68-370,"This product was horrible, the bus broke down midway and replacement took five hours.",english,travel_hotels,complaint,negative,bus,breakdown,high,none,moderate,Regular fleet maintenance
+P68-371,"I am very unhappy with the hotel reception, refused booking despite full advance payment.",english,travel_hotels,complaint,negative,booking,booking_denial,high,none,moderate,Honor bookings
+P68-372,"This was a terrible experience, no hot water in winter and non-functional room heater.",english,travel_hotels,complaint,negative,amenities,no_hot_water,high,none,moderate,Fix geysers
+P68-373,"mujhe hotel room bilkul pasand nahi aaya, seelan ki smell aa rahi thi.",hinglish,travel_hotels,complaint,negative,room,damp_smell,medium,none,simple,Room maintain karo
+P68-374,"ye travel booking app ekdum bekar hai, flight cancel hone ke baad bhi refund atka diya.",hinglish,travel_hotels,complaint,negative,refund,refund_stuck,high,none,moderate,Refund turant initiate karo
+P68-375,I loved the peaceful garden setting and warm hospitality of the hosts.,english,travel_hotels,appreciation,positive,hospitality,none,none,none,simple,none
+P68-376,I am very satisfied with the early check-in accommodated without extra charges.,english,travel_hotels,appreciation,positive,checkin,none,none,none,simple,none
+P68-377,I absolutely love this travel platform for booking affordable weekend getaways.,english,travel_hotels,appreciation,positive,platform,none,none,none,simple,none
+P68-378,"maine trip ko family ke saath kaafi enjoy kiya, hotel location tourist spots ke paas thi.",hinglish,travel_hotels,appreciation,positive,location,none,none,none,moderate,none
+P68-379,"mujhe hotel ka breakfast buffet bahut acha laga, south Indian aur continental dono tha.",hinglish,travel_hotels,appreciation,positive,food,none,none,none,moderate,none
+P68-380,Absolutely loved the hotel stay,english,travel_hotels,appreciation,positive,stay,none,none,none,simple,none
+P68-381,Really amazing mountain view,english,travel_hotels,appreciation,positive,view,none,none,none,simple,none
+P68-382,Loved the prompt room service,english,travel_hotels,appreciation,positive,service,none,none,none,simple,none
+P68-383,Clean comfortable room provided,english,travel_hotels,appreciation,positive,room,none,none,none,simple,none
+P68-384,Hated the dirty bathroom,english,travel_hotels,complaint,negative,hygiene,dirty_toilet,high,none,simple,none
+P68-385,Really disappointing hotel room,english,travel_hotels,complaint,negative,room,bad_room,medium,none,simple,none
+P68-386,Awful noisy hotel experience,english,travel_hotels,complaint,negative,noise,noisy_room,medium,none,simple,none
+P68-387,Loved the luxury deluxe room featuring complimentary spider webs and non-functional AC.,english,travel_hotels,complaint,negative,room,broken_ac,high,none,moderate,Clean and fix AC
+P68-388,I absolutely loved the wake-up call at 4 AM caused by drilling construction in adjacent room.,english,travel_hotels,complaint,negative,noise,construction_noise,medium,none,complex,No construction at night
+P68-389,Loved the complimentary breakfast buffet consisting of stale bread slices and lukewarm tap water.,english,travel_hotels,complaint,negative,food,stale_breakfast,medium,none,complex,Fresh breakfast items
+P68-390,"loved the bus ride, AC sleeper book kiya tha par AC band karke driver ne pure raste window khol di.",hinglish,travel_hotels,complaint,negative,ac,ac_off,high,none,complex,AC chalu rakho
+P68-391,"I don't love the location of this hotel, situated far in a narrow congested alley.",english,travel_hotels,complaint,negative,location,inaccessible,low,none,simple,Mention alley location
+P68-392,I wouldn't call this noisy bus journey comfortable or restful by any standard.,english,travel_hotels,complaint,negative,comfort,uncomfortable_ride,medium,none,simple,none
+P68-393,ye hotel room utna spacious nahi tha jitna photos me wide angle lens se dikh raha tha.,hinglish,travel_hotels,complaint,negative,room,small_room,low,none,moderate,none
+P68-394,"I loved the hilltop cottage, fresh breeze and pine scent all around.",english,travel_hotels,appreciation,positive,ambiance,none,none,none,simple,none
+P68-395,"I hated the hilltop cottage, damp walls and no phone connectivity.",english,travel_hotels,complaint,negative,ambiance,damp_walls,medium,none,simple,none
+P68-396,"hotel staff ka behavior kaafi respectful tha, luggage room tak drop kiya.",hinglish,travel_hotels,appreciation,positive,staff,none,none,none,simple,none
+P68-397,Hotel check-in begins at 12 PM and check-out is scheduled for 11 AM tomorrow.,english,travel_hotels,informational,neutral,schedule,none,none,none,simple,none
+P68-398,resort booking confirmation receipt email aur WhatsApp par bhej di gayi hai.,hinglish,travel_hotels,informational,neutral,booking,none,none,none,simple,none
+P68-399,I loved the stunning ocean view from the terrace but hated the slow room service food delivery.,english,travel_hotels,suggestion,mixed,service,slow_room_service,medium,none,moderate,Speed up room service
+P68-400,hotel ka ambiance aur location bahut pyari thi par bathroom me geyser ka paani garam nahi tha.,hinglish,travel_hotels,suggestion,mixed,amenities,cold_geyser,medium,none,moderate,Geyser theek karo

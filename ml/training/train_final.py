@@ -1,9 +1,19 @@
 #!/usr/bin/env python3
 """
-Final Model Retraining Pipeline (Phase 6.6).
+Final Model Retraining Pipeline.
 
-Retrains the winning Phase 5 Exp3 architecture on the expanded 8,000-record
-processed dataset (data/processed/sentiment_dataset.csv).
+================================================================================
+CRITICAL PRODUCTION NOTE (Phase 6.10 / Phase 6.12):
+The active production model (ml/models/sentiment_final_model.pkl) was trained
+on the 8,520-record Phase 6.9 experiment dataset (data/test/phase_6_9_experiment_dataset.csv),
+which incorporates 400 Phase 6.8 generic sentiment records and 120 Phase 6.9
+Hinglish negation records.
+
+WARNING: Running this script with its default 8,000-row canonical dataset source
+(data/processed/sentiment_dataset.csv) will retrain the Phase 6.6 baseline and
+would overwrite the promoted Phase 6.9 production model. Do not overwrite the
+promoted model accidentally.
+================================================================================
 
 Model Architecture:
 - Word TF-IDF: analyzer='word', ngram_range=(1,1), min_df=2, sublinear_tf=True

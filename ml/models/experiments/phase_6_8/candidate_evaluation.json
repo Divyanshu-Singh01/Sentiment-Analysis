@@ -1,0 +1,151 @@
+{
+  "diagnostic_set_comparison": [
+    {
+      "text": "I absolutely loved this product.",
+      "expected": "positive",
+      "prod_pred": "negative",
+      "cand_pred": "positive",
+      "prod_pos": 41.57712440060751,
+      "cand_pos": 91.65394018618251,
+      "prod_neg": 43.16702620200799,
+      "cand_neg": 7.353401901159572
+    },
+    {
+      "text": "I loved this product.",
+      "expected": "positive",
+      "prod_pred": "negative",
+      "cand_pred": "positive",
+      "prod_pos": 35.67332651032661,
+      "cand_pos": 72.82945108588227,
+      "prod_neg": 45.02020807539465,
+      "cand_neg": 23.82413024600632
+    },
+    {
+      "text": "I loved the product.",
+      "expected": "positive",
+      "prod_pred": "negative",
+      "cand_pred": "positive",
+      "prod_pos": 36.72333098022917,
+      "cand_pos": 65.16015985775057,
+      "prod_neg": 49.733408565576795,
+      "cand_neg": 29.160840340749385
+    },
+    {
+      "text": "Absolutely loved this product.",
+      "expected": "positive",
+      "prod_pred": "positive",
+      "cand_pred": "positive",
+      "prod_pos": 44.50118427137274,
+      "cand_pos": 92.62574720520928,
+      "prod_neg": 39.86718099805947,
+      "cand_neg": 6.385742832313916
+    },
+    {
+      "text": "I absolutely love this product.",
+      "expected": "positive",
+      "prod_pred": "negative",
+      "cand_pred": "positive",
+      "prod_pos": 28.937189204261877,
+      "cand_pos": 84.60866139826399,
+      "prod_neg": 38.21033799247753,
+      "cand_neg": 12.437096469213262
+    },
+    {
+      "text": "I really loved this product.",
+      "expected": "positive",
+      "prod_pred": "negative",
+      "cand_pred": "positive",
+      "prod_pos": 38.25315502891978,
+      "cand_pos": 81.35936339375138,
+      "prod_neg": 41.690993454564904,
+      "cand_neg": 16.197411646534665
+    },
+    {
+      "text": "This product is amazing.",
+      "expected": "positive",
+      "prod_pred": "neutral",
+      "cand_pred": "positive",
+      "prod_pos": 10.04490094593219,
+      "cand_pos": 64.97650982489527,
+      "prod_neg": 23.60928725401591,
+      "cand_neg": 10.20252545881334
+    },
+    {
+      "text": "This is an excellent product.",
+      "expected": "positive",
+      "prod_pred": "neutral",
+      "cand_pred": "positive",
+      "prod_pos": 16.541737973950315,
+      "cand_pos": 57.47475449894526,
+      "prod_neg": 10.520195243267768,
+      "cand_neg": 8.491579984198761
+    },
+    {
+      "text": "I hated this product.",
+      "expected": "negative",
+      "prod_pred": "neutral",
+      "cand_pred": "negative",
+      "prod_pos": 13.311992955087277,
+      "cand_pos": 8.606753954924576,
+      "prod_neg": 23.842935527142775,
+      "cand_neg": 81.1078729751513
+    },
+    {
+      "text": "This product was horrible.",
+      "expected": "negative",
+      "prod_pred": "negative",
+      "cand_pred": "negative",
+      "prod_pos": 8.438638803191495,
+      "cand_pos": 8.125192105774852,
+      "prod_neg": 39.719194590223104,
+      "cand_neg": 77.48791279675665
+    }
+  ],
+  "live_29_fixed": [
+    [
+      "kya bakwaas service hai ekdum bekar",
+      "negative",
+      "neutral",
+      "negative"
+    ],
+    [
+      "horrible experience",
+      "negative",
+      "positive",
+      "negative"
+    ]
+  ],
+  "live_29_regressed": [],
+  "challenge_fixed": [
+    [
+      "loved it",
+      "positive",
+      "negative",
+      "positive",
+      "unknown"
+    ],
+    [
+      "love",
+      "positive",
+      "negative",
+      "positive",
+      "unknown"
+    ]
+  ],
+  "challenge_regressed": [
+    [
+      "bahut bura tha ye sab",
+      "negative",
+      "negative",
+      "positive",
+      "unknown"
+    ],
+    [
+      "acha nhi laga mujhe",
+      "negative",
+      "negative",
+      "positive",
+      "unknown"
+    ]
+  ]
+}

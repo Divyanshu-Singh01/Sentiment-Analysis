@@ -16,7 +16,7 @@ sentiment label.
 - **Real-Time Classification:** Single-page dashboard for instant sentiment evaluation.
 - **4-Class Output:** Classifies input text as `Positive`, `Negative`, `Neutral`, or `Mixed`.
 - **Bilingual Coverage:** Supports standard English and Romanized Hindi (Hinglish).
-- **Service-Domain Dataset:** Ingests and standardizes 8,000 records across 10 consumer service domains.
+- **Service-Domain Dataset:** Ingests and standardizes 8,000 canonical foundation records across 10 consumer service domains, augmented with 520 targeted diagnostic records (8,520 records total) to train the promoted Phase 6.9 production model.
 - **Interpretable ML Pipeline:** Combined Word TF-IDF + Character boundary TF-IDF (`FeatureUnion`) with Multi-class Logistic Regression (`max_iter=1000`, `class_weight=None`).
 - **Decoupled Architecture:** Clean client-server separation between a Vite/React frontend and Django REST API.
 - **Focused Simplicity:** No unnecessary user authentication, database persistence, or external third-party cloud APIs.
@@ -41,6 +41,12 @@ Phase 4: Multi-class baseline model development
 Phase 5: Controlled ML feature experiments (Exp 3: Word+Char TF-IDF selected)
    ↓
 Phase 6: Adversarial challenge testing & targeted dataset expansion (5,000 → 6,000 → 8,000 records)
+   ↓
+Phase 6.8: Targeted generic English sentiment expansion (resolved "I absolutely loved this product")
+   ↓
+Phase 6.9: Targeted Hinglish negation & strong negative expansion (resolved "bahut bura", "acha nhi laga")
+   ↓
+Phase 6.10: Promotion of validated Phase 6.9 candidate to production (8,520 records, 75.56% challenge acc)
    ↓
 Phase 7: Final end-to-end application testing & frontend 4-class rendering fix
    ↓
