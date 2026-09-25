@@ -1,30 +1,50 @@
 import React from 'react'
-import { AlertCircle, Check } from 'lucide-react'
+import { AlertCircle, Check, Minus, Scale } from 'lucide-react'
 import { cn } from '../lib/utils'
 
 export function SentimentResult({ sentiment }) {
-  const isPositive = sentiment?.toLowerCase() === 'positive'
+  const norm = sentiment?.toLowerCase()?.trim()
 
-  const config = isPositive
-    ? {
-        title: 'Positive',
-        description: 'Your text has a positive sentiment.',
-        icon: Check,
-        wrapperStyles:
-          'bg-emerald-50/85 border-emerald-200/80 text-emerald-950',
-        iconBgStyles: 'bg-emerald-100 text-emerald-700',
-        badgeStyles: 'bg-emerald-100 text-emerald-800 border-emerald-200/90',
-        badgeText: 'Positive',
-      }
-    : {
-        title: 'Negative',
-        description: 'Your text has a negative sentiment.',
-        icon: AlertCircle,
-        wrapperStyles: 'bg-rose-50/85 border-rose-200/80 text-rose-950',
-        iconBgStyles: 'bg-rose-100 text-rose-700',
-        badgeStyles: 'bg-rose-100 text-rose-800 border-rose-200/90',
-        badgeText: 'Negative',
-      }
+  const configMap = {
+    positive: {
+      title: 'Positive',
+      description: 'Your text has a positive sentiment.',
+      icon: Check,
+      wrapperStyles: 'bg-emerald-50/85 border-emerald-200/80 text-emerald-950',
+      iconBgStyles: 'bg-emerald-100 text-emerald-700',
+      badgeStyles: 'bg-emerald-100 text-emerald-800 border-emerald-200/90',
+      badgeText: 'Positive',
+    },
+    negative: {
+      title: 'Negative',
+      description: 'Your text has a negative sentiment.',
+      icon: AlertCircle,
+      wrapperStyles: 'bg-rose-50/85 border-rose-200/80 text-rose-950',
+      iconBgStyles: 'bg-rose-100 text-rose-700',
+      badgeStyles: 'bg-rose-100 text-rose-800 border-rose-200/90',
+      badgeText: 'Negative',
+    },
+    neutral: {
+      title: 'Neutral',
+      description: 'Your text has a neutral or factual tone.',
+      icon: Minus,
+      wrapperStyles: 'bg-slate-50 border-slate-200 text-slate-900',
+      iconBgStyles: 'bg-slate-200 text-slate-700',
+      badgeStyles: 'bg-slate-100 text-slate-800 border-slate-300',
+      badgeText: 'Neutral',
+    },
+    mixed: {
+      title: 'Mixed',
+      description: 'Your text contains both positive and negative aspects.',
+      icon: Scale,
+      wrapperStyles: 'bg-amber-50/85 border-amber-200/80 text-amber-950',
+      iconBgStyles: 'bg-amber-100 text-amber-700',
+      badgeStyles: 'bg-amber-100 text-amber-800 border-amber-200/90',
+      badgeText: 'Mixed',
+    },
+  }
+
+  const config = configMap[norm] || configMap.negative
 
   const IconComponent = config.icon
 
