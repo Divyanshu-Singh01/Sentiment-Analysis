@@ -310,3 +310,18 @@ npm run dev
 ```
 
 Open `http://localhost:5173` in your browser to interact with the application.
+
+### 3. (Optional) Model Retraining & Evaluation
+
+The repository includes the pre-trained final model artifacts (`ml/models/sentiment_final_model.pkl` and `sentiment_final_vectorizer.pkl`), allowing the application to run immediately upon setup.
+
+If you wish to retrain the model or re-run the evaluation benchmarks:
+
+```bash
+# Retrain the final FeatureUnion model on the processed 8,000-record dataset
+python ml/training/train_final.py
+
+# Run holdout and frozen challenge set evaluation
+python ml/evaluation/evaluate_final.py
+```
+
