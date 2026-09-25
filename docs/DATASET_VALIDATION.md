@@ -1,9 +1,11 @@
-# Dataset Validation Report
+# Dataset Validation Report (Phase 2)
+
+> **Context:** This report records the initial structural validation of the raw service datasets conducted in **Phase 2** (when each dataset contained 500 records, totaling 5,000 records). Deficiencies discovered here were resolved in the Phase 3 cleaning pipeline (`clean_datasets.py`), and the datasets were later expanded to 8,000 records in Phase 6.4.
 
 ## Overall Summary
 
 - **Number of Datasets:** 10
-- **Total Records:** 5,000
+- **Total Records (Phase 2 baseline):** 5,000
 - **Overall Validation Status:** VALIDATED (WARNINGS IDENTIFIED FOR PHASE 3)
 - **Raw Datasets Preserved:** 100% (Read-only validation, 0 files modified)
 

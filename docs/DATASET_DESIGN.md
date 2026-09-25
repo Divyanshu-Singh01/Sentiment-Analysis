@@ -2,30 +2,34 @@
 
 ## Overview
 
-The project contains **10 service-specific datasets**, each with 500 records
-(501 lines including the header). Together they form approximately **5,000 records**
-of annotated customer feedback.
+The project contains **10 service-specific datasets**, organized under `data/raw/<service>/`.
+Originally established with 500 records each (5,000 records in Phase 1), the datasets were
+systematically expanded in Phase 6.1 (to 600 records each = 6,000 records) and Phase 6.4
+(to 800 records each = 8,000 records) to address specific linguistic edge cases discovered
+during challenge testing.
+
+Together they form **8,000 records** of multi-domain customer feedback.
 
 ## Services
 
-| Code | Relative Path | Service Domain |
-| ---- | ------------- | -------------- |
-| FD   | `data/raw/food_delivery/FD.csv` | Food Delivery / Restaurant |
-| EC   | `data/raw/ecommerce/EC.csv` | E-commerce |
-| BK   | `data/raw/banking_upi/BK.csv` | Banking / UPI |
-| HC   | `data/raw/healthcare/HC.csv` | Healthcare |
-| ED   | `data/raw/education/ED.csv` | Education |
-| TC   | `data/raw/telecom/TC.csv` | Telecom / Internet |
-| CB   | `data/raw/cab_transport/CB.csv` | Cab / Transport |
-| TR   | `data/raw/travel_hotels/TR.csv` | Travel / Hotels |
-| GR   | `data/raw/grocery_delivery/GR.csv` | Grocery Delivery |
-| CS   | `data/raw/customer_support/CS.csv` | Customer Support |
+| Code | Relative Path | Service Domain | Records |
+| ---- | ------------- | -------------- | ------- |
+| BK   | `data/raw/banking_upi/BK.csv` | Banking / UPI | 800 |
+| CB   | `data/raw/cab_transport/CB.csv` | Cab / Transport | 800 |
+| CS   | `data/raw/customer_support/CS.csv` | Customer Support | 800 |
+| EC   | `data/raw/ecommerce/EC.csv` | E-commerce | 800 |
+| ED   | `data/raw/education/ED.csv` | Education / EdTech | 800 |
+| FD   | `data/raw/food_delivery/FD.csv` | Food Delivery / Restaurant | 800 |
+| GR   | `data/raw/grocery_delivery/GR.csv` | Grocery Delivery | 800 |
+| HC   | `data/raw/healthcare/HC.csv` | Healthcare / Consultations | 800 |
+| TC   | `data/raw/telecom/TC.csv` | Telecom / Broadband | 800 |
+| TR   | `data/raw/travel_hotels/TR.csv` | Travel / Hospitality | 800 |
 
-## Dataset Structure (12 Columns)
+## Dataset Structure (Canonical 12 Columns)
 
 | Column       | Description                              | Example Values                    |
 | ------------ | ---------------------------------------- | --------------------------------- |
-| `id`         | Unique identifier per record             | `FD001`, `BK042`, `CS500`         |
+| `id`         | Unique identifier per record             | `BK001`, `CB650`, `FD800`         |
 | `text`       | Raw feedback text                        | `"Food was good."`                |
 | `language`   | Language of the text                     | `english`, `hinglish`             |
 | `service`    | Service domain                           | `food_delivery`, `banking_upi`    |
@@ -42,21 +46,20 @@ of annotated customer feedback.
 
 ### Language
 - `english` — Standard English
-- `hinglish` — Romanized Hindi-English mix (e.g., "bhai refund abhi tak nahi hua")
-- (Indian English patterns also appear within `english`)
+- `hinglish` — Romanized Hindi-English mix (e.g., `"bhai refund abhi tak nahi hua"`)
 
 ### Sentiment
 - `positive`
 - `negative`
 - `neutral`
-- `mixed` — Contains both positive and negative elements
+- `mixed` — Contains both positive and negative elements (e.g., `"Food was tasty but delivery was late"`)
 
 ### Behavior
 - `appreciation` — Praising the service
 - `complaint` — Reporting a problem
 - `question` — Asking for information
 - `suggestion` — Recommending an improvement
-- `informational` — Factual statements or status updates (observed in all 10 datasets)
+- `informational` — Factual statements or status updates
 
 ### Abuse
 - `none`
@@ -76,42 +79,30 @@ of annotated customer feedback.
 
 ## Writing Styles Present
 
-The datasets contain a mix of writing styles to reflect real-world feedback:
+The datasets incorporate natural linguistic variations to reflect realistic customer service interactions:
 
-- **Short** — `"Food was good."`
-- **Normal** — Typical 1-2 sentence feedback
-- **Long** — Detailed multi-clause feedback
-- **Complex** — Indirect phrasing, sarcasm, nuance
-- **Conversational** — Casual/chat-like style
-- **Typos/abbreviations** — Intentional misspellings, short forms
-- **Code-mixed** — Hinglish (Hindi words in Roman script mixed with English)
+- **Short** — Terse expressions (e.g., `"bahut acha"`, `"worst"`)
+- **Normal** — Standard 1-2 sentence feedback
+- **Long** — Detailed multi-clause customer feedback
+- **Complex / Nuanced** — Indirect phrasing, polite complaints, sarcasm
+- **Conversational** — Casual chat particles (e.g., *"bhai"*, *"yaar"*)
+- **Transliteration Variations** — Phonetic Roman Hindi spellings (e.g., *bohot* / *bahut*, *nhi* / *nahi*)
+- **Code-mixed** — Hinglish (Hindi words written in Latin script interspersed with English)
 
-## Raw vs Processed Data
+## Raw, Processed, and Test Data
 
-### Raw Data (Current — `data/*.csv`)
-- The 10 service CSV files are the **raw, annotated datasets**.
-- They have not been processed, merged, or modified for ML training.
-- Each file is self-contained with its own header row.
+### Raw Data (`data/raw/<service>/<CODE>.csv`)
+- 10 service CSV files containing 800 raw, annotated rows each (8,000 total).
+- 100% immutable and preserved in their native folder structure.
 
-### Processed Data (Future)
-- In a later phase, these raw datasets will be combined and processed into a
-  single training-ready dataset.
-- Processing will include text cleaning, validation, and format standardization.
-- The raw files will be preserved alongside any processed output.
+### Processed Training Data (`data/processed/sentiment_dataset.csv`)
+- Generated deterministically via `ml/preprocessing/clean_datasets.py`.
+- Merges all 8,000 rows into a unified, canonical 12-column dataset.
+- 0 missing values, 0 duplicate IDs, and normalized categorical labels.
+- Reconstructed 369 legacy shifted rows without data loss.
 
-### Original Dataset (Git History)
-- The Git history also contains the **original** dataset (`data/sentiment_dataset.csv`):
-  a ~1,000-record tab-separated file with only `text` and `sentiment` columns
-  (binary: positive/negative). This was the dataset used to train the current model.
-- A cleaned version (`data/cleaned_sentiment_dataset.csv`) was generated by
-  `sentiment/preprocessing.py` and used for training.
-- Both of these original files have been deleted from the working tree and replaced
-  by the 10 new service datasets.
+### Adversarial Challenge Test Data (`data/test/challenge_dataset.csv`)
+- A permanently frozen, manually curated evaluation set of 90 diagnostic samples.
+- Used exclusively for qualitative diagnostic evaluation of model failure modes (sarcasm, negation, polite complaints, transliteration, short text).
+- Never used in model training or validation tuning.
 
-## Future Dataset Expansion
-
-- Additional services can be added by creating new CSV files with the same 12-column
-  structure (e.g., `EN.csv` for Entertainment).
-- The original 10 service datasets should remain separately identifiable even after
-  merging for training.
-- Datasets should not be merged, deleted, moved, or renamed during early phases.
