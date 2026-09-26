@@ -9,8 +9,16 @@ from django.middleware.csrf import get_token
 from django.views.decorators.csrf import ensure_csrf_cookie
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
+
+from .models import AnalysisHistory
+
+from .language_detection import (
+    DEVANAGARI_REGEX,
+    detect_supported_language,
+    devanagari_to_hinglish,
+)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -220,7 +228,23 @@ def predict_sentiment(request):
             status=status.HTTP_400_BAD_REQUEST,
         )
 
-    cleaned_text = text.lower()
+    # Validate language before sentiment prediction
+    lang_info = detect_supported_language(text)
+    if not lang_info.get("supported", False):
+        return Response(
+            {
+                "success": False,
+                "error": "language_not_supported",
+                "message": "Sorry, I currently support sentiment analysis for English and Hindi/Hinglish only.",
+                "detected_language": lang_info.get("language_name", "Unknown"),
+            },
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    # Transliterate Devanagari Hindi into Roman Hinglish so the model's learned
+    # subword features and vocabulary are activated identically to native Hinglish
+    analysis_text = devanagari_to_hinglish(text) if DEVANAGARI_REGEX.search(text) else text
+    cleaned_text = analysis_text.lower()
 
     text_tfidf = vectorizer.transform([cleaned_text])
     classes = list(model.classes_)
@@ -244,10 +268,121 @@ def predict_sentiment(request):
         "is_close": is_close,
     }
 
-    if not is_authenticated:
+    if is_authenticated:
+        # Save analysis history strictly for authenticated users after successful prediction
+        confidence_val = round(score * 100, 2)
+        detected_lang = lang_info.get("language_name", "English")
+        AnalysisHistory.objects.create(
+            user=request.user,
+            text=text,
+            sentiment=top_class,
+            confidence=confidence_val,
+            language=detected_lang,
+        )
+    else:
         anon_count = request.session.get("anonymous_prediction_count", 0) + 1
         request.session["anonymous_prediction_count"] = anon_count
         remaining = max(0, MAX_ANONYMOUS_PREDICTIONS - anon_count)
         response_data["free_predictions_remaining"] = remaining
 
     return Response(response_data)
+
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def get_history(request):
+    """
+    Retrieve sentiment analysis history for the current authenticated user only.
+    Ordered by newest to oldest with optional pagination and text search.
+    """
+    queryset = AnalysisHistory.objects.filter(user=request.user)
+
+    search_term = request.query_params.get("search", "").strip()
+    if search_term:
+        queryset = queryset.filter(text__icontains=search_term)
+
+    sentiment_filter = request.query_params.get("sentiment", "").strip().lower()
+    if sentiment_filter and sentiment_filter != "all":
+        queryset = queryset.filter(sentiment=sentiment_filter)
+
+    total_count = queryset.count()
+
+    try:
+        page_size = min(max(1, int(request.query_params.get("page_size", 20))), 100)
+    except (ValueError, TypeError):
+        page_size = 20
+
+    try:
+        page_num = max(1, int(request.query_params.get("page", 1)))
+    except (ValueError, TypeError):
+        page_num = 1
+
+    total_pages = max(1, (total_count + page_size - 1) // page_size) if total_count > 0 else 1
+    start_idx = (page_num - 1) * page_size
+    end_idx = start_idx + page_size
+
+    items = queryset[start_idx:end_idx]
+
+    history_data = [
+        {
+            "id": item.id,
+            "text": item.text,
+            "sentiment": item.sentiment,
+            "confidence": item.confidence,
+            "score": round(item.confidence / 100.0, 4),
+            "language": item.language,
+            "created_at": item.created_at.isoformat(),
+        }
+        for item in items
+    ]
+
+    return Response(
+        {
+            "success": True,
+            "total_count": total_count,
+            "page": page_num,
+            "total_pages": total_pages,
+            "page_size": page_size,
+            "history": history_data,
+        }
+    )
+
+
+@api_view(["DELETE"])
+@permission_classes([IsAuthenticated])
+def delete_history_item(request, history_id):
+    """
+    Delete a specific history entry.
+    Ensures User isolation: User A cannot delete User B's record.
+    """
+    record = AnalysisHistory.objects.filter(id=history_id, user=request.user).first()
+    if not record:
+        return Response(
+            {"error": "History record not found."},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+
+    record.delete()
+    return Response(
+        {
+            "success": True,
+            "message": "Record deleted successfully.",
+            "deleted_id": history_id,
+        }
+    )
+
+
+@api_view(["DELETE"])
+@permission_classes([IsAuthenticated])
+def clear_history(request):
+    """
+    Clear all history entries belonging exclusively to the authenticated user.
+    """
+    deleted_count, _ = AnalysisHistory.objects.filter(user=request.user).delete()
+    return Response(
+        {
+            "success": True,
+            "message": f"Successfully cleared {deleted_count} history records.",
+            "deleted_count": deleted_count,
+        }
+    )

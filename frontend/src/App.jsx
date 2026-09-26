@@ -8,9 +8,11 @@ import { InitialState } from './components/InitialState'
 import { LoginForm } from './components/LoginForm'
 import { SignupForm } from './components/SignupForm'
 import { LimitReachedCard } from './components/LimitReachedCard'
+import { UnsupportedLanguageCard } from './components/UnsupportedLanguageCard'
+import { HistorySidebar } from './components/HistorySidebar'
 import { analyzeSentiment } from './services/sentimentApi'
 import { checkAuthStatus, fetchCsrfToken, login, logout, signup } from './services/authApi'
-import sentimentBg from './assets/backgrounds/sentiment-bg.png'
+import sentimentBg from './assets/backgrounds/sentiment-bg1.png'
 
 export default function App() {
   const [user, setUser] = useState(null)
@@ -19,12 +21,15 @@ export default function App() {
   const [authModal, setAuthModal] = useState(null) // null | 'login' | 'signup'
   const [sessionExpiredMessage, setSessionExpiredMessage] = useState(null)
   const [isLoggingOut, setIsLoggingOut] = useState(false)
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false)
+  const [historyRefreshTrigger, setHistoryRefreshTrigger] = useState(0)
 
   // Sentiment Analyzer state
   const [text, setText] = useState('')
   const [predictionResult, setPredictionResult] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [unsupportedLanguage, setUnsupportedLanguage] = useState(null)
 
   // Session verification on app startup
   useEffect(() => {
@@ -89,14 +94,17 @@ export default function App() {
       setText('')
       setPredictionResult(null)
       setError(null)
+      setUnsupportedLanguage(null)
       setSessionExpiredMessage(null)
       setAuthModal(null)
+      setIsHistoryOpen(false)
       setIsLoggingOut(false)
     }
   }
 
   const handleAnalyze = async () => {
     setError(null)
+    setUnsupportedLanguage(null)
 
     if (!text.trim()) {
       setError('Please enter some text to analyze.')
@@ -109,6 +117,9 @@ export default function App() {
     try {
       const data = await analyzeSentiment(text)
       setPredictionResult({ ...data, predictionId: Date.now() })
+      if (user) {
+        setHistoryRefreshTrigger((prev) => prev + 1)
+      }
       if (typeof data.freePredictionsRemaining === 'number') {
         setFreePredictionsRemaining(data.freePredictionsRemaining)
       }
@@ -117,6 +128,7 @@ export default function App() {
         setFreePredictionsRemaining(0)
         setError(null)
         setPredictionResult(null)
+        setUnsupportedLanguage(null)
         return
       }
 
@@ -126,6 +138,17 @@ export default function App() {
         setFreePredictionsRemaining(authData.freePredictionsRemaining ?? 10)
         setSessionExpiredMessage('Your session has expired. Please log in again.')
         setAuthModal('login')
+        setPredictionResult(null)
+        setError(null)
+        setUnsupportedLanguage(null)
+        return
+      }
+
+      if (err.isLanguageNotSupported) {
+        setUnsupportedLanguage({
+          message: err.message || 'Sorry, I currently support sentiment analysis for English and Hindi/Hinglish only.',
+          detectedLanguage: err.detectedLanguage || null,
+        })
         setPredictionResult(null)
         setError(null)
         return
@@ -141,23 +164,22 @@ export default function App() {
     setText('')
     setPredictionResult(null)
     setError(null)
+    setUnsupportedLanguage(null)
   }
 
   const isLimitBlocked = !user && freePredictionsRemaining === 0
 
   return (
-    <div className="min-h-screen relative flex flex-col text-stone-100 selection:bg-[#df8758]/30 selection:text-white">
-      {/* Background Image & Living Ambient Gradient Layers */}
+    <div className="min-h-screen relative flex flex-col text-[#2c1a10] selection:bg-[#df8758]/30 selection:text-[#2c1a10]">
+      {/* Background Image & Clean Ambient Luminous Accents */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div
           className="absolute inset-0 bg-cover bg-center animate-bg-drift"
           style={{ backgroundImage: `url(${sentimentBg})` }}
         />
-        {/* Ambient warm copper & amber light orbs */}
-        <div className="absolute -top-32 -right-32 w-[550px] h-[550px] rounded-full bg-[#df8758]/18 blur-[120px] animate-glow-pulse" />
-        <div className="absolute -bottom-40 -left-32 w-[650px] h-[650px] rounded-full bg-[#6e2b17]/25 blur-[140px] animate-glow-pulse" />
-        {/* Subtle dark vignette overlay for perfect contrast */}
-        <div className="absolute inset-0 bg-black/25 backdrop-brightness-[0.93]" />
+        {/* Soft warm champagne & golden ambient light highlights */}
+        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-[#f4ba93]/25 blur-[130px] animate-glow-pulse" />
+        <div className="absolute top-1/2 -left-40 w-[650px] h-[650px] rounded-full bg-[#e8a374]/18 blur-[140px] animate-glow-pulse" />
       </div>
 
       <Header
@@ -165,30 +187,35 @@ export default function App() {
         freePredictionsRemaining={freePredictionsRemaining}
         onLogout={handleLogout}
         isLoggingOut={isLoggingOut}
-        onOpenAuth={(mode) => setAuthModal(mode)}
+        onOpenAuth={(mode) => {
+          setAuthModal(mode)
+          setIsHistoryOpen(false)
+        }}
+        onToggleHistory={() => setIsHistoryOpen((prev) => !prev)}
+        isHistoryOpen={isHistoryOpen}
       />
 
       <main className="flex-1 flex flex-col items-center px-4 py-6 sm:py-10">
         <div className="w-full max-w-[720px] space-y-6">
           {isCheckingAuth ? (
             /* Subtle initial loading state while session is verified */
-            <div className="py-24 flex flex-col items-center justify-center gap-3 text-stone-400">
-              <Loader2 className="h-6 w-6 animate-spin text-[#df8758]" />
+            <div className="py-24 flex flex-col items-center justify-center gap-3 text-[#614b3f]">
+              <Loader2 className="h-6 w-6 animate-spin text-[#d66524]" />
               <p className="text-xs font-medium">Loading sentiment analyzer...</p>
             </div>
           ) : authModal === 'login' ? (
             /* Explicit Login View */
             <div key="login-view" className="space-y-6 animate-result-in">
               <div className="text-center space-y-2">
-                <h1 className="text-3xl sm:text-[38px] font-bold tracking-tight text-white">
-                  Sign In
+                <h1 className="text-3xl sm:text-[38px] font-bold tracking-tight text-[#22130b] drop-shadow-xs">
+                  Log In
                 </h1>
-                <p className="text-[15px] sm:text-base text-stone-300/90 max-w-md mx-auto leading-relaxed">
-                  Sign in to your account for unlimited sentiment analysis predictions.
+                <p className="text-[15px] sm:text-base text-[#614b3f] max-w-md mx-auto leading-relaxed">
+                  Log in to your account for unlimited sentiment analysis predictions.
                 </p>
               </div>
 
-              <div className="max-w-[440px] mx-auto">
+              <div className="w-full max-w-[490px] mx-auto">
                 <LoginForm
                   onLogin={handleLogin}
                   onSwitchToSignup={() => setAuthModal('signup')}
@@ -201,15 +228,15 @@ export default function App() {
             /* Explicit Sign Up View */
             <div key="signup-view" className="space-y-6 animate-result-in">
               <div className="text-center space-y-2">
-                <h1 className="text-3xl sm:text-[38px] font-bold tracking-tight text-white">
+                <h1 className="text-3xl sm:text-[38px] font-bold tracking-tight text-[#22130b] drop-shadow-xs">
                   Create Account
                 </h1>
-                <p className="text-[15px] sm:text-base text-stone-300/90 max-w-md mx-auto leading-relaxed">
+                <p className="text-[15px] sm:text-base text-[#614b3f] max-w-md mx-auto leading-relaxed">
                   Register to continue analyzing feedback with unlimited predictions.
                 </p>
               </div>
 
-              <div className="max-w-[440px] mx-auto">
+              <div className="w-full max-w-[490px] mx-auto">
                 <SignupForm
                   onSignup={handleSignup}
                   onSwitchToLogin={() => setAuthModal('login')}
@@ -222,13 +249,13 @@ export default function App() {
             <div key="analyzer-view" className="space-y-6 animate-result-in">
               {/* Main Title & Description */}
               <div className="text-center space-y-2.5 pt-2 sm:pt-4">
-                <h1 className="text-4xl sm:text-[46px] font-bold tracking-tight text-white leading-tight">
+                <h1 className="text-4xl sm:text-[46px] font-bold tracking-tight text-[#22130b] leading-tight drop-shadow-xs">
                   Sentiment{' '}
-                  <span className="bg-gradient-to-r from-[#e89d75] via-[#d47c50] to-[#b85a32] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#d96526] via-[#ba4f1a] to-[#993b0a] bg-clip-text text-transparent">
                     Analysis
                   </span>
                 </h1>
-                <p className="text-[15px] sm:text-base text-stone-300/90 max-w-md mx-auto leading-relaxed">
+                <p className="text-[15px] sm:text-base text-[#614b3f] max-w-md mx-auto leading-relaxed">
                   Analyze reviews, comments, and feedback using machine learning.
                 </p>
               </div>
@@ -240,12 +267,13 @@ export default function App() {
                   onOpenLogin={() => setAuthModal('login')}
                 />
               ) : (
-                <div className="rounded-[26px] border border-white/20 bg-[#ebd5c5]/[0.16] backdrop-blur-2xl p-5 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.35)] transition-all">
+                <div className="w-full">
                   <SentimentForm
                     text={text}
                     setText={(newText) => {
                       setText(newText)
                       if (error) setError(null)
+                      if (unsupportedLanguage) setUnsupportedLanguage(null)
                     }}
                     onSubmit={handleAnalyze}
                     onReset={handleReset}
@@ -263,14 +291,22 @@ export default function App() {
                   />
                 )}
 
+                {unsupportedLanguage && (
+                  <UnsupportedLanguageCard
+                    message={unsupportedLanguage.message}
+                    detectedLanguage={unsupportedLanguage.detectedLanguage}
+                    onDismiss={() => setUnsupportedLanguage(null)}
+                  />
+                )}
+
                 {isLoading && (
-                  <div className="w-full max-w-lg mx-auto rounded-2xl border border-white/15 bg-black/35 backdrop-blur-xl p-5 flex items-center justify-center gap-2.5 text-xs font-medium text-stone-300 animate-result-in shadow-2xs">
-                    <Loader2 className="h-4 w-4 animate-spin text-[#df8758]" />
+                  <div className="w-full max-w-lg mx-auto rounded-2xl border border-[#e49b73]/40 bg-white/75 backdrop-blur-xl p-5 flex items-center justify-center gap-2.5 text-xs font-semibold text-[#3b2316] animate-result-in shadow-md">
+                    <Loader2 className="h-4 w-4 animate-spin text-[#d66524]" />
                     <span>Analyzing sentiment...</span>
                   </div>
                 )}
 
-                {predictionResult && !error && !isLoading && (
+                {predictionResult && !error && !unsupportedLanguage && !isLoading && (
                   <SentimentResult
                     key={predictionResult.predictionId || `${predictionResult.sentiment}-${predictionResult.score}`}
                     result={predictionResult}
@@ -278,7 +314,7 @@ export default function App() {
                   />
                 )}
 
-                {!predictionResult && !error && !isLoading && !isLimitBlocked && (
+                {!predictionResult && !error && !unsupportedLanguage && !isLoading && !isLimitBlocked && (
                   <InitialState />
                 )}
               </div>
@@ -287,11 +323,29 @@ export default function App() {
         </div>
       </main>
 
-      <footer className="py-6 text-center text-xs text-stone-400/80">
-        <div className="max-w-3xl mx-auto px-4">
-          Sentiment Analysis • Powered by Machine Learning
-        </div>
-      </footer>
+
+      {/* Sleek Minimalist Analysis History Sidebar */}
+      {user && (
+        <HistorySidebar
+          isOpen={isHistoryOpen}
+          onClose={() => setIsHistoryOpen(false)}
+          onSelectText={(selectedText) => {
+            setText(selectedText)
+            setPredictionResult(null)
+            setError(null)
+            setUnsupportedLanguage(null)
+          }}
+          onSessionExpired={async () => {
+            setUser(null)
+            setIsHistoryOpen(false)
+            const authData = await checkAuthStatus()
+            setFreePredictionsRemaining(authData.freePredictionsRemaining ?? 10)
+            setSessionExpiredMessage('Your session has expired. Please log in again.')
+            setAuthModal('login')
+          }}
+          refreshTrigger={historyRefreshTrigger}
+        />
+      )}
     </div>
   )
 }

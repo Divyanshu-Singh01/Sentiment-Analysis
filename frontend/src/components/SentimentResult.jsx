@@ -3,10 +3,10 @@ import { AlertCircle, Check, ChevronDown, Minus, RotateCcw, Scale } from 'lucide
 import { cn } from '../lib/utils'
 
 const PRESENTATION_ORDER = [
-  { key: 'positive', label: 'Positive', dotColor: 'bg-emerald-500' },
-  { key: 'negative', label: 'Negative', dotColor: 'bg-rose-500' },
-  { key: 'neutral', label: 'Neutral', dotColor: 'bg-slate-400' },
-  { key: 'mixed', label: 'Mixed', dotColor: 'bg-amber-500' },
+  { key: 'positive', label: 'Positive', dotColor: 'bg-emerald-600' },
+  { key: 'negative', label: 'Negative', dotColor: 'bg-rose-600' },
+  { key: 'neutral', label: 'Neutral', dotColor: 'bg-stone-500' },
+  { key: 'mixed', label: 'Mixed', dotColor: 'bg-amber-600' },
 ]
 
 function formatPercent(val) {
@@ -38,32 +38,32 @@ export function SentimentResult({ result, sentiment, onAnalyzeAnother }) {
       title: 'Positive',
       description: 'Your text has a positive sentiment.',
       icon: Check,
-      iconBgStyles: 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30',
-      badgeStyles: 'bg-emerald-500/20 text-emerald-200 border-emerald-500/40',
+      iconBgStyles: 'bg-emerald-50 text-emerald-700 border border-emerald-300/80 shadow-2xs',
+      badgeStyles: 'bg-emerald-50 text-emerald-800 border-emerald-300/80 font-semibold',
       badgeText: 'Positive',
     },
     negative: {
       title: 'Negative',
       description: 'Your text has a negative sentiment.',
       icon: AlertCircle,
-      iconBgStyles: 'bg-rose-500/20 text-rose-300 border border-rose-500/30',
-      badgeStyles: 'bg-rose-500/20 text-rose-200 border-rose-500/40',
+      iconBgStyles: 'bg-rose-50 text-rose-700 border border-rose-300/80 shadow-2xs',
+      badgeStyles: 'bg-rose-50 text-rose-800 border-rose-300/80 font-semibold',
       badgeText: 'Negative',
     },
     neutral: {
       title: 'Neutral',
       description: 'Your text has a neutral or factual tone.',
       icon: Minus,
-      iconBgStyles: 'bg-stone-500/25 text-stone-200 border border-stone-400/30',
-      badgeStyles: 'bg-stone-500/25 text-stone-200 border-stone-400/40',
+      iconBgStyles: 'bg-stone-100 text-stone-700 border border-stone-300 shadow-2xs',
+      badgeStyles: 'bg-stone-100 text-stone-800 border-stone-300 font-semibold',
       badgeText: 'Neutral',
     },
     mixed: {
       title: 'Mixed',
       description: 'Your text contains both positive and negative aspects.',
       icon: Scale,
-      iconBgStyles: 'bg-amber-500/20 text-amber-300 border border-amber-500/30',
-      badgeStyles: 'bg-amber-500/20 text-amber-200 border-amber-500/40',
+      iconBgStyles: 'bg-amber-50 text-amber-800 border border-amber-300/80 shadow-2xs',
+      badgeStyles: 'bg-amber-50 text-amber-900 border-amber-300/80 font-semibold',
       badgeText: 'Mixed',
     },
   }
@@ -75,7 +75,7 @@ export function SentimentResult({ result, sentiment, onAnalyzeAnother }) {
     <div
       role="region"
       aria-label="Sentiment analysis result"
-      className="w-full rounded-[24px] border border-white/20 bg-[#ebd5c5]/[0.16] backdrop-blur-2xl p-5 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.35)] space-y-4 animate-result-in"
+      className="w-full rounded-[24px] border border-[#d98a5a]/40 bg-white/80 backdrop-blur-2xl p-5 sm:p-7 shadow-[0_15px_35px_rgba(200,120,70,0.14)] space-y-4 animate-result-in"
     >
       {/* Top Main Result: Icon, Title, Badge, Description, and Model Score */}
       <div className="flex items-start gap-3.5">
@@ -91,7 +91,7 @@ export function SentimentResult({ result, sentiment, onAnalyzeAnother }) {
         <div className="flex-1 space-y-1">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2">
-              <h3 className="text-base font-semibold tracking-tight text-white">
+              <h3 className="text-base font-semibold tracking-tight text-[#22130b]">
                 {config.title}
               </h3>
               <span
@@ -105,13 +105,13 @@ export function SentimentResult({ result, sentiment, onAnalyzeAnother }) {
             </div>
 
             {score !== null && (
-              <div className="text-xs font-medium text-stone-300 bg-black/35 px-2.5 py-1 rounded-full border border-white/15 backdrop-blur-md">
-                Model score: <span className="font-semibold text-amber-200">{formatPercent(score)}</span>
+              <div className="text-xs font-semibold text-[#3b2317] bg-white/90 px-2.5 py-1 rounded-full border border-[#d98a5a]/35 shadow-xs">
+                Model score: <span className="font-semibold text-[#c2561e]">{formatPercent(score)}</span>
               </div>
             )}
           </div>
 
-          <p className="text-sm text-stone-300/90 leading-relaxed">
+          <p className="text-sm text-[#543f34] leading-relaxed">
             {config.description}
           </p>
         </div>
@@ -122,17 +122,17 @@ export function SentimentResult({ result, sentiment, onAnalyzeAnother }) {
         <div
           role="note"
           aria-label="Close prediction notice"
-          className="flex items-start gap-2.5 rounded-xl border border-amber-500/30 bg-amber-950/40 backdrop-blur-md px-3.5 py-2.5 text-xs text-amber-200 animate-result-in"
+          className="flex items-start gap-2.5 rounded-xl border border-amber-500/40 bg-amber-50/90 backdrop-blur-md px-3.5 py-2.5 text-xs text-amber-950 animate-result-in"
         >
           <span
             className="inline-block h-2 w-2 rounded-full bg-[#df8758] mt-1 flex-shrink-0"
             aria-hidden="true"
           />
           <div className="space-y-0.5">
-            <p className="font-semibold text-amber-100">
+            <p className="font-semibold text-amber-900">
               Close prediction
             </p>
-            <p className="text-amber-200/90 leading-relaxed">
+            <p className="text-amber-800 leading-relaxed">
               Another sentiment has a similar model score.
             </p>
           </div>
@@ -147,7 +147,7 @@ export function SentimentResult({ result, sentiment, onAnalyzeAnother }) {
             onClick={() => setShowDetails(!showDetails)}
             aria-expanded={showDetails}
             aria-controls="prediction-score-details"
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-stone-300 hover:text-white transition-colors duration-150 active:scale-[0.97] cursor-pointer select-none"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#543f34] hover:text-[#180a03] transition-colors duration-150 active:scale-[0.97] cursor-pointer select-none"
           >
             <span>{showDetails ? 'Hide details' : 'View details'}</span>
             <ChevronDown
@@ -169,8 +169,8 @@ export function SentimentResult({ result, sentiment, onAnalyzeAnother }) {
             )}
           >
             <div className="overflow-hidden">
-              <div className="rounded-xl border border-white/15 bg-black/35 backdrop-blur-md p-3.5 space-y-2 text-xs shadow-2xs">
-                <p className="font-semibold text-stone-200 tracking-tight">
+              <div className="rounded-xl border border-[#d98a5a]/30 bg-white/90 backdrop-blur-md p-3.5 space-y-2 text-xs shadow-xs text-[#2b180f]">
+                <p className="font-semibold text-[#22130b] tracking-tight">
                   Prediction details
                 </p>
                 <div className="space-y-1.5 pt-0.5">
@@ -185,8 +185,8 @@ export function SentimentResult({ result, sentiment, onAnalyzeAnother }) {
                         className={cn(
                           'flex items-center justify-between py-1 px-2.5 rounded-md transition-colors duration-150',
                           isWinningClass
-                            ? 'bg-white/10 font-semibold text-white'
-                            : 'text-stone-300'
+                            ? 'bg-black/5 font-semibold text-[#180a03]'
+                            : 'text-[#543f34]'
                         )}
                       >
                         <div className="flex items-center gap-2">
@@ -208,11 +208,11 @@ export function SentimentResult({ result, sentiment, onAnalyzeAnother }) {
 
       {/* Analyze Another Action Button */}
       {onAnalyzeAnother && (
-        <div className="pt-2 border-t border-white/10 flex items-center justify-end">
+        <div className="pt-2 border-t border-black/10 flex items-center justify-end">
           <button
             type="button"
             onClick={onAnalyzeAnother}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-stone-200 hover:text-white bg-white/10 hover:bg-white/15 px-3.5 py-1.5 rounded-full border border-white/15 transition-all duration-150 active:scale-[0.97] cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#3d2417] hover:text-[#180a03] bg-black/5 hover:bg-black/10 px-3.5 py-1.5 rounded-full border border-black/10 transition-all duration-150 active:scale-[0.97] cursor-pointer"
           >
             <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
             <span>Analyze another</span>

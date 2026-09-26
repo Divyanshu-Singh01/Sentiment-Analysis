@@ -62,6 +62,15 @@ export async function analyzeSentiment(text) {
         throw sessionErr
       }
 
+      if (data && data.error === 'language_not_supported') {
+        const langErr = new Error(
+          data.message || 'Sorry, I currently support sentiment analysis for English and Hindi/Hinglish only.'
+        )
+        langErr.isLanguageNotSupported = true
+        langErr.detectedLanguage = data.detected_language || null
+        throw langErr
+      }
+
       if (data && (data.error || data.detail)) {
         const apiErr = new Error(data.error || data.detail)
         apiErr.isApiError = true
@@ -84,7 +93,7 @@ export async function analyzeSentiment(text) {
         : null,
     }
   } catch (err) {
-    if (err.isLimitReached || err.isSessionExpired || err.isApiError) {
+    if (err.isLimitReached || err.isSessionExpired || err.isLanguageNotSupported || err.isApiError) {
       throw err
     }
     // If it's already our friendly validation or parsed backend error message, preserve it
