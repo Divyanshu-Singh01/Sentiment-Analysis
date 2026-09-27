@@ -10,8 +10,8 @@ Customer reviews frequently go beyond simple positive or negative remarks, often
 
 This project demonstrates an end-to-end, production-grade machine learning workflow designed for academic presentation and real-world evaluation:
 - Cleans and normalizes 8,000 multi-domain service feedback records across 10 industry sectors.
-- Augmented with 520 targeted diagnostic records (8,520 total training records) for enhanced English and Hinglish negation handling.
-- Uses word and character n-gram TF-IDF feature extraction (34,592 features).
+- Augmented with 573 targeted diagnostic records (8,573 total training records) for enhanced English and Hinglish negation handling, polite complaints, and short-phrase robustness.
+- Uses word bigrams and character boundary n-gram TF-IDF feature extraction (69,634 sparse features).
 - Trains an interpretable multi-class Logistic Regression classifier.
 - Exposes predictions through a secure Django REST Framework API with session authentication, CSRF enforcement, and an anonymous 10-analysis trial quota.
 - Delivers real-time predictions via an interactive React web interface featuring confidence scoring and close-prediction uncertainty alerts.
@@ -67,9 +67,9 @@ This project demonstrates an end-to-end, production-grade machine learning workf
                            │ In-memory feature extraction
 ┌──────────────────────────▼─────────────────────────────┐
 │             Text Vectorizer (FeatureUnion)             │
-│    Word TF-IDF (1,1) + Char boundary n-grams (3,5)     │
+│    Word TF-IDF (1,2) + Char boundary n-grams (3,5)     │
 └──────────────────────────┬─────────────────────────────┘
-                           │ 34,592 Sparse Features
+                           │ 69,634 Sparse Features
 ┌──────────────────────────▼─────────────────────────────┐
 │          Production Model (Logistic Regression)        │
 │       Multi-class probability estimation via softmax   │
@@ -85,15 +85,18 @@ This project demonstrates an end-to-end, production-grade machine learning workf
 
 ## 5. Model & Dataset Overview
 
-- **Dataset:** 8,000 canonical foundation records across 10 service domains (Banking, Cab, Customer Support, E-Commerce, Education, Food Delivery, Grocery, Healthcare, Telecom, Travel), augmented to 8,520 records with targeted diagnostic samples.
+- **Dataset:** 8,000 canonical foundation records across 10 service domains, augmented to **8,573 production records** (`data/processed/sentiment_dataset_production.csv`).
 - **Production Artifacts:** Pre-trained and serialized in `ml/models/`:
   - `sentiment_final_model.pkl`: Multi-class Logistic Regression (`random_state=42`, `max_iter=1000`).
-  - `sentiment_final_vectorizer.pkl`: Combined Word + Character n-gram TF-IDF vectorizer.
+  - `sentiment_final_vectorizer.pkl`: Combined Word Bigram `(1, 2)` + Character n-gram `(3, 5)` TF-IDF vectorizer.
   - `final_model_metadata.json`: Verified training parameters.
 - **Evaluation Performance:**
-  - **Standard Stratified 80/20 Holdout:** **91.43%** accuracy, **0.9090** macro F1.
-  - **Strict Unseen-Text Holdout:** **90.48%** accuracy, **0.9022** macro F1.
-  - **Frozen Adversarial Challenge Set (90 samples):** **75.56%** accuracy, **0.7553** macro F1.
+  - **Standard Stratified 80/20 Holdout:** **91.84%** accuracy, **0.9150** macro F1.
+  - **Strict Unseen-Text Holdout:** **90.79%** accuracy, **0.9062** macro F1.
+  - **Frozen Adversarial Challenge Set (90 samples):** **93.33%** accuracy, **0.9322** macro F1.
+- **Dedicated Guides:**
+  - For detailed data lineage and column specifications, see [data/README.md](data/README.md).
+  - For the complete machine learning architecture and retraining procedures, see [ml/README.md](ml/README.md).
 
 ---
 
@@ -189,8 +192,10 @@ Open `http://localhost:5173` in your web browser.
 
 ## 8. Current Project Status
 
-- **System Health:** Fully operational with all 15 Django unit tests and 17 end-to-end integration scenarios passing.
-- **Frontend Quality:** Zero linter errors across all components; production bundle builds in under 1 second.
+- **System Health:** Fully operational with all 36 Django unit tests passing with zero errors and zero warnings.
+- **Frontend Quality:** Zero linter errors across all components; production bundle builds cleanly.
 - **Detailed Documentation:**
   - For full architectural and implementation details, see [CURRENT_STATE.md](CURRENT_STATE.md).
+  - For dataset lineage and schema, see [data/README.md](data/README.md).
+  - For machine learning design and benchmarks, see [ml/README.md](ml/README.md).
   - For potential roadmap features, see [FUTURE_IMPROVEMENTS.md](FUTURE_IMPROVEMENTS.md).

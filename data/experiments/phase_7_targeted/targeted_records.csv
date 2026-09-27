@@ -1,0 +1,54 @@
+id,text,language,service,behavior,sentiment,aspect,issue,severity,abuse,complexity,suggestion
+P70-001,"I would definitely recommend this to everyone, excellent value for money.",english,general,appreciation,positive,service,none,none,none,simple,none
+P70-002,I highly recommend this product to all my friends.,english,ecommerce,appreciation,positive,product,none,none,none,simple,none
+P70-003,"Definitely recommend this service, absolutely fantastic experience.",english,customer_support,appreciation,positive,support,none,none,none,simple,none
+P70-004,"I recommend this app, works seamlessly and saves a lot of time.",english,banking_upi,appreciation,positive,app,none,none,none,simple,none
+P70-005,"Highly recommend this doctor, very polite and helpful.",english,healthcare,appreciation,positive,doctor,none,none,none,simple,none
+P70-006,"ye product toh sach me kamaal ka hai, quality top notch hai.",hinglish,ecommerce,appreciation,positive,product,none,none,none,simple,none
+P70-007,kamaal ki service hai bhai maza aa gaya.,hinglish,customer_support,appreciation,positive,support,none,none,none,simple,none
+P70-008,"ye phone kamaal ka hai, battery backup top notch hai.",hinglish,ecommerce,appreciation,positive,product,none,none,none,simple,none
+P70-009,"kamaal ki delivery speed hai, turant mil gaya.",hinglish,food_delivery,appreciation,positive,delivery,none,none,none,simple,none
+P70-010,"sach me kamaal ka product hai, highly satisfied.",hinglish,ecommerce,appreciation,positive,product,none,none,none,simple,none
+P70-011,bhai UPI payment instant hua koi dikkat nhi.,hinglish,banking_upi,appreciation,positive,upi,none,none,none,simple,none
+P70-012,bhai doctor ne time pe dekha aur dawai bhi sahi di.,hinglish,healthcare,appreciation,positive,doctor,none,none,none,simple,none
+P70-013,"bhai service bahut mast thi, instant delivery ho gayi.",hinglish,food_delivery,appreciation,positive,delivery,none,none,none,simple,none
+P70-014,"bhai customer care ne turant refund de diya, shukriya.",hinglish,customer_support,appreciation,positive,refund,none,none,none,simple,none
+P70-015,"bhai bilkul smooth experience tha, koi issue nahi aaya.",hinglish,banking_upi,appreciation,positive,experience,none,none,none,simple,none
+P70-016,koi dikkat nahi hai sab smooth chal raha hai.,hinglish,banking_upi,appreciation,positive,app,none,none,none,simple,none
+P70-017,sab sahi tha koi dikkat nahi hui transaction me.,hinglish,banking_upi,appreciation,positive,upi,none,none,none,simple,none
+P70-018,very bad,english,general,complaint,negative,general,poor_quality,high,none,simple,none
+P70-019,this is very bad,english,general,complaint,negative,general,poor_quality,high,none,simple,none
+P70-020,very bad experience,english,general,complaint,negative,general,bad_experience,high,none,simple,none
+P70-021,bohot bura,hinglish,general,complaint,negative,general,bad_quality,high,none,simple,none
+P70-022,bohot bura laga,hinglish,general,complaint,negative,general,bad_feeling,high,none,simple,none
+P70-023,bohot bura experience tha,hinglish,general,complaint,negative,general,poor_service,high,none,simple,none
+P70-024,ok,english,general,neutral,neutral,general,none,none,none,simple,none
+P70-025,okay,english,general,neutral,neutral,general,none,none,none,simple,none
+P70-026,it was okay,english,general,neutral,neutral,general,none,none,none,simple,none
+P70-027,okay product,english,ecommerce,neutral,neutral,product,none,none,none,simple,none
+P70-028,the product is okay,english,ecommerce,neutral,neutral,product,none,none,none,simple,none
+P70-029,it was fine,english,general,neutral,neutral,general,none,none,none,simple,none
+P70-030,service was fine nothing special,english,customer_support,neutral,neutral,support,none,none,none,simple,none
+P70-031,chalega koi baat nhi,hinglish,general,neutral,neutral,general,none,none,none,simple,none
+P70-032,chalega normal tha,hinglish,general,neutral,neutral,general,none,none,none,simple,none
+P70-033,koi complaint nhi hai sab normal tha as expected,hinglish,customer_support,neutral,neutral,support,none,none,none,simple,none
+P70-034,koi complaint nahi hai,hinglish,customer_support,neutral,neutral,support,none,none,none,simple,none
+P70-035,it works i guess nothing special,english,general,neutral,neutral,general,none,none,none,simple,none
+P70-036,average product does the job,english,ecommerce,neutral,neutral,product,none,none,none,simple,none
+P70-037,What exactly is the point of premium membership if benefits keep changing?,english,customer_support,complaint,negative,membership,benefit_loss,medium,none,moderate,Fix membership terms
+P70-038,What is the use of customer support if nobody answers?,english,customer_support,complaint,negative,support,unresponsive,high,none,simple,Answer calls promptly
+P70-039,Not to complain but the service has been consistently below expectations.,english,customer_support,complaint,negative,service,poor_service,medium,none,moderate,Improve service standard
+P70-040,Not to sound rude but this app is unusable.,english,banking_upi,complaint,negative,app,ui_bugs,high,none,simple,Fix bugs
+P70-041,I wish I could say something positive but the quality has really gone down.,english,ecommerce,complaint,negative,quality,quality_drop,high,none,moderate,Improve quality control
+P70-042,I wish I had a better experience but everything was delayed.,english,cab_transport,complaint,negative,trip,trip_delay,medium,none,simple,On-time arrival
+P70-043,delievry was late and produt was damaegd,english,ecommerce,complaint,negative,delivery,damaged_item,high,none,simple,Refund damaged items
+P70-044,bhai pehle toh acha tha ab ekdum wahiyat hogaya hai sab,hinglish,customer_support,complaint,negative,service,quality_decline,high,none,moderate,Restore quality
+P70-045,pehle accha tha ab bilkul kharab ho chuka hai,hinglish,general,complaint,negative,general,decline,high,none,simple,Fix service
+P70-046,earlier it was good but now it has become completely useless,english,general,complaint,negative,general,decline,high,none,simple,Fix service
+P70-047,mene socha tha bura hoga par acha nikla surprisingly,hinglish,ecommerce,appreciation,positive,product,none,none,none,simple,none
+P70-048,socha tha kharab hoga par quality badiya nikli,hinglish,ecommerce,appreciation,positive,product,none,none,none,simple,none
+P70-049,Honestly I expected much worse but it turned out to be decent enough,english,general,appreciation,positive,experience,none,none,none,simple,none
+P70-050,I appreciate the quick delivery however the item was completely different from what was shown,english,ecommerce,feedback,mixed,order,item_mismatch,medium,none,complex,Check items before shipping
+P70-051,acha bhi hai aur bura bhi depends on your expectations honestly,hinglish,general,feedback,mixed,general,mixed_opinion,low,none,simple,none
+P70-052,paise toh zyada lge par quality dekhke lagta hai sahi hai,hinglish,ecommerce,feedback,mixed,pricing,high_price,low,none,moderate,Fair pricing
+P70-053,wifi speed thik thi par raat ko signal gayab ho jata tha,hinglish,telecom_broadband,complaint,mixed,connectivity,night_disconnect,medium,none,moderate,Fix night signal

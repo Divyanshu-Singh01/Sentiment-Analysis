@@ -106,15 +106,19 @@ CATEGORY_TAGS = {
 
 
 def load_model(models_dir: Path):
-    """Load the Phase 5 Exp 3 winning model and vectorizer."""
-    model_path = models_dir / "sentiment_best_model.pkl"
-    vec_path = models_dir / "sentiment_best_vectorizer.pkl"
+    """Load the active production model and vectorizer (with fallback to best model)."""
+    model_path = models_dir / "sentiment_final_model.pkl"
+    vec_path = models_dir / "sentiment_final_vectorizer.pkl"
+
+    if not model_path.is_file() or not vec_path.is_file():
+        model_path = models_dir / "sentiment_best_model.pkl"
+        vec_path = models_dir / "sentiment_best_vectorizer.pkl"
 
     if not model_path.is_file():
-        print(f"ERROR: Model not found: {model_path}", file=sys.stderr)
+        print(f"ERROR: Model not found in {models_dir}", file=sys.stderr)
         sys.exit(1)
     if not vec_path.is_file():
-        print(f"ERROR: Vectorizer not found: {vec_path}", file=sys.stderr)
+        print(f"ERROR: Vectorizer not found in {models_dir}", file=sys.stderr)
         sys.exit(1)
 
     model = joblib.load(model_path)

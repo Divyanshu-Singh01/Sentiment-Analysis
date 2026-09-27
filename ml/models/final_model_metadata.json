@@ -1,16 +1,15 @@
 {
-  "model_name": "Phase 6.9 Production Model (Promoted from Phase 6.9 Candidate)",
-  "model_version": "Phase 6.9",
+  "model_name": "Phase 7 Production Model (Augmented + Word Bigrams)",
+  "model_version": "Phase 7",
   "validation_status": "promoted",
   "promotion_date": "September 2026",
   "base_architecture": "Exp3 (FeatureUnion: Word TF-IDF + Character n-grams TF-IDF + LogisticRegression)",
-  "architecture_summary": "Word TF-IDF + Character TF-IDF FeatureUnion + Logistic Regression",
   "vectorizer": {
     "word": {
       "analyzer": "word",
       "ngram_range": [
         1,
-        1
+        2
       ],
       "min_df": 2,
       "sublinear_tf": true
@@ -26,57 +25,170 @@
     }
   },
   "classifier": "LogisticRegression(max_iter=1000, class_weight=None, random_state=42)",
-  "training_dataset": "8,520 experiment records (8,000 production dataset + 400 Phase 6.8 targeted + 120 Phase 6.9 targeted records)",
   "dataset": {
-    "production_canonical_dataset": "data/processed/sentiment_dataset.csv (8,000 records - unchanged)",
-    "phase_6_8_targeted_dataset": "data/experiments/phase_6_8_targeted/targeted_records.csv (400 records)",
-    "phase_6_9_targeted_dataset": "data/test/phase_6_9_hinglish_negation.csv (120 records)",
-    "combined_experiment_dataset": "data/test/phase_6_9_experiment_dataset.csv (8,520 records)",
-    "total_records": 8520,
+    "path": "C:\\Users\\hp\\OneDrive\\Desktop\\Sentiment Analysis\\data\\test\\phase_7_experiment_dataset.csv",
+    "total_records": 8573,
     "classes": [
-      "mixed",
       "negative",
+      "positive",
       "neutral",
-      "positive"
+      "mixed"
     ]
   },
-  "feature_count": 34592,
-  "metrics": {
-    "standard_accuracy": 0.9143,
-    "standard_macro_f1": 0.909,
-    "standard_weighted_f1": 0.914,
-    "strict_unseen_accuracy": 0.9048,
-    "strict_unseen_macro_f1": 0.9022,
-    "challenge_accuracy": 0.7556,
-    "challenge_macro_f1": 0.7553,
-    "live_29_accuracy": 0.8966,
-    "live_29_macro_f1": 0.8971
-  },
   "standard_split": {
-    "train_size": 6816,
-    "test_size": 1704,
+    "train_size": 6858,
+    "test_size": 1715,
     "random_state": 42,
     "metrics": {
-      "accuracy": 0.9143192488262911,
-      "macro_f1": 0.9089635132079501,
-      "weighted_f1": 0.9140462344812506
+      "accuracy": 0.9184,
+      "macro_precision": 0.9275,
+      "macro_recall": 0.9045,
+      "macro_f1": 0.915,
+      "weighted_precision": 0.9203,
+      "weighted_recall": 0.9184,
+      "weighted_f1": 0.9182,
+      "total_samples": 1715,
+      "total_errors": 140,
+      "per_class": {
+        "negative": {
+          "precision": 0.8861,
+          "recall": 0.9562,
+          "f1_score": 0.9198,
+          "support": 708
+        },
+        "positive": {
+          "precision": 0.951,
+          "recall": 0.9225,
+          "f1_score": 0.9365,
+          "support": 400
+        },
+        "neutral": {
+          "precision": 0.9569,
+          "recall": 0.881,
+          "f1_score": 0.9174,
+          "support": 353
+        },
+        "mixed": {
+          "precision": 0.916,
+          "recall": 0.8583,
+          "f1_score": 0.8862,
+          "support": 254
+        }
+      },
+      "confusion_matrix": [
+        [
+          677,
+          6,
+          9,
+          16
+        ],
+        [
+          26,
+          369,
+          3,
+          2
+        ],
+        [
+          33,
+          7,
+          311,
+          2
+        ],
+        [
+          28,
+          6,
+          2,
+          218
+        ]
+      ]
+    },
+    "language_metrics": {
+      "english": {
+        "total": 1096,
+        "correct": 1020,
+        "errors": 76,
+        "accuracy": 0.9307
+      },
+      "hinglish": {
+        "total": 619,
+        "correct": 555,
+        "errors": 64,
+        "accuracy": 0.8966
+      }
+    },
+    "complexity_metrics": {
+      "simple_accuracy": 0.8733,
+      "moderate_accuracy": 0.9425,
+      "complex_accuracy": 0.9241
     }
   },
   "strict_split": {
+    "train_size": 6857,
+    "test_size": 1716,
     "random_state": 42,
     "metrics": {
-      "accuracy": 0.9048178613396005,
-      "macro_f1": 0.9022134983848658
+      "accuracy": 0.9079,
+      "macro_precision": 0.921,
+      "macro_recall": 0.8945,
+      "macro_f1": 0.9062,
+      "weighted_precision": 0.9107,
+      "weighted_recall": 0.9079,
+      "weighted_f1": 0.9078,
+      "total_samples": 1716,
+      "total_errors": 158,
+      "per_class": {
+        "negative": {
+          "precision": 0.8633,
+          "recall": 0.9485,
+          "f1_score": 0.9039,
+          "support": 679
+        },
+        "positive": {
+          "precision": 0.9417,
+          "recall": 0.8851,
+          "f1_score": 0.9125,
+          "support": 383
+        },
+        "neutral": {
+          "precision": 0.958,
+          "recall": 0.9268,
+          "f1_score": 0.9421,
+          "support": 369
+        },
+        "mixed": {
+          "precision": 0.9209,
+          "recall": 0.8175,
+          "f1_score": 0.8662,
+          "support": 285
+        }
+      },
+      "confusion_matrix": [
+        [
+          644,
+          8,
+          11,
+          16
+        ],
+        [
+          39,
+          339,
+          2,
+          3
+        ],
+        [
+          19,
+          7,
+          342,
+          1
+        ],
+        [
+          44,
+          6,
+          2,
+          233
+        ]
+      ]
     }
   },
-  "challenge_evaluation": {
-    "accuracy": 0.7555555555555555,
-    "macro_f1": 0.7552817552817552,
-    "hinglish_accuracy": 0.7297297297297297
-  },
-  "history": {
-    "phase_6_6": "8,000-record production baseline (Standard Acc: 90.87%, Challenge Acc: 73.33%)",
-    "phase_6_8": "400-record generic sentiment expansion (Target 'loved' fix, Standard Acc: 91.01%, Challenge Acc: 73.33%)",
-    "phase_6_9": "120-record Hinglish negation & strong negative fix (Standard Acc: 91.43%, Challenge Acc: 75.56%)"
-  }
+  "feature_count": 47072
 }

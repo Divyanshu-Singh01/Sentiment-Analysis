@@ -3,20 +3,16 @@
 Final Model Retraining Pipeline.
 
 ================================================================================
-CRITICAL PRODUCTION NOTE (Phase 6.10 / Phase 6.12):
-The active production model (ml/models/sentiment_final_model.pkl) was trained
-on the 8,520-record Phase 6.9 experiment dataset (data/test/phase_6_9_experiment_dataset.csv),
-which incorporates 400 Phase 6.8 generic sentiment records and 120 Phase 6.9
-Hinglish negation records.
-
-WARNING: Running this script with its default 8,000-row canonical dataset source
-(data/processed/sentiment_dataset.csv) will retrain the Phase 6.6 baseline and
-would overwrite the promoted Phase 6.9 production model. Do not overwrite the
-promoted model accidentally.
+PRODUCTION NOTE (Phase 7):
+The active production model (ml/models/sentiment_final_model.pkl) is trained
+on the 8,573-record Phase 7 dataset (data/test/phase_7_experiment_dataset.csv),
+which incorporates 400 Phase 6.8 generic sentiment records, 120 Phase 6.9
+Hinglish negation records, and 53 Phase 7 targeted records for short feedback,
+polite complaints, and debiased colloquial tokens.
 ================================================================================
 
 Model Architecture:
-- Word TF-IDF: analyzer='word', ngram_range=(1,1), min_df=2, sublinear_tf=True
+- Word TF-IDF: analyzer='word', ngram_range=(1,2), min_df=2, sublinear_tf=True
 - Character TF-IDF: analyzer='char_wb', ngram_range=(3,5), min_df=3, sublinear_tf=True
 - FeatureUnion combining word + char features
 - Classifier: LogisticRegression(max_iter=1000, class_weight=None, random_state=42)
@@ -67,7 +63,7 @@ def build_vectorizer() -> FeatureUnion:
             TfidfVectorizer(
                 analyzer="word",
                 lowercase=True,
-                ngram_range=(1, 1),
+                ngram_range=(1, 2),
                 min_df=2,
                 sublinear_tf=True,
                 norm="l2",
@@ -143,8 +139,8 @@ def main() -> int:
     parser.add_argument(
         "--dataset",
         type=Path,
-        default=base_dir / "data" / "processed" / "sentiment_dataset.csv",
-        help="Path to processed training dataset (expected 8,000 records)",
+        default=base_dir / "data" / "test" / "phase_7_experiment_dataset.csv",
+        help="Path to training dataset (expected 8,573 Phase 7 records)",
     )
     parser.add_argument(
         "--models-dir",
@@ -161,7 +157,7 @@ def main() -> int:
     args = parser.parse_args()
 
     print("=" * 78)
-    print("PHASE 6.6: RETRAIN EXP3 ON EXPANDED 8,000-RECORD DATASET")
+    print("PHASE 7: RETRAIN EXP3 WITH BIGRAMS ON 8,573-RECORD AUGMENTED DATASET")
     print("=" * 78)
 
     if not args.dataset.is_file():
@@ -169,8 +165,8 @@ def main() -> int:
         return 1
 
     df = pd.read_csv(args.dataset)
-    if len(df) != 8000:
-        print(f"WARNING: Expected 8,000 records, got {len(df)}", file=sys.stderr)
+    if len(df) != 8573:
+        print(f"INFO: Loaded dataset with {len(df)} records", file=sys.stderr)
 
     X = df["text"].astype(str)
     y = df["sentiment"].str.strip().str.lower()
@@ -279,12 +275,15 @@ def main() -> int:
     joblib.dump(vec_final, final_vec_path)
 
     metadata = {
-        "model_name": "Phase 6.6 Final Model (Exp3 Architecture Retrained on 8,000 Records)",
-        "base_architecture": "Exp3 (FeatureUnion: Word TF-IDF + Character n-grams TF-IDF)",
+        "model_name": "Phase 7 Production Model (Augmented + Word Bigrams)",
+        "model_version": "Phase 7",
+        "validation_status": "promoted",
+        "promotion_date": "September 2026",
+        "base_architecture": "Exp3 (FeatureUnion: Word TF-IDF + Character n-grams TF-IDF + LogisticRegression)",
         "vectorizer": {
             "word": {
                 "analyzer": "word",
-                "ngram_range": [1, 1],
+                "ngram_range": [1, 2],
                 "min_df": 2,
                 "sublinear_tf": True,
             },

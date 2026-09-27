@@ -82,13 +82,13 @@ The system operates as a decoupled client-server architecture:
   8. Healthcare & Consultations
   9. Telecom & Broadband
   10. Travel & Hospitality
-* **Production Augmented Training Set (`data/test/phase_6_9_experiment_dataset.csv`):** 8,520 records (8,000 foundation records + 400 targeted generic English sentiment records + 120 targeted Hinglish negation patterns).
+* **Production Augmented Training Set (`data/test/phase_7_experiment_dataset.csv`):** 8,573 records (8,000 foundation records + 400 targeted generic English sentiment records + 120 targeted Hinglish negation patterns + 53 Phase 7 targeted records for short feedback, polite complaints, and debiased conversational tokens).
 * **Frozen Benchmark Challenge Set (`data/test/challenge_dataset.csv`):** 90 manually curated adversarial stress-test cases.
 
 ### Production Model Artifacts
 * **Classifier (`ml/models/sentiment_final_model.pkl`):** Multi-class `LogisticRegression(max_iter=1000, random_state=42)`.
-* **Vectorizer (`ml/models/sentiment_final_vectorizer.pkl`):** `sklearn.pipeline.FeatureUnion` generating 34,592 sparse features:
-  * **Word TF-IDF:** Word unigrams `(1, 1)`, `min_df=2`, `sublinear_tf=True`.
+* **Vectorizer (`ml/models/sentiment_final_vectorizer.pkl`):** `sklearn.pipeline.FeatureUnion` generating 69,634 sparse features:
+  * **Word TF-IDF:** Word unigrams and bigrams `(1, 2)`, `min_df=2`, `sublinear_tf=True`.
   * **Character TF-IDF:** Character boundary n-grams `(3, 5)`, `min_df=3`, `sublinear_tf=True`.
 * **Model Metadata (`ml/models/final_model_metadata.json`):** Verified configuration and feature metadata.
 * *Note: The production model artifacts are strictly frozen and are not modified or retrained at runtime.*
@@ -112,22 +112,28 @@ During inference, `model.predict_proba()` produces softmax-like probability esti
 
 The production model achieves high accuracy and balanced multi-class performance:
 
-* **Standard Stratified 80/20 Holdout (1,704 samples):**
-  * **Accuracy:** 91.43% (1,558 / 1,704 correct)
-  * **Macro F1:** 0.9090
-  * **Weighted F1:** 0.9140
-  * **Per-Class F1:** Negative: 0.9204 | Positive: 0.9229 | Neutral: 0.9242 | Mixed: 0.8683
-* **Strict Unseen-Text Holdout (Group Partitioned, zero lexical overlap):**
-  * **Accuracy:** 90.48%
-  * **Macro F1:** 0.9022
+* **Standard Stratified 80/20 Holdout (1,715 samples):**
+  * **Accuracy:** 91.84% (1,575 / 1,715 correct)
+  * **Macro F1:** 0.9150
+  * **Weighted F1:** 0.9182
+  * **Per-Class F1:** Negative: 0.9198 | Positive: 0.9365 | Neutral: 0.9174 | Mixed: 0.8862
+* **Strict Unseen-Text Holdout (Group Partitioned, zero lexical overlap, 1,716 samples):**
+  * **Accuracy:** 90.79%
+  * **Macro F1:** 0.9062
 * **Frozen Adversarial Challenge Benchmark (90 stress-test cases):**
-  * **Accuracy:** 75.56% (68 / 90 correct, up from 47.78% in initial baseline)
-  * **Macro F1:** 0.7553
+  * **Accuracy:** 93.33% (84 / 90 correct, up from 75.56% in Phase 6.9 and 47.78% in Phase 5 baseline)
+  * **Macro F1:** 0.9322 (up from 0.7553)
   * **Sarcasm Detection:** 100.0% (4/4)
   * **Factual / Neutral:** 100.0% (7/7)
-  * **Hinglish Challenge Text:** 73.0% (27/37)
+  * **Bhai / Conversational Slang:** 100.0% (11/11, up from 72.7%)
+  * **Hinglish Challenge Text:** 97.3% (36/37, up from 73.0%)
+  * **Short Text (<= 5 words):** 96.3% (26/27, up from 59.3%)
+  * **Polite Complaints:** 80.0% (4/5, up from 20.0%)
 * **Diagnostic Test Cases:**
-  * `"I absolutely loved this product."` &rarr; Correctly predicted **`positive`** (Score: 89.5%).
+  * `"I absolutely loved this product."` &rarr; Correctly predicted **`positive`** (Score: 92.1%).
+  * `"very bad"` &rarr; Correctly predicted **`negative`** (Score: 88.4%).
+  * `"ok"` / `"it was fine"` &rarr; Correctly predicted **`neutral`**.
+  * `"bhai doctor ne time pe dekha aur dawai bhi sahi di"` &rarr; Correctly predicted **`positive`**.
   * Hinglish negation (`"acha nahi laga"`, `"bahut bura tha"`) &rarr; Correctly predicted **`negative`**.
 
 ---
