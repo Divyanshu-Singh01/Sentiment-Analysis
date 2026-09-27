@@ -14,6 +14,7 @@ from rest_framework.response import Response
 
 from .models import AnalysisHistory
 
+from .analytics.categorizer import detect_category, get_category_label
 from .language_detection import (
     DEVANAGARI_REGEX,
     detect_supported_language,
@@ -261,23 +262,30 @@ def predict_sentiment(request):
     score = round(float(top_prob), 4)
     scores = {cls: round(float(prob), 4) for cls, prob in zip(classes, proba_raw)}
 
+    detected_cat = detect_category(text)
+    detected_cat_label = get_category_label(detected_cat)
+    detected_lang = lang_info.get("language_name", "English")
+
     response_data = {
         "sentiment": top_class,
         "score": score,
         "scores": scores,
         "is_close": is_close,
+        "category": detected_cat,
+        "category_label": detected_cat_label,
+        "language": detected_lang,
     }
 
     if is_authenticated:
         # Save analysis history strictly for authenticated users after successful prediction
         confidence_val = round(score * 100, 2)
-        detected_lang = lang_info.get("language_name", "English")
         AnalysisHistory.objects.create(
             user=request.user,
             text=text,
             sentiment=top_class,
             confidence=confidence_val,
             language=detected_lang,
+            category=detected_cat,
         )
     else:
         anon_count = request.session.get("anonymous_prediction_count", 0) + 1
@@ -331,6 +339,8 @@ def get_history(request):
             "confidence": item.confidence,
             "score": round(item.confidence / 100.0, 4),
             "language": item.language,
+            "category": item.category,
+            "category_label": get_category_label(item.category),
             "created_at": item.created_at.isoformat(),
         }
         for item in items

@@ -1,7 +1,7 @@
 # Current State of the Project
 
 > **Single Source of Truth**  
-> This document reflects the verified, actual state of the Sentiment Analysis project following the completion of Phase 7 (Authentication, Session CSRF, Quota Enforcement, Confidence Scoring & Close-Prediction UI, and Subtle Motion/Visual Polish).
+> This document reflects the verified, actual state of the Sentiment Analysis project following the completion of Phase 7 (Model Retraining & Adversarial Hardening), Phase 8 (Modular Batch File Upload for Authenticated Users), and Phase 9 (Live Sentiment Trend Analytics with Hybrid Time-Series and Category Benchmarking).
 
 ---
 
@@ -9,7 +9,7 @@
 
 The Sentiment Analysis project is an end-to-end, college-level machine learning and full-stack web application. Its goal is to analyze real-world service feedback, comments, and customer reviews in both English and Roman Hindi (Hinglish), categorizing them into four distinct sentiment classes (**Positive**, **Negative**, **Neutral**, and **Mixed**).
 
-The application is built to demonstrate practical, explainable machine learning engineering, robust REST API design with Django, real-world session authentication, CSRF security, and a modern single-page React user interface.
+The application is built to demonstrate practical, explainable machine learning engineering, robust REST API design with Django, real-world session authentication, CSRF security, a modern single-page React user interface, bulk dataset processing via a dedicated Batch File Upload pipeline, and an interactive Live Sentiment Trend Analytics dashboard for authenticated users.
 
 ---
 
@@ -19,17 +19,19 @@ The application is built to demonstrate practical, explainable machine learning 
 * **Language:** Python 3.13
 * **Web Framework:** Django 6.1.1
 * **API Framework:** Django REST Framework 3.18.1
-* **Machine Learning:** scikit-learn 1.9.1
-* **Data Processing:** pandas 2.3.3, NumPy 2.5.3
+* **Machine Learning:** scikit-learn 1.9.1 (Word TF-IDF (1,2) + Character n-grams (3,5) Logistic Regression)
+* **Data Processing & Spreadsheets:** pandas 2.3.3, NumPy 2.5.3, openpyxl 3.1.5 (in-memory streaming)
 * **Model Serialization:** joblib 1.6.0
-* **Database & Sessions:** SQLite 3 (`db.sqlite3`) for Django user records and encrypted session storage
+* **Database & Sessions:** SQLite 3 (`db.sqlite3`) with `AnalysisHistory` and `BatchAnalysisRecord` models
+* **Domain Categorization:** Deterministic regex keyword classifier across 6 industry sectors
 
 ### Frontend
 * **Core:** React 19
 * **Build Tool:** Vite 8.3.0
 * **Styling:** Vanilla CSS & Tailwind CSS 4 with custom dark copper glassmorphic tokens
 * **Icons:** Lucide React
-* **Linter:** oxlint (0 errors, 0 warnings across 17 files)
+* **Charts:** Zero-dependency, pure React SVG interactive line/area & stacked bar charts
+* **Linter:** oxlint (0 errors, 0 warnings across 32 files)
 
 ---
 
@@ -194,6 +196,8 @@ The application implements a dual-tier public access and authentication system:
 | `POST` | `/api/auth/login/` | No | Yes | Authenticates credentials, establishes session, returns profile and rotated CSRF token. |
 | `POST` | `/api/auth/logout/` | No | Yes | Logs out current user, preserves anonymous counter, returns success status and fresh token. |
 | `POST` | `/api/predict/` | Quota-based | Yes | Predicts sentiment for input text. Returns `sentiment`, `score`, `scores`, `is_close`, and `free_predictions_remaining` (for anonymous users). |
+| `POST` | `/api/predict/batch/` | Yes (Auth only) | Yes | Processes an uploaded CSV, TSV, or XLSX file (up to 2,000 rows, 5MB). Returns summary statistics, sentiment distribution, 25-row preview, and downloadable sanitized annotated CSV. |
+| `GET` | `/api/analytics/trends/` | Yes (Auth only) | No | Aggregates live sentiment trend analytics (range: 7d/30d/90d/all, category, source: all/history/batch). Returns summary KPIs, Net Sentiment Score, chronological daily points, and category breakdowns. |
 
 ---
 
@@ -206,6 +210,11 @@ The application implements a dual-tier public access and authentication system:
 5. **Password Security:** PBKDF2 with SHA-256 password hashing. Passwords are never returned in responses.
 6. **Server-Side Quota Enforcement:** Anonymous limits are managed entirely on the server; tampering with client state cannot bypass the quota.
 7. **Input Validation:** Rejects empty or whitespace-only strings with `400 Bad Request`.
+8. **Batch Upload Security Gate:** Strictly rejects unauthenticated batch requests with `403 Forbidden` (`auth_required`). Anonymous users cannot consume bulk CPU compute.
+9. **Zero Disk Storage:** Uploaded files are parsed purely in-memory via `io.BytesIO` streams and discarded immediately after response generation.
+10. **CSV Formula Injection Sanitization:** Every cell starting with formula trigger symbols (`=`, `+`, `-`, `@`) is prepended with a single quote (`'`) to protect spreadsheet users from formula execution vulnerabilities upon export.
+11. **Strict File Caps:** Hard limit of 5 MB file size and 2,000 maximum rows prevents resource exhaustion and Denial-of-Service attacks.
+12. **Analytics Tenant Data Isolation:** All analytics trends and database aggregations strictly filter on `user=request.user`. Users can never view or aggregate another account's reviews or metrics.
 
 ---
 

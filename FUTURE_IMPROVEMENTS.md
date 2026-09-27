@@ -24,9 +24,9 @@
 
 ## 3. UI & Product
 
-* **Batch File Upload:** Allow users to upload `.csv` or `.xlsx` files containing hundreds of reviews to receive downloadable batch predictions and aggregate sentiment charts.
-* **Live Sentiment Trend Analytics:** Add an authenticated dashboard with time-series charts showing sentiment trends across different product categories.
-* **Copy & Export Results:** Add one-click export buttons (JSON, CSV, PDF summary) for individual analysis results.
+* **High-Volume Asynchronous Batch Worker:** For very large enterprise datasets (> 10,000 rows), introduce a Celery/Redis worker queue with email notification when processing completes.
+* **Automated Negative Spike & Anomaly Alerts:** Email/webhook triggers when negative sentiment in any product category spikes by more than 25% over a 7-day moving window.
+* **Copy & Export Results:** Add one-click export buttons (JSON, CSV, PDF summary) for individual single-review analysis results.
 * **Theme Customizer:** Provide user toggles between the default warm copper glassmorphism theme and a high-contrast clean light theme.
 * **Voice Input Integration:** Integrate the browser Web Speech API for direct speech-to-text review dictation.
 

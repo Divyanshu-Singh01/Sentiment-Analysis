@@ -25,10 +25,11 @@ This project demonstrates an end-to-end, production-grade machine learning workf
 - **Close-Prediction Uncertainty Indicator:** Highlights predictions where the margin between the top two sentiment probabilities is less than 10% ($\Delta < 0.10$).
 - **Dual-Tier Access & Quota Control:**
   - **Anonymous Visitors:** Immediate access without registration, capped at 10 free successful analyses per session.
-  - **Authenticated Users:** Unlimited predictions with user signup, login, session persistence, and logout.
+- **Batch File Processing:** Drag-and-drop CSV, TSV, or Excel spreadsheets (up to 2,000 rows) with in-memory streaming, CSV formula injection sanitization, and 1-click enriched export.
+- **Live Sentiment Trend Analytics & Category Benchmarks:** Authenticated interactive dashboard tracking daily sentiment shifts and Net Sentiment Scores (NSS) across 7, 30, and 90-day windows, with automated domain classification (E-Commerce, Food, Banking, Travel, Telecom, General).
 - **Security & Integrity:** Django session authentication, custom CSRF protection (`CsrfEnforcedSessionAuthentication`), and automated CSRF token rotation on auth events.
 - **Bilingual & Transliteration Support:** Accurately classifies English as well as Roman Hindi (Hinglish) feedback (e.g. *bohot*, *bahut*, *nhi*, *nahi*).
-- **Modern User Experience:** Single-page interface with a warm copper glassmorphic aesthetic, live character counter, example phrase shortcut, and subtle animations.
+- **Modern User Experience:** Single-page interface with a warm copper glassmorphic aesthetic, live character counter, example phrase shortcut, interactive SVG trend charts, and subtle animations.
 
 ---
 
@@ -110,6 +111,8 @@ This project demonstrates an end-to-end, production-grade machine learning workf
 | `/api/auth/login/` | `POST` | No | Authenticates user with username and password. |
 | `/api/auth/logout/` | `POST` | No | Logs out the user and clears authentication session. |
 | `/api/predict/` | `POST` | Quota-based | Analyzes sentiment for the provided input text. |
+| `/api/predict/batch/` | `POST` | Yes (Auth only) | Processes bulk CSV/XLSX file (up to 2,000 rows). Returns statistics, preview, and downloadable annotated CSV. |
+| `/api/analytics/trends/` | `GET` | Yes (Auth only) | Aggregates daily time-series points, Net Sentiment Scores, and category breakdowns. |
 
 ### Prediction Example (`POST /api/predict/`)
 
@@ -192,8 +195,8 @@ Open `http://localhost:5173` in your web browser.
 
 ## 8. Current Project Status
 
-- **System Health:** Fully operational with all 36 Django unit tests passing with zero errors and zero warnings.
-- **Frontend Quality:** Zero linter errors across all components; production bundle builds cleanly.
+- **System Health:** Fully operational with all 57 Django unit tests passing with zero errors and zero warnings.
+- **Frontend Quality:** Zero linter errors across all 32 components; production bundle builds cleanly in ~1.1s.
 - **Detailed Documentation:**
   - For full architectural and implementation details, see [CURRENT_STATE.md](CURRENT_STATE.md).
   - For dataset lineage and schema, see [data/README.md](data/README.md).

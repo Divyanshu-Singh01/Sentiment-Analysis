@@ -1,12 +1,21 @@
-import { useState } from 'react'
-import { AlertCircle, Check, ChevronDown, Minus, RotateCcw, Scale } from 'lucide-react'
+import React, { useState } from 'react'
+import {
+  AlertCircle,
+  Check,
+  ChevronDown,
+  Minus,
+  RotateCcw,
+  Scale,
+  Copy,
+  CheckCheck,
+} from 'lucide-react'
 import { cn } from '../lib/utils'
 
 const PRESENTATION_ORDER = [
-  { key: 'positive', label: 'Positive', dotColor: 'bg-emerald-600' },
-  { key: 'negative', label: 'Negative', dotColor: 'bg-rose-600' },
-  { key: 'neutral', label: 'Neutral', dotColor: 'bg-stone-500' },
-  { key: 'mixed', label: 'Mixed', dotColor: 'bg-amber-600' },
+  { key: 'positive', label: 'Positive', dotColor: 'bg-emerald-500', barColor: 'bg-emerald-500' },
+  { key: 'negative', label: 'Negative', dotColor: 'bg-rose-500', barColor: 'bg-rose-500' },
+  { key: 'neutral', label: 'Neutral', dotColor: 'bg-stone-500', barColor: 'bg-stone-500' },
+  { key: 'mixed', label: 'Mixed', dotColor: 'bg-amber-500', barColor: 'bg-amber-500' },
 ]
 
 function formatPercent(val) {
@@ -15,7 +24,6 @@ function formatPercent(val) {
 }
 
 export function SentimentResult({ result, sentiment, onAnalyzeAnother }) {
-  // Support both object shape { sentiment, score, scores, isClose } and legacy string sentiment
   const normSentiment = (typeof result === 'object' && result?.sentiment
     ? result.sentiment
     : sentiment || ''
@@ -29,117 +37,163 @@ export function SentimentResult({ result, sentiment, onAnalyzeAnother }) {
     ? result.scores
     : null
 
-  const isClose = typeof result === 'object' ? Boolean(result?.isClose) : false
+  const isClose = typeof result === 'object'
+    ? Boolean(result?.is_close || result?.isClose)
+    : false
 
   const [showDetails, setShowDetails] = useState(false)
+  const [copied, setCopied] = useState(false)
 
   const configMap = {
     positive: {
-      title: 'Positive',
-      description: 'Your text has a positive sentiment.',
-      icon: Check,
-      iconBgStyles: 'bg-emerald-50 text-emerald-700 border border-emerald-300/80 shadow-2xs',
-      badgeStyles: 'bg-emerald-50 text-emerald-800 border-emerald-300/80 font-semibold',
+      title: 'Positive Sentiment',
       badgeText: 'Positive',
+      description: 'Your text conveys an overall positive sentiment.',
+      icon: Check,
+      accentBorder: 'border-emerald-500/35',
+      glowShadow: 'shadow-[0_12px_32px_rgba(16,185,129,0.12)]',
+      iconBg: 'bg-emerald-100 text-emerald-700 border border-emerald-300',
+      badgeBg: 'bg-emerald-50 text-emerald-800 border-emerald-200',
+      barColor: 'bg-emerald-500',
+      confidenceText: 'text-emerald-800',
     },
     negative: {
-      title: 'Negative',
-      description: 'Your text has a negative sentiment.',
-      icon: AlertCircle,
-      iconBgStyles: 'bg-rose-50 text-rose-700 border border-rose-300/80 shadow-2xs',
-      badgeStyles: 'bg-rose-50 text-rose-800 border-rose-300/80 font-semibold',
+      title: 'Negative Sentiment',
       badgeText: 'Negative',
+      description: 'Your text conveys an overall negative sentiment.',
+      icon: AlertCircle,
+      accentBorder: 'border-rose-500/35',
+      glowShadow: 'shadow-[0_12px_32px_rgba(244,63,94,0.12)]',
+      iconBg: 'bg-rose-100 text-rose-700 border border-rose-300',
+      badgeBg: 'bg-rose-50 text-rose-800 border-rose-200',
+      barColor: 'bg-rose-500',
+      confidenceText: 'text-rose-800',
     },
     neutral: {
-      title: 'Neutral',
+      title: 'Neutral Sentiment',
+      badgeText: 'Neutral',
       description: 'Your text has a neutral or factual tone.',
       icon: Minus,
-      iconBgStyles: 'bg-stone-100 text-stone-700 border border-stone-300 shadow-2xs',
-      badgeStyles: 'bg-stone-100 text-stone-800 border-stone-300 font-semibold',
-      badgeText: 'Neutral',
+      accentBorder: 'border-stone-400/40',
+      glowShadow: 'shadow-[0_12px_32px_rgba(120,113,108,0.12)]',
+      iconBg: 'bg-stone-100 text-stone-700 border border-stone-300',
+      badgeBg: 'bg-stone-50 text-stone-800 border-stone-200',
+      barColor: 'bg-stone-500',
+      confidenceText: 'text-stone-800',
     },
     mixed: {
-      title: 'Mixed',
+      title: 'Mixed Sentiment',
+      badgeText: 'Mixed',
       description: 'Your text contains both positive and negative aspects.',
       icon: Scale,
-      iconBgStyles: 'bg-amber-50 text-amber-800 border border-amber-300/80 shadow-2xs',
-      badgeStyles: 'bg-amber-50 text-amber-900 border-amber-300/80 font-semibold',
-      badgeText: 'Mixed',
+      accentBorder: 'border-amber-500/35',
+      glowShadow: 'shadow-[0_12px_32px_rgba(245,158,11,0.12)]',
+      iconBg: 'bg-amber-100 text-amber-800 border border-amber-300',
+      badgeBg: 'bg-amber-50 text-amber-900 border-amber-200',
+      barColor: 'bg-amber-500',
+      confidenceText: 'text-amber-900',
     },
   }
 
   const config = configMap[normSentiment] || configMap.negative
   const IconComponent = config.icon
 
+  const handleCopy = () => {
+    const textToCopy = `Sentiment: ${config.title} (${score !== null ? formatPercent(score) : 'N/A'})`
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    })
+  }
+
   return (
     <div
       role="region"
       aria-label="Sentiment analysis result"
-      className="w-full rounded-[24px] border border-[#d98a5a]/40 bg-white/80 backdrop-blur-2xl p-5 sm:p-7 shadow-[0_15px_35px_rgba(200,120,70,0.14)] space-y-4 animate-result-in"
+      className={cn(
+        'w-full rounded-2xl border bg-white/85 backdrop-blur-xl p-5 sm:p-6 transition-all duration-200 animate-result-in space-y-4',
+        config.accentBorder,
+        config.glowShadow
+      )}
     >
-      {/* Top Main Result: Icon, Title, Badge, Description, and Model Score */}
-      <div className="flex items-start gap-3.5">
-        <div
-          className={cn(
-            'flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl mt-0.5',
-            config.iconBgStyles
-          )}
-        >
-          <IconComponent className="h-4.5 w-4.5 stroke-[2.5]" aria-hidden="true" />
-        </div>
+      {/* Top Header Row: Icon, Title, Confidence Badge */}
+      <div className="flex items-start justify-between gap-3.5">
+        <div className="flex items-start gap-3.5 min-w-0">
+          <div
+            className={cn(
+              'flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl shadow-2xs mt-0.5',
+              config.iconBg
+            )}
+          >
+            <IconComponent className="h-5 w-5 stroke-[2.5]" aria-hidden="true" />
+          </div>
 
-        <div className="flex-1 space-y-1">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <div className="flex items-center gap-2">
-              <h3 className="text-base font-semibold tracking-tight text-[#22130b]">
+          <div className="space-y-1 min-w-0">
+            <div className="flex items-center gap-2 flex-wrap">
+              <h3 className="text-base sm:text-lg font-bold tracking-tight text-[#22130b]">
                 {config.title}
               </h3>
               <span
                 className={cn(
-                  'inline-flex items-center rounded-md border px-1.5 py-0.2 text-[11px] font-medium',
-                  config.badgeStyles
+                  'inline-flex items-center rounded-md border px-2 py-0.5 text-[11px] font-semibold tracking-wide',
+                  config.badgeBg
                 )}
               >
                 {config.badgeText}
               </span>
             </div>
-
-            {score !== null && (
-              <div className="text-xs font-semibold text-[#3b2317] bg-white/90 px-2.5 py-1 rounded-full border border-[#d98a5a]/35 shadow-xs">
-                Model score: <span className="font-semibold text-[#c2561e]">{formatPercent(score)}</span>
-              </div>
-            )}
+            <p className="text-xs sm:text-sm text-[#5d473b] leading-relaxed">
+              {config.description}
+            </p>
           </div>
-
-          <p className="text-sm text-[#543f34] leading-relaxed">
-            {config.description}
-          </p>
         </div>
+
+        {/* Confidence Metric Pill */}
+        {score !== null && (
+          <div className="shrink-0 text-right">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#df8758]/30 shadow-2xs">
+              <span className="text-[11px] text-[#735b4d] font-medium">Confidence</span>
+              <span className={cn('text-xs font-bold font-mono', config.confidenceText)}>
+                {formatPercent(score)}
+              </span>
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* Close Prediction Banner (Shown only when isClose === true) */}
+      {/* Subtle Confidence Indicator Bar */}
+      {score !== null && (
+        <div className="w-full h-1.5 rounded-full bg-black/5 overflow-hidden">
+          <div
+            style={{ width: `${Math.round(score * 100)}%` }}
+            className={cn('h-full rounded-full transition-all duration-500 ease-out', config.barColor)}
+          />
+        </div>
+      )}
+
+      {/* Close Prediction Banner (Only shown if isClose === true) */}
       {isClose && (
         <div
           role="note"
           aria-label="Close prediction notice"
-          className="flex items-start gap-2.5 rounded-xl border border-amber-500/40 bg-amber-50/90 backdrop-blur-md px-3.5 py-2.5 text-xs text-amber-950 animate-result-in"
+          className="flex items-start gap-2.5 rounded-xl border border-amber-400/50 bg-amber-50/90 px-3.5 py-2.5 text-xs text-amber-950 animate-result-in shadow-2xs"
         >
           <span
-            className="inline-block h-2 w-2 rounded-full bg-[#df8758] mt-1 flex-shrink-0"
+            className="inline-block h-2 w-2 rounded-full bg-amber-500 mt-1 flex-shrink-0"
             aria-hidden="true"
           />
           <div className="space-y-0.5">
             <p className="font-semibold text-amber-900">
-              Close prediction
+              Close Prediction
             </p>
             <p className="text-amber-800 leading-relaxed">
-              Another sentiment has a similar model score.
+              Another sentiment class scored very closely to this result.
             </p>
           </div>
         </div>
       )}
 
-      {/* View Details Expandable Section */}
+      {/* Expandable Class Probability Breakdown */}
       {scores && (
         <div className="pt-1">
           <button
@@ -147,9 +201,9 @@ export function SentimentResult({ result, sentiment, onAnalyzeAnother }) {
             onClick={() => setShowDetails(!showDetails)}
             aria-expanded={showDetails}
             aria-controls="prediction-score-details"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#543f34] hover:text-[#180a03] transition-colors duration-150 active:scale-[0.97] cursor-pointer select-none"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#6e5547] hover:text-[#22130b] transition-colors duration-150 cursor-pointer select-none"
           >
-            <span>{showDetails ? 'Hide details' : 'View details'}</span>
+            <span>{showDetails ? 'Hide probability breakdown' : 'View probability breakdown'}</span>
             <ChevronDown
               className={cn(
                 'h-3.5 w-3.5 transition-transform duration-200 ease-out',
@@ -164,61 +218,83 @@ export function SentimentResult({ result, sentiment, onAnalyzeAnother }) {
             className={cn(
               'grid transition-all duration-200 ease-out',
               showDetails
-                ? 'grid-rows-[1fr] opacity-100 mt-2.5'
+                ? 'grid-rows-[1fr] opacity-100 mt-2'
                 : 'grid-rows-[0fr] opacity-0 mt-0 pointer-events-none'
             )}
           >
             <div className="overflow-hidden">
-              <div className="rounded-xl border border-[#d98a5a]/30 bg-white/90 backdrop-blur-md p-3.5 space-y-2 text-xs shadow-xs text-[#2b180f]">
-                <p className="font-semibold text-[#22130b] tracking-tight">
-                  Prediction details
-                </p>
-                <div className="space-y-1.5 pt-0.5">
-                  {PRESENTATION_ORDER.map((item) => {
-                    const classScore = scores[item.key] ?? 0
-                    const pct = formatPercent(classScore)
-                    const isWinningClass = normSentiment === item.key
+              <div className="rounded-xl border border-[#ecd2be]/80 bg-white/75 p-3 space-y-1.5 text-xs shadow-2xs text-[#2b180f]">
+                {PRESENTATION_ORDER.map((item) => {
+                  const classScore = scores[item.key] ?? 0
+                  const pct = formatPercent(classScore)
+                  const isWinningClass = normSentiment === item.key
 
-                    return (
-                      <div
-                        key={item.key}
-                        className={cn(
-                          'flex items-center justify-between py-1 px-2.5 rounded-md transition-colors duration-150',
-                          isWinningClass
-                            ? 'bg-black/5 font-semibold text-[#180a03]'
-                            : 'text-[#543f34]'
-                        )}
-                      >
-                        <div className="flex items-center gap-2">
-                          <span className={cn('h-1.5 w-1.5 rounded-full', item.dotColor)} />
-                          <span>{item.label}</span>
+                  return (
+                    <div
+                      key={item.key}
+                      className={cn(
+                        'flex items-center justify-between py-1 px-2.5 rounded-lg transition-colors duration-150 gap-3',
+                        isWinningClass
+                          ? 'bg-[#df8758]/15 font-semibold text-[#22130b]'
+                          : 'text-[#614b3f]'
+                      )}
+                    >
+                      <div className="flex items-center gap-2 shrink-0">
+                        <span className={cn('h-2 w-2 rounded-full', item.dotColor)} />
+                        <span>{item.label}</span>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <div className="w-24 sm:w-32 h-1.5 rounded-full bg-black/5 overflow-hidden">
+                          <div
+                            style={{ width: `${Math.round(classScore * 100)}%` }}
+                            className={cn('h-full rounded-full transition-all duration-300', item.barColor)}
+                          />
                         </div>
-                        <span className="font-mono tabular-nums font-medium">
+                        <span className="font-mono tabular-nums font-semibold text-right w-10">
                           {pct}
                         </span>
                       </div>
-                    )
-                  })}
-                </div>
+                    </div>
+                  )
+                })}
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* Analyze Another Action Button */}
-      {onAnalyzeAnother && (
-        <div className="pt-2 border-t border-black/10 flex items-center justify-end">
+      {/* Action Row: Copy & Analyze Another */}
+      <div className="pt-2 border-t border-[#ecd2be]/60 flex items-center justify-between">
+        <button
+          type="button"
+          onClick={handleCopy}
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#614b3f] hover:text-[#22130b] bg-white hover:bg-black/5 px-3 py-1.5 rounded-full border border-[#ecd2be]/80 transition-all duration-150 active:scale-[0.97] cursor-pointer shadow-2xs"
+        >
+          {copied ? (
+            <>
+              <CheckCheck className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
+              <span className="text-emerald-700">Copied!</span>
+            </>
+          ) : (
+            <>
+              <Copy className="h-3.5 w-3.5 text-[#ba4f1a]" aria-hidden="true" />
+              <span>Copy result</span>
+            </>
+          )}
+        </button>
+
+        {onAnalyzeAnother && (
           <button
             type="button"
             onClick={onAnalyzeAnother}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#3d2417] hover:text-[#180a03] bg-black/5 hover:bg-black/10 px-3.5 py-1.5 rounded-full border border-black/10 transition-all duration-150 active:scale-[0.97] cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#3b2215] hover:text-[#180a03] bg-white hover:bg-black/5 px-3.5 py-1.5 rounded-full border border-[#ecd2be]/80 transition-all duration-150 active:scale-[0.97] cursor-pointer shadow-2xs"
           >
-            <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
+            <RotateCcw className="h-3.5 w-3.5 text-[#ba4f1a]" aria-hidden="true" />
             <span>Analyze another</span>
           </button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   )
 }
