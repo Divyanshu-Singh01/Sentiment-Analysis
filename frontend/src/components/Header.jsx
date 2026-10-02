@@ -1,6 +1,7 @@
 import React from 'react'
-import { LogOut, User } from 'lucide-react'
-import logoImg from '../assets/logo.png'
+import { LogOut, Sparkles, TrendingUp } from 'lucide-react'
+import logoImg from '../assets/logo (2).png'
+import { cn } from '../lib/utils'
 
 export function Header({
   user,
@@ -8,62 +9,101 @@ export function Header({
   onLogout,
   isLoggingOut,
   onOpenAuth,
+  activeTab = 'single',
+  onSelectTab,
 }) {
+  const isAnalyzerActive = activeTab === 'single' || activeTab === 'batch'
+
   return (
-    <header className="w-full bg-white/40 sticky top-0 z-20 backdrop-blur-md border-b border-[#edd7c7]/50 transition-colors duration-200">
-      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-8">
-        {/* Left Corner: Brand Logo */}
+    <header className="w-full bg-white sticky top-0 z-40 border-b border-neutral-200">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
+        {/* Left: Brand */}
         <button
           type="button"
           onClick={() => {
-            if (onOpenAuth) onOpenAuth(null)
+            onSelectTab?.('single')
+            onOpenAuth?.(null)
           }}
-          className="flex items-center group cursor-pointer text-left focus-visible:outline-none"
-          aria-label="Sentiment Analysis Home"
+          className="group flex items-center gap-2.5 cursor-pointer focus-visible:outline-none select-none shrink-0"
+          aria-label="Home"
         >
-          <img
-            src={logoImg}
-            alt="Sentiment Analysis"
-            className="h-9 sm:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02] drop-shadow-xs"
-          />
+          <div className="relative flex items-center justify-center shrink-0">
+            {/* Gemini-style ambient blue glow behind logo */}
+            <div className="absolute inset-0 rounded-full bg-blue-500/15 blur-md scale-110 group-hover:scale-125 group-hover:bg-blue-500/30 transition-all duration-300" />
+            <img
+              src={logoImg}
+              alt="Sentiment Analysis Logo"
+              className="relative h-6.5 w-6.5 sm:h-7 sm:w-7 md:h-7.5 md:w-7.5 object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_1px_6px_rgba(59,130,246,0.3)]"
+            />
+          </div>
+          <span className="font-semibold text-sm sm:text-[15px] tracking-tight text-neutral-900 group-hover:text-black transition-colors">
+            Sentiment Analysis
+          </span>
         </button>
 
-        {/* Right Corner: Controls */}
-        <div className="flex items-center gap-3 sm:gap-4 text-xs font-medium">
-          {/* Anonymous Usage Pill */}
+        {/* Center: Main Navigation Segmented Control (Desktop & Tablet) */}
+        {onSelectTab && (
+          <nav aria-label="Main Navigation" className="hidden sm:flex items-center gap-1 p-0.5 rounded-full bg-neutral-100 border border-neutral-200/80 text-xs">
+            <button
+              type="button"
+              onClick={() => onSelectTab('single')}
+              className={cn(
+                'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-medium transition-all cursor-pointer select-none',
+                isAnalyzerActive
+                  ? 'bg-white text-black shadow-xs font-semibold'
+                  : 'text-neutral-500 hover:text-black hover:bg-neutral-200/50'
+              )}
+            >
+              <Sparkles className="h-3.5 w-3.5" />
+              <span>Analyze</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => onSelectTab('analytics')}
+              className={cn(
+                'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-medium transition-all cursor-pointer select-none',
+                activeTab === 'analytics'
+                  ? 'bg-white text-black shadow-xs font-semibold'
+                  : 'text-neutral-500 hover:text-black hover:bg-neutral-200/50'
+              )}
+            >
+              <TrendingUp className="h-3.5 w-3.5" />
+              <span>Analytics</span>
+            </button>
+          </nav>
+        )}
+
+        {/* Right: Auth & Status */}
+        <div className="flex items-center gap-2.5 text-xs shrink-0">
           {!user && typeof freePredictionsRemaining === 'number' && (
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold bg-white/85 border border-[#df8758]/35 text-[#3d2417] backdrop-blur-md shadow-xs">
+            <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-neutral-200/80 bg-neutral-50/60 text-xs font-mono">
               <span
-                className={`h-2 w-2 rounded-full ${
-                  freePredictionsRemaining > 0 ? 'bg-emerald-500 animate-pulse' : 'bg-rose-500'
-                }`}
+                className={cn(
+                  'h-1.5 w-1.5 rounded-full shrink-0',
+                  freePredictionsRemaining > 3
+                    ? 'bg-emerald-500'
+                    : freePredictionsRemaining > 0
+                    ? 'bg-amber-500'
+                    : 'bg-rose-500'
+                )}
               />
-              <span>
-                {freePredictionsRemaining}{' '}
-                {freePredictionsRemaining === 1 ? 'free trial left' : 'free trials left'}
-              </span>
+              <span className="text-neutral-600 font-medium">{freePredictionsRemaining} free left</span>
             </div>
           )}
 
-          {/* User / Sign In Action */}
           {user ? (
-            <div className="flex items-center gap-2.5">
-              <div className="inline-flex items-center gap-1.5 text-[#3d2417] bg-white/90 px-3 py-1.5 rounded-full border border-[#df8758]/35 shadow-xs">
-                <div className="h-4 w-4 rounded-full bg-[#df8758]/20 flex items-center justify-center text-[#ba4f1a]">
-                  <User className="h-2.5 w-2.5 stroke-[2.5]" aria-hidden="true" />
-                </div>
-                <span className="font-bold text-[#24140b] tracking-tight">{user.username}</span>
-              </div>
-
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-medium text-neutral-700 bg-neutral-100 px-2.5 py-1 rounded-md">
+                {user.username}
+              </span>
               <button
                 type="button"
                 onClick={onLogout}
                 disabled={isLoggingOut}
-                className="inline-flex items-center gap-1.5 text-[#6e5648] hover:text-rose-700 hover:bg-rose-50 px-2.5 py-1.5 rounded-full border border-transparent hover:border-rose-200 transition-all duration-150 cursor-pointer disabled:opacity-50 active:scale-95"
-                title="Log out of your account"
+                className="text-xs text-neutral-500 hover:text-black p-1.5 rounded-md hover:bg-neutral-100 transition-colors cursor-pointer disabled:opacity-50"
+                title="Log out"
               >
-                <LogOut className="h-3.5 w-3.5" aria-hidden="true" />
-                <span className="font-semibold">{isLoggingOut ? 'Logging out...' : 'Logout'}</span>
+                <LogOut className="h-4 w-4" />
               </button>
             </div>
           ) : (
@@ -71,11 +111,9 @@ export function Header({
               <button
                 type="button"
                 onClick={() => onOpenAuth('login')}
-                className="inline-flex items-center gap-1.5 text-[#24140b] bg-white/90 hover:bg-white font-bold transition-all duration-150 cursor-pointer px-4 py-1.5 rounded-full border border-[#df8758]/35 shadow-xs active:scale-95"
-                title="Sign in to your account"
+                className="px-3.5 py-1.5 rounded-full bg-black text-white hover:bg-neutral-800 text-xs font-medium transition-colors cursor-pointer shadow-xs"
               >
-                <User className="h-3.5 w-3.5 text-[#ba4f1a]" aria-hidden="true" />
-                <span>Sign In</span>
+                Sign in
               </button>
             )
           )}

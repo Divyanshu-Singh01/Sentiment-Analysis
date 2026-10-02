@@ -11,7 +11,7 @@ export const Input = forwardRef(function Input(
       type={type}
       disabled={disabled}
       className={cn(
-        'w-full h-10 rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-3 focus:ring-slate-900/5 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:opacity-60 transition duration-150',
+        'w-full h-10 rounded-lg border border-neutral-200 bg-white px-3 text-sm text-black placeholder:text-neutral-400 focus:border-black focus:outline-none focus:ring-1 focus:ring-black disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:opacity-60 transition duration-150',
         className
       )}
       {...props}

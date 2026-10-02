@@ -1,13 +1,5 @@
 import React, { useState } from 'react'
-import {
-  Clock,
-  CheckCircle2,
-  AlertCircle,
-  MinusCircle,
-  Scale,
-  Sparkles,
-  Search,
-} from 'lucide-react'
+import { Search } from 'lucide-react'
 import { cn } from '../../lib/utils'
 
 export function RecentSearchFeed({ searches = [] }) {
@@ -30,153 +22,141 @@ export function RecentSearchFeed({ searches = [] }) {
     return matchesSentiment && matchesQuery
   })
 
-  const getSentimentConfig = (sentiment) => {
+  const getSentimentDot = (sentiment) => {
     const norm = (sentiment || '').toLowerCase()
     switch (norm) {
       case 'positive':
-        return {
-          icon: CheckCircle2,
-          textColor: 'text-emerald-700',
-          badgeBg: 'bg-emerald-50 text-emerald-800 border-emerald-200',
-          dot: 'bg-emerald-500',
-        }
+        return 'bg-emerald-500'
       case 'negative':
-        return {
-          icon: AlertCircle,
-          textColor: 'text-rose-700',
-          badgeBg: 'bg-rose-50 text-rose-800 border-rose-200',
-          dot: 'bg-rose-500',
-        }
+        return 'bg-rose-500'
       case 'neutral':
-        return {
-          icon: MinusCircle,
-          textColor: 'text-stone-700',
-          badgeBg: 'bg-stone-50 text-stone-800 border-stone-200',
-          dot: 'bg-stone-400',
-        }
+        return 'bg-neutral-400'
       case 'mixed':
-        return {
-          icon: Scale,
-          textColor: 'text-amber-800',
-          badgeBg: 'bg-amber-50 text-amber-900 border-amber-200',
-          dot: 'bg-amber-500',
-        }
+        return 'bg-amber-500'
       default:
-        return {
-          icon: Sparkles,
-          textColor: 'text-stone-700',
-          badgeBg: 'bg-stone-50 text-stone-800 border-stone-200',
-          dot: 'bg-stone-400',
-        }
+        return 'bg-neutral-400'
     }
   }
 
+  const getSentimentBadge = (sentiment) => {
+    const norm = (sentiment || '').toLowerCase()
+    switch (norm) {
+      case 'positive':
+        return 'text-emerald-700 bg-emerald-50 border border-emerald-200/60'
+      case 'negative':
+        return 'text-rose-700 bg-rose-50 border border-rose-200/60'
+      case 'neutral':
+        return 'text-neutral-700 bg-neutral-100 border border-neutral-200'
+      case 'mixed':
+        return 'text-amber-700 bg-amber-50 border border-amber-200/60'
+      default:
+        return 'text-neutral-700 bg-neutral-100 border border-neutral-200'
+    }
+  }
+
+  const filterChips = [
+    { id: 'all', label: 'All', activeClass: 'bg-black text-white' },
+    { id: 'positive', label: 'Positive', activeClass: 'bg-emerald-50 text-emerald-700 border border-emerald-300 font-semibold' },
+    { id: 'negative', label: 'Negative', activeClass: 'bg-rose-50 text-rose-700 border border-rose-300 font-semibold' },
+    { id: 'neutral', label: 'Neutral', activeClass: 'bg-neutral-100 text-neutral-800 border border-neutral-300 font-semibold' },
+  ]
+
   return (
-    <div className="p-5 sm:p-6 rounded-2xl bg-white/75 backdrop-blur-md border border-[#ecd2be]/80 shadow-xs space-y-4">
-      {/* Header & Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div className="space-y-0.5">
-          <div className="flex items-center gap-2">
-            <Clock className="h-4 w-4 text-[#ba4f1a]" />
-            <h3 className="text-sm font-bold text-[#22130b] tracking-tight">
-              Recent Analysis Stream
+    <div className="rounded-xl border border-neutral-200 bg-white overflow-hidden shadow-xs flex flex-col h-full">
+      {/* Header */}
+      <div className="p-4 sm:p-5 border-b border-neutral-100 space-y-3 shrink-0">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h3 className="text-sm font-semibold text-black">
+              Recent Activity
             </h3>
+            <p className="text-xs text-neutral-500 mt-0.5">
+              Live log of analyzed queries
+            </p>
           </div>
-          <p className="text-[11px] text-[#786154]">
-            Recent search queries and their classified sentiment.
-          </p>
+
+          {/* Filter Chips - YouTube Studio style */}
+          <div className="flex items-center gap-1 overflow-x-auto text-xs">
+            {filterChips.map((pill) => {
+              const isSelected = selectedSentiment === pill.id
+              return (
+                <button
+                  key={pill.id}
+                  type="button"
+                  onClick={() => setSelectedSentiment(pill.id)}
+                  className={cn(
+                    'px-2.5 py-1 rounded-full text-[11px] font-medium transition-all cursor-pointer select-none border border-transparent',
+                    isSelected
+                      ? pill.activeClass
+                      : 'text-neutral-600 hover:text-black hover:bg-neutral-100'
+                  )}
+                >
+                  {pill.label}
+                </button>
+              )
+            })}
+          </div>
         </div>
 
-        {/* Filter Pills */}
-        <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-semibold">
-          {[
-            { id: 'all', label: 'All' },
-            { id: 'positive', label: 'Positive' },
-            { id: 'negative', label: 'Negative' },
-            { id: 'neutral', label: 'Neutral' },
-            { id: 'mixed', label: 'Mixed' },
-          ].map((pill) => (
-            <button
-              key={pill.id}
-              type="button"
-              onClick={() => setSelectedSentiment(pill.id)}
-              className={cn(
-                'px-2.5 py-1 rounded-lg transition-all cursor-pointer border',
-                selectedSentiment === pill.id
-                  ? 'bg-gradient-to-r from-[#d96526] to-[#ba4f1a] text-white border-transparent shadow-2xs'
-                  : 'bg-white/80 border-[#ecd2be] text-[#614b3f] hover:text-[#22130b] hover:bg-white'
-              )}
-            >
-              {pill.label}
-            </button>
-          ))}
+        {/* Search bar inside header */}
+        <div className="relative">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search queries..."
+            className="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg border border-neutral-200 bg-neutral-50/50 focus:bg-white focus:outline-none focus:border-blue-500/60 focus:ring-2 focus:ring-blue-500/15 text-black placeholder:text-neutral-400 transition-all"
+          />
+          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-neutral-400 pointer-events-none" />
         </div>
-      </div>
-
-      {/* Quick Search inside Stream */}
-      <div className="relative">
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Filter recent searches by text..."
-          className="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl border border-[#ecd2be] bg-white/80 focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#ba4f1a] text-[#22130b] placeholder:text-[#a08b7e]"
-        />
-        <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[#a08b7e] pointer-events-none" />
       </div>
 
       {/* Stream List */}
-      <div className="divide-y divide-[#ecd2be]/50 max-h-[360px] overflow-y-auto pr-1">
+      <div className="divide-y divide-neutral-100 flex-1 max-h-[380px] overflow-y-auto">
         {filtered.length === 0 ? (
-          <div className="py-8 text-center text-xs text-[#786154]">
-            No search entries match the selected filters.
+          <div className="py-10 text-center text-xs text-neutral-400">
+            No queries match the selected filter.
           </div>
         ) : (
-          filtered.map((item) => {
-            const config = getSentimentConfig(item.sentiment)
-            const Icon = config.icon
-
-            return (
-              <div
-                key={item.id}
-                className="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 hover:bg-black/[0.02] px-2 rounded-xl transition-colors"
-              >
-                {/* Left: Text & Category */}
-                <div className="space-y-1 min-w-0 flex-1">
-                  <div className="flex items-center gap-2">
-                    <span className={cn('h-2 w-2 rounded-full shrink-0', config.dot)} />
-                    <p className="text-xs text-[#22130b] font-medium truncate" title={item.text}>
-                      {item.text}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-2 text-[10px] text-[#786154] pl-4">
-                    <span>{item.category_label || 'General'}</span>
-                    <span>•</span>
-                    <span>{item.display_date || item.created_at}</span>
-                  </div>
+          filtered.map((item) => (
+            <div
+              key={item.id}
+              className="p-3.5 sm:px-4 flex items-center justify-between gap-3 hover:bg-neutral-50/80 transition-colors"
+            >
+              {/* Left: Dot, query text, metadata */}
+              <div className="min-w-0 flex-1 space-y-0.5">
+                <div className="flex items-center gap-2">
+                  <span className={cn('h-1.5 w-1.5 rounded-full shrink-0', getSentimentDot(item.sentiment))} />
+                  <p className="text-xs text-black font-medium truncate" title={item.text}>
+                    {item.text}
+                  </p>
                 </div>
-
-                {/* Right: Badges */}
-                <div className="flex items-center gap-2 shrink-0 self-end sm:self-auto pl-4 sm:pl-0">
-                  <span
-                    className={cn(
-                      'inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-semibold border',
-                      config.badgeBg
-                    )}
-                  >
-                    <Icon className="h-3 w-3" />
-                    <span>{item.sentiment}</span>
-                  </span>
-
-                  {item.confidence && (
-                    <span className="text-[10px] font-mono font-semibold text-[#735b4d] bg-white border border-[#ecd2be] px-1.5 py-0.5 rounded-md shadow-2xs">
-                      {Math.round(item.confidence)}%
-                    </span>
-                  )}
+                <div className="flex items-center gap-2 text-[10px] text-neutral-400 pl-3.5">
+                  <span>{item.category_label || 'General'}</span>
+                  <span>•</span>
+                  <span>{item.display_date || item.created_at}</span>
                 </div>
               </div>
-            )
-          })
+
+              {/* Right: Badges */}
+              <div className="flex items-center gap-1.5 shrink-0">
+                <span
+                  className={cn(
+                    'text-[10px] font-medium px-2 py-0.5 rounded capitalize',
+                    getSentimentBadge(item.sentiment)
+                  )}
+                >
+                  {item.sentiment}
+                </span>
+
+                {item.confidence && (
+                  <span className="text-[10px] font-mono text-neutral-500 bg-neutral-100 px-1.5 py-0.5 rounded">
+                    {Math.round(item.confidence)}%
+                  </span>
+                )}
+              </div>
+            </div>
+          ))
         )}
       </div>
     </div>

@@ -9,6 +9,7 @@ import {
   HeartPulse,
   GraduationCap,
   Tv,
+  Check,
 } from 'lucide-react'
 import { cn } from '../../lib/utils'
 
@@ -30,15 +31,15 @@ export function CategoryBreakdown({ categories = [], selectedCategory = 'all', o
   }
 
   return (
-    <div className="space-y-3">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="space-y-0.5">
-          <h3 className="text-sm font-bold text-[#22130b] tracking-tight">
-            Category Sentiment Breakdown
+    <div className="rounded-xl border border-neutral-200 bg-white overflow-hidden shadow-xs h-full flex flex-col">
+      {/* Card Header */}
+      <div className="flex items-center justify-between p-4 sm:p-5 border-b border-neutral-100 shrink-0">
+        <div>
+          <h3 className="text-sm font-semibold text-black">
+            Category Breakdown
           </h3>
-          <p className="text-[11px] text-[#786154]">
-            Sentiment classification by detected search topic. Click a card to filter.
+          <p className="text-xs text-neutral-500 mt-0.5">
+            Performance across detected search categories
           </p>
         </div>
 
@@ -46,100 +47,121 @@ export function CategoryBreakdown({ categories = [], selectedCategory = 'all', o
           <button
             type="button"
             onClick={() => onSelectCategory('all')}
-            className="text-[11px] font-semibold text-[#ba4f1a] hover:underline cursor-pointer"
+            className="text-xs font-medium text-black hover:underline cursor-pointer"
           >
-            Clear category filter
+            Clear filter
           </button>
         )}
       </div>
 
-      {/* Grid of Categories */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {categories.map((cat) => {
-          const Icon = CATEGORY_ICON_MAP[cat.id] || Layers
-          const isSelected = selectedCategory === cat.id
+      {/* Table-like List (YouTube Studio Content Breakdown format) */}
+      <div className="overflow-x-auto flex-1 max-h-[380px] overflow-y-auto">
+        <table className="w-full text-left text-xs">
+          <thead>
+            <tr className="border-b border-neutral-100 text-neutral-400 font-medium">
+              <th className="py-2.5 px-4 font-normal">Category</th>
+              <th className="py-2.5 px-3 font-normal text-right">Searches</th>
+              <th className="py-2.5 px-4 font-normal">Sentiment split</th>
+              <th className="py-2.5 px-4 font-normal text-right">Net Sentiment</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-neutral-100">
+            {categories.map((cat) => {
+              const Icon = CATEGORY_ICON_MAP[cat.id] || Layers
+              const isSelected = selectedCategory === cat.id
 
-          return (
-            <button
-              key={cat.id}
-              type="button"
-              onClick={() => onSelectCategory(isSelected ? 'all' : cat.id)}
-              className={cn(
-                'p-4 rounded-2xl text-left transition-all duration-200 cursor-pointer border select-none',
-                isSelected
-                  ? 'bg-gradient-to-br from-white to-[#fff8f3] border-[#ba4f1a] shadow-md ring-2 ring-[#ba4f1a]/25'
-                  : 'bg-white/80 backdrop-blur-md border-[#ecd2be]/80 hover:bg-white hover:border-[#df8758] shadow-xs'
-              )}
-            >
-              {/* Card Header: Icon, Name, Volume */}
-              <div className="flex items-start justify-between gap-2">
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <div
-                    className={cn(
-                      'h-9 w-9 rounded-xl flex items-center justify-center shrink-0 border transition-colors',
-                      isSelected
-                        ? 'bg-gradient-to-tr from-[#d96526] to-[#ba4f1a] text-white border-transparent'
-                        : 'bg-[#df8758]/10 text-[#ba4f1a] border-[#ecd2be]'
-                    )}
-                  >
-                    <Icon className="h-4.5 w-4.5" />
-                  </div>
-                  <div className="min-w-0">
-                    <h4 className="text-xs font-bold text-[#22130b] truncate">
-                      {cat.label}
-                    </h4>
-                    <span className="text-[10px] text-[#8c7466] font-mono">
-                      {cat.total} {cat.total === 1 ? 'search' : 'searches'} ({cat.volume_share}%)
-                    </span>
-                  </div>
-                </div>
-
-                {/* Net Sentiment Badge */}
-                <div
+              return (
+                <tr
+                  key={cat.id}
+                  onClick={() => onSelectCategory(isSelected ? 'all' : cat.id)}
                   className={cn(
-                    'text-[10px] font-bold px-2 py-0.5 rounded-full border shrink-0 font-mono',
-                    cat.net_sentiment > 0
-                      ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
-                      : cat.net_sentiment < 0
-                      ? 'bg-rose-50 text-rose-800 border-rose-300'
-                      : 'bg-stone-50 text-stone-800 border-stone-300'
+                    'transition-colors cursor-pointer select-none group',
+                    isSelected
+                      ? 'bg-blue-50/50 font-medium'
+                      : 'hover:bg-neutral-50/80'
                   )}
                 >
-                  {cat.net_sentiment > 0 ? `+${cat.net_sentiment}%` : `${cat.net_sentiment}%`}
-                </div>
-              </div>
+                  {/* Category Name & Icon */}
+                  <td className="py-3 px-4">
+                    <div className="flex items-center gap-2.5">
+                      <div
+                        className={cn(
+                          'h-6 w-6 rounded-md flex items-center justify-center shrink-0 transition-colors',
+                          isSelected
+                            ? 'bg-blue-600 text-white'
+                            : 'bg-neutral-100 text-neutral-600 group-hover:bg-neutral-200'
+                        )}
+                      >
+                        <Icon className="h-3.5 w-3.5" />
+                      </div>
+                      <span className={cn(
+                        'text-xs truncate max-w-[140px] sm:max-w-[180px]',
+                        isSelected ? 'text-blue-950 font-semibold' : 'text-black'
+                      )}>
+                        {cat.label}
+                      </span>
+                    </div>
+                  </td>
 
-              {/* Progress Split Bar */}
-              <div className="mt-3 space-y-1.5">
-                <div className="h-1.5 w-full rounded-full bg-black/5 flex overflow-hidden">
-                  <div
-                    style={{ width: `${cat.positive_pct}%` }}
-                    className="h-full bg-emerald-500"
-                    title={`Positive: ${cat.positive_pct}%`}
-                  />
-                  <div
-                    style={{ width: `${cat.negative_pct}%` }}
-                    className="h-full bg-rose-500"
-                    title={`Negative: ${cat.negative_pct}%`}
-                  />
-                  <div
-                    style={{
-                      width: `${Math.max(0, 100 - cat.positive_pct - cat.negative_pct)}%`,
-                    }}
-                    className="h-full bg-stone-300"
-                    title="Neutral / Mixed"
-                  />
-                </div>
+                  {/* Volume & Share */}
+                  <td className="py-3 px-3 text-right">
+                    <span className="font-mono text-black">
+                      {cat.total}
+                    </span>
+                    <span className="text-neutral-400 font-mono ml-1 text-[11px]">
+                      ({cat.volume_share}%)
+                    </span>
+                  </td>
 
-                <div className="flex items-center justify-between text-[10px] text-[#786154]">
-                  <span className="text-emerald-700 font-semibold">{cat.positive} pos</span>
-                  <span className="text-rose-700 font-semibold">{cat.negative} neg</span>
-                  <span className="text-[#8c7466]">{cat.avg_confidence}% conf</span>
-                </div>
-              </div>
-            </button>
-          )
-        })}
+                  {/* Horizontal Sentiment Bar */}
+                  <td className="py-3 px-4 min-w-[130px]">
+                    <div className="space-y-1">
+                      <div className="h-1.5 w-full rounded-full bg-neutral-100 flex overflow-hidden">
+                        <div
+                          style={{ width: `${cat.positive_pct}%` }}
+                          className="h-full bg-emerald-500"
+                          title={`Positive: ${cat.positive_pct}%`}
+                        />
+                        <div
+                          style={{ width: `${cat.negative_pct}%` }}
+                          className="h-full bg-rose-500"
+                          title={`Negative: ${cat.negative_pct}%`}
+                        />
+                        <div
+                          style={{
+                            width: `${Math.max(0, 100 - cat.positive_pct - cat.negative_pct)}%`,
+                          }}
+                          className="h-full bg-slate-300"
+                          title="Neutral"
+                        />
+                      </div>
+                      <div className="flex items-center justify-between text-[10px] text-neutral-400 font-mono">
+                        <span className="text-emerald-700">{cat.positive_pct}%</span>
+                        <span className="text-rose-700">{cat.negative_pct}%</span>
+                      </div>
+                    </div>
+                  </td>
+
+                  {/* Net Sentiment Badge */}
+                  <td className="py-3 px-4 text-right">
+                    <span
+                      className={cn(
+                        'inline-block font-mono text-[11px] font-semibold px-2 py-0.5 rounded-full border',
+                        cat.net_sentiment > 0
+                          ? 'text-emerald-700 bg-emerald-50 border-emerald-200/60'
+                          : cat.net_sentiment < 0
+                          ? 'text-rose-700 bg-rose-50 border-rose-200/60'
+                          : 'text-neutral-700 bg-neutral-100 border-neutral-200'
+                      )}
+                    >
+                      {cat.net_sentiment > 0 ? `+${cat.net_sentiment}%` : `${cat.net_sentiment}%`}
+                    </span>
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
       </div>
     </div>
   )

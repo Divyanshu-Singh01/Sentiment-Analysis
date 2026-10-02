@@ -110,21 +110,21 @@ export function BatchDropzone({ onAnalyze, isLoading }) {
   }
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-[#ecd2be]/80 bg-white/75 backdrop-blur-xl p-6 sm:p-8 shadow-[0_8px_30px_rgb(223,135,88,0.12)]">
+    <div className="relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8 shadow-sm">
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Title & Info */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-[#ecd2be]/60">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-neutral-200">
           <div>
-            <h2 className="text-xl font-bold text-[#22130b] tracking-tight">Upload Spreadsheet</h2>
-            <p className="text-xs text-[#786154]">Accepts CSV and Excel (.xlsx) up to 2,000 rows & 5 MB</p>
+            <h2 className="text-xl font-bold text-black tracking-tight">Upload Spreadsheet</h2>
+            <p className="text-xs text-neutral-600 mt-0.5">Accepts CSV and Excel (.xlsx) up to 2,000 rows & 5 MB</p>
           </div>
           <button
             type="button"
             onClick={handleDownloadSample}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ba4f1a] hover:text-[#993b0a] bg-[#df8758]/10 hover:bg-[#df8758]/20 px-3 py-1.5 rounded-lg border border-[#df8758]/25 transition-all cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-black bg-neutral-100 hover:bg-neutral-200 px-3.5 py-1.5 rounded-full border border-neutral-200 transition-all cursor-pointer shrink-0"
           >
-            <Download className="h-3.5 w-3.5" />
-            Download Sample CSV
+            <Download className="h-3.5 w-3.5 text-black" aria-hidden="true" />
+            <span>Download Sample CSV</span>
           </button>
         </div>
 
@@ -135,12 +135,12 @@ export function BatchDropzone({ onAnalyze, isLoading }) {
           onDragOver={handleDrag}
           onDrop={handleDrop}
           onClick={() => inputRef.current?.click()}
-          className={`relative flex flex-col items-center justify-center p-8 rounded-xl border-2 border-dashed transition-all cursor-pointer ${
+          className={`relative flex flex-col items-center justify-center p-8 rounded-2xl border-2 border-dashed transition-all cursor-pointer ${
             dragActive
-              ? 'border-[#d96526] bg-[#df8758]/10 scale-[1.01]'
+              ? 'border-black bg-neutral-50'
               : selectedFile
-              ? 'border-[#df8758]/50 bg-[#fdf8f4]'
-              : 'border-[#ecd2be] hover:border-[#df8758]/60 bg-[#fefaf7]/70 hover:bg-[#fefaf7]'
+              ? 'border-neutral-300 bg-neutral-50'
+              : 'border-neutral-200 hover:border-black bg-white hover:bg-neutral-50'
           }`}
         >
           <input
@@ -153,14 +153,14 @@ export function BatchDropzone({ onAnalyze, isLoading }) {
 
           {selectedFile ? (
             <div className="flex flex-col items-center gap-2 text-center">
-              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-[#df8758]/25 to-[#ba4f1a]/30 flex items-center justify-center text-[#ba4f1a] shadow-xs">
-                <FileSpreadsheet className="h-6 w-6" />
+              <div className="h-12 w-12 rounded-xl bg-neutral-100 border border-neutral-200 flex items-center justify-center text-black">
+                <FileSpreadsheet className="h-6 w-6" aria-hidden="true" />
               </div>
               <div className="space-y-0.5">
-                <p className="text-sm font-semibold text-[#22130b] truncate max-w-[280px]">
+                <p className="text-sm font-semibold text-black truncate max-w-[280px]">
                   {selectedFile.name}
                 </p>
-                <p className="text-xs text-[#786154] font-medium">
+                <p className="text-xs text-neutral-500 font-mono font-medium">
                   {formatFileSize(selectedFile.size)}
                 </p>
               </div>
@@ -172,23 +172,23 @@ export function BatchDropzone({ onAnalyze, isLoading }) {
                   setValidationError(null)
                   if (inputRef.current) inputRef.current.value = ''
                 }}
-                className="mt-2 inline-flex items-center gap-1 text-xs text-[#b83b3b] hover:text-[#8a2222] font-medium px-2.5 py-1 rounded-md bg-[#b83b3b]/10 hover:bg-[#b83b3b]/20 transition-all cursor-pointer"
+                className="mt-2 inline-flex items-center gap-1.5 text-xs text-rose-700 hover:text-rose-900 font-medium px-3 py-1 rounded-full bg-rose-50 hover:bg-rose-100/70 border border-rose-200 transition-colors cursor-pointer"
               >
-                <X className="h-3 w-3" />
-                Remove File
+                <X className="h-3 w-3" aria-hidden="true" />
+                <span>Remove File</span>
               </button>
             </div>
           ) : (
             <div className="flex flex-col items-center gap-3 text-center">
-              <div className="h-13 w-13 rounded-2xl bg-gradient-to-br from-[#df8758]/15 to-[#ba4f1a]/20 flex items-center justify-center text-[#ba4f1a] border border-[#df8758]/30 shadow-xs">
-                <UploadCloud className="h-7 w-7" />
+              <div className="h-12 w-12 rounded-2xl bg-neutral-100 border border-neutral-200 flex items-center justify-center text-black">
+                <UploadCloud className="h-6 w-6" aria-hidden="true" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-[#22130b]">
-                  Drag and drop your file here, or <span className="text-[#ba4f1a] underline underline-offset-2">browse</span>
+                <p className="text-sm font-medium text-black">
+                  Drag and drop your file here, or <span className="text-black font-semibold underline underline-offset-2">browse</span>
                 </p>
-                <p className="text-xs text-[#786154] mt-1">
-                  Supported formats: <span className="font-semibold">.CSV</span>, <span className="font-semibold">.TSV</span>, <span className="font-semibold">.XLSX</span>
+                <p className="text-xs text-neutral-500 mt-1">
+                  Supported formats: <span className="font-semibold text-black">.CSV</span>, <span className="font-semibold text-black">.TSV</span>, <span className="font-semibold text-black">.XLSX</span>
                 </p>
               </div>
             </div>
@@ -197,8 +197,11 @@ export function BatchDropzone({ onAnalyze, isLoading }) {
 
         {/* Validation Error Message */}
         {validationError && (
-          <div className="flex items-center gap-2 p-3 rounded-xl bg-[#b83b3b]/10 border border-[#b83b3b]/25 text-[#912323] text-xs">
-            <AlertCircle className="h-4 w-4 shrink-0" />
+          <div
+            role="alert"
+            className="flex items-start gap-2.5 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-900 text-xs animate-result-in"
+          >
+            <AlertCircle className="h-4 w-4 text-rose-600 shrink-0 mt-0.5" aria-hidden="true" />
             <span>{validationError}</span>
           </div>
         )}
@@ -206,10 +209,10 @@ export function BatchDropzone({ onAnalyze, isLoading }) {
         {/* Optional Custom Column Input */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-1">
           <div className="space-y-0.5">
-            <label htmlFor="custom-column-input" className="text-xs font-semibold text-[#22130b] block">
-              Review Column Override <span className="text-[11px] text-[#786154] font-normal">(Optional)</span>
+            <label htmlFor="custom-column-input" className="text-xs font-medium text-black block">
+              Review Column Override <span className="text-xs text-neutral-500 font-normal">(Optional)</span>
             </label>
-            <p className="text-[11px] text-[#786154]">
+            <p className="text-[11px] text-neutral-500">
               Leave empty to automatically detect columns named <em>review</em>, <em>text</em>, <em>feedback</em>, or <em>comment</em>.
             </p>
           </div>
@@ -219,7 +222,7 @@ export function BatchDropzone({ onAnalyze, isLoading }) {
             value={customColumn}
             onChange={(e) => setCustomColumn(e.target.value)}
             placeholder="e.g. customer_comments"
-            className="w-full sm:w-56 px-3 py-1.5 text-xs rounded-lg border border-[#ecd2be] bg-white/90 text-[#22130b] focus:outline-hidden focus:ring-2 focus:ring-[#d96526]/40 focus:border-[#d96526] transition-all"
+            className="w-full sm:w-60 h-10 px-3 py-2 text-xs sm:text-[13px] rounded-xl border border-neutral-200 bg-white text-black placeholder:text-neutral-400 outline-none focus:border-black focus:ring-1 focus:ring-black caret-black transition-all"
           />
         </div>
 
@@ -228,17 +231,17 @@ export function BatchDropzone({ onAnalyze, isLoading }) {
           <button
             type="submit"
             disabled={!selectedFile || isLoading}
-            className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-[#d96526] via-[#c6551d] to-[#993b0a] hover:from-[#e37435] hover:to-[#a8440e] disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_4px_14px_rgba(217,101,38,0.35)] transition-all cursor-pointer"
+            className="w-full inline-flex items-center justify-center gap-2 rounded-full py-3.5 px-6 font-semibold text-sm sm:text-base text-white bg-black hover:bg-neutral-800 active:bg-neutral-900 shadow-xs transition-colors cursor-pointer select-none disabled:opacity-40 disabled:pointer-events-none"
           >
             {isLoading ? (
               <>
-                <Loader2 className="h-4 w-4 animate-spin" />
-                Analyzing spreadsheet rows in real-time...
+                <Loader2 className="h-4 w-4 animate-spin text-white" aria-hidden="true" />
+                <span>Analyzing spreadsheet rows in real-time...</span>
               </>
             ) : (
               <>
-                <Sparkles className="h-4 w-4" />
-                Start Bulk Analysis
+                <Sparkles className="h-4 w-4 text-white" aria-hidden="true" />
+                <span>Start Bulk Analysis</span>
               </>
             )}
           </button>

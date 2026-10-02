@@ -41,31 +41,31 @@ export function BatchResultsDashboard({ data, onReset }) {
     switch (sentiment?.toLowerCase()) {
       case 'positive':
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-300">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/60">
             <CheckCircle2 className="h-3 w-3 text-emerald-600" /> Positive
           </span>
         )
       case 'negative':
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-50 text-rose-800 border border-rose-300">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200/60">
             <AlertCircle className="h-3 w-3 text-rose-600" /> Negative
           </span>
         )
       case 'neutral':
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-stone-50 text-stone-800 border border-stone-300">
-            <MinusCircle className="h-3 w-3 text-stone-500" /> Neutral
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-neutral-100 text-neutral-700 border border-neutral-200">
+            <MinusCircle className="h-3 w-3 text-neutral-500" /> Neutral
           </span>
         )
       case 'mixed':
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-300">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200/60">
             <Scale className="h-3 w-3 text-amber-600" /> Mixed
           </span>
         )
       default:
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-neutral-100 text-neutral-700 border border-neutral-200">
             {sentiment || 'N/A'}
           </span>
         )
@@ -75,14 +75,14 @@ export function BatchResultsDashboard({ data, onReset }) {
   return (
     <div className="space-y-6 animate-result-in">
       {/* Top Banner & Action Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl border border-[#ecd2be]/80 bg-white/75 backdrop-blur-xl shadow-[0_8px_30px_rgb(223,135,88,0.12)]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl border border-neutral-200 bg-white shadow-sm">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
-            <FileCheck className="h-5 w-5 text-[#ba4f1a]" />
-            <h2 className="text-lg font-bold text-[#22130b] tracking-tight">{filename}</h2>
+            <FileCheck className="h-5 w-5 text-black" />
+            <h2 className="text-lg font-bold text-black tracking-tight">{filename}</h2>
           </div>
-          <p className="text-xs text-[#786154]">
-            Column analyzed: <span className="font-semibold text-[#22130b] font-mono">{detected_column}</span> • {processed_rows} valid reviews
+          <p className="text-xs text-neutral-600">
+            Column analyzed: <span className="font-semibold text-black font-mono">{detected_column}</span> • {processed_rows} valid reviews
             {skipped_rows > 0 && ` (${skipped_rows} blank skipped)`}
           </p>
         </div>
@@ -91,7 +91,7 @@ export function BatchResultsDashboard({ data, onReset }) {
           <button
             type="button"
             onClick={onReset}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-xl border border-[#ecd2be] bg-white/80 hover:bg-white text-[#4d382d] transition-all cursor-pointer shadow-2xs"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium rounded-full border border-neutral-200 bg-white hover:bg-neutral-50 text-black transition-all cursor-pointer shadow-xs"
           >
             <RotateCcw className="h-3.5 w-3.5" />
             Upload Another
@@ -100,7 +100,7 @@ export function BatchResultsDashboard({ data, onReset }) {
           <button
             type="button"
             onClick={handleDownloadCsv}
-            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold rounded-xl text-white bg-gradient-to-r from-[#d96526] via-[#c6551d] to-[#993b0a] hover:from-[#e37435] hover:to-[#a8440e] shadow-[0_4px_12px_rgba(217,101,38,0.3)] transition-all cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-full text-white bg-black hover:bg-neutral-800 shadow-xs transition-all cursor-pointer"
           >
             <Download className="h-3.5 w-3.5" />
             Download Enriched CSV
@@ -111,124 +111,124 @@ export function BatchResultsDashboard({ data, onReset }) {
       {/* KPI Stats Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {/* Positive */}
-        <div className="p-4 rounded-2xl border border-emerald-300/60 bg-emerald-50/60 space-y-1">
+        <div className="p-4 rounded-2xl border border-neutral-200 bg-white shadow-xs space-y-1 hover:border-emerald-200 transition-colors">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-emerald-800">Positive</span>
+            <span className="text-xs font-semibold text-black">Positive</span>
             <CheckCircle2 className="h-4 w-4 text-emerald-600" />
           </div>
-          <p className="text-2xl font-extrabold text-emerald-900 font-mono">
+          <p className="text-2xl font-bold text-black font-mono">
             {sentiment_percentages.positive ?? 0}%
           </p>
-          <p className="text-[11px] text-emerald-700/80 font-medium">
+          <p className="text-[11px] text-emerald-700 font-medium">
             {sentiment_counts.positive ?? 0} reviews
           </p>
         </div>
 
         {/* Negative */}
-        <div className="p-4 rounded-2xl border border-rose-300/60 bg-rose-50/60 space-y-1">
+        <div className="p-4 rounded-2xl border border-neutral-200 bg-white shadow-xs space-y-1 hover:border-rose-200 transition-colors">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-rose-800">Negative</span>
+            <span className="text-xs font-semibold text-black">Negative</span>
             <AlertCircle className="h-4 w-4 text-rose-600" />
           </div>
-          <p className="text-2xl font-extrabold text-rose-900 font-mono">
+          <p className="text-2xl font-bold text-black font-mono">
             {sentiment_percentages.negative ?? 0}%
           </p>
-          <p className="text-[11px] text-rose-700/80 font-medium">
+          <p className="text-[11px] text-rose-700 font-medium">
             {sentiment_counts.negative ?? 0} reviews
           </p>
         </div>
 
         {/* Average Confidence */}
-        <div className="p-4 rounded-2xl border border-[#df8758]/35 bg-white/80 space-y-1">
+        <div className="p-4 rounded-2xl border border-neutral-200 bg-white shadow-xs space-y-1 hover:border-violet-200 transition-colors">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-[#993b0a]">Avg Confidence</span>
-            <Sparkles className="h-4 w-4 text-[#ba4f1a]" />
+            <span className="text-xs font-semibold text-black">Avg Confidence</span>
+            <Sparkles className="h-4 w-4 text-violet-600" />
           </div>
-          <p className="text-2xl font-extrabold text-[#993b0a] font-mono">
+          <p className="text-2xl font-bold text-black font-mono">
             {average_confidence}%
           </p>
-          <p className="text-[11px] text-[#786154]">Model certainty</p>
+          <p className="text-[11px] text-neutral-500">Model certainty</p>
         </div>
 
         {/* Close Predictions */}
-        <div className="p-4 rounded-2xl border border-amber-300/60 bg-amber-50/60 space-y-1">
+        <div className="p-4 rounded-2xl border border-neutral-200 bg-white shadow-xs space-y-1 hover:border-amber-200 transition-colors">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-amber-900">Uncertain Margin</span>
-            <HelpCircle className="h-4 w-4 text-amber-700" />
+            <span className="text-xs font-semibold text-black">Uncertain Margin</span>
+            <HelpCircle className="h-4 w-4 text-amber-500" />
           </div>
-          <p className="text-2xl font-extrabold text-amber-950 font-mono">
+          <p className="text-2xl font-bold text-black font-mono">
             {close_predictions_count}
           </p>
-          <p className="text-[11px] text-[#786154]">Delta &lt; 10% (Close)</p>
+          <p className="text-[11px] text-amber-700">Delta &lt; 10% (Close)</p>
         </div>
       </div>
 
       {/* Visual Sentiment Distribution Bar */}
-      <div className="p-4 rounded-xl border border-[#ecd2be]/80 bg-white/70 backdrop-blur-md space-y-2.5">
-        <div className="flex items-center justify-between text-xs font-semibold text-[#22130b]">
+      <div className="p-4 rounded-2xl border border-neutral-200 bg-white shadow-xs space-y-2.5">
+        <div className="flex items-center justify-between text-xs font-semibold text-black">
           <span>Sentiment Distribution</span>
-          <span className="text-[11px] font-normal text-[#786154]">{total_rows} total rows</span>
+          <span className="text-[11px] font-normal text-neutral-500">{total_rows} total rows</span>
         </div>
 
-        <div className="w-full h-3.5 rounded-full overflow-hidden flex bg-gray-100 border border-[#ecd2be]/60">
+        <div className="w-full h-3 rounded-full overflow-hidden flex bg-neutral-100">
           <div
             style={{ width: `${sentiment_percentages.positive ?? 0}%` }}
-            className="bg-[#2a6d48] transition-all duration-500"
+            className="bg-emerald-500 transition-all duration-500"
             title={`Positive: ${sentiment_percentages.positive}%`}
           />
           <div
             style={{ width: `${sentiment_percentages.negative ?? 0}%` }}
-            className="bg-[#b83b3b] transition-all duration-500"
+            className="bg-rose-500 transition-all duration-500"
             title={`Negative: ${sentiment_percentages.negative}%`}
           />
           <div
             style={{ width: `${sentiment_percentages.mixed ?? 0}%` }}
-            className="bg-[#ba6820] transition-all duration-500"
+            className="bg-amber-500 transition-all duration-500"
             title={`Mixed: ${sentiment_percentages.mixed}%`}
           />
           <div
             style={{ width: `${sentiment_percentages.neutral ?? 0}%` }}
-            className="bg-[#6b584c] transition-all duration-500"
+            className="bg-neutral-400 transition-all duration-500"
             title={`Neutral: ${sentiment_percentages.neutral}%`}
           />
         </div>
 
         {/* Legend */}
-        <div className="flex flex-wrap items-center gap-4 text-xs pt-1 text-[#614b3f]">
+        <div className="flex flex-wrap items-center gap-4 text-xs pt-1 text-neutral-600">
           <span className="flex items-center gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#2a6d48]" />
+            <span className="h-2 w-2 rounded-full bg-emerald-500" />
             Positive ({sentiment_percentages.positive}%)
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#b83b3b]" />
+            <span className="h-2 w-2 rounded-full bg-rose-500" />
             Negative ({sentiment_percentages.negative}%)
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#ba6820]" />
+            <span className="h-2 w-2 rounded-full bg-amber-500" />
             Mixed ({sentiment_percentages.mixed}%)
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#6b584c]" />
+            <span className="h-2 w-2 rounded-full bg-neutral-400" />
             Neutral ({sentiment_percentages.neutral}%)
           </span>
         </div>
       </div>
 
       {/* Interactive Results Preview Table */}
-      <div className="rounded-2xl border border-[#ecd2be]/80 bg-white/80 backdrop-blur-xl overflow-hidden shadow-[0_8px_30px_rgb(223,135,88,0.08)] space-y-0">
-        <div className="p-4 border-b border-[#ecd2be]/60 flex items-center justify-between">
+      <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden shadow-sm space-y-0">
+        <div className="p-4 border-b border-neutral-200 flex items-center justify-between">
           <div>
-            <h3 className="text-sm font-bold text-[#22130b]">Preview Results</h3>
-            <p className="text-[11px] text-[#786154]">Showing first 25 analyzed rows. Full data available in CSV download.</p>
+            <h3 className="text-sm font-semibold text-black">Preview Results</h3>
+            <p className="text-[11px] text-neutral-500">Showing first 25 analyzed rows. Full data available in CSV download.</p>
           </div>
-          <span className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-[#df8758]/15 text-[#993b0a]">
+          <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-neutral-100 text-black border border-neutral-200">
             {preview_results.length} rows previewed
           </span>
         </div>
 
-        <div className="overflow-x-auto max-h-[420px] divide-y divide-[#ecd2be]/40">
+        <div className="overflow-x-auto max-h-[420px] divide-y divide-neutral-100">
           <table className="w-full text-left text-xs">
-            <thead className="sticky top-0 bg-[#fbf6f2] text-[#4d382d] font-semibold border-b border-[#ecd2be]/60 z-10">
+            <thead className="sticky top-0 bg-neutral-50 text-black font-semibold border-b border-neutral-200 z-10">
               <tr>
                 <th className="py-2.5 px-3 w-12 text-center">#</th>
                 <th className="py-2.5 px-3">Review Snippet</th>
@@ -237,14 +237,14 @@ export function BatchResultsDashboard({ data, onReset }) {
                 <th className="py-2.5 px-3 w-20 text-center">Close?</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#ecd2be]/30 text-[#22130b]">
+            <tbody className="divide-y divide-neutral-100 text-black">
               {preview_results.map((row) => (
-                <tr key={row.row_number} className="hover:bg-[#fcf8f5] transition-colors">
-                  <td className="py-2.5 px-3 font-mono text-[11px] text-center text-[#786154]">
+                <tr key={row.row_number} className="hover:bg-neutral-50 transition-colors">
+                  <td className="py-2.5 px-3 font-mono text-[11px] text-center text-neutral-500">
                     {row.row_number}
                   </td>
                   <td className="py-2.5 px-3 max-w-md truncate font-normal" title={row.text}>
-                    {row.text || <em className="text-gray-400">Blank row</em>}
+                    {row.text || <em className="text-neutral-400">Blank row</em>}
                   </td>
                   <td className="py-2.5 px-3 whitespace-nowrap">
                     {getSentimentBadge(row.sentiment)}
@@ -254,11 +254,11 @@ export function BatchResultsDashboard({ data, onReset }) {
                   </td>
                   <td className="py-2.5 px-3 text-center whitespace-nowrap">
                     {row.is_close ? (
-                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#ba6820]/15 text-[#8c460a]">
+                      <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-neutral-100 text-black border border-neutral-200">
                         Yes
                       </span>
                     ) : (
-                      <span className="text-[10px] text-gray-400">—</span>
+                      <span className="text-[10px] text-neutral-400">—</span>
                     )}
                   </td>
                 </tr>

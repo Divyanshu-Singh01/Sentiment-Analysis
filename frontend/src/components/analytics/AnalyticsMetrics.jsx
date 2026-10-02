@@ -1,16 +1,8 @@
 import React from 'react'
-import {
-  TrendingUp,
-  TrendingDown,
-  Smile,
-  Frown,
-  Activity,
-  Award,
-  Sparkles,
-} from 'lucide-react'
+import { TrendingUp, TrendingDown, ArrowUpRight, ArrowDownRight } from 'lucide-react'
 import { cn } from '../../lib/utils'
 
-export function AnalyticsMetrics({ summary }) {
+export function AnalyticsMetrics({ summary, activeMetric = 'net_sentiment', onSelectMetric }) {
   const {
     total_reviews = 0,
     positive_count = 0,
@@ -25,167 +17,123 @@ export function AnalyticsMetrics({ summary }) {
     net_sentiment_score = 0,
   } = summary || {}
 
-  // Net Sentiment Badge details
-  const getNssInfo = (nss) => {
-    if (nss >= 40) return { label: 'Strongly Positive', color: 'text-emerald-800 bg-emerald-50 border-emerald-300' }
-    if (nss >= 15) return { label: 'Favorable Positive', color: 'text-teal-800 bg-teal-50 border-teal-300' }
-    if (nss >= -15) return { label: 'Balanced / Neutral', color: 'text-amber-800 bg-amber-50 border-amber-300' }
-    if (nss >= -40) return { label: 'Leaning Negative', color: 'text-orange-800 bg-orange-50 border-orange-300' }
-    return { label: 'Critically Negative', color: 'text-rose-800 bg-rose-50 border-rose-300' }
+  const getNssLabel = (nss) => {
+    if (nss >= 40) return 'Strongly positive'
+    if (nss >= 15) return 'Favorable'
+    if (nss >= -15) return 'Neutral balance'
+    if (nss >= -40) return 'Leaning negative'
+    return 'Critical negative'
   }
 
-  const nssInfo = getNssInfo(net_sentiment_score)
+  const cards = [
+    {
+      id: 'net_sentiment',
+      label: 'Net Sentiment',
+      value: `${net_sentiment_score > 0 ? '+' : ''}${net_sentiment_score}%`,
+      subtext: getNssLabel(net_sentiment_score),
+      subtextColor: net_sentiment_score >= 15 ? 'text-emerald-700' : net_sentiment_score <= -15 ? 'text-rose-700' : 'text-neutral-500',
+      description: '% Positive minus % Negative',
+      hasIcon: true,
+      isPositive: net_sentiment_score >= 0,
+    },
+    {
+      id: 'total',
+      label: 'Searches Analyzed',
+      value: total_reviews.toLocaleString(),
+      subtext: `${total_reviews} total reviews`,
+      subtextColor: 'text-neutral-500',
+      description: 'Activity volume',
+      hasIcon: false,
+    },
+    {
+      id: 'positive_pct',
+      label: 'Positive Rate',
+      value: `${positive_pct}%`,
+      subtext: `${positive_count} favorable`,
+      subtextColor: 'text-emerald-700',
+      description: `${positive_count} of ${total_reviews} reviews`,
+      hasIcon: false,
+    },
+    {
+      id: 'negative_pct',
+      label: 'Negative Rate',
+      value: `${negative_pct}%`,
+      subtext: `${negative_count} critical`,
+      subtextColor: 'text-rose-700',
+      description: `${negative_count} of ${total_reviews} reviews`,
+      hasIcon: false,
+    },
+  ]
+
+  const getIndicatorColor = (cardId) => {
+    switch (cardId) {
+      case 'total':
+        return 'bg-blue-600'
+      case 'positive_pct':
+        return 'bg-emerald-600'
+      case 'negative_pct':
+        return 'bg-rose-600'
+      case 'net_sentiment':
+        return net_sentiment_score >= 0 ? 'bg-emerald-600' : 'bg-rose-600'
+      default:
+        return 'bg-black'
+    }
+  }
 
   return (
-    <div className="space-y-3">
-      {/* Primary KPI Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-        {/* 1. Net Sentiment Score Hero Card */}
-        <div className="p-4 sm:p-5 rounded-2xl bg-white/80 backdrop-blur-md border border-[#ecd2be]/80 shadow-xs flex flex-col justify-between relative overflow-hidden">
-          <div className="flex items-center justify-between text-[#786154]">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#9c7d69]">
-              Net Sentiment (NSS)
-            </span>
-            {net_sentiment_score >= 0 ? (
-              <TrendingUp className="h-4 w-4 text-emerald-600" />
-            ) : (
-              <TrendingDown className="h-4 w-4 text-rose-600" />
+    <div className="grid grid-cols-2 lg:grid-cols-4 border-b border-neutral-200 bg-white divide-y lg:divide-y-0 divide-neutral-200 lg:divide-x [&>*:nth-child(odd)]:border-r lg:[&>*:nth-child(odd)]:border-r-0">
+      {cards.map((card) => {
+        const isActive = activeMetric === card.id
+        return (
+          <button
+            key={card.id}
+            type="button"
+            onClick={() => onSelectMetric && onSelectMetric(card.id)}
+            className={cn(
+              'group relative flex flex-col p-4 sm:p-5 text-left transition-colors cursor-pointer select-none outline-none',
+              isActive
+                ? 'bg-neutral-50/90'
+                : 'hover:bg-neutral-50/50'
             )}
-          </div>
-
-          <div className="mt-2.5 space-y-1">
-            <div className="flex items-baseline gap-1.5">
-              <span
-                className={cn(
-                  'text-3xl font-extrabold tracking-tight font-mono',
-                  net_sentiment_score > 0
-                    ? 'text-emerald-700'
-                    : net_sentiment_score < 0
-                    ? 'text-rose-700'
-                    : 'text-[#22130b]'
-                )}
-              >
-                {net_sentiment_score > 0 ? `+${net_sentiment_score}` : net_sentiment_score}%
+          >
+            {/* Top row: Label */}
+            <div className="flex items-center justify-between gap-1 text-neutral-500">
+              <span className={cn(
+                'text-xs font-medium truncate transition-colors',
+                isActive ? 'text-black font-semibold' : 'text-neutral-600'
+              )}>
+                {card.label}
               </span>
+              {card.hasIcon && (
+                card.isPositive ? (
+                  <ArrowUpRight className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+                ) : (
+                  <ArrowDownRight className="h-3.5 w-3.5 text-rose-600 shrink-0" />
+                )
+              )}
             </div>
-            <div className="flex items-center gap-2">
-              <span
-                className={cn(
-                  'inline-block text-[10px] font-bold px-2 py-0.5 rounded-full border',
-                  nssInfo.color
-                )}
-              >
-                {nssInfo.label}
-              </span>
-            </div>
-            <p className="text-[10px] text-[#8c7466] pt-1">
-              % Positive minus % Negative
-            </p>
-          </div>
-        </div>
 
-        {/* 2. Total Volume Analyzed */}
-        <div className="p-4 sm:p-5 rounded-2xl bg-white/80 backdrop-blur-md border border-[#ecd2be]/80 shadow-xs flex flex-col justify-between">
-          <div className="flex items-center justify-between text-[#786154]">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#9c7d69]">
-              Search Volume
-            </span>
-            <Activity className="h-4 w-4 text-[#ba4f1a]" />
-          </div>
-
-          <div className="mt-2.5">
-            <div className="text-3xl font-extrabold text-[#22130b] tracking-tight font-mono">
-              {total_reviews.toLocaleString()}
-            </div>
-            <p className="text-[11px] text-[#786154] mt-0.5">
-              Total searches analyzed
-            </p>
-            <div className="mt-2 flex items-center gap-1.5 text-[10px] text-[#8c7466]">
-              <Sparkles className="h-3 w-3 text-[#ba4f1a]" />
-              <span>100% from your activity</span>
-            </div>
-          </div>
-        </div>
-
-        {/* 3. Positive vs Negative Ratio */}
-        <div className="p-4 sm:p-5 rounded-2xl bg-white/80 backdrop-blur-md border border-[#ecd2be]/80 shadow-xs flex flex-col justify-between sm:col-span-2 lg:col-span-1">
-          <div className="flex items-center justify-between text-[#786154]">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#9c7d69]">
-              Sentiment Split
-            </span>
-            <div className="flex items-center gap-1">
-              <Smile className="h-3.5 w-3.5 text-emerald-600" />
-              <Frown className="h-3.5 w-3.5 text-rose-600" />
-            </div>
-          </div>
-
-          <div className="mt-2.5 space-y-2">
-            <div className="flex items-baseline justify-between">
-              <span className="text-lg font-bold text-emerald-700 font-mono">
-                {positive_pct}% <span className="text-[11px] text-[#786154] font-normal">Pos</span>
-              </span>
-              <span className="text-lg font-bold text-rose-700 font-mono">
-                {negative_pct}% <span className="text-[11px] text-[#786154] font-normal">Neg</span>
+            {/* Middle: Big Metric Value */}
+            <div className="mt-1.5 flex items-baseline gap-1.5">
+              <span className="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-black">
+                {card.value}
               </span>
             </div>
 
-            {/* Visual Split Ratio Bar */}
-            <div className="h-2 w-full rounded-full bg-black/5 flex overflow-hidden">
-              <div
-                style={{ width: `${positive_pct}%` }}
-                className="h-full bg-emerald-500 transition-all duration-500"
-                title={`Positive: ${positive_pct}%`}
-              />
-              <div
-                style={{ width: `${negative_pct}%` }}
-                className="h-full bg-rose-500 transition-all duration-500"
-                title={`Negative: ${negative_pct}%`}
-              />
-              <div
-                style={{ width: `${neutral_pct}%` }}
-                className="h-full bg-stone-400 transition-all duration-500"
-                title={`Neutral: ${neutral_pct}%`}
-              />
-              <div
-                style={{ width: `${mixed_pct}%` }}
-                className="h-full bg-amber-500 transition-all duration-500"
-                title={`Mixed: ${mixed_pct}%`}
-              />
+            {/* Bottom: Subtext */}
+            <div className="mt-1 flex items-center justify-between text-[11px]">
+              <span className={cn('font-medium truncate', card.subtextColor)}>
+                {card.subtext}
+              </span>
             </div>
 
-            <div className="flex items-center justify-between text-[10px] text-[#8c7466]">
-              <span>{positive_count} pos</span>
-              <span>{neutral_count} neu • {mixed_count} mix</span>
-              <span>{negative_count} neg</span>
-            </div>
-          </div>
-        </div>
-
-        {/* 4. Model Confidence Score */}
-        <div className="p-4 sm:p-5 rounded-2xl bg-white/80 backdrop-blur-md border border-[#ecd2be]/80 shadow-xs flex flex-col justify-between sm:col-span-2 lg:col-span-1">
-          <div className="flex items-center justify-between text-[#786154]">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#9c7d69]">
-              ML Confidence
-            </span>
-            <Award className="h-4 w-4 text-[#ba4f1a]" />
-          </div>
-
-          <div className="mt-2.5">
-            <div className="text-3xl font-extrabold text-[#22130b] tracking-tight font-mono">
-              {average_confidence}%
-            </div>
-            <p className="text-[11px] text-[#786154] mt-0.5">
-              Average certainty score
-            </p>
-            <div className="mt-2 h-1.5 w-full rounded-full bg-black/5 overflow-hidden">
-              <div
-                style={{ width: `${Math.min(100, average_confidence)}%` }}
-                className="h-full bg-[#ba4f1a] rounded-full transition-all duration-500"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+            {/* YouTube Studio Metric-Specific Active Tab Underline Indicator */}
+            {isActive && (
+              <span className={cn('absolute bottom-0 left-0 right-0 h-0.5 transition-all', getIndicatorColor(card.id))} />
+            )}
+          </button>
+        )
+      })}
     </div>
   )
 }
